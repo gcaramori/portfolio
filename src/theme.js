@@ -2,7 +2,11 @@ import { extendTheme } from '@chakra-ui/react'
 
 const config = {
   initialColorMode: 'dark',
-  useSystemColorMode: true
+  useSystemColorMode: true,
+  fonts: {
+    heading: `'League Spartan', 'sans-serif'`,
+    body: `'League Spartan', 'sans-serif'`
+  }
 }
 
 const theme = extendTheme({ config })
