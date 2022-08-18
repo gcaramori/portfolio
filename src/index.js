@@ -1,12 +1,10 @@
-import { ChakraProvider } from '@chakra-ui/react';
-import { ColorModeScript } from '@chakra-ui/react';
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import './index.css';
-import "@fontsource/league-spartan";
 import theme from './theme';
+import '@fontsource/m-plus-rounded-1c';
 
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById('root');
 ReactDOM.createRoot(rootElement).render(
   <>
     <ChakraProvider theme={theme}>

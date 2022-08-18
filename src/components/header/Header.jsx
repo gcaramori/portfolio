@@ -11,8 +11,8 @@ const Header = () => {
         <header>
             <Flex justifyContent={'space-between'} alignItems={'center'} position='relative' px={20} py={3} bg={'#576574'} maxW="80%" mx="auto" boxShadow="md" borderBottomLeftRadius="xl" borderBottomRightRadius="xl">
                 <Box>
-                    <Link href="#" mr={10}>Projetos</Link>
-                    <Link href="#">Sobre mim</Link>
+                    <Link href="#" fontSize={20} fontWeight={500} mr={10}>Projetos</Link>
+                    <Link href="#" fontSize={20} fontWeight={500}>Sobre mim</Link>
                 </Box>
                 <Box>
                     <Button colorScheme='blackAlpha' variant='solid' onClick={() => toggleColorMode()}>
