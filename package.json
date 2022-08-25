@@ -8,6 +8,8 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@fontsource/m-plus-rounded-1c": "^4.5.9",
+    "@react-three/drei": "^9.23.7",
+    "@react-three/fiber": "^8.6.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
