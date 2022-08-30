@@ -9,8 +9,6 @@ const Animation = () => {
         <Box h="450px" w="500px" mx="auto">
             <Canvas>
                 <OrbitControls enableZoom={false} />
-                <ambientLight intensity={0.5} />
-                <directionalLight position={[-2, 5, 2]} intensity={1} />
                 <RetroComputer />
             </Canvas>
         </Box>
