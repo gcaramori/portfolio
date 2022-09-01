@@ -1,14 +1,16 @@
 import React from 'react';
-import Header from './components/header/Header';
-import Animation from './components/animation/Animation';
+import Header from './components/Header';
+import AnimationLoader from './components/AnimationLoader';
+import Presentation from './components/Presentation';
 
 const App = () => {
   return (
     <>
       <Header />
-      <Animation />
+      <AnimationLoader />
+      <Presentation />
     </>
   )
 }
 
-export default App
+export default App;

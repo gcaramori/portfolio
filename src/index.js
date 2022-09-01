@@ -1,7 +1,7 @@
 import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import theme from './theme';
+import theme from './lib/theme';
 import '@fontsource/m-plus-rounded-1c';
 
 const rootElement = document.getElementById('root');
