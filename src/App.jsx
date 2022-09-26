@@ -1,13 +1,11 @@
 import React from 'react';
-import Header from './components/Header';
-import AnimationLoader from './components/AnimationLoader';
+import Sidebar from './components/Sidebar';
 import Presentation from './components/Presentation';
 
 const App = () => {
   return (
     <>
-      <Header />
-      <AnimationLoader />
+      <Sidebar />
       <Presentation />
     </>
   )
