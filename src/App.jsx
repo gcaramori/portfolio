@@ -1,13 +1,14 @@
 import React from 'react';
+import { Flex, Box } from '@chakra-ui/react';
 import Sidebar from './components/Sidebar';
-import Presentation from './components/Presentation';
+import Home from './components/Home';
 
 const App = () => {
   return (
-    <>
+    <Flex h='100%' alignItems={'center'} >
       <Sidebar />
-      <Presentation />
-    </>
+      <Home />
+    </Flex>
   )
 }
 
