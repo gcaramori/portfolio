@@ -6,12 +6,12 @@ import { BsPersonCircle } from 'react-icons/bs';
 
 const Sidebar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
-    const sidebarBg = useColorModeValue('gray.50', 'gray.800');
+    const sidebarBg = useColorModeValue('gray.50', '#121111');
     const activeRouteColors = useColorModeValue('purple.600', 'white');
     const [activeRoute, setActiveRoute] = useState('home');
 
     return (
-        <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} position='relative' h='100%' w={20} bg={sidebarBg} boxShadow="md">
+        <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} position='relative' h='100%' w={14} bg={sidebarBg} boxShadow="md">
             <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
                 <Tooltip placement="right" hasArrow label="Início">
                     <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#" mb={8} onClick={() => setActiveRoute('home')} _hover={{ color: activeRouteColors }}>
@@ -36,7 +36,7 @@ const Sidebar = () => {
             </Flex>
             <Box>
                 <Tooltip placement="right" hasArrow label={ colorMode === 'dark' ? 'Modo light' : 'Modo dark' }>
-                    <Button w='28px' h='35px' colorScheme={ colorMode === 'dark' ? 'yellow' : 'purple' } variant='solid' onClick={() => toggleColorMode()}>
+                    <Button w='18px' h='35px' p={0} colorScheme={ colorMode === 'dark' ? 'yellow' : 'purple' } variant='solid' onClick={() => toggleColorMode()}>
                         { colorMode === 'dark' ? <SunIcon /> : <MoonIcon /> }
                     </Button>
                 </Tooltip>
