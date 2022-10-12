@@ -1,30 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Flex, Box, Link, Button, Tooltip, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { AiFillGithub, AiOutlineProject, AiOutlineHome, AiOutlineFacebook, AiOutlineLinkedin, AiOutlineInstagram } from 'react-icons/ai';
 import { BsPersonCircle } from 'react-icons/bs';
 
-const Sidebar = () => {
+const Sidebar = ({ scrollValue }) => {
     const { colorMode, toggleColorMode } = useColorMode();
     const sidebarBg = useColorModeValue('gray.50', '#121111');
     const activeRouteColors = useColorModeValue('purple.600', 'white');
     const [activeRoute, setActiveRoute] = useState('home');
 
+    useEffect(() => {
+        if(scrollValue >= window.innerHeight / 3 && scrollValue < window.innerHeight / 1) {
+            setActiveRoute('about');   
+        }
+        else if(scrollValue >= window.innerHeight / 1) {
+            setActiveRoute('projects');   
+        }
+        else setActiveRoute('home');
+    }, [scrollValue]);
+
+    document.querySelectorAll('#sidebarMenu a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+    
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
     return (
         <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} position='relative' h='100%' w={14} bg={sidebarBg} boxShadow="md">
-            <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+            <Flex id="sidebarMenu" flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
                 <Tooltip placement="right" hasArrow label="Início">
-                    <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#" mb={8} onClick={() => setActiveRoute('home')} _hover={{ color: activeRouteColors }}>
+                    <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#home" mb={8} 
+                    onClick={() => {
+                        setActiveRoute('home');
+                    }}
+                    _hover={{ color: activeRouteColors }}>
                         <AiOutlineHome size={'2em'} />
                     </Link>
                 </Tooltip>
                 <Tooltip placement="right" hasArrow label="Sobre mim">
-                    <Link color={ activeRoute === 'about_me' ? activeRouteColors : 'gray.600' } href="#" mb={8} onClick={() => setActiveRoute('about_me')} _hover={{ color: activeRouteColors }}>
+                    <Link color={ activeRoute === 'about' ? activeRouteColors : 'gray.600' } href="#about" mb={8} onClick={() => setActiveRoute('about')} _hover={{ color: activeRouteColors }}>
                         <BsPersonCircle size={'2em'} />
                     </Link>
                 </Tooltip>
                 <Tooltip placement="right" hasArrow label="Projetos">
-                    <Link color={ activeRoute === 'projects' ? activeRouteColors : 'gray.600' } href="#" mb={8} onClick={() => setActiveRoute('projects')} _hover={{ color: activeRouteColors }}>
+                    <Link color={ activeRoute === 'projects' ? activeRouteColors : 'gray.600' } href="#projects" mb={8} onClick={() => setActiveRoute('projects')} _hover={{ color: activeRouteColors }}>
                         <AiOutlineProject size={'2em'} />
                     </Link>
                 </Tooltip>

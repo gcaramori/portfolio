@@ -1,34 +1,49 @@
 import React from "react";
-import { Heading, Text, Button, Flex } from '@chakra-ui/react';
+import { Heading, Text, Button, Flex, useColorModeValue } from '@chakra-ui/react';
 import { motion } from "framer-motion";
 
-const Home = ({ scroll, isActiveFrame }) => {
+const Home = () => {
+    const buttonBorderColor = useColorModeValue('purple.600', '#00cec9');
+    const buttonFontColor = useColorModeValue('purple.600', '#00cec9');
+    const buttonBgHoverColor = useColorModeValue('purple.600', '#00cec9');
+
     return(
         <>
-            <Flex h='100vh' opacity={ isActiveFrame === true ? '1' : '0' } flexDirection='column' justifyContent='center' alignItems='flex-start' p={20}>
-                <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <Heading fontSize={60} textTransform='uppercase' maxW='800px'>
-                        Olá, eu sou <Text fontWeight='bold'>Guilherme Caramori</Text>
-                    </Heading>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, y: -15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <Text fontSize={25} color='gray.500' mt={15}>Desenvolvedor FullStack / Freelancer</Text>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <Button mt={10} p={7} boxShadow="md" bg='trasparent' color='#01a3a4' fontSize={20} border='1px solid #00cec9' borderRadius={0} textTransform='uppercase' _hover={{ bg: '#01a3a4', color: 'white', border: '1px solid white' }}>Contate-me!</Button>
-                </motion.div>
+            <Flex id='home' h='100vh' justifyContent='flex-start' alignItems='flex-start'>
+                <Flex h='100%' w='50%' flexDirection='column' justifyContent='center' alignItems='flex-start' p={20}>
+                    <motion.div
+                        initial={{ opacity: 0, y: -40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <Heading fontSize={60} textTransform='uppercase' maxW='800px'>
+                            Olá, eu sou <Text fontWeight='bold'>Guilherme Caramori</Text>
+                        </Heading>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: -45 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <Text fontSize={25} color='gray.500' mt={15}>Desenvolvedor FullStack / Freelancer</Text>
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <Button as='a' target='_blank' href='https://api.whatsapp.com/send?phone=55199826461199&text=Ol%C3%A1%2C%20tenho%20interesse%20em%20seus%20servi%C3%A7os!' mt={10} p={7} boxShadow="md" bg='trasparent' color={buttonFontColor} fontSize={20} border='1px solid' borderColor={buttonBorderColor} borderRadius={0} textTransform='uppercase' _hover={{ bg: buttonBgHoverColor, color: 'white', borderColor: buttonBorderColor }}>Contate-me!</Button>
+                    </motion.div>
+                </Flex>
+                <Flex h='100%' w='50%' flexDirection='column' justifyContent='flex-start' alignItems='center' p={20}>
+                    <motion.div
+                        initial={{ opacity: 0, y: -100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        
+                    </motion.div>
+                </Flex>
             </Flex>
         </>
     );
