@@ -14,7 +14,7 @@ const Frame = () => {
     const [scroll, setScroll] = useState(0);
 
     useEffect(() => {
-        return scrollY.onChange((latest) => {
+        scrollY.onChange((latest) => {
             setScroll(latest);
         });
     }, [scrollY]);

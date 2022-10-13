@@ -11,13 +11,15 @@ const Sidebar = ({ scrollValue }) => {
     const [activeRoute, setActiveRoute] = useState('home');
 
     useEffect(() => {
-        if(scrollValue >= window.innerHeight / 3 && scrollValue < window.innerHeight / 1) {
+        if(scrollValue <= window.innerHeight * 0.8) {
+            setActiveRoute('home');
+        }
+        else if(scrollValue >= window.innerHeight && scrollValue <= window.innerHeight * 1.45) {
             setActiveRoute('about');   
         }
-        else if(scrollValue >= window.innerHeight / 1) {
+        else if(scrollValue > window.innerHeight * 1.45) {
             setActiveRoute('projects');   
         }
-        else setActiveRoute('home');
     }, [scrollValue]);
 
     document.querySelectorAll('#sidebarMenu a[href^="#"]').forEach(anchor => {
@@ -34,27 +36,18 @@ const Sidebar = ({ scrollValue }) => {
         <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} position='relative' h='100%' w={14} bg={sidebarBg} boxShadow="md">
             <Flex id="sidebarMenu" flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
                 <Tooltip placement="right" hasArrow label="Início">
-                    <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#home" mb={8} 
-                    onClick={() => {
-                        setActiveRoute('home');
-                    }}
-                    _hover={{ color: activeRouteColors }}>
+                    <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#home" mb={8} _hover={{ color: activeRouteColors }}>
                         <AiOutlineHome size={'2em'} />
                     </Link>
                 </Tooltip>
                 <Tooltip placement="right" hasArrow label="Sobre mim">
-                    <Link color={ activeRoute === 'about' ? activeRouteColors : 'gray.600' } href="#about" mb={8} onClick={() => setActiveRoute('about')} _hover={{ color: activeRouteColors }}>
+                    <Link color={ activeRoute === 'about' ? activeRouteColors : 'gray.600' } href="#about" mb={8} _hover={{ color: activeRouteColors }}>
                         <BsPersonCircle size={'2em'} />
                     </Link>
                 </Tooltip>
                 <Tooltip placement="right" hasArrow label="Projetos">
-                    <Link color={ activeRoute === 'projects' ? activeRouteColors : 'gray.600' } href="#projects" mb={8} onClick={() => setActiveRoute('projects')} _hover={{ color: activeRouteColors }}>
+                    <Link color={ activeRoute === 'projects' ? activeRouteColors : 'gray.600' } href="#projects" mb='100px' _hover={{ color: activeRouteColors }}>
                         <AiOutlineProject size={'2em'} />
-                    </Link>
-                </Tooltip>
-                <Tooltip placement="right" hasArrow label="Código-fonte">
-                    <Link color={ activeRoute === 'source' ? activeRouteColors : 'gray.600' } href="https://github.com/gcaramori" mb='100px' isExternal _hover={{ color: activeRouteColors }}>
-                        <AiFillGithub size={'2em'} />
                     </Link>
                 </Tooltip>
             </Flex>
@@ -66,6 +59,9 @@ const Sidebar = ({ scrollValue }) => {
                 </Tooltip>
             </Box>
             <Flex mt='100px' flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+                <Link color={ activeRoute === 'source' ? activeRouteColors : 'gray.600' } href="https://github.com/gcaramori" mb={5} isExternal _hover={{ color: activeRouteColors }}>
+                    <AiFillGithub size={'1.5em'} />
+                </Link>
                 <Link color='gray.600' href="https://linkedin.com/in/gcaramori" mb={5} isExternal _hover={{ color: activeRouteColors }}>
                     <AiOutlineLinkedin size={'1.5em'} />
                 </Link>

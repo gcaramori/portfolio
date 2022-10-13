@@ -1,6 +1,7 @@
 import React from "react";
-import { Heading, Text, Button, Flex, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, Button, Flex, useColorModeValue } from '@chakra-ui/react';
 import { motion } from "framer-motion";
+import { Animation } from "./includes/Animation";
 
 const Home = () => {
     const buttonBorderColor = useColorModeValue('purple.600', '#00cec9');
@@ -41,7 +42,9 @@ const Home = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        
+                        <Box id="animation" h={window.innerHeight - 200} w='100%'>
+                            <Animation />
+                        </Box>
                     </motion.div>
                 </Flex>
             </Flex>
