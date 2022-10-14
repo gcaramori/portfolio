@@ -1,8 +1,11 @@
 import { useRef, Suspense } from 'react';
 import { Spinner } from '@chakra-ui/react';
 import { Canvas, useFrame } from '@react-three/fiber';
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
+import { useLoader } from '@react-three/fiber';
 
 function Cube() {
+    const objScene = useLoader(OBJLoader, '/low.obj');
     const meshRef = useRef(null);
 
     useFrame(() => {
@@ -16,8 +19,7 @@ function Cube() {
 
     return(
         <mesh ref={meshRef}>
-            <boxGeometry />
-            <meshStandardMaterial />
+            <primitive object={objScene} />
         </mesh>
     );
 }
@@ -25,8 +27,6 @@ function Cube() {
 export function Animation() {
     return(
         <Canvas>
-            <ambientLight />
-            <pointLight position={[10, 10, 10]} />
             <Suspense fallback={<Spinner />}>
                 <Cube />
             </Suspense>
