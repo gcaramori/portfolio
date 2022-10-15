@@ -14,7 +14,7 @@ const Sidebar = ({ scrollValue }) => {
         if(scrollValue <= window.innerHeight * 0.8) {
             setActiveRoute('home');
         }
-        else if(scrollValue >= window.innerHeight && scrollValue <= window.innerHeight * 1.45) {
+        else if(scrollValue >= window.innerHeight * 0.8 && scrollValue <= window.innerHeight * 1.2) {
             setActiveRoute('about');   
         }
         else if(scrollValue > window.innerHeight * 1.45) {
