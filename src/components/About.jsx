@@ -123,7 +123,7 @@ const About = () => {
                                 2022
                             </Text>
                             <Text display='block' mt={3} fontSize='sm' textAlign='justify'>
-                                Agora com 6 anos de experiência, uma visão mais ampla, vários desafios superados...
+                                Agora com 6 anos de experiência, uma visão mais ampla e vários desafios superados...
                             </Text>
                             <Text display='block' fontSize='sm' textAlign='justify'>
                                 Continuo na procura de novos projetos e desafios!
