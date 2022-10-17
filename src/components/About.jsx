@@ -113,6 +113,23 @@ const About = () => {
                             </Text>
                         </Box>
                     </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, y: -70 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1 }}
+                    >
+                        <Box mb={5}>
+                            <Text fontWeight='600' pb={2} borderBottom='4px solid #ccc' display='inline-block'>
+                                2022
+                            </Text>
+                            <Text display='block' mt={3} fontSize='sm' textAlign='justify'>
+                                Agora com 6 anos de experiência, uma visão mais ampla, vários desafios superados...
+                            </Text>
+                            <Text display='block' fontSize='sm' textAlign='justify'>
+                                Continuo na procura de novos projetos e desafios!
+                            </Text>
+                        </Box>
+                    </motion.div>
                 </Box>
             </Flex>
         </Flex>
