@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Flex, Box, Link, Button, Tooltip, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { AiFillGithub, AiOutlineProject, AiOutlineHome, AiOutlineFacebook, AiOutlineLinkedin, AiOutlineInstagram } from 'react-icons/ai';
+import { GiSkills } from 'react-icons/gi';
 import { BsPersonCircle } from 'react-icons/bs';
 
 const Sidebar = ({ scrollValue }) => {
@@ -14,11 +15,14 @@ const Sidebar = ({ scrollValue }) => {
         if(scrollValue <= window.innerHeight * 0.8) {
             setActiveRoute('home');
         }
-        else if(scrollValue >= window.innerHeight * 0.8 && scrollValue <= window.innerHeight * 1.2) {
+        else if(scrollValue >= window.innerHeight * 0.8 && scrollValue <= window.innerHeight * 1.4) {
             setActiveRoute('about');   
         }
-        else if(scrollValue > window.innerHeight * 1.45) {
+        else if(scrollValue > window.innerHeight * 1.4 && scrollValue <= window.innerHeight * 2) {
             setActiveRoute('projects');   
+        }
+        else {
+            setActiveRoute('skills');
         }
     }, [scrollValue]);
 
@@ -40,14 +44,19 @@ const Sidebar = ({ scrollValue }) => {
                         <AiOutlineHome size={'2em'} />
                     </Link>
                 </Tooltip>
-                <Tooltip placement="right" hasArrow label="Sobre mim">
+                <Tooltip placement="right" hasArrow label="Minha história">
                     <Link color={ activeRoute === 'about' ? activeRouteColors : 'gray.600' } href="#about" mb={8} _hover={{ color: activeRouteColors }}>
                         <BsPersonCircle size={'2em'} />
                     </Link>
                 </Tooltip>
                 <Tooltip placement="right" hasArrow label="Projetos">
-                    <Link color={ activeRoute === 'projects' ? activeRouteColors : 'gray.600' } href="#projects" mb='100px' _hover={{ color: activeRouteColors }}>
+                    <Link color={ activeRoute === 'projects' ? activeRouteColors : 'gray.600' } href="#projects" mb={8} _hover={{ color: activeRouteColors }}>
                         <AiOutlineProject size={'2em'} />
+                    </Link>
+                </Tooltip>
+                <Tooltip placement="right" hasArrow label="Skills">
+                    <Link color={ activeRoute === 'skills' ? activeRouteColors : 'gray.600' } href="#skills" mb='100px' _hover={{ color: activeRouteColors }}>
+                        <GiSkills size={'2em'} />
                     </Link>
                 </Tooltip>
             </Flex>
@@ -55,7 +64,7 @@ const Sidebar = ({ scrollValue }) => {
                 <Tooltip placement="right" hasArrow label={ colorMode === 'dark' ? 'Modo light' : 'Modo dark' }>
                     <Button w='18px' h='35px' p={0} colorScheme={ colorMode === 'dark' ? 'yellow' : 'purple' } variant='solid' onClick={() => toggleColorMode()}>
                         { colorMode === 'dark' ? <SunIcon /> : <MoonIcon /> }
-                    </Button>
+                    </Button>   
                 </Tooltip>
             </Box>
             <Flex mt='100px' flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>

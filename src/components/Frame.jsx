@@ -5,6 +5,7 @@ import Sidebar from './Sidebar';
 import Home from "./Home";
 import About from "./About";
 import Projects from "./Projects";
+import Skills from "./Skills";
 
 const Frame = () => {
     const containerRef = useRef(null);
@@ -28,6 +29,7 @@ const Frame = () => {
                 <Home />
                 <About />
                 <Projects />
+                <Skills />
             </Box>
         </>
     );

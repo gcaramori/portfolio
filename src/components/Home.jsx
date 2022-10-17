@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Heading, Text, Button, Flex, useColorModeValue } from '@chakra-ui/react';
+import { Box, Heading, Text, Button, Flex, useColorModeValue, Image } from '@chakra-ui/react';
 import { motion } from "framer-motion";
 
 const Home = () => {
@@ -39,10 +39,10 @@ const Home = () => {
                     <motion.div
                         initial={{ opacity: 0, y: -100 }}
                         whileInView={{ opacity: 1, y: 0 }}   
-                        transition={{ duration: 1.5 }}
+                        transition={{ duration: 1 }}
                     >
                         <Box id="animation" h='100%' w='100%'>
-                            <img style={{ display: 'block', objectFit: 'cover' }} src="/g-logo.gif" alt="G-Logo"/>
+                            <Image display='block' fit='cover' src="/g-logo.gif" alt="G-Logo"/>
                         </Box>
                     </motion.div>
                 </Flex>
