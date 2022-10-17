@@ -29,7 +29,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Box fontSize='md' fontWeight='600' letterSpacing='1px' mb={14}>
+                    <Box fontSize='md' fontWeight='600' mb={14}>
                         <Text mb={1}>
                             Sou apaixonado por tecnologia e computação desde que me lembro.
                         </Text>
