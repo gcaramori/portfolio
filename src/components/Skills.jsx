@@ -26,60 +26,60 @@ const Skills = () => {
             <Flex h='100%' w='60%' justifyContent='center' alignItems='center' p={20}>
                 <Box display='block' id="skillLogos" h='100%' w='100%' position='relative'>
                     <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
+                        initial={{ opacity: 0, scale: 0, y: '10%' }}
                         whileInView={{ opacity: 1, scale: 1 }}   
                         transition={{ duration: 1 }}
                     >    
-                        <Image position='absolute' top='3%' left='2%' h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="javascript_logo" />
+                        <Image h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="javascript_logo" />
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0, y: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}   
+                        transition={{ duration: 1 }}
+                    >    
+                        <Image h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html_logo" />
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0, y: '12%', x: 2 }}
+                        whileInView={{ opacity: 1, scale: 1 }}   
+                        transition={{ duration: 1 }}
+                    >    
+                        <Image h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css_logo" />
+                    </motion.div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0, y: '30%', x: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}   
+                        transition={{ duration: 1 }}
+                    >    
+                        <Image h='200px' w='200px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="tailwind_logo" />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}   
                         transition={{ duration: 1 }}
                     >    
-                        <Image position='absolute' top='-30px' insetX='0' mx='auto' h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html_logo" />
+                        <Image h='150px' w='150px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs_logo" />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}   
                         transition={{ duration: 1 }}
                     >    
-                        <Image position='absolute' top='12%' right='2%' h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css_logo" />
+                        <Image h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react_logo" />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}   
                         transition={{ duration: 1 }}
                     >    
-                        <Image position='absolute' top='30%' left='25%' h='200px' w='200px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="tailwind_logo" />
+                        <Image h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="mysql_logo" />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}   
                         transition={{ duration: 1 }}
                     >    
-                        <Image position='absolute' top='50%' right='8%' h='150px' w='150px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs_logo" />
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}   
-                        transition={{ duration: 1 }}
-                    >    
-                        <Image position='absolute' bottom='25%' left='10%' h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react_logo" />
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}   
-                        transition={{ duration: 1 }}
-                    >    
-                        <Image position='absolute' bottom='0' right='20%' h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="mysql_logo" />
-                    </motion.div>
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}   
-                        transition={{ duration: 1 }}
-                    >    
-                        <Image position='absolute' bottom='0' left='1%' h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" alt="mongo_logo" />
+                        <Image h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" alt="mongo_logo" />
                     </motion.div>
                 </Box>
             </Flex>
