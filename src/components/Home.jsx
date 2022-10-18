@@ -16,7 +16,7 @@ const Home = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <Heading fontSize={60} textTransform='uppercase' maxW='800px'>
+                        <Heading as='h1' fontSize={60} textTransform='uppercase' maxW='800px'>
                             Olá, eu sou <Text fontWeight='bold'>Guilherme Caramori</Text>
                         </Heading>
                     </motion.div>

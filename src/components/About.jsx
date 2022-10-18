@@ -11,7 +11,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Heading fontSize={60} textTransform='uppercase' maxW='800px'>
+                    <Heading as='h1' fontSize={60} textTransform='uppercase' maxW='800px'>
                         Minha história
                     </Heading>
                 </motion.div>
@@ -37,7 +37,7 @@ const About = () => {
                             Sou técnico de informática formado, e autodidata em programação. 
                         </Text>
                         <Text>
-                            Trabalho na área desde 2016, comecei fazendo freelances e só depois de 2 anos ingressei no mercado de trabalho na área de programação, atualmente sou programador full stack.
+                            Trabalho na área desde 2016. Comecei fazendo freelances e só depois de 2 anos ingressei no mercado de trabalho na área de programação, atualmente sou programador FullStack.
                         </Text>
                     </Box>
                 </motion.div>
@@ -69,9 +69,9 @@ const About = () => {
                                 Meu primeiro contato com tecnologia.
                             </Text>
                             <Text display='block' fontSize='sm' textAlign='justify'>
-                                No caso, meu pai havia comprado um computador (Intel Celeron D).
+                                Na situação, meu pai havia comprado um computador (Intel Celeron D).
                             </Text>
-                            <Text fontSize='sm' textAlign='justify'>
+                            <Text display='block' fontSize='sm' textAlign='justify'>
                                 A partir disso estava decidido a explorar tudo o que esta nova tecnologia possibilitava.
                             </Text>
                         </Box>
