@@ -33,36 +33,36 @@ const Skills = () => {
                         <Image h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="javascript_logo" />
                     </motion.div>
                     <motion.div
-                        initial={{ opacity: 0, scale: 0, y: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}   
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1, y: '-150px', x: '45%' }}   
                         transition={{ duration: 1 }}
                     >    
                         <Image h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="html_logo" />
                     </motion.div>
                     <motion.div
-                        initial={{ opacity: 0, scale: 0, y: '12%', x: 2 }}
-                        whileInView={{ opacity: 1, scale: 1 }}   
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1, y: 0, x: '80%' }}   
                         transition={{ duration: 1 }}
                     >    
                         <Image h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css_logo" />
                     </motion.div>
                     <motion.div
-                        initial={{ opacity: 0, scale: 0, y: '30%', x: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}   
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1, y: '-80px' }}
                         transition={{ duration: 1 }}
                     >    
                         <Image h='200px' w='200px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="tailwind_logo" />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}   
+                        whileInView={{ opacity: 1, scale: 1, y: '-70px', x: '65%' }}   
                         transition={{ duration: 1 }}
                     >    
                         <Image h='150px' w='150px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs_logo" />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0 }}
-                        whileInView={{ opacity: 1, scale: 1 }}   
+                        whileInView={{ opacity: 1, scale: 1, y: '-200px', x: '10%' }}   
                         transition={{ duration: 1 }}
                     >    
                         <Image h='100px' w='100px' fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="react_logo" />
