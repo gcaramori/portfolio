@@ -31,7 +31,7 @@ const Projects = () => {
                             <Link href='https://criptobeer.com.br' target='_blank'>
                                 <Image fit='contain' w='100%' h='220px' src='projects/criptobeer.png' alt='project_criptobeer' />
                             </Link>
-                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
+                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='10px' flexDirection='column' justifyContent='center' alignItems='center' h='200px' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                 <Flex mb={3} alignItems='center'>
                                     <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4}>Criptobeer</Text>
                                     <FiExternalLink />
@@ -45,7 +45,7 @@ const Projects = () => {
                             <Link href='https://panel.performa.ai' target='_blank'>
                                 <Image fit='contain' w='100%' h='220px' src='projects/performa.png' alt='project_performa' />
                             </Link>
-                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
+                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='10px' flexDirection='column' justifyContent='center' alignItems='center' h='200px' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                 <Flex mb={3} alignItems='center'>
                                     <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4}>Performa.AI</Text>
                                     <FiExternalLink />
@@ -59,7 +59,7 @@ const Projects = () => {
                             <Link href='https://vetpalmas.com.br' target='_blank'>
                                 <Image fit='contain' w='100%' h='220px' src='projects/vetpalmas.png' alt='project_vetpalmas' />
                             </Link>
-                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
+                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='10px' flexDirection='column' justifyContent='center' alignItems='center' h='200px' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                 <Flex mb={3} alignItems='center'>
                                     <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4}>Vetpalmas</Text>
                                     <FiExternalLink />
@@ -75,7 +75,7 @@ const Projects = () => {
                             <Link href='https://paani.com.br' target='_blank'>
                                 <Image fit='contain' w='100%' h='220px' src='projects/paani.png' alt='project_paani' />
                             </Link>
-                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
+                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='10px' flexDirection='column' justifyContent='center' alignItems='center' h='200px' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                 <Flex mb={3} alignItems='center'>
                                     <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4}>Paani</Text>
                                     <FiExternalLink />
@@ -89,7 +89,7 @@ const Projects = () => {
                             <Link href='https://paani.com.br' target='_blank'>
                                 <Image fit='contain' w='100%' h='220px' src='projects/criptobeer.png' alt='project_paani' />
                             </Link>
-                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
+                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='10px' flexDirection='column' justifyContent='center' alignItems='center' h='200px' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                 <Flex mb={3} alignItems='center'>
                                     <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4}>Criptobeer</Text>
                                     <FiExternalLink />
@@ -103,7 +103,7 @@ const Projects = () => {
                             <Link href='https://paani.com.br' target='_blank'>
                                 <Image fit='contain' w='100%' h='220px' src='projects/paani.png' alt='project_paani' />
                             </Link>
-                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
+                            <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='10px' flexDirection='column' justifyContent='center' alignItems='center' h='200px' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                 <Flex mb={3} alignItems='center'>
                                     <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4}>Paani</Text>
                                     <FiExternalLink />
