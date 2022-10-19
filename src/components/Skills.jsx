@@ -20,7 +20,7 @@ const Skills = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Text fontSize={25} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={15}>As ferramentas que domino</Text>
+                    <Text fontSize={25} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={15}>As ferramentas que domino.</Text>
                 </motion.div>
             </Flex>
             <Flex h='100%' w='60%' justifyContent='center' alignItems='center' p={20}>
