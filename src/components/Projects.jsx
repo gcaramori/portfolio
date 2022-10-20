@@ -38,7 +38,7 @@ const Projects = () => {
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
-                                        <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4} color='#fff'>Criptobeer</Text>
+                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Criptobeer</Text>
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
@@ -52,7 +52,7 @@ const Projects = () => {
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
-                                        <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4} color='#fff'>Performa.AI</Text>
+                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Performa.AI</Text>
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
@@ -66,7 +66,7 @@ const Projects = () => {
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
-                                        <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4} color='#fff'>Vetpalmas</Text>
+                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Vetpalmas</Text>
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
@@ -88,7 +88,7 @@ const Projects = () => {
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
-                                        <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4} color='#fff'>Paani</Text>
+                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Paani</Text>
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
@@ -102,7 +102,7 @@ const Projects = () => {
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
-                                        <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4} color='#fff'>Criptobeer</Text>
+                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Criptobeer</Text>
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
@@ -116,7 +116,7 @@ const Projects = () => {
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
-                                        <Text fontSize='xl' textTransform='uppercase' fontWeight='600' mr={4} color='#fff'>Paani</Text>
+                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Paani</Text>
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
