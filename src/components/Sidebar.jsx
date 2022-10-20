@@ -3,6 +3,7 @@ import { Flex, Box, Link, Button, Tooltip, useColorMode, useColorModeValue } fro
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { AiFillGithub, AiOutlineProject, AiOutlineHome, AiOutlineFacebook, AiOutlineLinkedin, AiOutlineInstagram } from 'react-icons/ai';
 import { GiSkills } from 'react-icons/gi';
+import { FaBars } from 'react-icons/fa';
 import { BsPersonCircle } from 'react-icons/bs';
 
 const Sidebar = ({ scrollValue }) => {
@@ -10,8 +11,13 @@ const Sidebar = ({ scrollValue }) => {
     const sidebarBg = useColorModeValue('gray.50', '#121111');
     const activeRouteColors = useColorModeValue('purple.600', 'white');
     const [activeRoute, setActiveRoute] = useState('home');
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     useEffect(() => {
+        if(window.innerWidth <= 600) {
+            setSidebarOpen(true);   
+        }
+
         if(scrollValue <= window.innerHeight * 0.8) {
             setActiveRoute('home');
         }
@@ -38,6 +44,9 @@ const Sidebar = ({ scrollValue }) => {
 
     return (
         <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} position='relative' h='100%' w={14} bg={sidebarBg} boxShadow="md">
+            <Box position='absolute' top={10} id="toggleSidebar" display={(sidebarOpen) ? 'block' : 'none'}>
+                <FaBars size={'1.5em'} />
+            </Box>
             <Flex id="sidebarMenu" flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
                 <Tooltip placement="right" hasArrow label="Início">
                     <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#home" mb={8} _hover={{ color: activeRouteColors }}>

@@ -20,7 +20,7 @@ const Frame = () => {
         });
     }, [scrollY]);
     
-    const bg = useColorModeValue('gray.50', '#2b1d1c');
+    const bg = useColorModeValue('gray.50', '#1f1e1e');
 
     return (
         <>
