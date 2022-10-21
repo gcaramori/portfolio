@@ -1,12 +1,12 @@
 import React from 'react';
-import { Flex } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import Frame from './components/Frame';
 
 const App = () => {
   return (
-    <Flex h='100%' className='mainContainer' alignItems={'center'}>
+    <Box h='100%'>
       <Frame />
-    </Flex>
+    </Box>
   )
 }
 

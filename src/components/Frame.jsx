@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Box, useColorModeValue } from '@chakra-ui/react';
+import { Flex, Box, useColorModeValue } from '@chakra-ui/react';
 import { useScroll } from "framer-motion";
+import { FaBars } from 'react-icons/fa';
 import Sidebar from './Sidebar';
 import Home from "./Home";
 import About from "./About";
@@ -13,8 +14,13 @@ const Frame = () => {
         container: containerRef
     });
     const [scroll, setScroll] = useState(0);
+    const [sidebarOpen, setSidebarOpen] = useState(true);
 
     useEffect(() => {
+        if(window.innerWidth <= 600) {
+            setSidebarOpen(false);
+        }
+
         scrollY.onChange((latest) => {
             setScroll(latest);
         });
@@ -22,16 +28,23 @@ const Frame = () => {
     
     const bg = useColorModeValue('gray.50', '#1f1e1e');
 
+    const toggleSidebar = () => {
+        setSidebarOpen(!sidebarOpen);
+    }
+
     return (
-        <>
-            <Sidebar scrollValue={scroll} />
-            <Box bg={bg} ref={containerRef} h='100%' w='100%' overflowY='scroll'>
+        <Flex h='100%' bg={bg}>
+            <Sidebar h='100%' scrollValue={scroll} isSidebarOpen={sidebarOpen} />
+            <Box bg={bg} ref={containerRef} h='100%' w='100%' overflowY='scroll' position='relative'>
+                <Box position='absolute' top={10} left={5} id="toggleSidebar" display={(window.innerWidth <= 600) ? 'block' : 'none'} onClick={toggleSidebar}>
+                    <FaBars size={'1.5em'} />
+                </Box>
                 <Home />
                 <About />
                 <Projects />
                 <Skills />
             </Box>
-        </>
+        </Flex>
     );
 }
 

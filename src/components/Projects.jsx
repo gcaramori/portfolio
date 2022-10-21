@@ -28,7 +28,7 @@ const Projects = () => {
                 <Flex w='100%' justifyContent='center' alignItems='center' flexWrap='wrap' gap={8}>
                     <Box w='48%' h='100%'>
                         <motion.div
-                            initial={{ opacity: 0, y: '-80px' }}
+                            initial={{ opacity: 0, y: -80 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1 }}
                         >    

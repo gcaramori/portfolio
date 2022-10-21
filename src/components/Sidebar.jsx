@@ -3,21 +3,16 @@ import { Flex, Box, Link, Button, Tooltip, useColorMode, useColorModeValue } fro
 import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import { AiFillGithub, AiOutlineProject, AiOutlineHome, AiOutlineFacebook, AiOutlineLinkedin, AiOutlineInstagram } from 'react-icons/ai';
 import { GiSkills } from 'react-icons/gi';
-import { FaBars } from 'react-icons/fa';
 import { BsPersonCircle } from 'react-icons/bs';
+import { motion } from 'framer-motion';
 
-const Sidebar = ({ scrollValue }) => {
+const Sidebar = ({ scrollValue, isSidebarOpen }) => {
     const { colorMode, toggleColorMode } = useColorMode();
     const sidebarBg = useColorModeValue('gray.50', '#121111');
     const activeRouteColors = useColorModeValue('purple.600', 'white');
     const [activeRoute, setActiveRoute] = useState('home');
-    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     useEffect(() => {
-        if(window.innerWidth <= 600) {
-            setSidebarOpen(true);   
-        }
-
         if(scrollValue <= window.innerHeight * 0.8) {
             setActiveRoute('home');
         }
@@ -43,54 +38,57 @@ const Sidebar = ({ scrollValue }) => {
     });
 
     return (
-        <Flex flexDirection={'column'} justifyContent={'center'} alignItems={'center'} position='relative' h='100%' w={14} bg={sidebarBg} boxShadow="md">
-            <Box position='absolute' top={10} id="toggleSidebar" display={(sidebarOpen) ? 'block' : 'none'}>
-                <FaBars size={'1.5em'} />
-            </Box>
-            <Flex id="sidebarMenu" flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
-                <Tooltip placement="right" hasArrow label="Início">
-                    <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#home" mb={8} _hover={{ color: activeRouteColors }}>
-                        <AiOutlineHome size={'2em'} />
+        <motion.div
+            initial={{ y: 0, x: -100 }}
+            animate={{ x: (isSidebarOpen) ? 0 : -100 }}
+            transition={{ duration: 1 }}
+        >
+            <Flex id="sidebar" flexDirection={'column'} justifyContent={'center'} alignItems={'center'} h='100%' w={14} bg={sidebarBg} boxShadow="md">
+                <Flex id="sidebarMenu" flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+                    <Tooltip placement="right" hasArrow label="Início">
+                        <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#home" mb={8} _hover={{ color: activeRouteColors }}>
+                            <AiOutlineHome size={'2em'} />
+                        </Link>
+                    </Tooltip>
+                    <Tooltip placement="right" hasArrow label="Minha história">
+                        <Link color={ activeRoute === 'about' ? activeRouteColors : 'gray.600' } href="#about" mb={8} _hover={{ color: activeRouteColors }}>
+                            <BsPersonCircle size={'2em'} />
+                        </Link>
+                    </Tooltip>
+                    <Tooltip placement="right" hasArrow label="Projetos">
+                        <Link color={ activeRoute === 'projects' ? activeRouteColors : 'gray.600' } href="#projects" mb={8} _hover={{ color: activeRouteColors }}>
+                            <AiOutlineProject size={'2em'} />
+                        </Link>
+                    </Tooltip>
+                    <Tooltip placement="right" hasArrow label="Skills">
+                        <Link color={ activeRoute === 'skills' ? activeRouteColors : 'gray.600' } href="#skills" mb='100px' _hover={{ color: activeRouteColors }}>
+                            <GiSkills size={'2em'} />
+                        </Link>
+                    </Tooltip>
+                </Flex>
+                <Box>
+                    <Tooltip placement="right" hasArrow label={ colorMode === 'dark' ? 'Modo light' : 'Modo dark' }>
+                        <Button w='18px' h='35px' p={0} colorScheme={ colorMode === 'dark' ? 'yellow' : 'purple' } variant='solid' onClick={() => toggleColorMode()}>
+                            { colorMode === 'dark' ? <SunIcon /> : <MoonIcon /> }
+                        </Button>   
+                    </Tooltip>
+                </Box>
+                <Flex mt='100px' flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+                    <Link color={ activeRoute === 'source' ? activeRouteColors : 'gray.600' } href="https://github.com/gcaramori" mb={5} isExternal _hover={{ color: activeRouteColors }}>
+                        <AiFillGithub size={'1.5em'} />
                     </Link>
-                </Tooltip>
-                <Tooltip placement="right" hasArrow label="Minha história">
-                    <Link color={ activeRoute === 'about' ? activeRouteColors : 'gray.600' } href="#about" mb={8} _hover={{ color: activeRouteColors }}>
-                        <BsPersonCircle size={'2em'} />
+                    <Link color='gray.600' href="https://linkedin.com/in/gcaramori" mb={5} isExternal _hover={{ color: activeRouteColors }}>
+                        <AiOutlineLinkedin size={'1.5em'} />
                     </Link>
-                </Tooltip>
-                <Tooltip placement="right" hasArrow label="Projetos">
-                    <Link color={ activeRoute === 'projects' ? activeRouteColors : 'gray.600' } href="#projects" mb={8} _hover={{ color: activeRouteColors }}>
-                        <AiOutlineProject size={'2em'} />
+                    <Link color='gray.600' href="https://www.facebook.com/guilherme.caramori" mb={5} isExternal _hover={{ color: activeRouteColors }}>
+                        <AiOutlineFacebook size={'1.5em'} />
                     </Link>
-                </Tooltip>
-                <Tooltip placement="right" hasArrow label="Skills">
-                    <Link color={ activeRoute === 'skills' ? activeRouteColors : 'gray.600' } href="#skills" mb='100px' _hover={{ color: activeRouteColors }}>
-                        <GiSkills size={'2em'} />
+                    <Link color='gray.600' href="https://www.instagram.com/gcaramori/" mb={5} isExternal _hover={{ color: activeRouteColors }}>
+                        <AiOutlineInstagram size={'1.5em'} />
                     </Link>
-                </Tooltip>
+                </Flex>
             </Flex>
-            <Box>
-                <Tooltip placement="right" hasArrow label={ colorMode === 'dark' ? 'Modo light' : 'Modo dark' }>
-                    <Button w='18px' h='35px' p={0} colorScheme={ colorMode === 'dark' ? 'yellow' : 'purple' } variant='solid' onClick={() => toggleColorMode()}>
-                        { colorMode === 'dark' ? <SunIcon /> : <MoonIcon /> }
-                    </Button>   
-                </Tooltip>
-            </Box>
-            <Flex mt='100px' flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
-                <Link color={ activeRoute === 'source' ? activeRouteColors : 'gray.600' } href="https://github.com/gcaramori" mb={5} isExternal _hover={{ color: activeRouteColors }}>
-                    <AiFillGithub size={'1.5em'} />
-                </Link>
-                <Link color='gray.600' href="https://linkedin.com/in/gcaramori" mb={5} isExternal _hover={{ color: activeRouteColors }}>
-                    <AiOutlineLinkedin size={'1.5em'} />
-                </Link>
-                <Link color='gray.600' href="https://www.facebook.com/guilherme.caramori" mb={5} isExternal _hover={{ color: activeRouteColors }}>
-                    <AiOutlineFacebook size={'1.5em'} />
-                </Link>
-                <Link color='gray.600' href="https://www.instagram.com/gcaramori/" mb={5} isExternal _hover={{ color: activeRouteColors }}>
-                    <AiOutlineInstagram size={'1.5em'} />
-                </Link>
-            </Flex>
-        </Flex>
+        </motion.div>
     );
 }
 
