@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Skills = () => {
     return(
-        <Flex id='skills' h='100vh' w='100%' justifyContent='flex-start' alignItems='flex-start' overflow='hidden'>
+        <Flex id='skills' h={{ base: 'auto', lg: '100vh'}} w='100%' justifyContent='flex-start' alignItems='flex-start' overflow='hidden'>
             <Flex h='100%' w='40%' flexDirection='column' justifyContent='center' alignItems='flex-start' p={20}>
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}

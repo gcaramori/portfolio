@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 
 const About = () => {
     return(
-        <Flex id='about' h='100vh' justifyContent='flex-start' alignItems='flex-start'>
-            <Flex h='100%' w='50%' flexDirection='column' justifyContent='center' alignItems='flex-start' p={20}>
+        <Flex id='about' h={{ base: 'auto', lg: '100vh'}} w='100%' flexDir={{ base: 'column', lg: 'row' }} justifyContent='flex-start' alignItems='flex-start'>
+            <Flex h='100%' w={{ base: '100%', lg: '50%' }} flexDir='column' justifyContent='center' alignItems='flex-start' p={{ base: 10, lg: 20 }}>
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Heading as='h1' fontSize={60} textTransform='uppercase' maxW='800px'>
+                    <Heading as='h1' fontSize={60} textAlign={{ base: 'right', lg: 'left' }} textTransform='uppercase' maxW='800px'>
                         Minha história
                     </Heading>
                 </motion.div>
@@ -20,16 +20,16 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Text fontSize={25} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={15}>Este sou eu!</Text>
+                    <Text fontSize={25} textAlign={{ base: 'right', lg: 'left' }} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={15}>Este sou eu!</Text>
                 </motion.div>
             </Flex>
-            <Flex h='100%' w='50%' flexDirection='column' justifyContent='flex-start' alignItems='flex-start' p={20}>
+            <Flex h='100%' w={{ base: '100%', lg: '50%' }} flexDir='column' justifyContent='flex-start' alignItems='flex-start' p={{ base: 10, lg: 20 }}   >
                 <motion.div
                     initial={{ opacity: 0, y: -45 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Box fontSize='md' fontWeight='600' mb={14}>
+                    <Box fontSize='md' fontWeight='600' mb={14} textAlign={{ base: 'center', lg: 'unset' }}>
                         <Text mb={1}>
                             Sou apaixonado por tecnologia e computação desde que me lembro.
                         </Text>

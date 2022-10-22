@@ -5,7 +5,7 @@ import { FiExternalLink } from 'react-icons/fi';
 
 const Projects = () => {
     return(
-        <Flex id='projects' h='100vh' justifyContent='flex-start' alignItems='flex-start'>
+        <Flex id='projects' h={{ base: 'auto', lg: '100vh'}} w='100%' justifyContent='flex-start' alignItems='flex-start'>
             <Flex h='100%' w='35%' flexDirection='column' justifyContent='center' alignItems='flex-start' p={20}>
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}
