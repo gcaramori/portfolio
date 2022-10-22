@@ -16,8 +16,8 @@ const Home = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
                     >
-                        <Heading as='h1' fontSize={60} textTransform='uppercase' maxW='800px'>
-                            Olá, eu sou <Text fontWeight='bold'>Guilherme Caramori</Text>
+                        <Heading as='h1' fontSize={{ base: 46, lg: 60 }} textTransform='uppercase' maxW='800px' textAlign={{ base: 'right', md: 'left' }} paddingRight={{ base: 10, md: 0 }}>
+                            Olá, <Text display={{ base: 'block', md: 'inline-block' }}>eu sou</Text> <Text fontWeight='bold'>Guilherme Caramori</Text>
                         </Heading>
                     </motion.div>
                     <motion.div

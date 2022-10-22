@@ -33,16 +33,16 @@ const Frame = () => {
     }
 
     return (
-        <Flex h='100%' bg={bg}>
+        <Flex h='100%' w='100%' bg={bg} position='relative'>
             <Sidebar h='100%' scrollValue={scroll} isSidebarOpen={sidebarOpen} />
             <Box bg={bg} ref={containerRef} h='100%' w='100%' overflowY='scroll' position='relative'>
                 <Box position='absolute' top={10} left={5} id="toggleSidebar" display={(window.innerWidth <= 600) ? 'block' : 'none'} onClick={toggleSidebar}>
                     <FaBars size={'1.5em'} />
                 </Box>
-                <Home />
-                <About />
-                <Projects />
-                <Skills />
+                <Home w='100%' />
+                <About w='100%' />
+                <Projects w='100%' />
+                <Skills w='100%' />
             </Box>
         </Flex>
     );

@@ -39,11 +39,11 @@ const Sidebar = ({ scrollValue, isSidebarOpen }) => {
 
     return (
         <motion.div
-            initial={{ y: 0, x: -100 }}
-            animate={{ x: (isSidebarOpen) ? 0 : -100 }}
-            transition={{ duration: 1 }}
+            initial={{ width: 0 }}
+            animate={{ width: (isSidebarOpen) ? '3.5rem' : 0 }}
+            transition={{ duration: 0.5 }}
         >
-            <Flex id="sidebar" flexDirection={'column'} justifyContent={'center'} alignItems={'center'} h='100%' w={14} bg={sidebarBg} boxShadow="md">
+            <Flex id="sidebar" flexDirection={'column'} justifyContent={'center'} alignItems={'center'} h='100%' bg={sidebarBg} boxShadow="md">
                 <Flex id="sidebarMenu" flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
                     <Tooltip placement="right" hasArrow label="Início">
                         <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#home" mb={8} _hover={{ color: activeRouteColors }}>

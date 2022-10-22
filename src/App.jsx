@@ -4,7 +4,7 @@ import Frame from './components/Frame';
 
 const App = () => {
   return (
-    <Box h='100%'>
+    <Box h='100%' w='100%' overflowX='hidden'>
       <Frame />
     </Box>
   )
