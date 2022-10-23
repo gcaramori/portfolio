@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 const About = () => {
     return(
         <Flex id='about' h={{ base: 'auto', lg: '100vh'}} w='100%' flexDir={{ base: 'column', lg: 'row' }} justifyContent='flex-start' alignItems='flex-start'>
-            <Flex h='100%' w={{ base: '100%', lg: '50%' }} flexDir='column' justifyContent='center' alignItems='flex-start' p={{ base: 10, lg: 20 }}>
+            <Flex h='100%' w={{ base: '100%', lg: '50%' }} flexDir='column' justifyContent='center' alignItems='flex-start' p={{ base: 6, lg: 20 }}>
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Heading as='h1' fontSize={60} textAlign={{ base: 'right', lg: 'left' }} textTransform='uppercase' maxW='800px'>
+                    <Heading as='h1' fontSize={{ base: 50, lg: 60 }} textAlign={{ base: 'right', lg: 'left' }} textTransform='uppercase' maxW='800px'>
                         Minha história
                     </Heading>
                 </motion.div>
@@ -21,10 +21,10 @@ const About = () => {
                     transition={{ duration: 1 }}
                     style={{ width: '100%' }}   
                 >
-                    <Text fontSize={25} textAlign={{ base: 'right', lg: 'left' }} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={15}>Este sou eu!</Text>
+                    <Text fontSize={25} textAlign={{ base: 'right', lg: 'left' }} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={{ base: 3, lg: 15}}>Este sou eu!</Text>
                 </motion.div>
             </Flex>
-            <Flex h='100%' w={{ base: '100%', lg: '50%' }} flexDir='column' justifyContent='flex-start' alignItems='flex-start' p={{ base: 10, lg: 20 }}>
+            <Flex h='100%' w={{ base: '100%', lg: '50%' }} flexDir='column' justifyContent='flex-start' alignItems='flex-start' p={{ base: 6, lg: 20 }}>
                 <motion.div
                     initial={{ opacity: 0, y: -45 }}
                     whileInView={{ opacity: 1, y: 0 }}

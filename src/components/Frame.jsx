@@ -35,8 +35,8 @@ const Frame = () => {
     return (
         <Flex h='100%' w='100%' bg={bg} position='relative'>
             <Sidebar h='100%' scrollValue={scroll} isSidebarOpen={sidebarOpen} />
-            <Box bg={bg} ref={containerRef} h='100%' w='100%' overflowY='scroll' position='relative'>
-                <Box position='fixed' top={10} left={3} id="toggleSidebar" display={(window.innerWidth <= 600) ? 'block' : 'none'} onClick={toggleSidebar}>
+            <Box bg={bg} ref={containerRef} h='100%' w='100%' overflowY='scroll' overflowX='hidden' position='relative'>
+                <Box position='fixed' top={10} left={12} id="toggleSidebar" display={(window.innerWidth <= 600) ? 'block' : 'none'} onClick={toggleSidebar}>
                     <FaBars size={'1.5em'} />
                 </Box>
                 <Home w='100%' />
