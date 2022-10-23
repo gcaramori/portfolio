@@ -13,17 +13,33 @@ const Sidebar = ({ scrollValue, isSidebarOpen }) => {
     const [activeRoute, setActiveRoute] = useState('home');
 
     useEffect(() => {
-        if(scrollValue <= window.innerHeight * 0.8) {
-            setActiveRoute('home');
-        }
-        else if(scrollValue >= window.innerHeight * 0.8 && scrollValue <= window.innerHeight * 1.4) {
-            setActiveRoute('about');   
-        }
-        else if(scrollValue > window.innerHeight * 1.4 && scrollValue <= window.innerHeight * 2) {
-            setActiveRoute('projects');   
+        if(window.innerWidth < 600) {
+            if(scrollValue <= window.innerHeight * 0.8) {
+                setActiveRoute('home');
+            }
+            else if(scrollValue >= window.innerHeight * 0.8 && scrollValue <= window.innerHeight * 1.4) {
+                setActiveRoute('about');   
+            }
+            else if(scrollValue > window.innerHeight * 1.4 && scrollValue <= window.innerHeight * 3) {
+                setActiveRoute('projects');   
+            }
+            else {
+                setActiveRoute('skills');
+            }
         }
         else {
-            setActiveRoute('skills');
+            if(scrollValue <= window.innerHeight * 0.8) {
+                setActiveRoute('home');
+            }
+            else if(scrollValue >= window.innerHeight * 0.8 && scrollValue <= window.innerHeight * 1.4) {
+                setActiveRoute('about');   
+            }
+            else if(scrollValue > window.innerHeight * 1.4 && scrollValue <= window.innerHeight * 2) {
+                setActiveRoute('projects');   
+            }
+            else {
+                setActiveRoute('skills');
+            }
         }
     }, [scrollValue]);
 
@@ -46,22 +62,22 @@ const Sidebar = ({ scrollValue, isSidebarOpen }) => {
             <Flex id="sidebar" flexDirection={'column'} justifyContent={'center'} alignItems={'center'} h='100%' bg={sidebarBg} boxShadow="md">
                 <Flex id="sidebarMenu" flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
                     <Tooltip placement="right" hasArrow label="Início">
-                        <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#home" mb={8} _hover={{ color: activeRouteColors }}>
+                        <Link color={ activeRoute === 'home' ? activeRouteColors : 'gray.600' } href="#home" mb={{ base: 5, lg: 8 }} _hover={{ color: activeRouteColors }}>
                             <AiOutlineHome size={'2em'} />
                         </Link>
                     </Tooltip>
                     <Tooltip placement="right" hasArrow label="Minha história">
-                        <Link color={ activeRoute === 'about' ? activeRouteColors : 'gray.600' } href="#about" mb={8} _hover={{ color: activeRouteColors }}>
+                        <Link color={ activeRoute === 'about' ? activeRouteColors : 'gray.600' } href="#about" mb={{ base: 5, lg: 8 }} _hover={{ color: activeRouteColors }}>
                             <BsPersonCircle size={'2em'} />
                         </Link>
                     </Tooltip>
                     <Tooltip placement="right" hasArrow label="Projetos">
-                        <Link color={ activeRoute === 'projects' ? activeRouteColors : 'gray.600' } href="#projects" mb={8} _hover={{ color: activeRouteColors }}>
+                        <Link color={ activeRoute === 'projects' ? activeRouteColors : 'gray.600' } href="#projects" mb={{ base: 5, lg: 8 }} _hover={{ color: activeRouteColors }}>
                             <AiOutlineProject size={'2em'} />
                         </Link>
                     </Tooltip>
                     <Tooltip placement="right" hasArrow label="Skills">
-                        <Link color={ activeRoute === 'skills' ? activeRouteColors : 'gray.600' } href="#skills" mb='100px' _hover={{ color: activeRouteColors }}>
+                        <Link color={ activeRoute === 'skills' ? activeRouteColors : 'gray.600' } href="#skills" mb={{ base: '60px', lg: '100px' }} _hover={{ color: activeRouteColors }}>
                             <GiSkills size={'2em'} />
                         </Link>
                     </Tooltip>
@@ -73,7 +89,7 @@ const Sidebar = ({ scrollValue, isSidebarOpen }) => {
                         </Button>   
                     </Tooltip>
                 </Box>
-                <Flex mt='100px' flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+                <Flex mt={{ base: '60px', lg: '100px' }} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
                     <Link color={ activeRoute === 'source' ? activeRouteColors : 'gray.600' } href="https://github.com/gcaramori" mb={5} isExternal _hover={{ color: activeRouteColors }}>
                         <AiFillGithub size={'1.5em'} />
                     </Link>
