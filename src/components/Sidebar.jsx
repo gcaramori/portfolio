@@ -57,7 +57,7 @@ const Sidebar = ({ scrollValue, isSidebarOpen }) => {
         <motion.div
             initial={{ width: 0 }}
             animate={{ width: (isSidebarOpen) ? '3.5rem' : 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.2, default: { ease: "linear" } }}
         >
             <Flex id="sidebar" flexDirection={'column'} justifyContent={'center'} alignItems={'center'} h='100%' bg={sidebarBg} boxShadow="md">
                 <Flex id="sidebarMenu" flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>

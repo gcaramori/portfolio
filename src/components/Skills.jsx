@@ -46,7 +46,7 @@ const Skills = () => {
                     <Box w={{ base: '48%', md: '30%', xl: '110px' }} mb={{ base: 6, xl: 0 }} position={{ base: 'relative', xl: 'absolute' }} top={{ base: 0, xl: 20 }} right={{ base: 0, xl: 32 }}>
                         <motion.div
                             initial={{ opacity: 0, scale: 0 }}
-                            whileInView={{ opacity: 1, scale: 1 }}   
+                            whileInView={{ opacity: 1, scale: 1 }}  
                             transition={{ duration: 1 }}
                         >    
                             <Image h={{ base: '100%', xl: '100px' }} w={{ base: '100%', xl: '100px' }} fit='contain' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="css_logo" />

@@ -31,7 +31,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Box fontSize={{ base: 'sm', '2xl': 'md' }} fontWeight='600' mb={{ base: 6, '2xl': 14 }} textAlign={{ base: 'center', lg: 'unset' }} px={{ md: 24, lg: 0 }}>
+                    <Box fontSize={{ base: 'sm', '2xl': 'md' }} fontWeight='600' mb={{ base: 6, '2xl': 14 }} textAlign={{ base: 'right', lg: 'unset' }} px={{ md: 24, lg: 0 }}>
                         <Text mb={1}>
                             Sou apaixonado por tecnologia e computação desde que me lembro.
                         </Text>
