@@ -13,14 +13,14 @@ const Sidebar = ({ scrollValue, isSidebarOpen }) => {
     const [activeRoute, setActiveRoute] = useState('home');
 
     useEffect(() => {
-        if(window.innerWidth < 1450) {
+        if(window.innerWidth <= 1450) {
             if(scrollValue <= window.innerHeight * 0.8) {
                 setActiveRoute('home');
             }
             else if(scrollValue >= window.innerHeight * 0.8 && scrollValue <= window.innerHeight * 1.4) {
                 setActiveRoute('about');   
             }
-            else if(scrollValue > window.innerHeight * 1.4 && scrollValue <= window.innerHeight * 3) {
+            else if(scrollValue > window.innerHeight * 1.4 && scrollValue <= window.innerHeight * 2.8) {
                 setActiveRoute('projects');   
             }
             else {
@@ -77,7 +77,7 @@ const Sidebar = ({ scrollValue, isSidebarOpen }) => {
                         </Link>
                     </Tooltip>
                     <Tooltip placement="right" hasArrow label="Skills">
-                        <Link color={ activeRoute === 'skills' ? activeRouteColors : 'gray.600' } href="#skills" mb={{ base: '60px', lg: '100px' }} _hover={{ color: activeRouteColors }}>
+                        <Link color={ activeRoute === 'skills' ? activeRouteColors : 'gray.600' } href="#skills" mb={{ base: '60px', '2xl': '100px' }} _hover={{ color: activeRouteColors }}>
                             <GiSkills size={'2em'} />
                         </Link>
                     </Tooltip>
@@ -89,7 +89,7 @@ const Sidebar = ({ scrollValue, isSidebarOpen }) => {
                         </Button>   
                     </Tooltip>
                 </Box>
-                <Flex mt={{ base: '60px', lg: '100px' }} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
+                <Flex mt={{ base: '60px', '2xl': '100px' }} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
                     <Link color={ activeRoute === 'source' ? activeRouteColors : 'gray.600' } href="https://github.com/gcaramori" mb={5} isExternal _hover={{ color: activeRouteColors }}>
                         <AiFillGithub size={'1.5em'} />
                     </Link>
