@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Skills = () => {
     return(
         <Flex id='skills' h={{ base: 'auto', lg: '100vh'}} w='100%' flexDir={{ base: 'column', lg: 'row' }} justifyContent='flex-start' alignItems='flex-start' overflow='hidden'>
-            <Flex h='100%' w={{ base: '100%', lg: '40%' }} flexDirection='column' justifyContent='center' alignItems={{ base: 'flex-end', lg: 'flex-start' }} p={{ base: 6, lg: 20 }}>
+            <Flex h='100%' w={{ base: '100%', lg: '40%' }} flexDirection='column' justifyContent='center' alignItems={{ base: 'flex-end', lg: 'flex-start' }} p={{ base: 6, lg: 10, '2xl': 20 }}>
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +23,7 @@ const Skills = () => {
                     <Text fontSize={25} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={{ base: 3, lg: 15}}>As ferramentas que domino.</Text>
                 </motion.div>
             </Flex>
-            <Flex h='100%' w={{ base: '100%', lg: '60%' }} justifyContent='center' alignItems='center' p={{ base: 6, lg: 20 }}>
+            <Flex h='100%' w={{ base: '100%', lg: '60%' }} justifyContent='center' alignItems='center' p={{ base: 6, lg: 10, '2xl': 20 }}>
                 <Flex justifyContent={{ base: 'space-between', lg: 'center' }} alignItems='center' id="skillLogos" h='100%' w='100%' position='relative' flexWrap={{ base: 'wrap', lg: 'nowrap' }}>
                     <Box w={{ base: '48%', lg: '110px' }} mb={{ base: 6, lg: 0 }} position={{ base: 'relative', lg: 'absolute' }} top={{ base: 0, lg: 20 }} left={{ base: 0, lg: 32 }}>
                         <motion.div

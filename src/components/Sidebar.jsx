@@ -13,7 +13,7 @@ const Sidebar = ({ scrollValue, isSidebarOpen }) => {
     const [activeRoute, setActiveRoute] = useState('home');
 
     useEffect(() => {
-        if(window.innerWidth < 600) {
+        if(window.innerWidth < 1450) {
             if(scrollValue <= window.innerHeight * 0.8) {
                 setActiveRoute('home');
             }
