@@ -38,7 +38,7 @@ const Frame = () => {
         <Flex h='100%' w='100%' bg={bg} position='relative'>
             <Sidebar h='100%' scrollValue={scroll} isSidebarOpen={sidebarOpen} />
             <Box bg={bg} ref={containerRef} h='100%' w='100%' overflowY='scroll' overflowX='hidden' position='relative'>
-                    <Box position='fixed' top={6} left={2} id="toggleSidebar" display={(window.innerWidth <= 768) ? 'block' : 'none'} onClick={toggleSidebar} bg={toggleSidebarBg} color={toggleSidebarColor} borderRadius='20px' p={2}>
+                    <Box position='fixed' top={6} left={2} id="toggleSidebar" display={(window.innerWidth <= 768) ? 'block' : 'none'} onClick={toggleSidebar} bg={toggleSidebarBg} color={toggleSidebarColor} borderRadius='20px' p={2} zIndex='9999'>
                         <motion.div
                             initial={{ opacity: 0, y: -45 }}
                             whileInView={{ opacity: 1, y: 0 }}
