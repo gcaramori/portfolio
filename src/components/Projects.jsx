@@ -6,7 +6,7 @@ import { FiExternalLink } from 'react-icons/fi';
 const Projects = () => {
     return(
         <Flex id='projects' h={{ base: 'auto', lg: '100vh'}} w='100%' flexDir={{ base: 'column', lg: 'row' }} justifyContent='flex-start' alignItems={{ base: 'flex-start', lg: 'center', '2xl': 'flex-start' }}>
-            <Flex h='100%' w={{ base: '100%', lg: '30%', '2xl': '35%' }} flexDir='column' justifyContent='center' alignItems={{ base: 'flex-end', lg: 'flex-start' }} p={{ base: 6, lg: 10, '2xl': 20 }}>
+            <Flex h='100%' w={{ base: '100%', lg: '35%', '2xl': '35%' }} flexDir='column' justifyContent='center' alignItems={{ base: 'flex-end', lg: 'flex-start' }} p={{ base: 6, lg: 10, '2xl': 20 }}>
                 <motion.div
                     initial={{ opacity: 0, y: -40 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +26,7 @@ const Projects = () => {
                     <Text fontSize={25} textAlign={{ base: 'right', lg: 'left' }} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={{ base: 3, lg: 15}}>Um pouco do meu trabalho.</Text>
                 </motion.div>
             </Flex>
-            <Flex h='100%' w={{ base: '100%', lg: '70%', '2xl': '65%' }} justifyContent='center' alignItems='center' p={{ base: 6, lg: 10, '2xl': 20 }}>
+            <Flex h='100%' w={{ base: '100%', lg: '65%', '2xl': '65%' }} justifyContent='center' alignItems='center' p={{ base: 6, lg: 10, '2xl': 20 }}>
                 <Flex w='100%' flexDir={{ base: 'column', md: 'row' }} justifyContent='center' alignItems='center' flexWrap='wrap' gap={{ base: 4, xl: 8 }}>
                     <Box w={{ base: '100%', md: '48%', xl: '45%' }} h='100%'>
                         <motion.div
