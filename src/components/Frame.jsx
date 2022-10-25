@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Flex, Box, useColorModeValue } from '@chakra-ui/react';
-import { useScroll } from "framer-motion";
+import { useScroll, motion } from "framer-motion";
 import { FaBars } from 'react-icons/fa';
 import Sidebar from './Sidebar';
 import Home from "./Home";
@@ -36,9 +36,15 @@ const Frame = () => {
         <Flex h='100%' w='100%' bg={bg} position='relative'>
             <Sidebar h='100%' scrollValue={scroll} isSidebarOpen={sidebarOpen} />
             <Box bg={bg} ref={containerRef} h='100%' w='100%' overflowY='scroll' overflowX='hidden' position='relative'>
-                <Box position='fixed' top={10} left={12} id="toggleSidebar" display={(window.innerWidth <= 768) ? 'block' : 'none'} onClick={toggleSidebar}>
-                    <FaBars size={'1.5em'} />
-                </Box>
+                    <Box position='fixed' top={10} left={12} id="toggleSidebar" display={(window.innerWidth <= 768) ? 'block' : 'none'} onClick={toggleSidebar}>
+                        <motion.div
+                            initial={{ opacity: 0, y: -45 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                        >
+                           <FaBars size={'1.5em'} />
+                        </motion.div>
+                    </Box>
                 <Home w='100%' />
                 <About w='100%' />
                 <Projects w='100%' />
