@@ -26,17 +26,18 @@ const Projects = () => {
                     <Text fontSize={25} textAlign={{ base: 'right', lg: 'left' }} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={{ base: 3, lg: 15}}>Um pouco do meu trabalho.</Text>
                 </motion.div>
             </Flex>
-            <Flex h='100%' w={{ base: '100%', lg: '65%', '2xl': '65%' }} justifyContent='center' alignItems='center' p={{ base: 6, lg: 10, '2xl': 20 }}>
-                <Flex w='100%' flexDir={{ base: 'column', md: 'row' }} justifyContent='center' alignItems='center' flexWrap='wrap' gap={{ base: 4, xl: 8 }}>
-                    <Box w={{ base: '100%', md: '48%', xl: '45%' }} h='100%'>
+            <Flex h='100%' w={{ base: '100%', lg: '65%', '2xl': '65%' }} justifyContent='center' alignItems='center' p={{ base: 6, lg: 10, '2xl': 0 }}>
+                <Flex w='100%' h='100%' flexDir={{ base: 'column', md: 'row' }} justifyContent='center' alignItems='center' flexWrap='wrap' gap={{ base: 4, xl: 0 }}>
+                    <Box w={{ base: '100%', md: '50%' }} h='100%'>
                         <motion.div
                             initial={{ opacity: 0, y: -80 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1 }}
+                            style={{ height: '100%' }}
                         >    
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                            <Box position='relative' w='100%' h='33%' borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer'  role='group'>
                                 <Link href='https://criptobeer.com.br' target='_blank'>
-                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '180px', '2xl': '250px' }} src='projects/criptobeer.png' alt='project_criptobeer' />
+                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '100%' }} src='projects/criptobeer.png' alt='project_criptobeer' />
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
@@ -48,9 +49,9 @@ const Projects = () => {
                                     </Text>
                                 </Flex>
                             </Box>
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                            <Box position='relative' w='100%' h='33%' borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer'  role='group'>
                                 <Link href='https://panel.performa.ai' target='_blank'>
-                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '180px', '2xl': '250px' }} src='projects/performa.png' alt='project_performa' />
+                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '100%' }} src='projects/performa.png' alt='project_performa' />
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
@@ -62,9 +63,9 @@ const Projects = () => {
                                     </Text>
                                 </Flex>
                             </Box>
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                            <Box position='relative' w='100%' h='33%' borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer'  role='group'>
                                 <Link href='https://vetpalmas.com.br' target='_blank'>
-                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '180px', '2xl': '250px' }} src='projects/vetpalmas.png' alt='project_vetpalmas' />
+                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '100%' }} src='projects/vetpalmas.png' alt='project_vetpalmas' />
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
@@ -78,15 +79,16 @@ const Projects = () => {
                             </Box>
                         </motion.div>
                     </Box>
-                    <Box w={{ base: '100%', md: '48%', xl: '45%' }} h='100%'>
+                    <Box w={{ base: '100%', md: '50%' }} h='100%'>
                         <motion.div
                             initial={{ opacity: 0, y: '-100px' }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.5 }}
+                            style={{ height: '100%' }}
                         >  
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                            <Box position='relative' w='100%' h='33%' borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer'  role='group'>
                                 <Link href='https://paani.com.br' target='_blank'>
-                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '180px', '2xl': '250px' }} src='projects/paani.png' alt='project_paani' />
+                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '100%' }} src='projects/paani.png' alt='project_paani' />
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
@@ -98,23 +100,23 @@ const Projects = () => {
                                     </Text>
                                 </Flex>
                             </Box>
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
-                                <Link href='https://paani.com.br' target='_blank'>
-                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '180px', '2xl': '250px' }} src='projects/criptobeer.png' alt='project_paani' />
+                            <Box position='relative' w='100%' h='33%' borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer'  role='group'>
+                                <Link href='https://lust-imobiliaria.vercel.app' target='_blank'>
+                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '100%' }} src='projects/lustimobiliaria.png' alt='project_lust' />
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
-                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Criptobeer</Text>
+                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Lust imobiliária</Text>
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
-                                        HTML / CSS / PHP
+                                        React / Chakra UI
                                     </Text>
                                 </Flex>
                             </Box>
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                            <Box position='relative' w='100%' h='33%' borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer'  role='group'>
                                 <Link href='https://paani.com.br' target='_blank'>
-                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '180px', '2xl': '250px' }} src='projects/paani.png' alt='project_paani' />
+                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '100%' }} src='projects/paani.png' alt='project_paani' />
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>

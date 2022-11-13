@@ -12,4 +12,4 @@ ReactDOM.createRoot(rootElement).render(
       <App /> 
     </ChakraProvider>
   </>
-)
+);
