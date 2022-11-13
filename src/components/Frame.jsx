@@ -27,6 +27,8 @@ const Frame = () => {
     }, [scrollY]);
     
     const bg = useColorModeValue('gray.50', '#1f1e1e');
+    const toggleSidebarBg = useColorModeValue('purple.600', 'gray.50');
+    const toggleSidebarColor = useColorModeValue('gray.50', '#1f1e1e');
 
     const toggleSidebar = () => {
         setSidebarOpen(!sidebarOpen);
@@ -36,13 +38,13 @@ const Frame = () => {
         <Flex h='100%' w='100%' bg={bg} position='relative'>
             <Sidebar h='100%' scrollValue={scroll} isSidebarOpen={sidebarOpen} />
             <Box bg={bg} ref={containerRef} h='100%' w='100%' overflowY='scroll' overflowX='hidden' position='relative'>
-                    <Box position='fixed' top={10} left={12} id="toggleSidebar" display={(window.innerWidth <= 768) ? 'block' : 'none'} onClick={toggleSidebar}>
+                    <Box position='fixed' top={6} left={10} id="toggleSidebar" display={(window.innerWidth <= 768) ? 'block' : 'none'} onClick={toggleSidebar} bg={toggleSidebarBg} color={toggleSidebarColor} borderRadius='20px' p={2} zIndex='9999'>
                         <motion.div
                             initial={{ opacity: 0, y: -45 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1 }}
                         >
-                           <FaBars size={'1.5em'} />
+                           <FaBars size={'1em'} />
                         </motion.div>
                     </Box>
                 <Home w='100%' />
