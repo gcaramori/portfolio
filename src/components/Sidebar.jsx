@@ -7,13 +7,24 @@ import { BsPersonCircle } from 'react-icons/bs';
 import { motion } from 'framer-motion';
 
 const Sidebar = ({ scrollValue, isSidebarOpen }) => {
+    const [isMobile, setIsMobile] = useState(false);
     const { colorMode, toggleColorMode } = useColorMode();
     const sidebarBg = useColorModeValue('gray.50', '#121111');
     const activeRouteColors = useColorModeValue('purple.600', 'white');
     const [activeRoute, setActiveRoute] = useState('home');
+    const handleResize = () => {
+        if (window.innerWidth <= 1450) {
+            setIsMobile(true);
+        } else {
+            setIsMobile(false);
+        }
+    }
 
     useEffect(() => {
-        if(window.innerWidth <= 1450) {
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        if(isMobile) {
             if(scrollValue <= window.innerHeight * 0.8) {
                 setActiveRoute('home');
             }
@@ -41,7 +52,7 @@ const Sidebar = ({ scrollValue, isSidebarOpen }) => {
                 setActiveRoute('skills');
             }
         }
-    }, [scrollValue]);
+    }, [scrollValue, isMobile]);
 
     document.querySelectorAll('#sidebarMenu a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

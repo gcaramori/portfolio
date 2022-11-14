@@ -31,7 +31,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Box fontSize={{ base: 'sm', '2xl': 'md' }} fontWeight='600' mb={{ base: 6, lg: 3, '2xl': 14 }} textAlign={{ base: 'right', lg: 'unset' }} px={{ md: 24, lg: 0 }}>
+                    <Box w='100%' fontSize={{ base: 'sm', '2xl': 'md' }} fontWeight='600' mb={{ base: 6, lg: 3, '2xl': 14 }} textAlign={{ base: 'right', lg: 'unset' }} pl={{ md: 50, lg: 0 }}>
                         <Text mb={1}>
                             Sou apaixonado por tecnologia e computação desde que me lembro.
                         </Text>
@@ -100,7 +100,7 @@ const About = () => {
                             </Box>
                         </motion.div>
                     </Box>
-                    <Box width={{ lg: '48%', '2xl': '100%' }}>
+                    <Box width={{ base: '100%', lg: '48%', '2xl': '100%' }}>
                         <motion.div
                             initial={{ opacity: 0, y: -65 }}
                             whileInView={{ opacity: 1, y: 0 }}
