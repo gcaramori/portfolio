@@ -113,7 +113,7 @@ const Projects = () => {
                                 </Flex>
                             </Box>
                             <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
-                                <Link href='https://paani.com.br' target='_blank'>
+                                {/* <Link href='https://paani.com.br' target='_blank'>
                                     <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={{ base: '160px', xl: '180px', '2xl': '250px' }} src='projects/paani.png' alt='project_paani' />
                                 </Link>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
@@ -124,7 +124,7 @@ const Projects = () => {
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
                                         HTML / CSS / PHP
                                     </Text>
-                                </Flex>
+                                </Flex> */}
                             </Box>
                         </motion.div>
                     </Box>
