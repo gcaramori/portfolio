@@ -27,7 +27,7 @@ const Projects = () => {
                 </motion.div>
             </Flex>
             <Flex h='100%' w={{ base: '100%', lg: '65%', '2xl': '65%' }} justifyContent='center' alignItems='center' p={{ base: 6, lg: 10, '2xl': 20 }}>
-                <Flex w='100%' flexDir={{ base: 'column', md: 'row' }} justifyContent='center' alignItems='center' flexWrap='wrap' gap={{ base: 4, xl: 8 }}>
+                <Flex w='100%' flexDir={{ base: 'column', md: 'row' }} justifyContent='center' alignItems='flex-start' flexWrap='wrap' gap={{ base: 4, xl: 8 }}>
                     <Box w={{ base: '100%', md: '48%', xl: '45%' }} h='100%'>
                         <motion.div
                             initial={{ opacity: 0, y: -80 }}
