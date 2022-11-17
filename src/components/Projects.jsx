@@ -58,7 +58,7 @@ const Projects = () => {
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
-                                        HTML / CSS / PHP
+                                        HTML / CSS / PHP / MONGO DB
                                     </Text>
                                 </Flex>
                             </Box>
@@ -94,7 +94,7 @@ const Projects = () => {
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
-                                        HTML / CSS / PHP
+                                        HTML / CSS / PHP / MySQL
                                     </Text>
                                 </Flex>
                             </Box>
