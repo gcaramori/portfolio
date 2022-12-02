@@ -33,13 +33,10 @@ const About = () => {
                 >
                     <Box w='100%' fontSize={{ base: 'sm', '2xl': 'md' }} fontWeight='600' mb={{ base: 6, lg: 3, '2xl': 14 }} textAlign={{ base: 'right', lg: 'unset' }} pl={{ md: 50, lg: 0 }}>
                         <Text mb={1}>
-                            Sou apaixonado por tecnologia e computação desde que me lembro.
+                            Trabalho como Desenvolvedor Full Stack há 5 anos, em minha trajetória pude implementar vários projetos, desde landing pages com animações (2D e 3D) com foco em conversão de clientes à sistemas web em PHP, utilizando padrões como MVC e Clean Architecture, com milhares de acessos mensais e até aplicativos no marketplace da Shopify.
                         </Text>
                         <Text mb={1}>
-                            Sou técnico de informática formado, e autodidata em programação. 
-                        </Text>
-                        <Text>
-                            Trabalho na área desde 2016. Comecei fazendo freelances e só depois de 2 anos ingressei no mercado de trabalho na área de programação, atualmente sou programador FullStack.
+                            Atualmente estou amando desenvolver aplicações com ReactJS, ChakraUI ou Tailwind e NodeJS.
                         </Text>
                     </Box>
                 </motion.div>
