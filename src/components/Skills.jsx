@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Heading, Text, Flex, Image, Box } from '@chakra-ui/react';
 import { motion } from "framer-motion";
+import { LanguageContext } from "../contexts/languageContext";
+import Languages from '../lib/languages';
 
 const Skills = () => {
+    const { language } = useContext(LanguageContext);
+    
     return(
         <Flex id='skills' h={{ base: 'auto', lg: '100vh'}} w='100%' flexDir={{ base: 'column', lg: 'row' }} justifyContent='flex-start' alignItems={{ base: 'flex-start', lg: 'center', xl: 'flex-start' }} overflow='hidden'>
             <Flex h='100%' w={{ base: '100%', lg: '40%' }} flexDir='column' justifyContent='center' alignItems={{ base: 'flex-end', lg: 'flex-start' }} p={{ base: 6, lg: 10, '2xl': 20 }}>
@@ -20,7 +24,7 @@ const Skills = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Text fontSize={25} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={{ base: 3, xl: 15 }}>As ferramentas que domino.</Text>
+                    <Text fontSize={25} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={{ base: 3, xl: 15 }}>{Languages[language]?.skills?.subtitle}</Text>
                 </motion.div>
             </Flex>
             <Flex h='100%' w={{ base: '100%', lg: '60%' }} justifyContent='center' alignItems='center' p={{ base: 6, lg: 10, '2xl': 20 }}>

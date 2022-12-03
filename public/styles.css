@@ -5,7 +5,23 @@
 html, body, #root {
     height: 100% !important;
     width: 100% !important;
-    overflow-x: hidden !important;
+    overflow-x: hidden !important;  
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #636e72;
+    border-radius: 20px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+    opacity: .6;
 }
 
 @media screen and (max-width: 450px) {
