@@ -29,7 +29,7 @@ const About = () => {
                     <Text fontSize={25} textAlign={{ base: 'right', lg: 'left' }} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={{ base: 3, lg: 15}}>{Languages[language]?.about?.subtitle}</Text>
                 </motion.div>
             </Flex>
-            <Flex h='100%' w={{ base: '100%', lg: '60%', '2xl': '50%' }} flexDir='column' justifyContent='flex-start' alignItems='flex-start' p={{ base: 6, '2xl': 10 }}>
+            <Flex h='100%' w={{ base: '100%', lg: '60%', '2xl': '50%' }} flexDir='column' justifyContent='center' alignItems='flex-start' p={{ base: 6, '2xl': 10 }}>
                 <motion.div
                     initial={{ opacity: 0, y: -45 }}
                     whileInView={{ opacity: 1, y: 0 }}
