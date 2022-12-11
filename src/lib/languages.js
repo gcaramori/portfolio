@@ -27,7 +27,7 @@ const Languages = {
             "year16_3": "Meu primeiro projeto foi um sistema de gerenciamento de reservas de um consultório. Feito em HTML, CSS, PHP e MySQL.",
             "year18_1": "Ingresso no mercado de trabalho como desenvolvedor front-end.",
             "year18_2": "Aqui começa o caminho do meu aprimoramento e especialização na área.",
-            "year22_1": "Agora com 6 anos de experiência, uma visão mais ampla e vários desafios superados...",
+            "year22_1": "Agora com 5 anos de experiência, uma visão mais ampla e vários desafios superados...",
             "year22_2": "Continuo na procura de novos projetos e desafios!"
         },
         "projects": {
