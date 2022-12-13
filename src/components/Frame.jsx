@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { Flex, Box, Button, Divider, useColorModeValue } from '@chakra-ui/react';
 import { useScroll, motion } from "framer-motion";
 import { FaBars } from 'react-icons/fa';
-import { AiOutlineGlobal } from 'react-icons/ai';
+import { AiOutlineGlobal, AiOutlineClose } from 'react-icons/ai';
 import { LanguageContext } from "../contexts/languageContext";
 import Sidebar from './Sidebar';
 import Home from "./Home";
@@ -55,7 +55,7 @@ const Frame = () => {
         <Flex h='100%' w='100%' bg={bg} position='relative'>
             <Sidebar h='100%' scrollValue={scroll} isSidebarOpen={sidebarOpen} />
             <Box bg={bg} ref={containerRef} h='100%' w='100%' overflowY='scroll' overflowX='hidden' position='relative'>
-                <Flex justifyContent={'start'} alignItems={'center'} h={10} w={'auto'} position='fixed' top={2} left={{ base: 'unset', lg: 20}} right={{ base: 10, lg: 'unset' }}>
+                <Flex justifyContent={'start'} alignItems={'center'} h={10} w={'auto'} position='fixed' top={2} left={{ base: 14, lg: 20}}>
                     <AiOutlineGlobal size='1.2em' />
                     <Flex justifyContent={'space-between'} alignItems={'center'} ml={1}>
                         <Button display={'inline-block'} px={3} textAlign={'left'} border={'unset'} fontSize={10} fontWeight={'bold'} bg={'transparent'} color={ language === 'pt-BR' ? languagesActive : languagesInactive } _hover={{ bg: 'transparent' }} _focus={{ bg: 'transparent' }} _active={{ bg: 'transparent' }} onClick={() => toggleLanguage('pt-BR')}>PT-BR</Button>
@@ -63,13 +63,15 @@ const Frame = () => {
                         <Button display={'inline-block'} px={3} textAlign={'left'} border={'unset'} fontSize={10} fontWeight={'bold'} bg={'transparent'} color={ language === 'en' ? languagesActive : languagesInactive } _hover={{ bg: 'transparent' }} _focus={{ bg: 'transparent' }} _active={{ bg: 'transparent' }} onClick={() => toggleLanguage('en')}>EN</Button>
                     </Flex>
                 </Flex>
-                <Box position='fixed' top={6} left={3} id="toggleSidebar" display={(window.innerWidth <= 768) ? 'block' : 'none'} onClick={toggleSidebar} bg={toggleSidebarBg} color={toggleSidebarColor} borderRadius='20px' p={2} zIndex='9999'>
+                <Box position='fixed' top={6} right={8} id="toggleSidebar" display={(window.innerWidth <= 768) ? 'block' : 'none'} onClick={toggleSidebar} bg={toggleSidebarBg} color={toggleSidebarColor} borderRadius='20px' p={2} zIndex='9999'>
                     <motion.div
                         initial={{ opacity: 0, y: -45 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1 }}
-                    >
-                        <FaBars size={'1em'} />
+                    >   
+                        {
+                            sidebarOpen ? <AiOutlineClose size={'1em'} /> : <FaBars size={'1em'} />
+                        }
                     </motion.div>
                 </Box>
                 <Home w='100%' />
