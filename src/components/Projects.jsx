@@ -38,10 +38,10 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1 }}
                         >    
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
-                                <Link href='https://criptobeer.com.br' target='_blank'>
+                            <Link href='https://criptobeer.com.br' target='_blank' display='block' position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                                <Box>
                                     <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={'auto'} src='projects/criptobeer.png' alt='project_criptobeer' />
-                                </Link>
+                                </Box>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
                                         <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Criptobeer</Text>
@@ -51,11 +51,11 @@ const Projects = () => {
                                         HTML / TailwindCSS / JS
                                     </Text>
                                 </Flex>
-                            </Box>
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
-                                <Link href='https://panel.performa.ai' target='_blank'>
+                            </Link>
+                            <Link href='https://panel.performa.ai' target='_blank' display='block' position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                                <Box>
                                     <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={'auto'} src='projects/performa.png' alt='project_performa' />
-                                </Link>
+                                </Box>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
                                         <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Performa.AI</Text>
@@ -65,11 +65,11 @@ const Projects = () => {
                                         HTML / CSS / PHP / MONGO DB
                                     </Text>
                                 </Flex>
-                            </Box>
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
-                                <Link href='https://vetpalmas.com.br' target='_blank'>
+                            </Link>
+                            <Link href='https://vetpalmas.com.br' target='_blank' display='block' position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                                <Box>
                                     <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={'auto'} src='projects/vetpalmas.png' alt='project_vetpalmas' />
-                                </Link>
+                                </Box>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
                                         <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Vetpalmas</Text>
@@ -79,7 +79,7 @@ const Projects = () => {
                                         HTML / TailwindCSS
                                     </Text>
                                 </Flex>
-                            </Box>
+                            </Link>
                         </motion.div>
                     </Box>
                     <Box w={{ base: '100%', md: '48%', xl: '45%' }} h='100%'>
@@ -88,10 +88,10 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.5 }}
                         >  
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
-                                <Link href='https://paani.com.br' target='_blank'>
+                            <Link href='https://paani.com.br' target='_blank' display='block' position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                                <Box>
                                     <Image fit={{ base: 'cover', '2xl': 'cover'  }} w='100%' h={'auto'} src='projects/paani.png' alt='project_paani' />
-                                </Link>
+                                </Box>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
                                         <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Paani</Text>
@@ -101,11 +101,11 @@ const Projects = () => {
                                         HTML / CSS / PHP / MySQL
                                     </Text>
                                 </Flex>
-                            </Box>
-                            <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
-                                <Link href='https://lust-imobiliaria.vercel.app' target='_blank'>
+                            </Link>
+                            <Link href='https://lust-imobiliaria.vercel.app' target='_blank' display='block' position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                                <Box>
                                     <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={'auto'} src='projects/lustimobiliaria.png' alt='project_lust' />
-                                </Link>
+                                </Box>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
                                         <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Lust imobiliária</Text>
@@ -115,7 +115,7 @@ const Projects = () => {
                                         React / Chakra UI
                                     </Text>
                                 </Flex>
-                            </Box>
+                            </Link>
                             <Box position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
                                 {/* <Link href='https://paani.com.br' target='_blank'>
                                     <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={'auto'} src='projects/paani.png' alt='project_paani' />
