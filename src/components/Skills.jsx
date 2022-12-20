@@ -24,7 +24,7 @@ const Skills = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
                 >
-                    <Text fontSize={25} color='gray.500' dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={{ base: 3, xl: 15 }}>{Languages[language]?.skills?.subtitle}</Text>
+                    <Text fontSize={25} color='gray.500' textAlign={{ base: 'right', lg: 'left' }} dropShadow='(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))' mt={{ base: 3, xl: 15 }}>{Languages[language]?.skills?.subtitle}</Text>
                 </motion.div>
             </Flex>
             <Flex h='100%' w={{ base: '100%', lg: '60%' }} justifyContent='center' alignItems='center' p={{ base: 6, lg: 10, '2xl': 20 }}>
