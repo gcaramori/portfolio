@@ -98,7 +98,7 @@ const Projects = () => {
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
-                                        Next.JS / TailwindCSS
+                                        NextJS / TailwindCSS
                                     </Text>
                                 </Flex>
                             </Link>

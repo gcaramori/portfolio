@@ -5,8 +5,8 @@ const Languages = {
             "about": "Minha história",
             "projects": "Projetos",
             "skills": "Habilidades",
-            "toggle_theme_text_dark": "Modo dark",
-            "toggle_theme_text_light": "Modo light" 
+            "toggle_theme_text_dark": "Modo escuro",
+            "toggle_theme_text_light": "Modo claro" 
         },
         "home": {
             "title1": "OLÁ,",
