@@ -88,34 +88,21 @@ const Projects = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.5 }}
                         >  
-                            <Link href='https://paani.com.br' target='_blank' display='block' position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                            <Link href='https://www.unit5strengthandfitness.com' target='_blank' display='block' position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
                                 <Box>
-                                    <Image fit={{ base: 'cover', '2xl': 'cover'  }} w='100%' h={'auto'} src='projects/paani.png' alt='project_paani' />
+                                    <Image fit={{ base: 'cover', '2xl': 'cover'  }} w='100%' h={'195px'} src='projects/unit5.png' alt='project_unit5' />
                                 </Box>
                                 <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
                                     <Flex mb={3} alignItems='center'>
-                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Paani</Text>
+                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Unit 5 - Strength and Fitness</Text>
                                         <FiExternalLink />
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
-                                        HTML / CSS / PHP / MySQL
+                                        Next.JS / TailwindCSS
                                     </Text>
                                 </Flex>
                             </Link>
-                            <Link href='https://lust-imobiliaria.vercel.app' target='_blank' display='block' position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
-                                <Box>
-                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={'auto'} src='projects/lustimobiliaria.png' alt='project_lust' />
-                                </Box>
-                                <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
-                                    <Flex mb={3} alignItems='center'>
-                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Lust imobiliária</Text>
-                                        <FiExternalLink />
-                                    </Flex>
-                                    <Text fontSize='md' fontWeight='600' color='#fff'>
-                                        ReactJS / Chakra UI
-                                    </Text>
-                                </Flex>
-                            </Link>
+
                             <Link href='https://caramori-bjj-academy.vercel.app' target='_blank' display='block' position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
                                 <Box>
                                     <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={'auto'} src='projects/caramoribjj.png' alt='project_caramoribjj' />
@@ -127,6 +114,21 @@ const Projects = () => {
                                     </Flex>
                                     <Text fontSize='md' fontWeight='600' color='#fff'>
                                         NextJS / TailwindCSS
+                                    </Text>
+                                </Flex>
+                            </Link>
+                            
+                            <Link href='https://lust-imobiliaria.vercel.app' target='_blank' display='block' position='relative' w='100%' h='30%' mb={5} borderRadius='sm' boxShadow='lg' overflow='hidden' transition='all 200ms ease-in-out' cursor='pointer' _hover={{ transform: 'scale(1.1)' }} role='group'>
+                                <Box>
+                                    <Image fit={{ base: 'contain', '2xl': 'cover'  }} w='100%' h={'auto'} src='projects/lustimobiliaria.png' alt='project_lust' />
+                                </Box>
+                                <Flex _groupHover={{ opacity: '1' }} opacity='0' transition='all 200ms ease-in-out' position='absolute' top='0' flexDirection='column' justifyContent='center' alignItems='center' h='100%' w='100%' p={2} bg='rgba(0, 0, 0, .6)'>
+                                    <Flex mb={3} alignItems='center'>
+                                        <Text fontSize='xl' fontWeight='600' mr={4} color='#fff'>Lust imobiliária</Text>
+                                        <FiExternalLink />
+                                    </Flex>
+                                    <Text fontSize='md' fontWeight='600' color='#fff'>
+                                        ReactJS / Chakra UI
                                     </Text>
                                 </Flex>
                             </Link>
