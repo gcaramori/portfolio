@@ -11,19 +11,19 @@ const Projects = () => {
   return (
     <Flex
       id="projects"
-      h={{ base: "auto", lg: "100vh" }}
+      h={{ base: "auto", xl: "100vh" }}
       w="100%"
-      flexDir={{ base: "column", lg: "row" }}
+      flexDir={{ base: "column", xl: "row" }}
       justifyContent="flex-start"
-      alignItems={{ base: "flex-start", lg: "center", "2xl": "flex-start" }}
+      alignItems={{ base: "flex-start", xl: "center", "2xl": "flex-start" }}
     >
       <Flex
         h="100%"
-        w={{ base: "100%", lg: "35%", "2xl": "35%" }}
+        w={{ base: "100%", xl: "35%", "2xl": "35%" }}
         flexDir="column"
         justifyContent="center"
-        alignItems={{ base: "flex-end", lg: "flex-start" }}
-        p={{ base: 6, lg: 10, "2xl": 20 }}
+        alignItems={{ base: "flex-end", xl: "flex-start" }}
+        p={{ base: 6, xl: 10, "2xl": 20 }}
       >
         <motion.div
           initial={{ opacity: 0, y: -40 }}
@@ -34,9 +34,8 @@ const Projects = () => {
           <Heading
             as="h1"
             fontSize={{ base: 50, "2xl": 60 }}
-            textAlign={{ base: "right", lg: "left" }}
+            textAlign={{ base: "right", xl: "left" }}
             textTransform="uppercase"
-            maxW="800px"
           >
             {Languages[language]?.projects?.heading}
           </Heading>
@@ -49,21 +48,22 @@ const Projects = () => {
         >
           <Text
             fontSize={25}
-            textAlign={{ base: "right", lg: "left" }}
+            textAlign={{ base: "right", xl: "left" }}
             color="gray.500"
             dropShadow="(0 10px 8px rgb(0 0 0 / 0.04))(0 4px 3px rgb(0 0 0 / 0.1))"
-            mt={{ base: 3, lg: 15 }}
+            mt={{ base: 3, xl: 15 }}
           >
             {Languages[language]?.projects?.subtitle}
           </Text>
         </motion.div>
       </Flex>
+
       <Flex
         h="100%"
-        w={{ base: "100%", lg: "65%", "2xl": "65%" }}
+        w={{ base: "100%", xl: "65%", "2xl": "65%" }}
         justifyContent="center"
         alignItems="center"
-        p={{ base: 6, lg: 10, "2xl": 20 }}
+        p={{ base: 6, xl: 10, "2xl": 20 }}
       >
         <Flex
           w="100%"
@@ -99,7 +99,7 @@ const Projects = () => {
                   <Image
                     fit={{ base: "contain", "2xl": "cover" }}
                     w="100%"
-                    h={"auto"}
+                    h={"232px"}
                     src="projects/criptobeer.png"
                     alt="project_criptobeer"
                   />
@@ -149,7 +149,7 @@ const Projects = () => {
                   <Image
                     fit={{ base: "contain", "2xl": "cover" }}
                     w="100%"
-                    h={"auto"}
+                    h={"232px"}
                     src="projects/performa.png"
                     alt="project_performa"
                   />
@@ -199,7 +199,7 @@ const Projects = () => {
                   <Image
                     fit={{ base: "contain", "2xl": "cover" }}
                     w="100%"
-                    h={"auto"}
+                    h={"232px"}
                     src="projects/vetpalmas.png"
                     alt="project_vetpalmas"
                   />
@@ -231,6 +231,7 @@ const Projects = () => {
               </Link>
             </motion.div>
           </Box>
+
           <Box w={{ base: "100%", md: "48%", xl: "45%" }} h="100%">
             <motion.div
               initial={{ opacity: 0, y: "-100px" }}
@@ -255,7 +256,7 @@ const Projects = () => {
               >
                 <Box>
                   <Image
-                    fit={{ base: "cover", "2xl": "cover" }}
+                    fit={{ base: "contain", "2xl": "cover" }}
                     w="100%"
                     h={"232px"}
                     src="projects/unit5.png"
@@ -308,7 +309,7 @@ const Projects = () => {
                   <Image
                     fit={{ base: "contain", "2xl": "cover" }}
                     w="100%"
-                    h={"auto"}
+                    h={"232px"}
                     src="projects/jsbjjkylemore.png"
                     alt="project_jsbjjkylemore"
                   />
@@ -359,7 +360,7 @@ const Projects = () => {
                   <Image
                     fit={{ base: "contain", "2xl": "cover" }}
                     w="100%"
-                    h={"auto"}
+                    h={"232px"}
                     src="projects/lustimobiliaria.png"
                     alt="project_lust"
                   />
