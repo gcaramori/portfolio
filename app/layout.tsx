@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import '@fontsource/m-plus-rounded-1c'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { Sidebar } from '@/components/sidebar'
+import { Sidebar } from '@/components/sidebar/sidebar'
 import { LanguageProvider } from '@/contexts/languageContext'
 
 const inter = Inter({
@@ -24,7 +24,7 @@ export default function RootLayout({
     <LanguageProvider>
       <html lang="en">
         <body
-          className={`${inter.variable} bg-gradient-to-b from-[var(--background)] to-[var(--background-gradient)] antialiased`}
+          className={`flex ${inter.variable} bg-gradient-to-b from-[var(--background)] to-[var(--background-gradient)] antialiased`}
         >
           <Sidebar />
 
