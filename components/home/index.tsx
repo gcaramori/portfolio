@@ -8,7 +8,7 @@ const Computer3D = dynamic(() =>
 export function Index() {
   return (
     <section
-      id="index"
+      id="home"
       className="h-screen w-full flex flex-col lg:flex-row items-start justify-start"
     >
       <MainTexts />

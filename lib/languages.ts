@@ -18,11 +18,9 @@ const Languages: LanguagesType = {
   'pt-BR': {
     sidebar: {
       home: 'Início',
-      about: 'Minha história',
+      about: 'Sobre mim',
       projects: 'Projetos',
       skills: 'Habilidades',
-      toggle_theme_text_dark: 'Modo escuro',
-      toggle_theme_text_light: 'Modo claro',
     },
     home: {
       title1: 'OLÁ,',
@@ -64,11 +62,9 @@ const Languages: LanguagesType = {
   en: {
     sidebar: {
       home: 'Home',
-      about: 'My history',
+      about: 'About me',
       projects: 'Projects',
       skills: 'Skills',
-      toggle_theme_text_dark: 'Dark mode',
-      toggle_theme_text_light: 'Light mode',
     },
     home: {
       title1: 'HI,',
@@ -79,7 +75,7 @@ const Languages: LanguagesType = {
       button: "Let's work together?",
     },
     about: {
-      heading: 'My History',
+      heading: 'About me',
       subtitle: 'This is me!',
       description1:
         'I am a Full Stack Developer with 7 years of experience, specialized in building modern applications with Next.js, ReactJS, Tailwind CSS, and Node.js. Currently, I focus on developing apps for e-commerce platforms, SEO-optimized landing pages, and microservices, delivering scalable and results-driven solutions.',

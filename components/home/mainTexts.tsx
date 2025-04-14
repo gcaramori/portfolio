@@ -20,7 +20,7 @@ export function MainTexts() {
       </h1>
 
       <p className="block text-xl sm:text-2xl text-right lg:text-left text-gray-400 font-inter">
-        {Languages[language]?.home?.subtitle2} / Freelancer
+        {Languages[language]?.home?.subtitle2} / Freelancer Sênior
       </p>
 
       <p className="block text-lg sm:text-xl text-right lg:text-left text-[var(--primary-bg)] mt-5 font-inter">
