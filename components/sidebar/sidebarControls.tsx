@@ -1,17 +1,12 @@
 'use client'
 
+import { useContext } from 'react'
 import { useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip'
 import { House, ScrollText, Code, Wrench } from 'lucide-react'
 import Languages from '@/lib/languages'
 import { LanguageContext } from '@/contexts/languageContext'
-import { useContext } from 'react'
+import { Tooltip } from '../tooltip'
 
 interface ISidebarControlProps {
   id: string
@@ -47,23 +42,19 @@ export function SidebarControls({ id, link }: ISidebarControlProps) {
   }
 
   return (
-    <TooltipProvider>
-      <Tooltip delayDuration={100}>
-        <TooltipTrigger>
-          <Link
-            href={link}
-            className={`block relative p-3 rounded-lg transition-colors hover:bg-gray-300 ${
-              activeSession === id ? 'bg-gray-300' : ''
-            }`}
-            onClick={() => handleScrollToSection(id)}
-          >
-            {handleControlIcon(id)}
-          </Link>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{Languages[language] && Languages[language].sidebar[id]}</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+    <Tooltip
+      content={Languages[language] && Languages[language].sidebar[id]}
+      position="right"
+    >
+      <Link
+        href={link}
+        className={`block relative p-3 rounded-lg transition-colors hover:bg-gray-300 ${
+          activeSession === id ? 'bg-gray-300' : ''
+        }`}
+        onClick={() => handleScrollToSection(id)}
+      >
+        {handleControlIcon(id)}
+      </Link>
+    </Tooltip>
   )
 }
