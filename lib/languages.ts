@@ -4,7 +4,7 @@ type GenericSection = {
 
 type LanguageStructure = {
   sidebar: GenericSection
-  home: GenericSection
+  index: GenericSection
   about: GenericSection
   projects: GenericSection
   skills: GenericSection
@@ -17,12 +17,12 @@ type LanguagesType = {
 const Languages: LanguagesType = {
   'pt-BR': {
     sidebar: {
-      home: 'Início',
+      index: 'Início',
       about: 'Sobre mim',
       projects: 'Projetos',
       skills: 'Habilidades',
     },
-    home: {
+    index: {
       title1: 'OLÁ,',
       title2: 'EU SOU',
       subtitle1:
@@ -61,12 +61,12 @@ const Languages: LanguagesType = {
   },
   en: {
     sidebar: {
-      home: 'Home',
+      index: 'Index',
       about: 'About me',
       projects: 'Projects',
       skills: 'Skills',
     },
-    home: {
+    index: {
       title1: 'HI,',
       title2: 'I AM',
       subtitle1:

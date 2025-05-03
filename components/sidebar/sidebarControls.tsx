@@ -1,7 +1,7 @@
 'use client'
 
 import { useContext } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { House, ScrollText, Code, Wrench } from 'lucide-react'
 import Languages from '@/lib/languages'
@@ -14,19 +14,9 @@ interface ISidebarControlProps {
 }
 
 export function SidebarControls({ id, link }: ISidebarControlProps) {
-  const searchParams = useSearchParams()
-
-  const activeSession = searchParams.get('session')
+  const pathname = usePathname()
 
   const { language } = useContext(LanguageContext)
-
-  function handleScrollToSection(sectionId: string) {
-    const section = document.getElementById(sectionId)
-
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
 
   function handleControlIcon(id: string) {
     switch (id) {
@@ -41,6 +31,8 @@ export function SidebarControls({ id, link }: ISidebarControlProps) {
     }
   }
 
+  const isActive = pathname === link || (pathname === '/' && id === 'index')
+
   return (
     <Tooltip
       content={Languages[language] && Languages[language].sidebar[id]}
@@ -49,9 +41,8 @@ export function SidebarControls({ id, link }: ISidebarControlProps) {
       <Link
         href={link}
         className={`block relative p-3 rounded-lg transition-colors hover:bg-gray-300 ${
-          activeSession === id ? 'bg-gray-300' : ''
+          isActive ? 'bg-gray-300' : ''
         }`}
-        onClick={() => handleScrollToSection(id)}
       >
         {handleControlIcon(id)}
       </Link>

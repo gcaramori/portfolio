@@ -1,12 +1,20 @@
-import { Index } from '@/components/home'
-import { About } from '@/components/about/about'
+'use client'
 
-export default function Home() {
+import dynamic from 'next/dynamic'
+import { Index } from '@/components/index'
+import withPageTransition from '@/components/pageTransition'
+
+const Computer = dynamic(() =>
+  import('../components/index/computer').then((mod) => mod.Computer)
+)
+
+function IndexPage() {
   return (
-    <main className="block relative h-full w-full overflow-x-hidden">
+    <>
       <Index />
-
-      <About />
-    </main>
+      <Computer />
+    </>
   )
 }
+
+export default withPageTransition(IndexPage)

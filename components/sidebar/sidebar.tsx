@@ -3,20 +3,20 @@ import { SidebarMedias } from './sidebarMedias'
 
 const CONTROLS = [
   {
-    id: 'home',
-    link: '?session=home',
+    id: 'index',
+    link: '/',
   },
   {
     id: 'about',
-    link: '?session=about',
+    link: '/about',
   },
   {
     id: 'projects',
-    link: '?session=projects',
+    link: '/projects',
   },
   {
     id: 'skills',
-    link: '?session=skills',
+    link: '/skills',
   },
 ]
 
