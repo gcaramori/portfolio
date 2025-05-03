@@ -28,7 +28,7 @@ const pageVariants = {
   },
 }
 
-const withPageTransition = <P extends object>(
+const withPageTransition = <P extends WithPageTransitionProps>(
   WrappedComponent: React.ComponentType<P>
 ) => {
   const ComponentWithTransition: React.FC<P & WithPageTransitionProps> = (
