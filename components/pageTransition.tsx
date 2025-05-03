@@ -6,6 +6,8 @@ import { usePathname } from 'next/navigation'
 
 interface WithPageTransitionProps {
   children: React.ReactNode
+  transitionKey?: string
+  timeout?: number
 }
 
 const pageVariants = {
