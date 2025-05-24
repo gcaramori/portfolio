@@ -1,30 +1,22 @@
 'use client'
 
 import React from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, Variants } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 
-const pageVariants = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      duration: 1,
-      ease: 'easeOut',
-    },
-  },
-  exit: {
-    opacity: 0,
-    transition: {
-      duration: 1,
-      ease: 'easeIn',
-    },
-  },
+interface MotionVariants {
+  variants: Variants
+  transition?: {
+    duration?: number
+    ease?: string | number | number[]
+    delay?: number
+  }
 }
 
-const withPageTransition = (WrappedComponent: React.ComponentType) => {
+const withPageTransition = (
+  WrappedComponent: React.ComponentType,
+  motionVariants: MotionVariants
+) => {
   const ComponentWithTransition: React.FC = (props) => {
     const pathname = usePathname()
 
@@ -32,7 +24,8 @@ const withPageTransition = (WrappedComponent: React.ComponentType) => {
       <AnimatePresence mode="wait">
         <motion.div
           key={pathname}
-          variants={pageVariants}
+          variants={motionVariants.variants}
+          transition={motionVariants.transition || { duration: 0.3 }}
           initial="initial"
           animate="animate"
           exit="exit"

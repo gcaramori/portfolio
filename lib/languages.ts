@@ -26,7 +26,7 @@ const Languages: LanguagesType = {
       title1: 'OLÁ,',
       title2: 'EU SOU',
       subtitle1:
-        'Especializado em desenvolvimento de aplicações web, com ênfase em Next.js, priorizando performance, escalabilidade e um UX otimizado e agradável.',
+        'Especialista em criar aplicações web modernas com Next.js, focadas em performance excepcional, escalabilidade robusta e experiências de usuário intuitivas e envolventes.',
       subtitle2: 'Desenvolvedor Full Stack',
       button: 'Vamos trabalhar juntos?',
     },
@@ -70,7 +70,7 @@ const Languages: LanguagesType = {
       title1: 'HI,',
       title2: 'I AM',
       subtitle1:
-        'Specialized in web application development, with a focus on Next.js, prioritizing performance, scalability, and an optimized, enjoyable UX.',
+        'Expert in building modern web applications with Next.js, focused on exceptional performance, robust scalability, and intuitive, engaging user experiences.',
       subtitle2: 'Full Stack Developer',
       button: "Let's work together?",
     },
