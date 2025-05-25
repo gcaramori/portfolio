@@ -1,12 +1,12 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, memo } from 'react'
 import * as THREE from 'three'
 import { useGLTF } from '@react-three/drei'
 
 useGLTF.preload('/scene.gltf')
 
-export function ComputerModel() {
+function ComputerModel() {
   const modelRef = useRef<THREE.Group>(null)
 
   const { scene } = useGLTF('/scene.gltf')
@@ -42,7 +42,9 @@ export function ComputerModel() {
 
   return (
     <group ref={modelRef}>
-      <primitive object={scene} scale={[0.0035, 0.0035, 0.0035]} />
+      <primitive object={scene} scale={[0.0045, 0.0045, 0.0045]} />
     </group>
   )
 }
+
+export default memo(ComputerModel)

@@ -4,9 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Tooltip } from '../tooltip'
 
-export function SidebarMedias() {
+export function Social() {
   return (
-    <>
+    <div className="relative flex items-center gap-4">
       <Tooltip content="Github" position="right">
         <Link
           href="https://github.com/gcaramori"
@@ -79,6 +79,6 @@ export function SidebarMedias() {
           </svg>
         </Link>
       </Tooltip>
-    </>
+    </div>
   )
 }

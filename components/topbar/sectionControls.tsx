@@ -13,7 +13,7 @@ interface ISidebarControlProps {
   link: string
 }
 
-export function SidebarControls({ id, link }: ISidebarControlProps) {
+export function SectionControls({ id, link }: ISidebarControlProps) {
   const pathname = usePathname()
 
   const { language } = useContext(LanguageContext)
@@ -35,7 +35,7 @@ export function SidebarControls({ id, link }: ISidebarControlProps) {
 
   return (
     <Tooltip
-      content={Languages[language] && Languages[language].sidebar[id]}
+      content={Languages[language] && Languages[language].topbar[id]}
       position="right"
     >
       <Link
