@@ -3,18 +3,14 @@
 import { useContext } from 'react'
 import { LanguageContext } from '@/contexts/languageContext'
 import Languages from '@/lib/languages'
-import { motion } from 'framer-motion'
+import FadeInBottom from '../fadeInBottom'
 
 export function MainTexts() {
   const { language } = useContext(LanguageContext)
 
   return (
     <div className="container flex h-full flex-col justify-start">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <FadeInBottom>
         <h1 className="block relative font-rounded text-5xl lg:text-4xl 2xl:text-6xl uppercase max-w-[800px] text-right lg:text-left text-[var(--primary-bg)] mb-4 lg:mb-6 2xl:mb-10">
           {Languages[language]?.index?.title1}
 
@@ -46,7 +42,7 @@ export function MainTexts() {
         >
           {Languages[language]?.index?.button}
         </a>
-      </motion.div>
+      </FadeInBottom>
     </div>
   )
 }

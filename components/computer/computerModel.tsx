@@ -4,12 +4,12 @@ import { useRef, memo } from 'react'
 import * as THREE from 'three'
 import { useGLTF } from '@react-three/drei'
 
-useGLTF.preload('/scene.gltf')
+useGLTF.preload('/computer/scene.gltf')
 
 function ComputerModel() {
   const modelRef = useRef<THREE.Group>(null)
 
-  const { scene } = useGLTF('/scene.gltf')
+  const { scene } = useGLTF('/computer/scene.gltf')
 
   scene.rotation.set(0, (3 * Math.PI) / 2, 0)
 
