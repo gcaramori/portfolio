@@ -5,7 +5,7 @@ import { LanguageContext } from '@/contexts/languageContext'
 import Languages from '@/lib/languages'
 import FadeInBottom from '../fadeInBottom'
 
-export function MainTexts() {
+export function IndexContent() {
   const { language } = useContext(LanguageContext)
 
   return (
@@ -38,7 +38,7 @@ export function MainTexts() {
               : 'https://api.whatsapp.com/send?phone=5519982646119&text=Hi!%20I%20checked%20out%20your%20portfolio%20and%20would%20love%20to%20learn%20more%20about%20your%20work%20as%20a%20Full%20Stack%20Developer.%20Can%20we%20chat%3F'
           }
           target="_blank"
-          className="inline-block mt-12 xl:mt-10 p-7 w-full lg:w-auto shadow-md bg-transparent text-[var(--button)] text-lg md:text-xl border-2 border-[var(--button)] font-semibold text-center uppercase transition-colors hover:bg-[var(--button-hover)] hover:border-[var(--button-hover)] hover:text-white"
+          className="font-inter inline-block mt-12 xl:mt-10 p-7 w-full lg:w-auto shadow-md bg-transparent text-[var(--button)] text-lg md:text-xl border-2 border-[var(--button)] font-semibold text-center uppercase transition-colors hover:bg-[var(--button-hover)] hover:border-[var(--button-hover)] hover:text-white"
         >
           {Languages[language]?.index?.button}
         </a>

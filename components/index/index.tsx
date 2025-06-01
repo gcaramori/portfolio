@@ -1,4 +1,4 @@
-import { MainTexts } from './mainTexts'
+import { IndexContent } from './content'
 
 export function Index() {
   return (
@@ -6,7 +6,7 @@ export function Index() {
       id="index"
       className="h-screen w-full flex flex-col lg:flex-row items-start justify-start overflow-y-hidden pt-6 2xl:pt-10"
     >
-      <MainTexts />
+      <IndexContent />
     </section>
   )
 }
