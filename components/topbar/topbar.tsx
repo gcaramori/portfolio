@@ -22,7 +22,7 @@ const CONTROLS = [
 
 export function Topbar() {
   return (
-    <nav className="w-full h-16 z-10 p-2 flex items-center bg-gray-200">
+    <nav className="w-full h-16 z-10 p-2 flex items-center bg-[#9FD3C7]">
       <div className="container flex justify-between items-center">
         <div className="flex justify-center items-center gap-4">
           {CONTROLS.map((control) => (

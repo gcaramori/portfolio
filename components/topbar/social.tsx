@@ -10,7 +10,7 @@ export function Social() {
       <Tooltip content="Github" position="right">
         <Link
           href="https://github.com/gcaramori"
-          className="block relative p-3 rounded-lg transition-colors hover:bg-gray-300"
+          className="block relative p-3 rounded-lg text-[var(--background-gradient)] transition-colors hover:bg-[#3A7CA5]"
           target="__blank"
           rel="noopener noreferrer"
         >
@@ -29,7 +29,7 @@ export function Social() {
       <Tooltip content="Linkedin" position="right">
         <Link
           href="https://linkedin.com/in/gcaramori"
-          className="block relative p-3 rounded-lg transition-colors hover:bg-gray-300"
+          className="block relative p-3 rounded-lg text-[var(--background-gradient)] transition-colors hover:bg-[#3A7CA5]"
           target="__blank"
           rel="noopener noreferrer"
         >
@@ -45,7 +45,7 @@ export function Social() {
       <Tooltip content="Facebook" position="right">
         <Link
           href="https://facebook.com/gcaramori"
-          className="block relative p-3 rounded-lg transition-colors hover:bg-gray-300"
+          className="block relative p-3 rounded-lg text-[var(--background-gradient)] transition-colors hover:bg-[#3A7CA5]"
           target="__blank"
           rel="noopener noreferrer"
         >
@@ -64,7 +64,7 @@ export function Social() {
       <Tooltip content="Instagram" position="right">
         <Link
           href="https://www.instagram.com/gcaramori"
-          className="block relative p-3 rounded-lg transition-colors hover:bg-gray-300"
+          className="block relative p-3 rounded-lg text-[var(--background-gradient)] transition-colors hover:bg-[#3A7CA5]"
           target="__blank"
           rel="noopener noreferrer"
         >

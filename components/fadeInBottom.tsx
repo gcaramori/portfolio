@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const INITIAL = { opacity: 0, y: 30 }
 const ANIMATE = { opacity: 1, y: 0 }
-const TRANSITION = { duration: 0.5 }
+const TRANSITION = { duration: 0.8 }
 
 function FadeInBottom({ children }: { children: ReactNode }) {
   return (

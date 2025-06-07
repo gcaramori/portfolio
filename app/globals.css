@@ -4,15 +4,15 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background-gradient: #e6ecef;
-  --primary-bg: #1a2a44;
+  --background-gradient: #1a2238;
+  --primary-bg: #f5f6fa;
   --secondary-details: #64748b;
-  --button: #0984e3;
-  --button-hover: #0984e3;
-  --error: #ff4c4c;
+  --button: #f4d160;
+  --button-hover: #f4d160;
+  --error: #eb4a4a;
   --success: #3ddc97;
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: #1a2238;
   --foreground: oklch(0.13 0.028 261.692);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
@@ -136,6 +136,12 @@ body {
   position: relative;
   margin: 0 auto;
   max-width: 65vw;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 80vw;
+  }
 }
 
 @layer base {

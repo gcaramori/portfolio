@@ -40,8 +40,8 @@ export function SectionControls({ id, link }: ISidebarControlProps) {
     >
       <Link
         href={link}
-        className={`block relative p-3 rounded-lg transition-colors hover:bg-gray-300 ${
-          isActive ? 'bg-gray-300' : ''
+        className={`block relative p-3 rounded-lg text-[var(--background-gradient)] transition-colors hover:bg-[#3A7CA5] ${
+          isActive ? 'bg-[#3A7CA5]' : ''
         }`}
       >
         {handleControlIcon(id)}

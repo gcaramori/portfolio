@@ -32,13 +32,14 @@ const Languages: LanguagesType = {
     },
     about: {
       text1:
-        'Sou desenvolvedor full stack há 7 anos e apaixonado por tecnologia desde criança. Atualmente, trabalho na Performa.AI, onde comecei como front-end e evoluí para full stack, liderando projetos completos: do design de interfaces à arquitetura de bancos de dados, implementação de regras de negócio e deploy.',
+        'Sou desenvolvedor full stack com 7 anos de experiência, especializado em criar soluções robustas, escaláveis e com excelente experiência para o usuário. Minha trajetória na Performa.AI me permitiu liderar projetos de ponta a ponta, atuando desde o design de interfaces até a arquitetura de bancos de dados, implementação de regras de negócio e deploy em produção',
       text2:
         'Tenho experiência sólida com React, Next.js, Node.js, Nest.js, PHP, Laravel, PostgreSQL, MongoDB, JavaScript (ES5, ES6) e TypeScript.',
       text3:
-        'Além do trabalho em tempo integral, atuo como freelancer, o que me permite encarar diferentes desafios e ampliar meu repertório técnico. Sou formado como técnico em informática e tenho grande interesse por inovação, UX e resolução de problemas.',
+        'Entre os projetos que já desenvolvi, destaco o website de uma academia de jiu-jitsu, que conta com funcionalidades completas de cadastro, login, pagamento e processamento de assinaturas dos alunos utilizando a API da GoCardless.',
       text4:
-        'Se você procura um profissional dedicado, curioso e comprometido com resultados de qualidade, estou pronto para contribuir com o seu projeto. Vamos conversar?',
+        'Se você procura um profissional dedicado, curioso e comprometido com resultados de qualidade, estou pronto para contribuir com o seu projeto.',
+      cta: 'Vamos conversar?',
     },
     projects: {
       text1:
@@ -65,13 +66,14 @@ const Languages: LanguagesType = {
     },
     about: {
       text1:
-        'I am a full stack developer with 7 years of experience and a passion for technology that started early. I currently work at Performa.AI, where I began as a front-end developer and grew into a full stack role, leading projects from start to finish: designing interfaces, architecting databases, implementing business logic, and handling deployment.',
+        'I am a full stack developer with 7 years of experience, specialized in creating robust, scalable solutions with excellent user experience. My journey at Performa.AI has allowed me to lead end-to-end projects, working on everything from interface design to database architecture, business logic implementation, and production deployment.',
       text2:
-        'I have solid experience with React, Next.js, Node.js, Nest.js, PHP, Laravel, PostgreSQL, MongoDB, JavaScript (ES5, ES6), and TypeScript. I’m always looking to explore new technologies and best practices to deliver modern, efficient, and scalable solutions.',
+        'I have solid experience with React, Next.js, Node.js, Nest.js, PHP, Laravel, PostgreSQL, MongoDB, JavaScript (ES5, ES6), and TypeScript.',
       text3:
-        'In addition to my full-time job, I also take on freelance projects, which allows me to face different challenges and expand my technical skills. I have a technical degree in IT and a strong interest in innovation, UX, and problem-solving.',
+        'Among the projects I have developed, I highlight the website for a jiu-jitsu academy, which features complete functionalities for registration, login, payment, and student subscription processing using the GoCardless API.',
       text4:
-        'If you’re looking for a dedicated, curious professional committed to delivering quality results, I’m ready to contribute to your project. Let’s talk?',
+        'If you are looking for a dedicated, curious professional committed to quality results, I am ready to contribute to your project.',
+      cta: "Let's talk?",
     },
     projects: {
       text1:
