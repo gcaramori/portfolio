@@ -32,15 +32,13 @@ const Languages: LanguagesType = {
     },
     about: {
       text1:
-        'Sou um desenvolvedor full stack de 27 anos, moro em Nova Odessa - São Paulo, com 7 anos de experiência profissional construindo aplicações robustas, escaláveis e com interfaces amigáveis para os usuários. Minha jornada na tecnologia começou cedo: meu pai comprou nosso primeiro computador quando eu tinha apenas 3 anos, e desde então sou fascinado por tecnologia, computadores e games.',
+        'Sou desenvolvedor full stack há 7 anos e apaixonado por tecnologia desde criança. Atualmente, trabalho na Performa.AI, onde comecei como front-end e evoluí para full stack, liderando projetos completos: do design de interfaces à arquitetura de bancos de dados, implementação de regras de negócio e deploy.',
       text2:
-        'Atualmente, trabalho em tempo integral na Performa.AI, onde comecei como desenvolvedor front-end e evoluí para o full stack. Ao longo dos anos, tive a oportunidade de liderar projetos do início ao fim — desenhando interfaces, arquitetando bancos de dados, implementando regras de negócio e cuidando do deploy. Também gosto de pegar projetos como freelancer, o que me permite encarar novos desafios e continuar aprendendo.',
+        'Tenho experiência sólida com React, Next.js, Node.js, Nest.js, PHP, Laravel, PostgreSQL, MongoDB, JavaScript (ES5, ES6) e TypeScript.',
       text3:
-        'Meu stack principal inclui React, Next.js, Node.js, Nest.js, PHP, Laravel, PostgreSQL, MongoDB, JavaScript (ES5, ES6) e TypeScript. Estou sempre disposto a explorar novas tecnologias e melhores práticas, pois acredito que o aprendizado contínuo é essencial para entregar ótimas soluções.',
+        'Além do trabalho em tempo integral, atuo como freelancer, o que me permite encarar diferentes desafios e ampliar meu repertório técnico. Sou formado como técnico em informática e tenho grande interesse por inovação, UX e resolução de problemas.',
       text4:
-        'Me formei como técnico em informática em 2015 e, desde então, minha paixão por programação e resolução de problemas só aumentou. Quando não estou codando, provavelmente estou lendo mangá ou explorando as últimas tendências em tecnologia.',
-      text5:
-        'Se você procura alguém dedicado, curioso e realmente apaixonado por tecnologia, vamos conversar!',
+        'Se você procura um profissional dedicado, curioso e comprometido com resultados de qualidade, estou pronto para contribuir com o seu projeto. Vamos conversar?',
     },
     projects: {
       text1:
@@ -67,15 +65,13 @@ const Languages: LanguagesType = {
     },
     about: {
       text1:
-        'I’m a 27-year-old full stack developer, based in Nova Odessa - Brasil, with 7 years of professional experience building robust, scalable, and user-friendly applications. My journey in tech started early: my father bought our first computer when I was just 3 years old, and I’ve been fascinated by technology, computers, and gaming ever since.',
+        'I am a full stack developer with 7 years of experience and a passion for technology that started early. I currently work at Performa.AI, where I began as a front-end developer and grew into a full stack role, leading projects from start to finish: designing interfaces, architecting databases, implementing business logic, and handling deployment.',
       text2:
-        'I currently work full-time at Performa.AI, where I began as a front-end developer and grew into a full stack role. Over the years, I’ve had the opportunity to lead projects from start to finish—designing interfaces, architecting databases, implementing business logic, and handling deployment.',
+        'I have solid experience with React, Next.js, Node.js, Nest.js, PHP, Laravel, PostgreSQL, MongoDB, JavaScript (ES5, ES6), and TypeScript. I’m always looking to explore new technologies and best practices to deliver modern, efficient, and scalable solutions.',
       text3:
-        'My main tech stack includes React, Next.js, Node.js, Nest.js, PHP, Laravel, PostgreSQL, MongoDB, JavaScript (ES5, ES6), and TypeScript. I’m always eager to dive into new technologies and best practices, and I believe that continuous learning is key to delivering great solutions.',
+        'In addition to my full-time job, I also take on freelance projects, which allows me to face different challenges and expand my technical skills. I have a technical degree in IT and a strong interest in innovation, UX, and problem-solving.',
       text4:
-        'I graduated as an IT technician in 2015, and since then, my passion for coding and problem-solving has only grown. When I’m not coding, you’ll probably find me reading manga or exploring the latest trends in tech.',
-      text5:
-        'If you’re looking for someone who’s dedicated, curious, and genuinely passionate about technology, let’s connect!',
+        'If you’re looking for a dedicated, curious professional committed to delivering quality results, I’m ready to contribute to your project. Let’s talk?',
     },
     projects: {
       text1:
