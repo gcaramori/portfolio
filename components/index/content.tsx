@@ -12,23 +12,23 @@ export function IndexContent() {
   return (
     <div className="container flex h-full flex-col justify-start">
       <FadeInBottom>
-        <h1 className="block relative font-rounded text-5xl lg:text-4xl 2xl:text-6xl uppercase max-w-[800px] text-right lg:text-left text-[var(--primary-bg)] mb-4 lg:mb-6 2xl:mb-10">
+        <h1 className="block relative font-rounded text-5xl lg:text-4xl 2xl:text-6xl uppercase max-w-[800px] text-right lg:text-left text-[var(--primary-bg)] mb-4 lg:mb-6 2xl:mb-10 drop-shadow-sm">
           {Languages[language]?.index?.title1}
 
-          <span className="block md:inline-block">
+          <span className="block md:inline-block drop-shadow-sm">
             {Languages[language]?.index?.title2}
           </span>
 
-          <span className="block whitespace-nowrap font-bold ml-2">
-            Guilherme Caramori
+          <span className="block whitespace-nowrap font-bold ml-2 drop-shadow-sm">
+            Guilherme Caramori!
           </span>
         </h1>
 
-        <p className="block text-xl sm:text-2xl text-right lg:text-left text-gray-400 font-inter">
+        <p className="block text-xl sm:text-2xl text-right lg:text-left text-gray-300 font-inter drop-shadow-sm">
           {Languages[language]?.index?.subtitle2} / Freelancer Sênior
         </p>
 
-        <p className="block text-lg sm:text-xl text-right lg:text-left text-[var(--primary-bg)] mt-5 font-inter">
+        <p className="block text-lg sm:text-xl text-right lg:text-left text-[var(--primary-bg)] mt-5 font-inter drop-shadow-sm">
           {Languages[language]?.index?.subtitle1}
         </p>
 
@@ -39,7 +39,7 @@ export function IndexContent() {
               : 'https://api.whatsapp.com/send?phone=5519982646119&text=Hi!%20I%20checked%20out%20your%20portfolio%20and%20would%20love%20to%20learn%20more%20about%20your%20work%20as%20a%20Full%20Stack%20Developer.%20Can%20we%20chat%3F'
           }
           target="_blank"
-          className="font-inter inline-block mt-12 xl:mt-10 p-7 w-full lg:w-auto shadow-md bg-transparent text-[var(--button)] text-lg md:text-xl border-2 border-[var(--button)] font-semibold text-center uppercase transition-colors hover:bg-[var(--button-hover)] hover:border-[var(--button-hover)] hover:text-white"
+          className="font-inter inline-block mt-12 xl:mt-10 p-7 w-full lg:w-auto shadow-md bg-transparent text-[var(--button)] text-lg md:text-xl border-2 border-[var(--button)] font-semibold text-center uppercase drop-shadow-sm transition-colors hover:bg-[var(--button-hover)] hover:border-[var(--button-hover)] hover:text-white"
         >
           {Languages[language]?.index?.button}
         </Link>

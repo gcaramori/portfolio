@@ -36,12 +36,12 @@ export function SectionControls({ id, link }: ISidebarControlProps) {
   return (
     <Tooltip
       content={Languages[language] && Languages[language].topbar[id]}
-      position="right"
+      position="bottom"
     >
       <Link
         href={link}
-        className={`block relative p-3 rounded-lg text-[var(--background-gradient)] transition-colors hover:bg-[#3A7CA5] ${
-          isActive ? 'bg-[#3A7CA5]' : ''
+        className={`block relative p-3 rounded-lg text-[var(--topbar-icons)] transition-colors hover:bg-[var(--background)] ${
+          isActive ? 'bg-[var(--background)]' : ''
         }`}
       >
         {handleControlIcon(id)}

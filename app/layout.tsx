@@ -29,7 +29,7 @@ export default async function RootLayout({
     <LanguageProvider>
       <html lang="en">
         <body
-          className={`relative flex flex-col justify-center items-start ${inter.variable} bg-[var(--background)] antialiased`}
+          className={`relative flex flex-col justify-center items-start ${inter.variable} bg-linear-to-tr from-[var(--background)] to-[var(--background-gradient)] antialiased`}
         >
           <Topbar />
 

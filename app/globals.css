@@ -4,15 +4,17 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background-gradient: #1a2238;
-  --primary-bg: #f5f6fa;
+  --background-gradient: rgb(72, 61, 155);
+  --primary-bg: rgb(112, 117, 128);
   --secondary-details: #64748b;
-  --button: #f4d160;
-  --button-hover: #f4d160;
+  --button: #e66767;
+  --button-hover: #e15f41;
   --error: #eb4a4a;
   --success: #3ddc97;
+  --topbar: #546de5;
+  --topbar-icons: #f1f5f9;
   --radius: 0.625rem;
-  --background: #1a2238;
+  --background: #303952;
   --foreground: oklch(0.13 0.028 261.692);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
@@ -35,14 +37,6 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --topbar: oklch(0.985 0.002 247.839);
-  --topbar-foreground: oklch(0.13 0.028 261.692);
-  --topbar-primary: oklch(0.21 0.034 264.665);
-  --topbar-primary-foreground: oklch(0.985 0.002 247.839);
-  --topbar-accent: oklch(0.967 0.003 264.542);
-  --topbar-accent-foreground: oklch(0.21 0.034 264.665);
-  --topbar-border: oklch(0.928 0.006 264.531);
-  --topbar-ring: oklch(0.707 0.022 261.325);
 }
 
 @theme {

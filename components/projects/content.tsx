@@ -21,8 +21,8 @@ export function ProjectsContent() {
             <Image
               src="/projects/kylemore.png"
               alt="jsbjjkylemore"
-              width={400}
-              height={400}
+              width={300}
+              height={300}
             />
           </div>
 
@@ -30,8 +30,8 @@ export function ProjectsContent() {
             <Image
               src="/projects/criptobeer.png"
               alt="criptobeer"
-              width={400}
-              height={400}
+              width={300}
+              height={300}
             />
           </div>
 
@@ -39,8 +39,8 @@ export function ProjectsContent() {
             <Image
               src="/projects/unit5.png"
               alt="unit5gym"
-              width={400}
-              height={400}
+              width={300}
+              height={300}
             />
           </div>
 
@@ -48,8 +48,8 @@ export function ProjectsContent() {
             <Image
               src="/projects/performa.png"
               alt="performapanel"
-              width={400}
-              height={400}
+              width={300}
+              height={300}
             />
           </div>
         </div>

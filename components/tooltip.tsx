@@ -34,7 +34,7 @@ export function Tooltip({
       {children}
 
       <div
-        className={`block whitespace-nowrap absolute z-10 bg-[var(--background-gradient)] text-[#F1F5F9] text-sm px-3 py-1 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${positionStyles[position]}`}
+        className={`block whitespace-nowrap absolute z-10 bg-[var(--foreground)] text-[#F1F5F9] text-sm px-3 py-1 rounded-sm shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none ${positionStyles[position]}`}
       >
         {content}
         <span className={`absolute border-solid ${caretStyles[position]}`} />

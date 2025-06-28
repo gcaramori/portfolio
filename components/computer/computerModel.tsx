@@ -6,6 +6,8 @@ import { useGLTF } from '@react-three/drei'
 
 useGLTF.preload('/computer/scene.gltf')
 
+const SCALE = 0.004
+
 function ComputerModel() {
   const modelRef = useRef<THREE.Group>(null)
 
@@ -42,7 +44,7 @@ function ComputerModel() {
 
   return (
     <group ref={modelRef}>
-      <primitive object={scene} scale={[0.0045, 0.0045, 0.0045]} />
+      <primitive object={scene} scale={[SCALE, SCALE, SCALE]} />
     </group>
   )
 }

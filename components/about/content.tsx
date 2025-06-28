@@ -12,7 +12,7 @@ export function AboutContent() {
   return (
     <div className="container flex h-full flex-col justify-start relative py-6">
       <FadeInBottom>
-        <div className="flex flex-col justify-start gap-6 2xl:gap-8 relative text-md 2xl:text-2xl">
+        <div className="flex flex-col justify-start gap-6 2xl:gap-8 relative text-md xl:text-lg 2xl:text-2xl">
           <p className="block relative text-[var(--primary-bg)] font-inter drop-shadow-sm">
             {Languages[language]?.about?.text1}
           </p>
@@ -35,7 +35,7 @@ export function AboutContent() {
                   : 'https://api.whatsapp.com/send?phone=5519982646119&text=Hi!%20I%20checked%20out%20your%20portfolio%20and%20would%20love%20to%20learn%20more%20about%20your%20work%20as%20a%20Full%20Stack%20Developer.%20Can%20we%20chat%3F'
               }
               target="_blank"
-              className="inline-block ml-1 drop-shadow-xs font-bold transition-opacity hover:opacity-60"
+              className="inline-block ml-1 drop-shadow-xs text-slate-400 font-bold transition-opacity hover:opacity-60"
             >
               {Languages[language]?.about.cta}
             </Link>
