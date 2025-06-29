@@ -12,7 +12,7 @@ export function ProjectsContent() {
   return (
     <div className="container flex h-full flex-col justify-start relative py-6">
       <FadeInBottom>
-        <p className="block relative text-gray-500 font-inter drop-shadow-sm text-xl mb-8">
+        <p className="block relative text-gray-500 font-inter drop-shadow-sm text-md xl:text-lg 2xl:text-2xl mb-8">
           {Languages[language]?.projects?.text1}
         </p>
 
@@ -23,6 +23,7 @@ export function ProjectsContent() {
               alt="jsbjjkylemore"
               width={300}
               height={300}
+              priority={true}
             />
           </div>
 
@@ -32,6 +33,7 @@ export function ProjectsContent() {
               alt="criptobeer"
               width={300}
               height={300}
+              priority={true}
             />
           </div>
 
@@ -41,6 +43,7 @@ export function ProjectsContent() {
               alt="unit5gym"
               width={300}
               height={300}
+              priority={true}
             />
           </div>
 
@@ -50,6 +53,7 @@ export function ProjectsContent() {
               alt="performapanel"
               width={300}
               height={300}
+              priority={true}
             />
           </div>
         </div>

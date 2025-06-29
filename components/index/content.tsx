@@ -19,7 +19,7 @@ export function IndexContent() {
             {Languages[language]?.index?.title2}
           </span>
 
-          <span className="block whitespace-nowrap font-bold ml-2 drop-shadow-sm">
+          <span className="block whitespace-nowrap font-bold 2xl:ml-2 drop-shadow-sm">
             Guilherme Caramori!
           </span>
         </h1>

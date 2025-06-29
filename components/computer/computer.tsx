@@ -8,7 +8,7 @@ import { Spinner } from '../spinner'
 
 export function Computer() {
   return (
-    <div className="block relative w-96 2xl:w-[500px] h-96 2xl:h-[500px] overflow-hidden mx-auto">
+    <div className="block relative w-80 2xl:w-[500px] h-80 2xl:h-[500px] overflow-hidden mx-auto">
       <Canvas
         shadows
         dpr={[1, 2]}
