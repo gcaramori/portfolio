@@ -31,7 +31,10 @@ export function SectionControls({ id, link }: ISidebarControlProps) {
     }
   }
 
-  const isActive = pathname === link || (pathname === '/' && id === 'index')
+  const isActive =
+    pathname === link ||
+    (link !== '/' && pathname.indexOf(link) > -1) ||
+    (pathname === '/' && id === 'index')
 
   return (
     <Tooltip

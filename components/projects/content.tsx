@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import Image from 'next/image'
 import { useContext } from 'react'
 import { LanguageContext } from '@/contexts/languageContext'
@@ -21,26 +22,29 @@ export function ProjectsContent() {
         </p>
 
         <div className="flex flex-wrap justify-between items-start gap-10 relative">
-          <div className="flex flex-col justify-start items-start relative">
+          <Link
+            href="/projects/jsbjjkylemore"
+            className="flex flex-col justify-start items-start relative"
+          >
             <Image
               src={jsbjjkylemore}
               alt="jsbjjkylemore"
               width={300}
-              height={300}
+              height={150}
               placeholder="blur"
               style={{
                 maxWidth: '100%',
                 height: 'auto',
               }}
             />
-          </div>
+          </Link>
 
           <div className="flex flex-col justify-start items-start relative">
             <Image
               src={criptobeer}
               alt="criptobeer"
               width={300}
-              height={300}
+              height={150}
               placeholder="blur"
               style={{
                 maxWidth: '100%',
@@ -54,7 +58,7 @@ export function ProjectsContent() {
               src={unit5}
               alt="unit5gym"
               width={300}
-              height={300}
+              height={150}
               placeholder="blur"
               style={{
                 maxWidth: '100%',
@@ -68,7 +72,7 @@ export function ProjectsContent() {
               src={performapanel}
               alt="performapanel"
               width={300}
-              height={300}
+              height={150}
               placeholder="blur"
               style={{
                 maxWidth: '100%',

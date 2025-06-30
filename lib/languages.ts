@@ -7,6 +7,7 @@ type LanguageStructure = {
   index: GenericSection
   about: GenericSection
   projects: GenericSection
+  jsbjjkylemore: GenericSection
   skills: GenericSection
 }
 
@@ -45,6 +46,10 @@ const Languages: LanguagesType = {
       text1:
         'Explore alguns dos projetos que desenvolvi ao longo da minha carreira. Clique em qualquer projeto para ver mais detalhes, tecnologias utilizadas e meu papel em cada um deles.',
     },
+    jsbjjkylemore: {
+      text1:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies orci quis vestibulum scelerisque. Cras et finibus nunc. Etiam tincidunt lacinia erat. Maecenas nulla neque, dapibus eu vehicula sit amet, pulvinar nec neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra ex sapien, vitae efficitur lacus interdum nec. Quisque vitae urna tortor. Integer ullamcorper justo ut sapien scelerisque luctus et sed sem. Morbi nunc felis, consequat non molestie in, tempor et risus. Aliquam tempus augue imperdiet elit sodales iaculis. Nunc ex mi, venenatis eget lectus et, hendrerit lacinia metus.',
+    },
     skills: {
       subtitle: 'As ferramentas que eu domino.',
     },
@@ -78,6 +83,10 @@ const Languages: LanguagesType = {
     projects: {
       text1:
         'Explore some of the projects I’ve developed throughout my career. Click on any project to see more details, the technologies used, and my role in each one.',
+    },
+    jsbjjkylemore: {
+      text1:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies orci quis vestibulum scelerisque. Cras et finibus nunc. Etiam tincidunt lacinia erat. Maecenas nulla neque, dapibus eu vehicula sit amet, pulvinar nec neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra ex sapien, vitae efficitur lacus interdum nec. Quisque vitae urna tortor. Integer ullamcorper justo ut sapien scelerisque luctus et sed sem. Morbi nunc felis, consequat non molestie in, tempor et risus. Aliquam tempus augue imperdiet elit sodales iaculis. Nunc ex mi, venenatis eget lectus et, hendrerit lacinia metus.',
     },
     skills: {
       subtitle: 'The tools i master.',
