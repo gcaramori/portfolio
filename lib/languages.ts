@@ -7,7 +7,10 @@ type LanguageStructure = {
   index: GenericSection
   about: GenericSection
   projects: GenericSection
-  jsbjjkylemore: GenericSection
+  jsbjjkylemore?: GenericSection
+  criptobeer?: GenericSection
+  unit5?: GenericSection
+  performapanel?: GenericSection
   skills: GenericSection
 }
 
@@ -44,11 +47,22 @@ const Languages: LanguagesType = {
     },
     projects: {
       text1:
-        'Explore alguns dos projetos que desenvolvi ao longo da minha carreira. Clique em qualquer projeto para ver mais detalhes, tecnologias utilizadas e meu papel em cada um deles.',
+        'Explore alguns dos projetos que desenvolvi ao longo da minha carreira. Clique em qualquer projeto para ver mais detalhes.',
     },
     jsbjjkylemore: {
+      title1: 'Detalhes',
       text1:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies orci quis vestibulum scelerisque. Cras et finibus nunc. Etiam tincidunt lacinia erat. Maecenas nulla neque, dapibus eu vehicula sit amet, pulvinar nec neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra ex sapien, vitae efficitur lacus interdum nec. Quisque vitae urna tortor. Integer ullamcorper justo ut sapien scelerisque luctus et sed sem. Morbi nunc felis, consequat non molestie in, tempor et risus. Aliquam tempus augue imperdiet elit sodales iaculis. Nunc ex mi, venenatis eget lectus et, hendrerit lacinia metus.',
+        'Criei todo o design original e desenvolvi o site completo com atenção total aos detalhes visuais (pixel perfect). Implementei páginas totalmente responsivas, com integrações às APIs do Google (Maps e Calendário), além de um sistema automatizado de pagamentos recorrentes via GoCardless. O projeto foi pensado para otimizar o fluxo operacional da academia e simplificar o processo de inscrição de novos alunos, reduzindo tarefas manuais e aumentando a eficiência.',
+      title2: 'Tecnologias',
+      text2:
+        'Next.js, TypeScript, Tailwind, PostgreSQL, Prisma ORM, Framer-Motion, API Google e API GoCardless.',
+    },
+    criptobeer: {
+      title1: 'Detalhes',
+      text1:
+        'Fui responsável por todo o processo — desde o design no Figma até a implementação final, garantindo fidelidade total ao layout (pixel perfect) com abordagem figma-to-code. Destaque para a animação interativa no estilo Matrix, onde hashs de Bitcoin caem dinamicamente ao fundo. Ao interagir com o cursor, cada hash revela informações sobre seu significado, proporcionando uma experiência imersiva e educativa.',
+      title2: 'Tecnologias',
+      text2: 'React, Tailwind, Framer-Motion',
     },
     skills: {
       subtitle: 'As ferramentas que eu domino.',
@@ -82,11 +96,22 @@ const Languages: LanguagesType = {
     },
     projects: {
       text1:
-        'Explore some of the projects I’ve developed throughout my career. Click on any project to see more details, the technologies used, and my role in each one.',
+        'Explore some of the projects I’ve developed throughout my career. Click on any project to see more details.',
     },
     jsbjjkylemore: {
+      title1: 'Details',
       text1:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultricies orci quis vestibulum scelerisque. Cras et finibus nunc. Etiam tincidunt lacinia erat. Maecenas nulla neque, dapibus eu vehicula sit amet, pulvinar nec neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra ex sapien, vitae efficitur lacus interdum nec. Quisque vitae urna tortor. Integer ullamcorper justo ut sapien scelerisque luctus et sed sem. Morbi nunc felis, consequat non molestie in, tempor et risus. Aliquam tempus augue imperdiet elit sodales iaculis. Nunc ex mi, venenatis eget lectus et, hendrerit lacinia metus.',
+        'I created the original design and implemented the entire site with pixel perfect attention to visual details. The website features fully responsive pages, integrations with Google APIs (Maps and Calendar), and an automated recurring payment system using GoCardless. The project was designed to streamline the gym’s operational workflow and simplify the enrollment process for new students, reducing manual steps and increasing overall efficiency.',
+      title2: 'Tecnologias',
+      text2:
+        'Next.js, TypeScript, Tailwind, PostgreSQL, Prisma ORM, Framer-Motion, API Google e API GoCardless.',
+    },
+    criptobeer: {
+      title1: 'Details',
+      text1:
+        'I was responsible for the entire process — from the design in Figma to the final implementation — ensuring full layout accuracy (pixel perfect) using a figma-to-code approach. A standout feature is the interactive Matrix-style animation, where Bitcoin hashes continuously fall in the background. When hovered, each hash reveals meaningful information, offering users an immersive and informative experience.',
+      title2: 'Tecnologias',
+      text2: 'React, Tailwind, Framer-Motion',
     },
     skills: {
       subtitle: 'The tools i master.',
