@@ -1,6 +1,12 @@
 'use client'
 
-import { createContext, useState, useEffect, ReactNode } from 'react'
+import {
+  createContext,
+  useCallback,
+  useEffect,
+  useMemo,
+  type ReactNode,
+} from 'react'
 import { usePathname } from 'next/navigation'
 import { locales, type Locale } from '@/lib/languages'
 import { defaultLocale, getLocaleFromPath } from '@/lib/locale'
@@ -29,23 +35,20 @@ export const LanguageProvider = ({
   initialLanguage = defaultLocale,
 }: LanguageProviderProps) => {
   const pathname = usePathname()
-  const [language, setLanguage] = useState<Locale>(initialLanguage)
+  const pathLanguage = getLocaleFromPath(pathname)
+  const language = isLocale(pathLanguage) ? pathLanguage : initialLanguage
+  const setLanguage = useCallback((lang: Locale) => {
+    localStorage.setItem('language', lang)
+  }, [])
 
   useEffect(() => {
-    const pathLanguage = getLocaleFromPath(pathname)
-
-    if (isLocale(pathLanguage)) {
-      setLanguage(pathLanguage)
-    }
-  }, [pathname])
-
-  useEffect(() => {
-    if (language) {
-      localStorage.setItem('language', language)
-    }
+    localStorage.setItem('language', language)
   }, [language])
 
-  const value: LanguageContextValue = { language, setLanguage }
+  const value = useMemo(
+    () => ({ language, setLanguage }),
+    [language, setLanguage],
+  )
 
   return (
     <LanguageContext.Provider value={value}>
