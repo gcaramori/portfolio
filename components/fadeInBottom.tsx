@@ -1,20 +1,29 @@
 'use client'
 
-import React, { ReactNode, memo } from 'react'
+import type { ReactNode } from 'react'
+import { memo } from 'react'
 import { motion } from 'framer-motion'
 
-const INITIAL = { opacity: 0, y: 30 }
-const ANIMATE = { opacity: 1, y: 0 }
-const EXIT = { y: 30 }
-const TRANSITION = { duration: 0.9, ease: 'easeOut' }
+type FadeInBottomProps = {
+  children: ReactNode
+  className?: string
+  delay?: number
+  distance?: number
+}
 
-function FadeInBottom({ children }: { children: ReactNode }) {
+function FadeInBottom({
+  children,
+  className,
+  delay = 0,
+  distance = 28,
+}: FadeInBottomProps) {
   return (
     <motion.div
-      initial={INITIAL}
-      animate={ANIMATE}
-      transition={TRANSITION}
-      exit={EXIT}
+      className={className}
+      initial={{ opacity: 0, y: distance }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

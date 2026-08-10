@@ -1,31 +1,46 @@
 'use client'
 
 import { createContext, useState, useEffect, ReactNode } from 'react'
+import { usePathname } from 'next/navigation'
+import { locales, type Locale } from '@/lib/languages'
+import { defaultLocale, getLocaleFromPath } from '@/lib/locale'
 
 type LanguageContextValue = {
-  language: string
-  setLanguage: (lang: string) => void
+  language: Locale
+  setLanguage: (lang: Locale) => void
 }
 
 export const LanguageContext = createContext<LanguageContextValue>({
-  language: 'pt-BR',
+  language: defaultLocale,
   setLanguage: () => null,
 })
 
 type LanguageProviderProps = {
   children: ReactNode
+  initialLanguage?: Locale
 }
 
-export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguage] = useState<string>(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('language') || 'pt-BR'
-    }
-    return 'pt-BR'
-  })
+function isLocale(value: string): value is Locale {
+  return locales.includes(value as Locale)
+}
+
+export const LanguageProvider = ({
+  children,
+  initialLanguage = defaultLocale,
+}: LanguageProviderProps) => {
+  const pathname = usePathname()
+  const [language, setLanguage] = useState<Locale>(initialLanguage)
 
   useEffect(() => {
-    if (language && typeof window !== 'undefined') {
+    const pathLanguage = getLocaleFromPath(pathname)
+
+    if (isLocale(pathLanguage)) {
+      setLanguage(pathLanguage)
+    }
+  }, [pathname])
+
+  useEffect(() => {
+    if (language) {
       localStorage.setItem('language', language)
     }
   }, [language])

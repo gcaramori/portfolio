@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { ProjectDetails } from '@/components/projects/projectDetails'
-import { projectOrder } from '@/lib/projects'
 import type { ProjectSlug } from '@/lib/languages'
+import { projectOrder } from '@/lib/projects'
 import { getProjectMetadata } from '@/lib/seo'
 
 export function generateStaticParams() {
@@ -19,10 +19,10 @@ export async function generateMetadata({
     return {}
   }
 
-  return getProjectMetadata('pt-BR', slug as ProjectSlug)
+  return getProjectMetadata('en', slug as ProjectSlug)
 }
 
-export default async function ProjectPage({
+export default async function EnglishProjectPage({
   params,
 }: {
   params: Promise<{ slug: string }>

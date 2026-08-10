@@ -2,47 +2,314 @@
 
 import Link from 'next/link'
 import { useContext } from 'react'
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Dot,
+  Github,
+  Linkedin,
+  MessageCircle,
+  MoveRight,
+} from 'lucide-react'
+import FadeInBottom from '@/components/fadeInBottom'
 import { LanguageContext } from '@/contexts/languageContext'
-import Languages from '@/lib/languages'
-import FadeInBottom from '../fadeInBottom'
+import siteContent, { projectCases } from '@/lib/languages'
+import { getWhatsappHref } from '@/lib/contact'
+import { getLocalizedPath } from '@/lib/locale'
+import { projectMeta } from '@/lib/projects'
+import Image from 'next/image'
 
 export function IndexContent() {
   const { language } = useContext(LanguageContext)
+  const content = siteContent[language].home
+  const projectLabels = siteContent[language].projects
+  const whatsappHref = getWhatsappHref(language)
+  const contactLinks = [
+    {
+      href: whatsappHref,
+      label: content.hiring.links.whatsapp,
+      icon: MessageCircle,
+    },
+    {
+      href: 'https://linkedin.com/in/gcaramori',
+      label: 'LinkedIn',
+      icon: Linkedin,
+    },
+    {
+      href: 'https://github.com/gcaramori',
+      label: 'GitHub',
+      icon: Github,
+    },
+  ]
 
   return (
-    <div className="container flex h-full flex-col justify-start">
+    <div className="container py-10 md:py-14">
       <FadeInBottom>
-        <h1 className="block relative font-rounded text-5xl lg:text-4xl 2xl:text-6xl uppercase max-w-[800px] text-right lg:text-left text-[var(--primary-bg)] mb-4 lg:mb-6 2xl:mb-10 drop-shadow-sm">
-          {Languages[language]?.index?.title1}
+        <section className="grid gap-10 border-b border-[var(--border)] pb-12 lg:grid-cols-[1.45fr_0.9fr] lg:gap-16 lg:pb-16">
+          <div>
+            <p className="section-label">{content.eyebrow}</p>
 
-          <span className="block md:inline-block drop-shadow-sm">
-            {Languages[language]?.index?.title2}
-          </span>
+            <h1 className="mt-6 max-w-5xl font-display text-4xl leading-[1.05] font-semibold tracking-[-0.06em] text-[var(--foreground)] sm:text-5xl md:text-6xl lg:text-[4rem]">
+              {content.title}
+            </h1>
 
-          <span className="block whitespace-nowrap font-bold 2xl:ml-2 drop-shadow-sm">
-            Guilherme Caramori!
-          </span>
-        </h1>
+            <p className="mt-8 max-w-2xl text-xl leading-9 text-[var(--foreground)]">
+              {content.intro}
+            </p>
 
-        <p className="block text-xl sm:text-2xl text-right lg:text-left text-gray-300 font-inter drop-shadow-sm">
-          {Languages[language]?.index?.subtitle2} / Freelancer Sênior
-        </p>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--muted-foreground)] md:text-lg">
+              {content.description}
+            </p>
 
-        <p className="block text-lg sm:text-xl text-right lg:text-left text-[var(--primary-bg)] mt-5 font-inter drop-shadow-sm">
-          {Languages[language]?.index?.subtitle1}
-        </p>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+              <Link
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="primary-link"
+              >
+                {content.primaryCta}
+                <ArrowRight className="h-4 w-4" />
+              </Link>
 
-        <Link
-          href={
-            language === 'pt-BR'
-              ? 'https://api.whatsapp.com/send?phone=5519982646119&text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho%20como%20desenvolvedor%20Full%20Stack.%20Podemos%20conversar%3F'
-              : 'https://api.whatsapp.com/send?phone=5519982646119&text=Hi!%20I%20checked%20out%20your%20portfolio%20and%20would%20love%20to%20learn%20more%20about%20your%20work%20as%20a%20Full%20Stack%20Developer.%20Can%20we%20chat%3F'
-          }
-          target="_blank"
-          className="font-inter inline-block mt-12 xl:mt-10 p-7 w-full lg:w-auto shadow-md bg-transparent text-[var(--button)] text-lg md:text-xl border-2 border-[var(--button)] font-semibold text-center uppercase drop-shadow-sm transition-colors hover:bg-[var(--button-hover)] hover:border-[var(--button-hover)] hover:text-white"
-        >
-          {Languages[language]?.index?.button}
-        </Link>
+              <Link
+                href={getLocalizedPath('/projects', language)}
+                className="secondary-link"
+              >
+                {content.secondaryCta}
+                <MoveRight className="h-4 w-4" />
+              </Link>
+            </div>
+
+            <p className="mt-6 max-w-xl text-sm leading-7 text-[var(--muted-foreground)]">
+              {content.note}
+            </p>
+          </div>
+
+          <div className="grid gap-4 self-start">
+            {content.stats.map((stat) => (
+              <article key={stat.label} className="editorial-card">
+                <p className="font-display text-4xl font-semibold tracking-[-0.05em] text-[var(--foreground)] md:text-5xl">
+                  {stat.value}
+                </p>
+                <p className="mt-2 max-w-[14rem] text-sm leading-6 text-[var(--muted-foreground)]">
+                  {stat.label}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+      </FadeInBottom>
+
+      <FadeInBottom delay={0.05}>
+        <section className="grid gap-10 border-b border-[var(--border)] py-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:py-16">
+          <div>
+            <p className="section-label">{content.manifestoTitle}</p>
+          </div>
+
+          <div className="max-w-3xl">
+            <p className="font-display text-3xl leading-tight tracking-[-0.05em] text-[var(--foreground)] md:text-5xl">
+              {content.manifestoLead}
+            </p>
+
+            <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--muted-foreground)] md:text-lg">
+              {content.manifestoBody}
+            </p>
+
+            <ul className="mt-8 grid gap-4 border-t border-[var(--border)] pt-6 md:grid-cols-3">
+              {content.manifestoEvidence.map((item) => (
+                <li
+                  key={item}
+                  className="flex gap-3 text-sm leading-6 text-[var(--foreground)]"
+                >
+                  <Dot className="mt-0.5 h-5 w-5 shrink-0 text-[var(--accent)]" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </FadeInBottom>
+
+      <FadeInBottom delay={0.08}>
+        <section className="grid gap-10 border-b border-[var(--border)] py-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:py-16">
+          <div>
+            <p className="section-label">{content.capabilitiesTitle}</p>
+            <p className="mt-4 max-w-md text-base leading-8 text-[var(--muted-foreground)]">
+              {content.capabilitiesIntro}
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {content.capabilities.map((item) => (
+              <article
+                key={item.title}
+                className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 transition-transform hover:-translate-y-0.5 md:p-8"
+              >
+                <div className="flex items-start gap-3">
+                  <Dot className="mt-1 h-7 w-7 shrink-0 text-[var(--accent)]" />
+
+                  <div>
+                    <h2 className="font-display text-2xl leading-tight tracking-[-0.04em] text-[var(--foreground)] md:text-3xl">
+                      {item.title}
+                    </h2>
+                    <p className="mt-3 max-w-2xl text-base leading-8 text-[var(--muted-foreground)]">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </FadeInBottom>
+
+      <FadeInBottom delay={0.12}>
+        <section className="py-12 lg:py-16">
+          <div className="border-b border-[var(--border)] pb-8">
+            <div>
+              <p className="section-label">{content.featuredTitle}</p>
+            </div>
+
+            <p className="mt-4 max-w-3xl text-base leading-8 text-[var(--muted-foreground)]">
+              {content.featuredIntro}
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {content.featuredProjects.map((project) => {
+              const details = projectCases[language][project.slug]
+              const meta = projectMeta[project.slug]
+
+              return (
+                <Link
+                  key={project.slug}
+                  href={getLocalizedPath(`/projects/${project.slug}`, language)}
+                  className="group overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] transition-transform hover:-translate-y-1"
+                >
+                  <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--border)]">
+                    <Image
+                      src={meta.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    />
+                  </div>
+
+                  <div className="p-6 md:p-7">
+                    <p className="section-label">{project.kicker}</p>
+                    <h2 className="mt-4 font-display text-3xl leading-tight tracking-[-0.05em] text-[var(--foreground)]">
+                      {project.title}
+                    </h2>
+                    <p className="mt-4 text-base leading-8 text-[var(--muted-foreground)]">
+                      {project.summary}
+                    </p>
+                    <p className="mt-4 text-sm leading-7 text-[var(--muted-foreground)]">
+                      {details.overview}
+                    </p>
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--foreground)]">
+                      {projectLabels.cta}
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+      </FadeInBottom>
+
+      <FadeInBottom delay={0.14}>
+        <section className="grid gap-10 border-y border-[var(--border)] py-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:py-16">
+          <div>
+            <p className="section-label">{content.experienceTitle}</p>
+            <p className="mt-4 max-w-md text-base leading-8 text-[var(--muted-foreground)]">
+              {content.experienceIntro}
+            </p>
+          </div>
+
+          <div className="space-y-6">
+            {content.experience.map((item) => (
+              <article
+                key={item.title}
+                className="grid gap-3 border-b border-[var(--border)] pb-6 last:border-none last:pb-0 md:grid-cols-[120px_1fr]"
+              >
+                <p className="text-sm font-semibold tracking-[0.18em] text-[var(--accent)] uppercase">
+                  {item.period}
+                </p>
+                <div>
+                  <h2 className="font-display text-2xl leading-tight tracking-[-0.04em] text-[var(--foreground)]">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 max-w-2xl text-base leading-8 text-[var(--muted-foreground)]">
+                    {item.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </FadeInBottom>
+
+      <FadeInBottom delay={0.16}>
+        <section className="grid gap-10 border-y border-[var(--border)] py-12 lg:grid-cols-[0.65fr_1.35fr] lg:gap-16 lg:py-16">
+          <div>
+            <p className="section-label">{content.hiring.title}</p>
+            <p className="mt-4 max-w-md text-base leading-8 text-[var(--muted-foreground)]">
+              {content.hiring.intro}
+            </p>
+          </div>
+
+          <div>
+            <div className="grid gap-3 md:grid-cols-[0.9fr_0.95fr_1.25fr]">
+              {content.hiring.items.map((item) => (
+                <article key={item} className="editorial-card">
+                  <p className="text-base leading-7 text-[var(--foreground)]">
+                    {item}
+                  </p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {contactLinks.map(({ href, label, icon: Icon }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="secondary-link justify-center"
+                >
+                  <Icon className="h-4 w-4" />
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      </FadeInBottom>
+
+      <FadeInBottom delay={0.18}>
+        <section className="py-12 lg:py-16">
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-strong)] p-8 md:p-10">
+            <h2 className="max-w-3xl font-display text-3xl leading-tight tracking-[-0.05em] text-[var(--foreground)] md:text-5xl">
+              {content.closingTitle}
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--muted-foreground)] md:text-lg">
+              {content.closingBody}
+            </p>
+            <Link
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="primary-link mt-8 inline-flex"
+            >
+              {content.closingCta}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </section>
       </FadeInBottom>
     </div>
   )

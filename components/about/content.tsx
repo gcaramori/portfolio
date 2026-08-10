@@ -1,46 +1,118 @@
 'use client'
 
-import { useContext } from 'react'
-import { LanguageContext } from '@/contexts/languageContext'
-import Languages from '@/lib/languages'
-import FadeInBottom from '../fadeInBottom'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { ArrowRight } from 'lucide-react'
+import FadeInBottom from '@/components/fadeInBottom'
+import { LanguageContext } from '@/contexts/languageContext'
+import siteContent from '@/lib/languages'
+import { getWhatsappHref } from '@/lib/contact'
 
 export function AboutContent() {
   const { language } = useContext(LanguageContext)
+  const content = siteContent[language].about
+  const whatsappHref = getWhatsappHref(language)
 
   return (
-    <div className="container flex h-full flex-col justify-start relative py-6">
+    <div className="container py-10 md:py-14">
       <FadeInBottom>
-        <div className="flex flex-col justify-start gap-6 2xl:gap-8 relative text-md xl:text-lg 2xl:text-2xl">
-          <p className="block relative text-[var(--primary-bg)] font-inter drop-shadow-sm">
-            {Languages[language]?.about?.text1}
-          </p>
+        <section className="grid gap-10 border-b border-[var(--border)] pb-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:pb-16">
+          <div>
+            <p className="section-label">{content.eyebrow}</p>
+          </div>
 
-          <p className="block relative text-[var(--primary-bg)] font-inter drop-shadow-sm">
-            {Languages[language]?.about?.text2}
-          </p>
+          <div>
+            <h1 className="max-w-4xl font-display text-3xl leading-[1.08] font-semibold tracking-[-0.03em] text-[var(--foreground)] md:text-5xl lg:text-[3.25rem]">
+              {content.title}
+            </h1>
 
-          <p className="block relative text-[var(--primary-bg)] font-inter drop-shadow-sm">
-            {Languages[language]?.about?.text3}
-          </p>
+            <p className="mt-8 max-w-2xl text-xl leading-9 text-[var(--foreground)]">
+              {content.intro}
+            </p>
+          </div>
+        </section>
+      </FadeInBottom>
 
-          <p className="block relative text-[var(--primary-bg)] font-inter drop-shadow-sm">
-            {Languages[language]?.about?.text4}
+      <FadeInBottom delay={0.05}>
+        <section className="grid gap-10 border-b border-[var(--border)] py-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:py-16">
+          <div>
+            <p className="section-label">{content.storyTitle}</p>
+          </div>
 
-            <Link
-              href={
-                language === 'pt-BR'
-                  ? 'https://api.whatsapp.com/send?phone=5519982646119&text=Ol%C3%A1!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho%20como%20desenvolvedor%20Full%20Stack.%20Podemos%20conversar%3F'
-                  : 'https://api.whatsapp.com/send?phone=5519982646119&text=Hi!%20I%20checked%20out%20your%20portfolio%20and%20would%20love%20to%20learn%20more%20about%20your%20work%20as%20a%20Full%20Stack%20Developer.%20Can%20we%20chat%3F'
-              }
-              target="_blank"
-              className="inline-block ml-1 drop-shadow-xs text-slate-400 font-bold transition-opacity hover:opacity-60"
-            >
-              {Languages[language]?.about.cta}
-            </Link>
-          </p>
-        </div>
+          <div className="grid gap-8">
+            {content.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="max-w-3xl text-base leading-8 text-[var(--muted-foreground)] md:text-lg"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
+        </section>
+      </FadeInBottom>
+
+      <FadeInBottom delay={0.08}>
+        <section className="grid gap-10 border-b border-[var(--border)] py-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16 lg:py-16">
+          <div>
+            <p className="section-label">{content.highlightsTitle}</p>
+          </div>
+
+          <div className="space-y-4">
+            {content.highlights.map((item) => (
+              <article
+                key={item}
+                className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 text-base leading-8 text-[var(--foreground)] md:p-8"
+              >
+                {item}
+              </article>
+            ))}
+          </div>
+        </section>
+      </FadeInBottom>
+
+      <FadeInBottom delay={0.11}>
+        <section className="grid gap-10 py-12 lg:grid-cols-[240px_1fr] lg:gap-16 lg:py-16">
+          <div>
+            <p className="section-label">{content.methodTitle}</p>
+          </div>
+
+          <div className="divide-y divide-[var(--border)] border-y border-[var(--border)]">
+            {content.method.map((item, index) => (
+              <article
+                key={item.title}
+                className="grid gap-4 py-7 md:grid-cols-[5rem_1fr] md:gap-8 md:py-8"
+              >
+                <p className="text-sm font-semibold tracking-[0.18em] text-[var(--accent)] uppercase">
+                  0{index + 1}
+                </p>
+
+                <div>
+                  <h2 className="max-w-xl font-display text-2xl leading-tight text-[var(--foreground)] md:text-3xl">
+                    {item.title}
+                  </h2>
+                  <p className="mt-4 max-w-3xl text-base leading-8 text-[var(--muted-foreground)] md:text-lg">
+                    {item.body}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      </FadeInBottom>
+
+      <FadeInBottom delay={0.14}>
+        <section className="border-t border-[var(--border)] py-12 lg:py-16">
+          <Link
+            href={whatsappHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="primary-link inline-flex"
+          >
+            {content.cta}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </section>
       </FadeInBottom>
     </div>
   )
