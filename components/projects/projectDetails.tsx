@@ -19,9 +19,7 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
   const labels = siteContent[language].projectDetail
   const details = projectCases[language][slug]
   const meta = projectMeta[slug]
-  const moreProjects: ProjectSlug[] = projectOrder
-    .filter((item) => item !== slug)
-    .slice(0, 3)
+  const moreProjects = projectOrder.filter((item) => item !== slug).slice(0, 3)
 
   return (
     <div className="container py-10 md:py-14">
@@ -127,39 +125,37 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
         </section>
       </FadeInBottom>
 
-      {moreProjects.length > 0 && (
-        <FadeInBottom delay={0.2}>
-          <section className="border-t border-[var(--border)] py-12 lg:py-16">
-            <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-              <div>
-                <p className="section-label">{labels.moreProjectsLabel}</p>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-3">
-                {moreProjects.map((item) => {
-                  const project = projectCases[language][item]
-
-                  return (
-                    <Link
-                      key={item}
-                      href={getLocalizedPath(`/projects/${item}`, language)}
-                      className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 transition-transform hover:-translate-y-0.5"
-                    >
-                      <p className="section-label">{project.category}</p>
-                      <h2 className="mt-4 font-display text-2xl leading-tight tracking-[-0.04em] text-[var(--foreground)]">
-                        {project.title}
-                      </h2>
-                      <p className="mt-3 text-sm leading-7 text-[var(--muted-foreground)]">
-                        {project.cardSummary}
-                      </p>
-                    </Link>
-                  )
-                })}
-              </div>
+      <FadeInBottom delay={0.2}>
+        <section className="border-t border-[var(--border)] py-12 lg:py-16">
+          <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="section-label">{labels.moreProjectsLabel}</p>
             </div>
-          </section>
-        </FadeInBottom>
-      )}
+
+            <div className="grid gap-4 md:grid-cols-3">
+              {moreProjects.map((item) => {
+                const project = projectCases[language][item]
+
+                return (
+                  <Link
+                    key={item}
+                    href={getLocalizedPath(`/projects/${item}`, language)}
+                    className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 transition-transform hover:-translate-y-0.5"
+                  >
+                    <p className="section-label">{project.category}</p>
+                    <h2 className="mt-4 font-display text-2xl leading-tight tracking-[-0.04em] text-[var(--foreground)]">
+                      {project.title}
+                    </h2>
+                    <p className="mt-3 text-sm leading-7 text-[var(--muted-foreground)]">
+                      {project.cardSummary}
+                    </p>
+                  </Link>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+      </FadeInBottom>
     </div>
   )
 }

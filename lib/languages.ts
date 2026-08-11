@@ -1,7 +1,7 @@
 export const locales = ['pt-BR', 'en'] as const
 
 export type Locale = (typeof locales)[number]
-export type ProjectSlug = 'jsbjjkylemore'
+export type ProjectSlug = 'jsbjjkylemore' | 'unit5'
 
 type NavItem = {
   href: string
@@ -206,6 +206,13 @@ const siteContent: Record<Locale, SiteContent> = {
           summary:
             'Plataforma para academia com captação de leads, cadastro, login, pagamentos recorrentes e integrações operacionais.',
         },
+        {
+          slug: 'unit5',
+          kicker: 'Website fitness + presença local',
+          title: 'Unit 5 Strength & Fitness',
+          summary:
+            'Website comercial com linguagem forte, contraste alto e comunicação pensada para presença local.',
+        },
       ],
       experienceTitle: 'Trajetória',
       experienceIntro:
@@ -386,6 +393,13 @@ const siteContent: Record<Locale, SiteContent> = {
           summary:
             'An academy platform with lead capture, registration, login, recurring payments, and operational integrations.',
         },
+        {
+          slug: 'unit5',
+          kicker: 'Fitness website + local presence',
+          title: 'Unit 5 Strength & Fitness',
+          summary:
+            'A commercial website with bold language, high contrast, and messaging designed for a stronger local presence.',
+        },
       ],
       experienceTitle: 'Background',
       experienceIntro:
@@ -530,6 +544,37 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
       ],
     },
+    unit5: {
+      slug: 'unit5',
+      category: 'Website fitness',
+      title: 'Unit 5 Strength & Fitness',
+      cardSummary:
+        'Website comercial com direção visual forte, hierarquia de conversão e comunicação pensada para presença local.',
+      overview:
+        'Unit 5 exigia uma presença digital direta, energética e mais confiante. O trabalho foi transformar a direção visual em uma experiência responsiva que comunicasse força, serviço e ação logo nos primeiros segundos.',
+      role: 'Responsável por interface, frontend, responsividade, ritmo visual, hierarquia de CTA e tradução da identidade em experiência web.',
+      deliverables:
+        'Website promocional com hero de alto impacto, seções de serviços, prova social, contato e layout responsivo preparado para leitura rápida em mobile.',
+      stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      sections: [
+        {
+          title: 'Contexto',
+          body: 'O projeto pedia uma identidade com mais presença e contraste, capaz de comunicar energia e especialização logo no primeiro scroll. O risco era virar mais um site genérico de academia, com pouca clareza de oferta e CTAs sem prioridade.',
+        },
+        {
+          title: 'Solução',
+          body: 'A interface foi organizada para valorizar headline, imagem e chamadas de ação, usando contraste forte, tipografia pesada e ritmo visual direto. As seções foram pensadas para leitura escaneável: proposta, serviços, prova e contato sem excesso de ornamentação.',
+        },
+        {
+          title: 'Execução responsiva',
+          body: 'O frontend foi implementado com atenção a espaçamento, proporção de imagens, quebras de texto e prioridade dos CTAs em telas pequenas. A entrega preserva impacto visual no desktop sem sacrificar leitura e ação no mobile.',
+        },
+        {
+          title: 'Impacto',
+          body: 'O site ficou mais convincente como peça comercial e mais coerente com o tipo de serviço oferecido. A marca ganhou uma apresentação mais confiante, direta e adequada para tráfego local e primeiro contato.',
+        },
+      ],
+    },
   },
   en: {
     jsbjjkylemore: {
@@ -571,6 +616,37 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         {
           title: 'Impact',
           body: 'The result was more mature than a standard institutional website: clear positioning, lead capture, onboarding, connected payments, and structured data. The operation became less dependent on disconnected manual processes and gained better visibility over acquisition, registration, and conversion.',
+        },
+      ],
+    },
+    unit5: {
+      slug: 'unit5',
+      category: 'Fitness website',
+      title: 'Unit 5 Strength & Fitness',
+      cardSummary:
+        'A commercial website with strong visual direction, conversion hierarchy, and messaging designed for local presence.',
+      overview:
+        'Unit 5 needed a direct, energetic, and more confident digital presence. The work translated the visual direction into a responsive experience that communicates strength, service, and action within the first few seconds.',
+      role: 'Responsible for interface, frontend, responsiveness, visual rhythm, CTA hierarchy, and translating the identity into a web experience.',
+      deliverables:
+        'Promotional website with a high-impact hero, service sections, social proof, contact flows, and a responsive layout prepared for fast mobile reading.',
+      stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      sections: [
+        {
+          title: 'Context',
+          body: 'The project called for a visual identity with more presence and contrast, able to communicate energy and specialization in the first scroll. The risk was ending up with a generic gym website, weak offer clarity, and CTAs without priority.',
+        },
+        {
+          title: 'Solution',
+          body: 'The interface was structured to give more weight to headline, imagery, and calls to action, using strong contrast, heavy typography, and direct visual rhythm. The sections were designed for scanning: proposition, services, proof, and contact without unnecessary ornament.',
+        },
+        {
+          title: 'Responsive execution',
+          body: 'The frontend implementation paid close attention to spacing, image proportions, text breaks, and CTA priority on small screens. The delivery preserves visual impact on desktop without sacrificing readability and action on mobile.',
+        },
+        {
+          title: 'Impact',
+          body: 'The website became more convincing as a commercial asset and more aligned with the service itself. The brand gained a more confident, direct presentation suited for local traffic and first contact.',
         },
       ],
     },
