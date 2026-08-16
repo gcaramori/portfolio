@@ -144,16 +144,16 @@ const siteContent: Record<Locale, SiteContent> = {
       languageLabel: 'Idioma',
     },
     home: {
-      eyebrow: 'Full stack sênior · 8 anos · produtos em produção',
+      eyebrow: 'Full stack sênior · produto, dados e integrações',
       title:
-        'Transformo processos críticos em sistemas web confiáveis, mensuráveis e prontos para escala.',
+        'Projeto e desenvolvo sistemas web que sustentam operações críticas, com estabilidade, métricas e arquitetura para escala.',
       intro:
         'Desenvolvo dashboards, plataformas internas, e-commerces e integrações com responsabilidade real de produto, engenharia e entrega.',
       description:
         'Meu melhor encaixe é em times e negócios que precisam sair de planilhas, etapas manuais ou sistemas desconectados para uma base operável: requisitos claros, arquitetura simples de manter, interface usável, integrações estáveis e deploy acompanhado.',
       primaryCta: 'Conversar sobre contratação',
       secondaryCta: 'Ver cases técnicos',
-      note: 'Stack principal: Next.js, React, TypeScript, Node.js, PHP, Prisma, SQL/NoSQL, APIs, webhooks, cloud, Docker e automações com IA aplicadas onde melhoram velocidade, escala ou eficiência.',
+      note: 'Stack principal: Next.js, React, TypeScript, Node.js, PHP, Prisma, PostgreSQL, APIs, webhooks, Docker, cloud, CI/CD e observabilidade. Uso essa base para entregar produtos integrados, mensuráveis e simples de manter.',
       stats: [
         {
           value: '8+ anos',
@@ -331,16 +331,16 @@ const siteContent: Record<Locale, SiteContent> = {
       languageLabel: 'Language',
     },
     home: {
-      eyebrow: 'Senior full stack · 8 years · production products',
+      eyebrow: 'Senior full stack · product, data, and integrations',
       title:
-        'I turn critical processes into reliable, measurable web systems built to scale.',
+        'I design and build web systems that support critical operations, with stability, metrics, and architecture built to scale.',
       intro:
         'I build dashboards, internal platforms, e-commerce flows, and integrations with real ownership across product, engineering, and delivery.',
       description:
         'My strongest fit is with teams and businesses moving away from spreadsheets, manual steps, or disconnected systems into an operable foundation: clear requirements, maintainable architecture, usable interfaces, stable integrations, and supported deployment.',
       primaryCta: 'Discuss hiring',
       secondaryCta: 'View technical cases',
-      note: 'Core stack: Next.js, React, TypeScript, Node.js, PHP, Prisma, SQL/NoSQL, APIs, webhooks, cloud, Docker, and AI automations applied where they improve speed, scale, or efficiency.',
+      note: 'Core stack: Next.js, React, TypeScript, Node.js, PHP, Prisma, PostgreSQL, APIs, webhooks, Docker, cloud, CI/CD, and observability. I use this foundation to deliver integrated, measurable products that are simple to maintain.',
       stats: [
         {
           value: '8+ years',

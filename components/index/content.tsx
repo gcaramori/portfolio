@@ -43,25 +43,21 @@ export function IndexContent() {
   ]
 
   return (
-    <div className="container py-10 md:py-14">
+    <div className="container py-6 md:py-8 lg:py-10">
       <FadeInBottom>
-        <section className="grid gap-10 border-b border-[var(--border)] pb-12 lg:grid-cols-[1.45fr_0.9fr] lg:gap-16 lg:pb-16">
+        <section className="grid gap-8 border-b border-[var(--border)] pb-10 lg:grid-cols-[minmax(0,1.55fr)_minmax(20rem,0.85fr)] lg:gap-12 lg:pb-12 xl:grid-cols-[minmax(0,1.6fr)_minmax(21rem,0.8fr)]">
           <div>
             <p className="section-label">{content.eyebrow}</p>
 
-            <h1 className="mt-6 max-w-5xl font-display text-4xl leading-[1.05] font-semibold tracking-[-0.06em] text-[var(--foreground)] sm:text-5xl md:text-6xl lg:text-[4rem]">
+            <h1 className="mt-4 max-w-[58rem] font-display text-[2.75rem] leading-[1.03] font-semibold tracking-normal text-[var(--foreground)] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.15rem] xl:text-[4.35rem]">
               {content.title}
             </h1>
 
-            <p className="mt-8 max-w-2xl text-xl leading-9 text-[var(--foreground)]">
+            <p className="mt-7 max-w-3xl text-xl leading-9 text-[var(--foreground)] lg:text-[1.35rem] lg:leading-10">
               {content.intro}
             </p>
 
-            <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--muted-foreground)] md:text-lg">
-              {content.description}
-            </p>
-
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href={whatsappHref}
                 target="_blank"
@@ -81,18 +77,21 @@ export function IndexContent() {
               </Link>
             </div>
 
-            <p className="mt-6 max-w-xl text-sm leading-7 text-[var(--muted-foreground)]">
+            <p className="mt-5 max-w-2xl text-[0.95rem] leading-7 text-[var(--muted-foreground)]">
               {content.note}
             </p>
           </div>
 
           <div className="grid gap-4 self-start">
             {content.stats.map((stat) => (
-              <article key={stat.label} className="editorial-card">
-                <p className="font-display text-4xl font-semibold tracking-[-0.05em] text-[var(--foreground)] md:text-5xl">
+              <article
+                key={stat.label}
+                className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-6"
+              >
+                <p className="whitespace-nowrap font-display text-[2.35rem] font-semibold tracking-normal text-[var(--foreground)] md:text-[2.75rem] lg:text-[2.65rem] xl:text-[2.85rem]">
                   {stat.value}
                 </p>
-                <p className="mt-2 max-w-[14rem] text-sm leading-6 text-[var(--muted-foreground)]">
+                <p className="mt-2 max-w-[15rem] text-[0.95rem] leading-6 text-[var(--muted-foreground)]">
                   {stat.label}
                 </p>
               </article>

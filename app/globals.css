@@ -84,7 +84,7 @@ body {
 @layer components {
   .section-label {
     color: var(--accent);
-    font-size: 0.72rem;
+    font-size: 0.76rem;
     font-weight: 700;
     letter-spacing: 0.22em;
     line-height: 1.4;
@@ -106,7 +106,7 @@ body {
     color: var(--background);
     display: inline-flex;
     gap: 0.5rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
     padding: 0.9rem 1.35rem;
     transition:
@@ -126,7 +126,7 @@ body {
     color: var(--foreground);
     display: inline-flex;
     gap: 0.5rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
     padding: 0.9rem 1.35rem;
     transition:
