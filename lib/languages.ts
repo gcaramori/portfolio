@@ -62,7 +62,9 @@ type SiteContent = {
   home: {
     eyebrow: string
     title: string
+    mobileTitle: string
     intro: string
+    mobileIntro: string
     description: string
     primaryCta: string
     secondaryCta: string
@@ -148,8 +150,12 @@ const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Full stack sênior · produto, dados e integrações',
       title:
         'Projeto e desenvolvo sistemas web que sustentam operações críticas, com estabilidade, métricas e arquitetura para escala.',
+      mobileTitle:
+        'Desenvolvo sistemas web para operações críticas.',
       intro:
         'Desenvolvo dashboards, plataformas internas, e-commerces e integrações com responsabilidade real de produto, engenharia e entrega.',
+      mobileIntro:
+        'Com estabilidade, métricas, integrações e arquitetura para escala.',
       description:
         'Meu melhor encaixe é em times e negócios que precisam sair de planilhas, etapas manuais ou sistemas desconectados para uma base operável: requisitos claros, arquitetura simples de manter, interface usável, integrações estáveis e deploy acompanhado.',
       primaryCta: 'Conversar sobre contratação',
@@ -361,8 +367,12 @@ const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Senior full stack · product, data, and integrations',
       title:
         'I design and build web systems that support critical operations, with stability, metrics, and architecture built to scale.',
+      mobileTitle:
+        'I build web systems for critical operations.',
       intro:
         'I build dashboards, internal platforms, e-commerce flows, and integrations with real ownership across product, engineering, and delivery.',
+      mobileIntro:
+        'With stability, metrics, integrations, and architecture built to scale.',
       description:
         'My strongest fit is with teams and businesses moving away from spreadsheets, manual steps, or disconnected systems into an operable foundation: clear requirements, maintainable architecture, usable interfaces, stable integrations, and supported deployment.',
       primaryCta: 'Discuss hiring',
