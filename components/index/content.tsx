@@ -244,6 +244,18 @@ export function IndexContent() {
                   <p className="mt-3 max-w-2xl text-base leading-8 text-[var(--muted-foreground)]">
                     {item.description}
                   </p>
+                  {item.stack ? (
+                    <ul className="mt-4 flex max-w-2xl flex-wrap gap-2">
+                      {item.stack.map((technology) => (
+                        <li
+                          key={technology}
+                          className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs leading-5 font-medium text-[var(--foreground)]"
+                        >
+                          {technology}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
               </article>
             ))}

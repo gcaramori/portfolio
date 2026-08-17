@@ -41,7 +41,7 @@ export default async function RootLayout({
         className={`${manrope.variable} ${fraunces.variable} min-h-dvh bg-[var(--background)] text-[var(--foreground)] antialiased`}
       >
         <LanguageProvider initialLanguage={language}>
-          <div className="relative isolate min-h-dvh overflow-hidden">
+          <div className="relative isolate min-h-dvh">
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(circle_at_top,rgba(201,106,44,0.12),transparent_60%)]" />
               <div className="absolute left-[-6rem] top-[18rem] h-72 w-72 rounded-full bg-[rgba(44,79,60,0.08)] blur-3xl" />

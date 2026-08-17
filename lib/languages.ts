@@ -22,6 +22,7 @@ type ExperienceItem = {
   period: string
   title: string
   description: string
+  stack?: string[]
 }
 
 type FeaturedProject = {
@@ -195,9 +196,9 @@ const siteContent: Record<Locale, SiteContent> = {
             'Lojas, catálogos, checkout, autenticação, pagamentos e fluxos comerciais implementados com base preparada para evoluir depois da primeira entrega.',
         },
       ],
-      featuredTitle: 'Cases com escopo verificável',
+      featuredTitle: 'Cases com contexto, entrega e decisão técnica',
       featuredIntro:
-        'Cada case mostra contexto, papel, entregáveis, stack e decisões técnicas. A ideia é facilitar avaliação por recrutadores, founders e lideranças de engenharia.',
+        'Cada projeto mostra o problema enfrentado, minha responsabilidade, as escolhas de arquitetura e o que foi entregue em produção.',
       featuredProjects: [
         {
           slug: 'jsbjjkylemore',
@@ -222,20 +223,43 @@ const siteContent: Record<Locale, SiteContent> = {
           period: '2018 - atual',
           title: 'Performa.AI',
           description:
-            'Desenvolvedor Full Stack Sênior nas principais ferramentas da empresa, com foco em compatibilidade, performance, segurança e continuidade operacional. Lidero decisões técnicas, apoio boas práticas e integro plataformas como Tray, NuvemShop, Bagy, Climba e Shopify.',
+            'Atuo como Full Stack Sênior em um ecossistema SaaS de e-commerce usado por lojas em múltiplas plataformas. Tenho responsabilidade técnica sobre APIs, painéis administrativos, conectores, widgets distribuídos via CDN, webhooks, tracking e automações que precisam continuar funcionando em produção enquanto o produto evolui. Integro plataformas como Tray, NuvemShop, Bagy, Climba e Shopify, transformando demandas operacionais e comerciais em soluções mais estáveis, rastreáveis e fáceis de escalar.',
+          stack: [
+            'TypeScript',
+            'React',
+            'Node.js',
+            'NestJS',
+            'PHP',
+            'MongoDB',
+            'Redis',
+            'JavaScript CDN',
+            'Cloudflare Workers',
+            'Supabase',
+            'APIs REST',
+            'Webhooks',
+          ],
         },
         {
           period: '2017 - atual',
           title: 'Autônomo e freelance',
           description:
-            'Entrego sites, e-commerces, apps para plataformas de venda e sistemas web com foco em SEO, conversão e operação. Também desenvolvi sistema de agendamentos, fila de e-mails marketing, configuração de servidores, deploys, protótipos e layouts.',
-        },
-        {
-          period: 'Stack principal',
-          title:
-            'Arquitetura full stack para produtos web, integrações e operações digitais',
-          description:
-            'Construo aplicações com Next.js, React, TypeScript, Node.js, PHP, Prisma, Tailwind e bancos relacionais ou NoSQL. Tenho experiência com autenticação, pagamentos, frete, webhooks, e-mails transacionais, uploads, APIs, automações, Docker e cloud.',
+            'Atuo em projetos independentes para negócios que precisam transformar uma demanda comercial em produto web publicado, mensurável e fácil de operar. Entrego sites, e-commerces, apps para plataformas de venda e sistemas internos de ponta a ponta, passando por interface, SEO, conversão, integrações, automações, configuração de servidores, deploy e evolução pós-lançamento. Também desenvolvi fluxos de agendamento, filas de e-mail marketing, protótipos e ferramentas internas que reduzem etapas manuais e tornam a operação mais organizada.',
+          stack: [
+            'Next.js',
+            'React',
+            'TypeScript',
+            'Node.js',
+            'PHP',
+            'Tailwind CSS',
+            'Prisma',
+            'PostgreSQL',
+            'MySQL',
+            'APIs REST',
+            'Webhooks',
+            'SEO',
+            'Vercel',
+            'Docker',
+          ],
         },
       ],
       hiring: {
@@ -265,7 +289,7 @@ const siteContent: Record<Locale, SiteContent> = {
       storyTitle: 'Experiência aplicada',
       paragraphs: [
         'Minha trajetória começou em interfaces web e evoluiu para produtos completos. Hoje trabalho do diagnóstico à produção, conectando frontend, backend, banco de dados, permissões, integrações, automações, deploy e manutenção sem perder de vista o uso real.',
-        'Na Performa.AI, mantenho e evoluo ferramentas críticas da empresa com foco em compatibilidade, performance, segurança e continuidade operacional. Também participo de decisões técnicas, apoio boas práticas no time e integro plataformas de e-commerce como Tray, NuvemShop, Bagy, Climba e Shopify.',
+        'Na Performa.AI, atuo como Full Stack Sênior em um ecossistema SaaS para e-commerce usado por lojas em múltiplas plataformas. Tenho responsabilidade técnica sobre APIs, painéis administrativos, conectores, widgets distribuídos via CDN, webhooks, tracking e automações que precisam continuar funcionando em produção enquanto o produto evolui. Integro plataformas como Tray, NuvemShop, Bagy, Climba e Shopify, transformando demandas operacionais e comerciais em soluções mais estáveis, rastreáveis e fáceis de escalar.',
         'Em projetos externos, transformei presença pública em camada operacional: captação, cadastro, autenticação, pagamentos recorrentes, e-mails transacionais, tracking, banco relacional, cloud e ajustes pós-lançamento. No case JSBJJ Kylemore, por exemplo, o site deixou de ser só uma vitrine e passou a conectar aquisição, onboarding, assinatura recorrente e dados estruturados.',
         'Meu diferencial está em entrar antes da implementação para entender fluxo, gargalo, dependência externa e risco técnico. A partir disso, desenho uma solução que não dependa de improviso depois do deploy: entidades claras, integrações explícitas, estados de interface previsíveis e responsabilidades bem separadas entre produto, operação e engenharia.',
       ],
@@ -382,9 +406,9 @@ const siteContent: Record<Locale, SiteContent> = {
             'Stores, catalogs, checkout, authentication, payments, and commercial workflows implemented on a foundation that can evolve after the first release.',
         },
       ],
-      featuredTitle: 'Cases with verifiable scope',
+      featuredTitle: 'Cases with context, delivery, and technical decisions',
       featuredIntro:
-        'Each case shows context, role, deliverables, stack, and technical decisions, making evaluation easier for recruiters, founders, and engineering leaders.',
+        'Each project shows the problem, my responsibility, the architecture choices, and what was delivered to production.',
       featuredProjects: [
         {
           slug: 'jsbjjkylemore',
@@ -409,20 +433,43 @@ const siteContent: Record<Locale, SiteContent> = {
           period: '2018 - now',
           title: 'Performa.AI',
           description:
-            "Senior Full Stack Developer on the company's main tools, focused on compatibility, performance, security, and operational continuity. I lead technical decisions, support team practices, and integrate platforms such as Tray, NuvemShop, Bagy, Climba, and Shopify.",
+            'I work as a Senior Full Stack Developer in an e-commerce SaaS ecosystem used by stores across multiple platforms. I hold technical responsibility for APIs, admin panels, connectors, CDN-delivered widgets, webhooks, tracking, and automations that must keep running in production while the product evolves. I integrate platforms such as Tray, NuvemShop, Bagy, Climba, and Shopify, turning operational and commercial needs into solutions that are more stable, traceable, and easier to scale.',
+          stack: [
+            'TypeScript',
+            'React',
+            'Node.js',
+            'NestJS',
+            'PHP',
+            'MongoDB',
+            'Redis',
+            'JavaScript CDN',
+            'Cloudflare Workers',
+            'Supabase',
+            'REST APIs',
+            'Webhooks',
+          ],
         },
         {
           period: '2017 - now',
           title: 'Freelance and independent work',
           description:
-            'I deliver websites, e-commerce stores, platform apps, and web systems focused on SEO, conversion, and operations. I have also built a clinic scheduling system, marketing email queue, server setup, production deployments, prototypes, and layouts.',
-        },
-        {
-          period: 'Core stack',
-          title:
-            'Full stack architecture for web products, integrations, and digital operations',
-          description:
-            'I build applications with Next.js, React, TypeScript, Node.js, PHP, Prisma, Tailwind, and relational or NoSQL databases. I have experience with authentication, payments, shipping, webhooks, transactional email, uploads, APIs, automations, Docker, and cloud.',
+            'I work on independent projects for businesses that need to turn a commercial request into a published, measurable web product that is easy to operate. I deliver websites, e-commerce stores, platform apps, and internal systems end to end, covering interface, SEO, conversion, integrations, automations, server setup, deployment, and post-launch evolution. I have also built scheduling flows, marketing email queues, prototypes, and internal tools that reduce manual steps and make operations more organized.',
+          stack: [
+            'Next.js',
+            'React',
+            'TypeScript',
+            'Node.js',
+            'PHP',
+            'Tailwind CSS',
+            'Prisma',
+            'PostgreSQL',
+            'MySQL',
+            'REST APIs',
+            'Webhooks',
+            'SEO',
+            'Vercel',
+            'Docker',
+          ],
         },
       ],
       hiring: {
@@ -452,7 +499,7 @@ const siteContent: Record<Locale, SiteContent> = {
       storyTitle: 'Applied experience',
       paragraphs: [
         'My path started with web interfaces and evolved into complete products. Today I work from diagnosis to production, connecting frontend, backend, databases, permissions, integrations, automations, deployment, and maintenance without losing sight of real usage.',
-        'At Performa.AI, I maintain and evolve critical company tools with a focus on compatibility, performance, security, and operational continuity. I also contribute to technical decisions, support team practices, and integrate e-commerce platforms such as Tray, NuvemShop, Bagy, Climba, and Shopify.',
+        'At Performa.AI, I work as a Senior Full Stack Developer in an e-commerce SaaS ecosystem used by stores across multiple platforms. I hold technical responsibility for APIs, admin panels, connectors, CDN-delivered widgets, webhooks, tracking, and automations that must keep running in production while the product evolves. I integrate platforms such as Tray, NuvemShop, Bagy, Climba, and Shopify, turning operational and commercial needs into solutions that are more stable, traceable, and easier to scale.',
         'In external projects, I have turned public presence into an operational layer: lead capture, registration, authentication, recurring payments, transactional email, tracking, relational data, cloud, and post-launch iteration. In the JSBJJ Kylemore case, for example, the website became more than a brochure and started connecting acquisition, onboarding, recurring subscriptions, and structured data.',
         'My differentiator is getting involved before implementation to understand flows, bottlenecks, external dependencies, and technical risk. From there, I design solutions that do not depend on improvisation after deployment: clear entities, explicit integrations, predictable interface states, and well-separated responsibilities across product, operations, and engineering.',
       ],
