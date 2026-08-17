@@ -160,7 +160,10 @@ const siteContent: Record<Locale, SiteContent> = {
           value: '8+ anos',
           label: 'criando, mantendo e evoluindo produtos web',
         },
-        { value: '5+', label: 'plataformas de e-commerce integradas' },
+        {
+          value: 'Integrações',
+          label: 'E-commerce, pagamentos e APIs em produção',
+        },
         {
           value: '0 → produção',
           label: 'discovery, arquitetura, código, deploy e evolução',
@@ -370,7 +373,10 @@ const siteContent: Record<Locale, SiteContent> = {
           value: '8+ years',
           label: 'building, maintaining, and evolving web products',
         },
-        { value: '5+', label: 'e-commerce platforms integrated' },
+        {
+          value: 'Integrations',
+          label: 'E-commerce, payments, and APIs in production',
+        },
         {
           value: '0 → prod',
           label: 'discovery, architecture, code, deployment, and iteration',
