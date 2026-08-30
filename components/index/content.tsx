@@ -43,23 +43,23 @@ export function IndexContent() {
   ]
 
   return (
-    <div className="container py-5 md:py-8 lg:py-10">
+    <div className="home-content container py-5 md:py-8 lg:py-10">
       <FadeInBottom>
-        <section className="grid gap-6 border-b border-[var(--border)] pb-8 md:gap-8 md:pb-10 lg:grid-cols-[minmax(0,1.55fr)_minmax(20rem,0.85fr)] lg:gap-12 lg:pb-12 xl:grid-cols-[minmax(0,1.6fr)_minmax(21rem,0.8fr)]">
+        <section className="home-hero grid gap-6 border-b border-[var(--border)] pb-8 md:gap-8 md:pb-10 lg:grid-cols-[minmax(0,1.55fr)_minmax(20rem,0.85fr)] lg:gap-12 lg:pb-12 xl:grid-cols-[minmax(0,1.6fr)_minmax(21rem,0.8fr)]">
           <div>
             <p className="section-label">{content.eyebrow}</p>
 
-            <h1 className="mt-3 max-w-[58rem] font-display text-[1.875rem] leading-[1.08] font-semibold tracking-normal text-[var(--foreground)] min-[390px]:text-[2rem] sm:mt-4 sm:text-[3.25rem] sm:leading-[1.04] md:text-[4rem] lg:text-[4.15rem] xl:text-[4.35rem]">
+            <h1 className="home-hero-title mt-3 max-w-[58rem] font-display text-[1.875rem] leading-[1.08] font-semibold tracking-normal text-[var(--foreground)] min-[390px]:text-[2rem] sm:mt-4 sm:text-[3.25rem] sm:leading-[1.04] md:text-[4rem] lg:text-[4.15rem] xl:text-[4.35rem]">
               <span className="sm:hidden">{content.mobileTitle}</span>
               <span className="hidden sm:inline">{content.title}</span>
             </h1>
 
-            <p className="mt-5 max-w-2xl text-[1.0625rem] leading-7 text-[var(--foreground)] sm:mt-7 sm:max-w-3xl sm:text-xl sm:leading-9 lg:text-[1.35rem] lg:leading-10">
+            <p className="home-hero-intro mt-5 max-w-2xl text-[1.0625rem] leading-7 text-[var(--foreground)] sm:mt-7 sm:max-w-3xl sm:text-xl sm:leading-9 lg:text-[1.35rem] lg:leading-10">
               <span className="sm:hidden">{content.mobileIntro}</span>
               <span className="hidden sm:inline">{content.intro}</span>
             </p>
 
-            <div className="mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center">
+            <div className="home-hero-actions mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
                 href={whatsappHref}
                 target="_blank"
@@ -79,21 +79,21 @@ export function IndexContent() {
               </Link>
             </div>
 
-            <p className="mt-4 max-w-2xl text-[0.875rem] leading-6 text-[var(--muted-foreground)] sm:mt-5 sm:text-[0.95rem] sm:leading-7">
+            <p className="home-hero-note mt-4 max-w-2xl text-[0.875rem] leading-6 text-[var(--muted-foreground)] sm:mt-5 sm:text-[0.95rem] sm:leading-7">
               {content.note}
             </p>
           </div>
 
-          <div className="grid gap-4 self-start">
+          <div className="home-hero-stats grid gap-4 self-start">
             {content.stats.map((stat) => (
               <article
                 key={stat.label}
-                className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-6"
+                className="home-hero-stat rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-6"
               >
-                <p className="whitespace-nowrap font-display text-[2.35rem] font-semibold tracking-normal text-[var(--foreground)] md:text-[2.75rem] lg:text-[2.65rem] xl:text-[2.85rem]">
+                <p className="home-hero-stat-value whitespace-nowrap font-display text-[2.35rem] font-semibold tracking-normal text-[var(--foreground)] md:text-[2.75rem] lg:text-[2.65rem] xl:text-[2.85rem]">
                   {stat.value}
                 </p>
-                <p className="mt-2 max-w-[15rem] text-[0.95rem] leading-6 text-[var(--muted-foreground)]">
+                <p className="home-hero-stat-label mt-2 max-w-[15rem] text-[0.95rem] leading-6 text-[var(--muted-foreground)]">
                   {stat.label}
                 </p>
               </article>
