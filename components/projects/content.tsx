@@ -32,7 +32,7 @@ export function ProjectsContent() {
         </section>
       </FadeInBottom>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-2">
+      <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
         {projectOrder.map((slug, index) => {
           const details = projectCases[language][slug]
           const meta = projectMeta[slug]
@@ -42,6 +42,7 @@ export function ProjectsContent() {
               <ProjectLinkCard
                 href={getLocalizedPath(`/projects/${slug}`, language)}
                 imageSrc={meta.image}
+                metrics={details.metrics}
                 category={details.category}
                 title={details.title}
                 summary={details.cardSummary}

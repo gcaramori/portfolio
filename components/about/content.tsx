@@ -11,6 +11,7 @@ import { getWhatsappHref } from '@/lib/contact'
 export function AboutContent() {
   const { language } = useContext(LanguageContext)
   const content = siteContent[language].about
+  const highlights = siteContent[language].home.experience[0].highlights
   const whatsappHref = getWhatsappHref(language)
 
   return (
@@ -59,7 +60,7 @@ export function AboutContent() {
           </div>
 
           <div className="space-y-4">
-            {content.highlights.map((item) => (
+            {(highlights ?? content.highlights).map((item) => (
               <article
                 key={item}
                 className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 text-base leading-8 text-[var(--foreground)] md:p-8"

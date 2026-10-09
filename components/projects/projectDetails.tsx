@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useContext } from 'react'
 import { ArrowLeft, ArrowUpRight } from 'lucide-react'
@@ -9,6 +8,7 @@ import { LanguageContext } from '@/contexts/languageContext'
 import siteContent, { projectCases, type ProjectSlug } from '@/lib/languages'
 import { getLocalizedPath } from '@/lib/locale'
 import { projectMeta, projectOrder } from '@/lib/projects'
+import { ProjectVisual } from './projectVisual'
 
 type ProjectDetailsProps = {
   slug: ProjectSlug
@@ -44,29 +44,29 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
               {details.overview}
             </p>
 
-            <Link
-              href={meta.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="primary-link mt-8 inline-flex"
-            >
-              {labels.openLabel}
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            {meta.href && (
+              <Link
+                href={meta.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="primary-link mt-8 inline-flex"
+              >
+                {labels.openLabel}
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+            )}
           </div>
         </section>
       </FadeInBottom>
 
       <FadeInBottom delay={0.05}>
         <section className="py-8 md:py-10">
-          <div className="relative aspect-video overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
-            <Image
-              src={meta.image}
-              alt={details.title}
-              fill
+          <div className="overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
+            <ProjectVisual
+              image={meta.image}
+              title={details.title}
+              metrics={details.metrics}
               priority
-              sizes="100vw"
-              className="object-cover"
             />
           </div>
         </section>

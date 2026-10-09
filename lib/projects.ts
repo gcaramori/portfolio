@@ -5,11 +5,12 @@ import type { ProjectSlug } from './languages'
 
 type ProjectMeta = {
   slug: ProjectSlug
-  href: string
-  image: StaticImageData
+  href?: string
+  image?: StaticImageData
 }
 
 export const projectMeta: Record<ProjectSlug, ProjectMeta> = {
+  'performa-ai': { slug: 'performa-ai' },
   jsbjjkylemore: {
     slug: 'jsbjjkylemore',
     href: 'https://jsbjjkylemore.com',
@@ -23,6 +24,7 @@ export const projectMeta: Record<ProjectSlug, ProjectMeta> = {
 }
 
 export const projectOrder: ProjectSlug[] = [
+  'performa-ai',
   'jsbjjkylemore',
   'unit5',
 ]

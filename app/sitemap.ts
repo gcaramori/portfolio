@@ -2,7 +2,16 @@ import type { MetadataRoute } from 'next'
 import { projectOrder } from '@/lib/projects'
 import { absoluteUrl } from '@/lib/seo'
 
-const staticRoutes = ['/', '/about', '/projects', '/en', '/en/about', '/en/projects']
+const staticRoutes = [
+  '/',
+  '/about',
+  '/projects',
+  '/resume',
+  '/en',
+  '/en/about',
+  '/en/projects',
+  '/en/resume',
+]
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const projectRoutes = projectOrder.flatMap((slug) => [

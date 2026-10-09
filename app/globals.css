@@ -169,7 +169,7 @@ body {
   }
 
   .home-hero-title {
-    font-size: clamp(3rem, 7svh, 3.65rem);
+    font-size: clamp(2.75rem, 6.4svh, 3.35rem);
     line-height: 1.02;
   }
 
@@ -205,5 +205,104 @@ body {
   .home-hero-stat-label {
     line-height: 1.45;
     margin-top: 0.35rem;
+  }
+}
+
+.resume-page {
+  max-width: 56rem;
+}
+
+.resume-section {
+  margin-top: 2rem;
+}
+
+.resume-section h2 {
+  font-family: var(--font-heading), serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  body:has(.resume-page) {
+    background: white;
+    color: black;
+    font-size: 10pt;
+  }
+
+  body:has(.resume-page) .min-h-svh {
+    min-height: 0;
+  }
+
+  .resume-page {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+
+  .resume-page h1 {
+    font-size: 24pt;
+  }
+
+  .resume-page header {
+    padding-bottom: 3mm;
+  }
+
+  .resume-page h3 {
+    font-size: 11pt;
+  }
+
+  .resume-section {
+    margin-top: 3mm;
+  }
+
+  .resume-section h2 {
+    font-size: 14pt;
+  }
+
+  .resume-page p,
+  .resume-page li {
+    font-size: 10pt;
+    line-height: 1.35;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .resume-page h2,
+  .resume-page h3 {
+    break-after: avoid;
+  }
+
+  .resume-page .mt-3,
+  .resume-page .mt-4,
+  .resume-page .mt-5 {
+    margin-top: 1.5mm;
+  }
+
+  .resume-page .space-y-2 > :not(:last-child) {
+    margin-bottom: 1mm;
+  }
+
+  .resume-project,
+  .resume-contacts,
+  .resume-page li {
+    break-inside: avoid;
+  }
+
+  .resume-page a {
+    color: black;
+    text-decoration: none;
+    overflow-wrap: anywhere;
   }
 }

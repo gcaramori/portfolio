@@ -5,7 +5,6 @@ import { useContext } from 'react'
 import {
   ArrowRight,
   ArrowUpRight,
-  Dot,
   Github,
   Linkedin,
   MessageCircle,
@@ -17,7 +16,7 @@ import siteContent, { projectCases } from '@/lib/languages'
 import { getWhatsappHref } from '@/lib/contact'
 import { getLocalizedPath } from '@/lib/locale'
 import { projectMeta } from '@/lib/projects'
-import Image from 'next/image'
+import { ProjectVisual } from '@/components/projects/projectVisual'
 
 export function IndexContent() {
   const { language } = useContext(LanguageContext)
@@ -46,10 +45,10 @@ export function IndexContent() {
     <div className="home-content container py-5 md:py-8 lg:py-10">
       <FadeInBottom>
         <section className="home-hero grid gap-6 border-b border-[var(--border)] pb-8 md:gap-8 md:pb-10 lg:grid-cols-[minmax(0,1.55fr)_minmax(20rem,0.85fr)] lg:gap-12 lg:pb-12 xl:grid-cols-[minmax(0,1.6fr)_minmax(21rem,0.8fr)]">
-          <div>
+          <div className="min-w-0">
             <p className="section-label">{content.eyebrow}</p>
 
-            <h1 className="home-hero-title mt-3 max-w-[58rem] font-display text-[1.875rem] leading-[1.08] font-semibold tracking-normal text-[var(--foreground)] min-[390px]:text-[2rem] sm:mt-4 sm:text-[3.25rem] sm:leading-[1.04] md:text-[4rem] lg:text-[4.15rem] xl:text-[4.35rem]">
+            <h1 className="home-hero-title mt-3 max-w-[58rem] font-display text-[1.75rem] leading-[1.08] font-semibold tracking-normal text-[var(--foreground)] min-[390px]:text-[1.875rem] sm:mt-4 sm:text-[3rem] sm:leading-[1.04] md:text-[3.65rem] lg:text-[3.75rem] xl:text-[3.95rem]">
               <span className="sm:hidden">{content.mobileTitle}</span>
               <span className="hidden sm:inline">{content.title}</span>
             </h1>
@@ -71,7 +70,7 @@ export function IndexContent() {
               </Link>
 
               <Link
-                href={getLocalizedPath('/projects', language)}
+                href={getLocalizedPath('/resume', language)}
                 className="secondary-link"
               >
                 {content.secondaryCta}
@@ -84,13 +83,19 @@ export function IndexContent() {
             </p>
           </div>
 
-          <div className="home-hero-stats grid gap-4 self-start">
-            {content.stats.map((stat) => (
+          <div className="home-hero-stats grid min-w-0 gap-4 self-start">
+            {content.stats.map((stat, index) => (
               <article
                 key={stat.label}
-                className="home-hero-stat rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-6"
+                className="home-hero-stat min-w-0 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-6"
               >
-                <p className="home-hero-stat-value whitespace-nowrap font-display text-[2.35rem] font-semibold tracking-normal text-[var(--foreground)] md:text-[2.75rem] lg:text-[2.65rem] xl:text-[2.85rem]">
+                <p
+                  className={`break-words font-display font-semibold tracking-normal text-[var(--foreground)] ${
+                    index === 0
+                      ? 'home-hero-stat-value text-[2rem] md:text-[2.75rem] lg:text-[2.65rem] xl:text-[2.85rem]'
+                      : 'text-xl leading-tight md:text-2xl'
+                  }`}
+                >
                   {stat.value}
                 </p>
                 <p className="home-hero-stat-label mt-2 max-w-[15rem] text-[0.95rem] leading-6 text-[var(--muted-foreground)]">
@@ -103,61 +108,61 @@ export function IndexContent() {
       </FadeInBottom>
 
       <FadeInBottom delay={0.05}>
-        <section className="grid gap-10 border-b border-[var(--border)] py-12 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16 lg:py-16">
+        <section className="grid gap-10 border-y border-[var(--border)] py-12 lg:py-16">
           <div>
-            <p className="section-label">{content.manifestoTitle}</p>
-          </div>
-
-          <div className="max-w-3xl">
-            <p className="font-display text-3xl leading-tight tracking-[-0.05em] text-[var(--foreground)] md:text-5xl">
-              {content.manifestoLead}
-            </p>
-
-            <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--muted-foreground)] md:text-lg">
-              {content.manifestoBody}
-            </p>
-
-            <ul className="mt-8 grid gap-4 border-t border-[var(--border)] pt-6 md:grid-cols-3">
-              {content.manifestoEvidence.map((item) => (
-                <li
-                  key={item}
-                  className="flex gap-3 text-sm leading-6 text-[var(--foreground)]"
-                >
-                  <Dot className="mt-0.5 h-5 w-5 shrink-0 text-[var(--accent)]" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      </FadeInBottom>
-
-      <FadeInBottom delay={0.08}>
-        <section className="grid gap-10 border-b border-[var(--border)] py-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:py-16">
-          <div>
-            <p className="section-label">{content.capabilitiesTitle}</p>
-            <p className="mt-4 max-w-md text-base leading-8 text-[var(--muted-foreground)]">
-              {content.capabilitiesIntro}
+            <p className="section-label">{content.experienceTitle}</p>
+            <p className="mt-4 max-w-[80ch] text-base leading-8 text-[var(--muted-foreground)]">
+              {content.experienceIntro}
             </p>
           </div>
 
-          <div className="space-y-4">
-            {content.capabilities.map((item) => (
+          <div className="space-y-6">
+            {content.experience.map((item) => (
               <article
                 key={item.title}
-                className="group rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 transition-transform hover:-translate-y-0.5 md:p-8"
+                className="grid gap-3 border-b border-[var(--border)] pb-6 last:border-none last:pb-0 md:grid-cols-[120px_minmax(0,1fr)] md:gap-8"
               >
-                <div className="flex items-start gap-3">
-                  <Dot className="mt-1 h-7 w-7 shrink-0 text-[var(--accent)]" />
-
-                  <div>
-                    <h2 className="font-display text-2xl leading-tight tracking-[-0.04em] text-[var(--foreground)] md:text-3xl">
-                      {item.title}
-                    </h2>
-                    <p className="mt-3 max-w-2xl text-base leading-8 text-[var(--muted-foreground)]">
-                      {item.description}
-                    </p>
-                  </div>
+                <p className="text-sm font-semibold tracking-[0.18em] text-[var(--accent)] uppercase">
+                  {item.period}
+                </p>
+                <div className="min-w-0 max-w-[80ch]">
+                  <h2 className="font-display text-2xl leading-tight tracking-[-0.04em] text-[var(--foreground)]">
+                    {item.title}
+                  </h2>
+                  <p className="mt-3 text-base leading-8 text-[var(--muted-foreground)]">
+                    {item.description}
+                  </p>
+                  {item.highlights && (
+                    <ul className="mt-4 list-disc space-y-3 pl-5 text-base leading-7 text-[var(--muted-foreground)]">
+                      {item.highlights.map((highlight) => (
+                        <li key={highlight}>{highlight}</li>
+                      ))}
+                    </ul>
+                  )}
+                  {item.caseSlug && (
+                    <Link
+                      href={getLocalizedPath(
+                        `/projects/${item.caseSlug}`,
+                        language,
+                      )}
+                      className="mt-5 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4"
+                    >
+                      {content.experienceCaseLabel}
+                      <ArrowRight className="h-4 w-4 shrink-0" />
+                    </Link>
+                  )}
+                  {item.stack ? (
+                    <ul className="mt-4 flex max-w-2xl flex-wrap gap-2">
+                      {item.stack.map((technology) => (
+                        <li
+                          key={technology}
+                          className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs leading-5 font-medium text-[var(--foreground)]"
+                        >
+                          {technology}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </div>
               </article>
             ))}
@@ -177,7 +182,7 @@ export function IndexContent() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+          <div className="mt-8 grid grid-cols-1 gap-6 lg:grid-cols-2">
             {content.featuredProjects.map((project) => {
               const details = projectCases[language][project.slug]
               const meta = projectMeta[project.slug]
@@ -188,13 +193,11 @@ export function IndexContent() {
                   href={getLocalizedPath(`/projects/${project.slug}`, language)}
                   className="group overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] transition-transform hover:-translate-y-1"
                 >
-                  <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--border)]">
-                    <Image
-                      src={meta.image}
-                      alt={project.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  <div className="overflow-hidden border-b border-[var(--border)]">
+                    <ProjectVisual
+                      image={meta.image}
+                      title={project.title}
+                      metrics={details.metrics}
                     />
                   </div>
 
@@ -206,9 +209,6 @@ export function IndexContent() {
                     <p className="mt-4 text-base leading-8 text-[var(--muted-foreground)]">
                       {project.summary}
                     </p>
-                    <p className="mt-4 text-sm leading-7 text-[var(--muted-foreground)]">
-                      {details.overview}
-                    </p>
                     <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--foreground)]">
                       {projectLabels.cta}
                       <ArrowUpRight className="h-4 w-4" />
@@ -217,50 +217,6 @@ export function IndexContent() {
                 </Link>
               )
             })}
-          </div>
-        </section>
-      </FadeInBottom>
-
-      <FadeInBottom delay={0.14}>
-        <section className="grid gap-10 border-y border-[var(--border)] py-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:py-16">
-          <div>
-            <p className="section-label">{content.experienceTitle}</p>
-            <p className="mt-4 max-w-md text-base leading-8 text-[var(--muted-foreground)]">
-              {content.experienceIntro}
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {content.experience.map((item) => (
-              <article
-                key={item.title}
-                className="grid gap-3 border-b border-[var(--border)] pb-6 last:border-none last:pb-0 md:grid-cols-[120px_1fr]"
-              >
-                <p className="text-sm font-semibold tracking-[0.18em] text-[var(--accent)] uppercase">
-                  {item.period}
-                </p>
-                <div>
-                  <h2 className="font-display text-2xl leading-tight tracking-[-0.04em] text-[var(--foreground)]">
-                    {item.title}
-                  </h2>
-                  <p className="mt-3 max-w-2xl text-base leading-8 text-[var(--muted-foreground)]">
-                    {item.description}
-                  </p>
-                  {item.stack ? (
-                    <ul className="mt-4 flex max-w-2xl flex-wrap gap-2">
-                      {item.stack.map((technology) => (
-                        <li
-                          key={technology}
-                          className="rounded-full border border-[var(--border)] bg-[var(--surface)] px-3 py-1 text-xs leading-5 font-medium text-[var(--foreground)]"
-                        >
-                          {technology}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </div>
-              </article>
-            ))}
           </div>
         </section>
       </FadeInBottom>
@@ -286,6 +242,13 @@ export function IndexContent() {
             </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href={getLocalizedPath('/resume', language)}
+                className="secondary-link justify-center"
+              >
+                {content.secondaryCta}
+                <MoveRight className="h-4 w-4" />
+              </Link>
               {contactLinks.map(({ href, label, icon: Icon }) => (
                 <Link
                   key={label}

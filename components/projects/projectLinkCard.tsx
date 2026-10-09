@@ -1,23 +1,26 @@
 'use client'
 
-import Image, { type StaticImageData } from 'next/image'
+import type { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
+import { ProjectVisual } from './projectVisual'
 
 type ProjectLinkCardProps = {
   href: string
-  imageSrc: StaticImageData
+  imageSrc?: StaticImageData
+  metrics?: { value: string; label: string }[]
   category: string
   title: string
   summary: string
   cta: string
   liveLabel: string
-  liveHref: string
+  liveHref?: string
 }
 
 export function ProjectLinkCard({
   href,
   imageSrc,
+  metrics,
   category,
   title,
   summary,
@@ -25,19 +28,15 @@ export function ProjectLinkCard({
   liveLabel,
   liveHref,
 }: ProjectLinkCardProps) {
-  const liveHostname = new URL(liveHref).hostname.replace('www.', '')
+  const liveHostname = liveHref
+    ? new URL(liveHref).hostname.replace('www.', '')
+    : undefined
 
   return (
-    <article className="overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
+    <article className="min-w-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
       <Link href={href} aria-label={`${cta}: ${title}`} className="group block">
-        <div className="relative aspect-[16/10] overflow-hidden border-b border-[var(--border)]">
-          <Image
-            src={imageSrc}
-            alt={title}
-            fill
-            sizes="(max-width: 1024px) 100vw, 50vw"
-            className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-          />
+        <div className="overflow-hidden border-b border-[var(--border)]">
+          <ProjectVisual image={imageSrc} title={title} metrics={metrics} />
         </div>
       </Link>
 
@@ -61,19 +60,21 @@ export function ProjectLinkCard({
             <ArrowUpRight className="h-4 w-4" />
           </Link>
 
-          <Link
-            href={liveHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${liveLabel}: ${title}`}
-            className="inline-flex items-center gap-2 text-sm text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
-          >
-            {liveLabel}
-            <span className="font-semibold text-[var(--foreground)]">
-              {liveHostname}
-            </span>
-            <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          {liveHref && (
+            <Link
+              href={liveHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${liveLabel}: ${title}`}
+              className="inline-flex flex-wrap items-center gap-2 text-sm text-[var(--muted-foreground)] transition-colors hover:text-[var(--foreground)]"
+            >
+              {liveLabel}
+              <span className="font-semibold text-[var(--foreground)]">
+                {liveHostname}
+              </span>
+              <ArrowUpRight className="h-4 w-4" />
+            </Link>
+          )}
         </div>
       </div>
     </article>

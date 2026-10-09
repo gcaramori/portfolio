@@ -1,8 +1,13 @@
 import type { Metadata } from 'next'
-import siteContent, { projectCases, type Locale, type ProjectSlug } from './languages'
+import siteContent, {
+  projectCases,
+  type Locale,
+  type ProjectSlug,
+} from './languages'
 import { getLocalizedPath } from './locale'
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
 export const siteName = 'Guilherme Caramori'
 export const ogImage = '/projects/kylemore.png'
 
@@ -66,6 +71,18 @@ export function getHomeMetadata(locale: Locale) {
   return buildMetadata({
     ...siteContent[locale].metadata,
     pathname: '/',
+    locale,
+  })
+}
+
+export function getResumeMetadata(locale: Locale) {
+  return buildMetadata({
+    title:
+      locale === 'pt-BR'
+        ? 'Currículo | Guilherme Caramori | Full Stack Sênior'
+        : 'Résumé | Guilherme Caramori | Senior Full Stack Developer',
+    description: siteContent[locale].home.intro,
+    pathname: '/resume',
     locale,
   })
 }

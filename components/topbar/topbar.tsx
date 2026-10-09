@@ -59,7 +59,7 @@ export function Topbar() {
     <>
       <header
         ref={headerRef}
-        className="fixed inset-x-0 top-0 z-[100] border-b border-[var(--border)] backdrop-blur-xl"
+        className="fixed inset-x-0 top-0 z-[100] border-b border-[var(--border)] backdrop-blur-xl print:hidden"
         style={{ backgroundColor: 'rgb(244 239 231 / 0.88)' }}
       >
         <div className="container flex flex-col gap-2 py-2 lg:min-h-20 lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:py-4">
@@ -153,7 +153,7 @@ export function Topbar() {
       </header>
       <div
         aria-hidden="true"
-        className="h-[6.5rem] shrink-0 lg:h-[7.25rem]"
+        className="h-[6.5rem] shrink-0 lg:h-[7.25rem] print:hidden"
         style={headerHeight ? { height: `${headerHeight}px` } : undefined}
       />
     </>
