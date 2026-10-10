@@ -164,7 +164,7 @@ const siteContent: Record<Locale, SiteContent> = {
     metadata: {
       title: 'Guilherme Caramori | Desenvolvedor Full Stack Sênior',
       description:
-        'Portfólio de Guilherme Caramori, desenvolvedor full stack sênior focado em sistemas de negócio, dashboards, integrações, automações e entrega em produção.',
+        'Portfólio de Guilherme Caramori, desenvolvedor full stack sênior focado em e-commerces, sistemas de negócio, dashboards, integrações, automações e entrega em produção.',
     },
     topbar: {
       brand: 'Guilherme Caramori',
@@ -224,7 +224,7 @@ const siteContent: Record<Locale, SiteContent> = {
         'Trabalho em projetos usados no dia a dia da operação, em que os dados precisam ser confiáveis e os fluxos, fáceis de seguir. Dou atenção à estabilidade das integrações e à manutenção do sistema.',
       capabilities: [
         {
-          title: 'Sistemas de negócio e dashboards',
+          title: 'E-commerces, sistemas de negócio e dashboards',
           description:
             'Desenvolvo painéis e ferramentas internas para acompanhar a operação, controlar permissões e consultar dados. O objetivo é reduzir retrabalho e dar ao time informações confiáveis para decidir.',
         },
@@ -346,7 +346,7 @@ const siteContent: Record<Locale, SiteContent> = {
       },
       closingTitle: 'Vamos conversar sobre uma oportunidade?',
       closingBody:
-        'Busco oportunidades como desenvolvedor full stack sênior em times que desenvolvem SaaS, sistemas de negócio e integrações. Também estou aberto a consultoria técnica.',
+        'Desenvolvo SaaS, e-commerces, sistemas de negócio e integrações, do planejamento à manutenção em produção. Estou aberto a integrar uma equipe como full stack sênior ou trabalhar em projetos de consultoria técnica.',
       closingCta: 'Conversar sobre uma oportunidade',
     },
     about: {
@@ -354,7 +354,7 @@ const siteContent: Record<Locale, SiteContent> = {
       title:
         'Desenvolvedor full stack sênior com experiência em SaaS, e-commerce e integrações.',
       intro:
-        'Trabalho com SaaS, sistemas de negócio e integrações de e-commerce, acompanhando produtos desde o planejamento até a manutenção em produção.',
+        'Trabalho com SaaS, e-commerces, sistemas de negócio e integrações, acompanhando produtos desde o planejamento até a manutenção em produção.',
       storyTitle: 'Minha experiência',
       paragraphs: [
         'Comecei desenvolvendo interfaces web. Com o tempo, passei a trabalhar também com APIs, integrações e produtos completos. Na Performa.AI, desenvolvo e mantenho ferramentas que conectam catálogos, pedidos e recomendações nas lojas.',
@@ -421,7 +421,7 @@ const siteContent: Record<Locale, SiteContent> = {
     metadata: {
       title: 'Guilherme Caramori | Senior Full Stack Developer',
       description:
-        'Portfolio of Guilherme Caramori, a senior full stack developer focused on internal products, dashboards, integrations, automations, and production delivery.',
+        'Portfolio of Guilherme Caramori, a senior full stack developer focused on e-commerce platforms, internal products, dashboards, integrations, automations, and production delivery.',
     },
     topbar: {
       brand: 'Guilherme Caramori',
@@ -482,7 +482,7 @@ const siteContent: Record<Locale, SiteContent> = {
         'I work on projects used in day-to-day operations, where data needs to be reliable and workflows easy to follow. I pay attention to integration stability and system maintenance.',
       capabilities: [
         {
-          title: 'Internal products and dashboards',
+          title: 'E-commerce platforms, internal products, and dashboards',
           description:
             'I build dashboards and internal tools to monitor operations, manage permissions, and filter data. The goal is to reduce rework and give the team reliable information for making decisions.',
         },
@@ -604,7 +604,7 @@ const siteContent: Record<Locale, SiteContent> = {
       },
       closingTitle: 'Have a role in mind?',
       closingBody:
-        'I am looking for senior full stack roles in teams building SaaS, business systems, and integrations. I am also open to technical consulting.',
+        'I develop SaaS, e-commerce platforms, business systems, and integrations, from planning through production maintenance. I am open to joining a team as a senior full stack developer or working on technical consulting projects.',
       closingCta: 'Discuss an opportunity',
     },
     about: {
@@ -612,7 +612,7 @@ const siteContent: Record<Locale, SiteContent> = {
       title:
         'Senior full stack developer with experience in SaaS, e-commerce, and integrations.',
       intro:
-        'I work on SaaS, internal systems, and e-commerce integrations, taking products from planning through production maintenance.',
+        'I work on SaaS, e-commerce platforms, internal systems, and integrations, taking products from planning through production maintenance.',
       storyTitle: 'My experience',
       paragraphs: [
         'I started by building web interfaces. Over time, I began working on APIs, integrations, and complete products too. At Performa.AI, I build and maintain tools that connect store catalogs, orders, and recommendations.',
@@ -756,7 +756,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
         {
           title: 'Entrega adicional: automações com IA',
-          body: 'Também trabalhei em automações de WhatsApp utilizando IA, MCP, modelos e RAG. Essa experiência complementa minha atuação em sistemas de negócio e integrações.',
+          body: 'Também trabalhei em automações de WhatsApp utilizando IA, MCP, modelos e RAG. Essa experiência complementa minha atuação em e-commerces, sistemas de negócio e integrações.',
         },
       ],
     },
@@ -932,7 +932,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
         {
           title: 'Additional delivery: AI automations',
-          body: 'I also worked on WhatsApp automations using AI, MCP, models, and RAG. This experience complements my work on business systems and integrations.',
+          body: 'I also worked on WhatsApp automations using AI, MCP, models, and RAG. This experience complements my work on e-commerce platforms, business systems, and integrations.',
         },
       ],
     },
