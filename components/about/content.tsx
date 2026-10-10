@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import FadeInBottom from '@/components/fadeInBottom'
 import { LanguageContext } from '@/contexts/languageContext'
 import siteContent from '@/lib/languages'
-import { emailHref } from '@/lib/contact'
+import { getWhatsappHref } from '@/lib/contact'
 
 export function AboutContent() {
   const { language } = useContext(LanguageContext)
@@ -104,7 +104,9 @@ export function AboutContent() {
       <FadeInBottom delay={0.14}>
         <section className="border-t border-[var(--border)] py-12 lg:py-16">
           <Link
-            href={emailHref}
+            href={getWhatsappHref(language)}
+            target="_blank"
+            rel="noopener noreferrer"
             className="primary-link inline-flex"
           >
             {content.cta}
