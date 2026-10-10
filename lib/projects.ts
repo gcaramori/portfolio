@@ -10,7 +10,7 @@ type ProjectMeta = {
 }
 
 export const projectMeta: Record<ProjectSlug, ProjectMeta> = {
-  'performa-ai': { slug: 'performa-ai' },
+  'performa-ai': { slug: 'performa-ai', href: 'https://performa.ai' },
   jsbjjkylemore: {
     slug: 'jsbjjkylemore',
     href: 'https://jsbjjkylemore.com',
