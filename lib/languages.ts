@@ -196,9 +196,13 @@ const siteContent: Record<Locale, SiteContent> = {
           label: 'desenvolvendo e mantendo produtos web',
         },
         {
-          value: '150+ clientes',
+          value: 'Milhares de requisições/min',
+          label: 'em um serviço de webhooks que desenvolvi',
+        },
+        {
+          value: 'Plataformas conectadas',
           label:
-            'conectados ao serviço de webhooks durante minha atuação na Performa.AI',
+            'apps, catálogos e pedidos integrados entre Shopify, Nuvemshop, Loja Integrada, Tray, VTEX e Magazord',
         },
         {
           value: 'Da arquitetura à produção',
@@ -267,7 +271,7 @@ const siteContent: Record<Locale, SiteContent> = {
             'Desenvolvedor full stack sênior e referência técnica do time na Performa.AI, plataforma de inteligência e conversão para e-commerce. Desenvolvo APIs, integrações de catálogos e pedidos e ferramentas embarcadas nas lojas.',
           highlights: [
             'Confiabilidade no processamento de pedidos: implementei processamento idempotente de webhooks para evitar registros duplicados em um serviço com mais de 150 clientes conectados e milhares de requisições por minuto, mantendo dados consistentes para a avaliação das recomendações.',
-            'Automação de integrações de e-commerce: desenvolvi e mantive integrações de catálogos e pedidos com plataformas como Shopify, Nuvemshop e Loja Integrada, automatizando a atualização dos dados utilizados pelas ferramentas da Performa.AI e reduzindo a necessidade de intervenção manual.',
+            'Automação de integrações de e-commerce: desenvolvi e mantive integrações de catálogos e pedidos com plataformas como Shopify, Nuvemshop, Loja Integrada, Tray, VTEX e Magazord, automatizando a atualização dos dados utilizados pelas ferramentas da Performa.AI e reduzindo a necessidade de intervenção manual.',
             'APIs e segurança: API com MongoDB replicado, JWT, HMAC e rate limiting, com milhares de acessos diários.',
             'Parcerias com plataformas: interlocução técnica para obter orientações de integração e apoiar o fechamento de parcerias.',
             'Suporte e clientes: apoio ao suporte, implementações específicas e resolução de problemas técnicos complexos.',
@@ -448,9 +452,13 @@ const siteContent: Record<Locale, SiteContent> = {
           label: 'developing and maintaining web products',
         },
         {
-          value: '150+ clients',
+          value: 'Thousands of requests/min',
+          label: 'in a webhook service I built',
+        },
+        {
+          value: 'Connected platforms',
           label:
-            'connected to the webhook service during my work at Performa.AI',
+            'apps, catalogs, and orders integrated across Shopify, Nuvemshop, Loja Integrada, Tray, VTEX, and Magazord',
         },
         {
           value: 'From architecture to production',
@@ -519,7 +527,7 @@ const siteContent: Record<Locale, SiteContent> = {
             'Senior full stack developer and go-to engineer for technical questions at Performa.AI, an intelligence and conversion platform for e-commerce. I develop APIs, catalog and order integrations, and tools embedded in stores.',
           highlights: [
             'Reliable order processing: I implemented idempotent webhook processing to prevent duplicate records in a service with more than 150 connected clients and thousands of requests per minute, keeping data consistent for recommendation evaluation.',
-            'E-commerce integration automation: I developed and maintained catalog and order integrations with platforms such as Shopify, Nuvemshop, and Loja Integrada, automating updates to the data used by Performa.AI tools and reducing the need for manual intervention.',
+            'E-commerce integration automation: I developed and maintained catalog and order integrations with platforms such as Shopify, Nuvemshop, Loja Integrada, Tray, VTEX, and Magazord, automating updates to the data used by Performa.AI tools and reducing the need for manual intervention.',
             'APIs and security: an API backed by replicated MongoDB with JWT, HMAC, and rate limiting, serving thousands of daily accesses.',
             'Platform partnerships: technical discussions to obtain integration guidance and support partnership agreements.',
             'Support and clients: assistance to the support team, client-specific implementations, and resolution of complex technical issues.',

@@ -94,17 +94,13 @@ export function IndexContent() {
           </div>
 
           <div className="home-hero-stats grid min-w-0 gap-4 self-start">
-            {content.stats.map((stat, index) => (
+            {content.stats.map((stat) => (
               <article
                 key={stat.label}
                 className="home-hero-stat min-w-0 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-6"
               >
                 <p
-                  className={`break-words font-display font-semibold tracking-normal text-[var(--foreground)] ${
-                    index === 0
-                      ? 'home-hero-stat-value text-[2rem] md:text-[2.75rem] lg:text-[2.65rem] xl:text-[2.85rem]'
-                      : 'text-xl leading-tight md:text-2xl'
-                  }`}
+                  className="break-words font-display text-xl leading-tight font-semibold tracking-normal text-[var(--foreground)] md:text-2xl"
                 >
                   {stat.value}
                 </p>
@@ -294,7 +290,9 @@ export function IndexContent() {
               {content.closingBody}
             </p>
             <Link
-              href={emailHref}
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
               className="primary-link mt-8 inline-flex"
             >
               {content.closingCta}
