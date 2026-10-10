@@ -178,9 +178,9 @@ const siteContent: Record<Locale, SiteContent> = {
       title: 'Desenvolvedor Full Stack Sênior | React, TypeScript e Node.js',
       mobileTitle: 'Desenvolvedor Full Stack Sênior',
       intro:
-        '8+ anos desenvolvendo produtos web, integrações de e-commerce e sistemas em produção. Referência técnica do time na Performa.AI, com experiência em APIs, processamento de pedidos e entregas completas para clientes.',
+        '8+ anos desenvolvendo produtos web, integrações de e-commerce e sistemas em produção. Atuo do planejamento à entrega, conectando sistemas e automatizando processos para reduzir trabalho manual, manter dados confiáveis e sustentar operações em escala.',
       mobileIntro:
-        '8+ anos em produtos web e integrações de e-commerce. Referência técnica do time na Performa.AI. React, TypeScript e Node.js.',
+        '8+ anos em produtos web e integrações de e-commerce, do planejamento à produção. React, TypeScript e Node.js.',
       description:
         'Ajudo times e negócios a substituir planilhas, tarefas manuais e sistemas desconectados por aplicações com requisitos claros, interfaces fáceis de usar e integrações estáveis. Cuido da arquitetura e acompanho o deploy para facilitar a manutenção.',
       primaryCta: 'Conversar sobre uma oportunidade',
@@ -417,9 +417,9 @@ const siteContent: Record<Locale, SiteContent> = {
       title: 'Senior Full Stack Developer | React, TypeScript and Node.js',
       mobileTitle: 'Senior Full Stack Developer',
       intro:
-        '8+ years building web products, e-commerce integrations, and production systems. The technical point of reference for the team at Performa.AI, with experience in APIs, order processing, and end-to-end client projects.',
+        '8+ years building web products, e-commerce integrations, and production systems. I work from planning through delivery, connecting systems and automating processes to reduce manual work, keep data reliable, and support operations at scale.',
       mobileIntro:
-        '8+ years in web products and e-commerce integrations. The technical point of reference for the team at Performa.AI. React, TypeScript and Node.js.',
+        '8+ years in web products and e-commerce integrations, from planning to production. React, TypeScript and Node.js.',
       description:
         'I help teams and businesses replace spreadsheets, manual tasks, and disconnected systems with applications that have clear requirements, usable interfaces, and stable integrations. I handle architecture and deployment with maintenance in mind.',
       primaryCta: 'Discuss an opportunity',
