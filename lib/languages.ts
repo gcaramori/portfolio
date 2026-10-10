@@ -164,7 +164,7 @@ const siteContent: Record<Locale, SiteContent> = {
     metadata: {
       title: 'Guilherme Caramori | Desenvolvedor Full Stack Sênior',
       description:
-        'Portfolio de Guilherme Caramori, desenvolvedor full stack sênior focado em sistemas de negócio, dashboards, integrações, automações e entrega em produção.',
+        'Portfólio de Guilherme Caramori, desenvolvedor full stack sênior focado em sistemas de negócio, dashboards, integrações, automações e entrega em produção.',
     },
     topbar: {
       brand: 'Guilherme Caramori',
@@ -255,7 +255,7 @@ const siteContent: Record<Locale, SiteContent> = {
           kicker: 'Site para academia com foco no público local',
           title: 'Unit 5 Strength & Fitness',
           summary:
-            'Site comercial responsivo com apresentação de serviços, prova social e chamadas de ação para contato.',
+            'Site comercial responsivo com apresentação de serviços, prova social e chamadas para entrar em contato.',
         },
       ],
       experienceTitle: 'Trajetória',
@@ -292,7 +292,8 @@ const siteContent: Record<Locale, SiteContent> = {
             'MCP',
             'RAG',
             'Docker',
-            'Vitest/Jest',
+            'Vitest',
+            'Jest',
             'Grafana',
             'GitHub Actions',
             'Supabase',
@@ -307,10 +308,10 @@ const siteContent: Record<Locale, SiteContent> = {
             'Minha experiência freelance inclui sites, plataformas web, intranets corporativas, sistemas de agendamento e automações de e-mail marketing. Atuo do levantamento de requisitos à entrega em produção, com frontend, backend, integrações e manutenção.',
           highlights: [
             'Intranet corporativa: sistema interno de comunicação, com acervo de fotos e mural de recados.',
-            'E-mail marketing: fila de envios com Bull Queue, Node.js e Amazon SES, com deploy em VPS na DigitalOcean.',
+            'E-mail marketing: fila de envios com BullMQ, Node.js e Amazon SES, com deploy em VPS na DigitalOcean.',
             'Clínica odontológica: sistema de agendamento de consultas e gestão de médicos, funcionários e horários disponíveis.',
-            'Plataforma para academia: captação de alunos, cadastro, autenticação, pagamentos recorrentes via GoCardless e banco PostgreSQL/Prisma.',
-            'Site comercial para academia: interface responsiva com apresentação de serviços, prova social e chamadas de ação para contato.',
+            'Plataforma para academia: captação de alunos, cadastro, autenticação, pagamentos recorrentes via GoCardless e banco de dados PostgreSQL com Prisma ORM.',
+            'Site comercial para academia: interface responsiva com apresentação de serviços, prova social e chamadas para entrar em contato.',
           ],
           stack: [
             'Next.js',
@@ -322,7 +323,8 @@ const siteContent: Record<Locale, SiteContent> = {
             'PostgreSQL',
             'PHP',
             'BullMQ',
-            'Vitest/Jest',
+            'Vitest',
+            'Jest',
             'GitHub Actions',
             'Integrações com gateways de pagamento',
           ],
@@ -361,7 +363,7 @@ const siteContent: Record<Locale, SiteContent> = {
       highlightsTitle: 'Meu trabalho na Performa.AI',
       highlights: [
         '8 anos criando, mantendo e evoluindo produtos web em empresa e projetos externos, com responsabilidade de ponta a ponta: diagnóstico, arquitetura, implementação, deploy e evolução pós-lançamento.',
-        'Ownership técnico em ferramentas críticas, com atenção a compatibilidade, performance, segurança, manutenção de legado e integrações que impactam a operação diária.',
+        'Ownership técnico em ferramentas críticas, com atenção à compatibilidade, à performance, à segurança, à manutenção de legado e às integrações que impactam a operação diária.',
         'Experiência real com fluxos críticos: autenticação, pagamentos recorrentes, webhooks, frete, e-mails transacionais, uploads, tracking, permissões, APIs e integrações de e-commerce.',
         'Boa aderência para squads pequenos, consultoria técnica e negócios que precisam transformar planilhas, etapas manuais ou integrações frágeis em produto operável e mensurável.',
       ],
@@ -548,7 +550,8 @@ const siteContent: Record<Locale, SiteContent> = {
             'MCP',
             'RAG',
             'Docker',
-            'Vitest/Jest',
+            'Vitest',
+            'Jest',
             'Grafana',
             'GitHub Actions',
             'Supabase',
@@ -563,9 +566,9 @@ const siteContent: Record<Locale, SiteContent> = {
             'My freelance experience includes websites, web platforms, corporate intranets, scheduling systems, and email marketing automations. I work from requirements gathering through production delivery, covering frontend, backend, integrations, and maintenance.',
           highlights: [
             'Corporate intranet: an internal communication system with a photo archive and a noticeboard.',
-            'Email marketing: a sending queue built with Bull Queue, Node.js, and Amazon SES, deployed to a DigitalOcean VPS.',
+            'Email marketing: a sending queue built with BullMQ, Node.js, and Amazon SES, deployed to a DigitalOcean VPS.',
             'Dental clinic: an appointment scheduling system with management of doctors, staff, and available time slots.',
-            'Academy platform: student acquisition, registration, authentication, recurring payments via GoCardless, and PostgreSQL/Prisma.',
+            'Academy platform: student acquisition, registration, authentication, recurring payments via GoCardless, and a PostgreSQL database with Prisma ORM.',
             'Gym website: a responsive commercial website with service information, social proof, and calls to action for contact.',
           ],
           stack: [
@@ -578,7 +581,8 @@ const siteContent: Record<Locale, SiteContent> = {
             'PostgreSQL',
             'PHP',
             'BullMQ',
-            'Vitest/Jest',
+            'Vitest',
+            'Jest',
             'GitHub Actions',
             'Payment gateway integrations',
           ],
@@ -619,7 +623,7 @@ const siteContent: Record<Locale, SiteContent> = {
         '8 years building, maintaining, and evolving web products across company work and external projects, with end-to-end responsibility: diagnosis, architecture, implementation, deployment, and post-launch evolution.',
         'Technical ownership of critical tools, with attention to compatibility, performance, security, legacy maintenance, and integrations that affect daily operations.',
         'Real experience with critical flows: authentication, recurring payments, webhooks, shipping, transactional email, uploads, tracking, permissions, APIs, and e-commerce integrations.',
-        'Strong fit for small squads, technical consulting, and businesses that need to turn spreadsheets, manual steps, or fragile integrations into operable, measurable product.',
+        'Strong fit for small squads, technical consulting, and businesses that need to turn spreadsheets, manual steps, or fragile integrations into an operable, measurable product.',
       ],
       methodTitle: 'How I work',
       method: [
@@ -766,7 +770,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         'Projeto full stack para organizar a captação de alunos e conectar o site à operação da academia. A entrega incluiu cadastro, autenticação e pagamentos recorrentes, com banco de dados relacional, tracking e deploy em produção.',
       role: 'Responsável por discovery, direção visual, arquitetura da interface, frontend, backend, modelagem de dados, integrações externas, eventos de tracking, deploy e ajustes pós-lançamento.',
       deliverables:
-        'Site institucional responsivo, páginas de captação para adultos e kids/teens, cadastro e login, assinatura recorrente, emails transacionais, Google Maps, GoCardless, Meta Pixel, banco PostgreSQL/Prisma e deploy em produção.',
+        'Site institucional responsivo, páginas de captação para adultos e kids/teens, cadastro e login, assinatura recorrente, e-mails transacionais, Google Maps, GoCardless, Meta Pixel, banco de dados PostgreSQL com Prisma ORM e deploy em produção.',
       stack: [
         'Next.js',
         'TypeScript',
@@ -821,7 +825,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
         {
           title: 'Solução',
-          body: 'A interface foi organizada para valorizar headline, imagem e chamadas de ação, usando contraste forte, tipografia pesada e ritmo visual direto. As seções foram pensadas para leitura escaneável: proposta, serviços, prova e contato sem excesso de ornamentação.',
+          body: 'A interface foi organizada para valorizar headline, imagem e chamadas para ação, usando contraste forte, tipografia pesada e ritmo visual direto. As seções foram pensadas para leitura escaneável: proposta, serviços, prova e contato sem excesso de ornamentação.',
         },
         {
           title: 'Execução responsiva',
@@ -942,7 +946,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         "A full stack project to organize student acquisition and connect the website to the academy's operations. The delivery included registration, authentication, and recurring payments, with a relational database, tracking, and production deployment.",
       role: 'Responsible for discovery, visual direction, interface architecture, frontend, backend, data modeling, external integrations, tracking events, deployment, and post-launch adjustments.',
       deliverables:
-        'Responsive institutional website, adult and kids/teens lead capture pages, registration and login, recurring subscriptions, transactional emails, Google Maps, GoCardless, Meta Pixel, PostgreSQL/Prisma, and production deployment.',
+        'Responsive institutional website, adult and kids/teens lead capture pages, registration and login, recurring subscriptions, transactional emails, Google Maps, GoCardless, Meta Pixel, a PostgreSQL database with Prisma ORM, and production deployment.',
       stack: [
         'Next.js',
         'TypeScript',
