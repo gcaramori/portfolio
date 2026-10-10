@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useContext } from 'react'
-import { ArrowLeft, ArrowUpRight } from 'lucide-react'
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 import FadeInBottom from '@/components/fadeInBottom'
 import { LanguageContext } from '@/contexts/languageContext'
 import siteContent, { projectCases, type ProjectSlug } from '@/lib/languages'
@@ -104,6 +104,39 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
         </section>
       </FadeInBottom>
 
+      {details.flow && (
+        <FadeInBottom delay={0.12}>
+          <figure className="border-b border-[var(--border)] py-10">
+            <figcaption>
+              <h2 className="font-display text-2xl font-semibold">
+                {details.flow.title}
+              </h2>
+              <p className="mt-3 text-sm text-[var(--muted-foreground)]">
+                {details.flow.note}
+              </p>
+            </figcaption>
+            <ol className="mt-6 grid gap-3 lg:grid-cols-4">
+              {details.flow.steps.map((step, index) => (
+                <li key={step} className="flex flex-col gap-3 lg:flex-row">
+                  <div className="editorial-card flex flex-1 items-center">
+                    <span className="mr-3 text-sm text-[var(--accent)]">
+                      {index + 1}
+                    </span>
+                    <p className="text-sm leading-6">{step}</p>
+                  </div>
+                  {index < details.flow!.steps.length - 1 && (
+                    <span aria-hidden="true" className="self-center">
+                      <ArrowDown className="h-4 w-4 lg:hidden" />
+                      <ArrowRight className="hidden h-4 w-4 lg:block" />
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </figure>
+        </FadeInBottom>
+      )}
+
       <FadeInBottom delay={0.16}>
         <section className="grid gap-8 border-b border-[var(--border)] py-12 lg:grid-cols-[0.72fr_1.28fr] lg:py-16">
           <div>
@@ -124,6 +157,32 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
           </div>
         </section>
       </FadeInBottom>
+
+      {details.sources && (
+        <section className="border-b border-[var(--border)] py-10">
+          <h2 className="font-display text-2xl font-semibold">
+            {labels.sourcesLabel}
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[var(--muted-foreground)]">
+            {labels.sourcesNote}
+          </p>
+          <ul className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
+            {details.sources.map((source) => (
+              <li key={source.url}>
+                <a
+                  href={source.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm underline underline-offset-4"
+                >
+                  {source.title}
+                  <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <FadeInBottom delay={0.2}>
         <section className="border-t border-[var(--border)] py-12 lg:py-16">

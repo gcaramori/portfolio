@@ -5,7 +5,9 @@ import { useContext } from 'react'
 import {
   ArrowRight,
   ArrowUpRight,
+  Download,
   Github,
+  Mail,
   Linkedin,
   MessageCircle,
   MoveRight,
@@ -13,7 +15,12 @@ import {
 import FadeInBottom from '@/components/fadeInBottom'
 import { LanguageContext } from '@/contexts/languageContext'
 import siteContent, { projectCases } from '@/lib/languages'
-import { getWhatsappHref } from '@/lib/contact'
+import {
+  CONTACT_EMAIL,
+  emailHref,
+  getWhatsappHref,
+  getResumePdfHref,
+} from '@/lib/contact'
 import { getLocalizedPath } from '@/lib/locale'
 import { projectMeta } from '@/lib/projects'
 import { ProjectVisual } from '@/components/projects/projectVisual'
@@ -24,6 +31,11 @@ export function IndexContent() {
   const projectLabels = siteContent[language].projects
   const whatsappHref = getWhatsappHref(language)
   const contactLinks = [
+    {
+      href: emailHref,
+      label: `${content.hiring.links.email}: ${CONTACT_EMAIL}`,
+      icon: Mail,
+    },
     {
       href: whatsappHref,
       label: content.hiring.links.whatsapp,
@@ -60,9 +72,7 @@ export function IndexContent() {
 
             <div className="home-hero-actions mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center">
               <Link
-                href={whatsappHref}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={emailHref}
                 className="primary-link"
               >
                 {content.primaryCta}
@@ -249,12 +259,20 @@ export function IndexContent() {
                 {content.secondaryCta}
                 <MoveRight className="h-4 w-4" />
               </Link>
+              <a
+                href={getResumePdfHref(language)}
+                download
+                className="secondary-link justify-center"
+              >
+                <Download className="h-4 w-4" />
+                {siteContent[language].resume.downloadLabel}
+              </a>
               {contactLinks.map(({ href, label, icon: Icon }) => (
                 <Link
                   key={label}
                   href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={href.startsWith('https:') ? '_blank' : undefined}
+                  rel={href.startsWith('https:') ? 'noopener noreferrer' : undefined}
                   className="secondary-link justify-center"
                 >
                   <Icon className="h-4 w-4" />
@@ -276,9 +294,7 @@ export function IndexContent() {
               {content.closingBody}
             </p>
             <Link
-              href={whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={emailHref}
               className="primary-link mt-8 inline-flex"
             >
               {content.closingCta}

@@ -45,6 +45,7 @@ type ProjectCase = {
   stack: string[]
   metrics?: Stat[]
   sources?: { title: string; url: string }[]
+  flow?: { title: string; note: string; steps: string[] }
   sections: {
     title: string
     body: string
@@ -55,6 +56,7 @@ type SiteContent = {
   resume: {
     label: string
     printLabel: string
+    downloadLabel: string
     printHint: string
     summaryTitle: string
     experienceTitle: string
@@ -104,6 +106,7 @@ type SiteContent = {
       items: string[]
       links: {
         whatsapp: string
+        email: string
       }
     }
     closingTitle: string
@@ -149,6 +152,7 @@ const siteContent: Record<Locale, SiteContent> = {
     resume: {
       label: 'Ver currículo',
       printLabel: 'Imprimir / salvar PDF',
+      downloadLabel: 'Baixar currículo em PDF',
       printHint:
         'Na janela de impressão, escolha Salvar como PDF para baixar o currículo.',
       summaryTitle: 'Resumo profissional',
@@ -192,9 +196,9 @@ const siteContent: Record<Locale, SiteContent> = {
           label: 'desenvolvendo e mantendo produtos web',
         },
         {
-          value: 'SaaS e projetos freelance',
+          value: '150+ clientes',
           label:
-            'experiência em e-commerce, sistemas internos e plataformas para clientes',
+            'conectados ao serviço de webhooks durante minha atuação na Performa.AI',
         },
         {
           value: 'Da arquitetura à produção',
@@ -233,7 +237,7 @@ const siteContent: Record<Locale, SiteContent> = {
       ],
       featuredTitle: 'Projetos freelance selecionados',
       featuredIntro:
-        'Uma seleção de entregas para clientes, com detalhes sobre minha participação, as soluções e o que foi colocado em produção.',
+        'Projetos para clientes: minha contribuição, decisões técnicas e entregas em produção.',
       featuredProjects: [
         {
           slug: 'jsbjjkylemore',
@@ -247,7 +251,7 @@ const siteContent: Record<Locale, SiteContent> = {
           kicker: 'Site para academia com foco no público local',
           title: 'Unit 5 Strength & Fitness',
           summary:
-            'Site comercial com linguagem direta e visual de alto contraste, voltado ao público da região.',
+            'Site comercial responsivo com apresentação de serviços, prova social e chamadas de ação para contato.',
         },
       ],
       experienceTitle: 'Trajetória',
@@ -262,11 +266,13 @@ const siteContent: Record<Locale, SiteContent> = {
           description:
             'Desenvolvedor full stack sênior e referência técnica do time na Performa.AI, plataforma de inteligência e conversão para e-commerce. Desenvolvo APIs, integrações de catálogos e pedidos e ferramentas embarcadas nas lojas.',
           highlights: [
-            'APIs e escala: webhooks com 150+ clientes conectados e milhares de requisições por minuto; API com MongoDB replicado, JWT, HMAC e rate limiting, com milhares de acessos diários.',
-            'Integrações e plataformas: sincronização de catálogos e pedidos, apps e interlocução técnica para obter orientações de integração e apoiar o fechamento de parcerias.',
+            'Confiabilidade no processamento de pedidos: implementei processamento idempotente de webhooks para evitar registros duplicados em um serviço com mais de 150 clientes conectados e milhares de requisições por minuto, mantendo dados consistentes para a avaliação das recomendações.',
+            'Automação de integrações de e-commerce: desenvolvi e mantive integrações de catálogos e pedidos com plataformas como Shopify, Nuvemshop e Loja Integrada, automatizando a atualização dos dados utilizados pelas ferramentas da Performa.AI e reduzindo a necessidade de intervenção manual.',
+            'APIs e segurança: API com MongoDB replicado, JWT, HMAC e rate limiting, com milhares de acessos diários.',
+            'Parcerias com plataformas: interlocução técnica para obter orientações de integração e apoiar o fechamento de parcerias.',
             'Suporte e clientes: apoio ao suporte, implementações específicas e resolução de problemas técnicos complexos.',
             'Orientação de iniciantes: apoio a profissionais em início de carreira nas dúvidas e decisões técnicas do dia a dia.',
-            'Otimizações: melhorias em scripts JavaScript que reduziram o carregamento das ferramentas e o consumo dos bancos de dados.',
+            'Eficiência das ferramentas em produção: otimizei scripts JavaScript e rotinas de acesso aos dados, reduzindo o tempo de carregamento das ferramentas embarcadas nas lojas e o consumo dos bancos de dados.',
             'Automações com IA: fluxos de WhatsApp com IA, MCP e RAG, além de trabalho com pagamentos e auditoria.',
           ],
           stack: [
@@ -277,10 +283,16 @@ const siteContent: Record<Locale, SiteContent> = {
             'PHP',
             'MongoDB',
             'Redis',
-            'JavaScript CDN',
-            'Cloudflare Workers',
+            'JavaScript',
+            'Sentry',
+            'MCP',
+            'RAG',
+            'Docker',
+            'Vitest/Jest',
+            'Grafana',
+            'GitHub Actions',
             'Supabase',
-            'APIs REST',
+            'APIs',
             'Webhooks',
           ],
         },
@@ -293,8 +305,8 @@ const siteContent: Record<Locale, SiteContent> = {
             'Intranet corporativa: sistema interno de comunicação, com acervo de fotos e mural de recados.',
             'E-mail marketing: fila de envios com Bull Queue, Node.js e Amazon SES, com deploy em VPS na DigitalOcean.',
             'Clínica odontológica: sistema de agendamento de consultas e gestão de médicos, funcionários e horários disponíveis.',
-            'JSBJJ Kylemore: plataforma com captação de alunos, cadastro, autenticação, pagamentos recorrentes via GoCardless e banco PostgreSQL/Prisma.',
-            'Unit 5 Strength & Fitness: site comercial responsivo com apresentação de serviços, prova social e chamadas de ação para contato.',
+            'Plataforma para academia: captação de alunos, cadastro, autenticação, pagamentos recorrentes via GoCardless e banco PostgreSQL/Prisma.',
+            'Site comercial para academia: interface responsiva com apresentação de serviços, prova social e chamadas de ação para contato.',
           ],
           stack: [
             'Next.js',
@@ -304,6 +316,11 @@ const siteContent: Record<Locale, SiteContent> = {
             'Tailwind CSS',
             'Prisma',
             'PostgreSQL',
+            'PHP',
+            'BullMQ',
+            'Vitest/Jest',
+            'GitHub Actions',
+            'Integrações com gateways de pagamento',
           ],
         },
       ],
@@ -318,6 +335,7 @@ const siteContent: Record<Locale, SiteContent> = {
         ],
         links: {
           whatsapp: 'WhatsApp',
+          email: 'E-mail',
         },
       },
       closingTitle: 'Vamos conversar sobre uma oportunidade?',
@@ -330,13 +348,11 @@ const siteContent: Record<Locale, SiteContent> = {
       title:
         'Desenvolvedor full stack sênior com experiência em SaaS, e-commerce e integrações.',
       intro:
-        'Tenho 8+ anos de experiência criando, mantendo e evoluindo produtos web em produção. Meu melhor encaixe é em sistemas de negócio, dashboards, e-commerce e integrações onde a entrega precisa sair da tela bonita e sustentar rotina, decisão, automação e crescimento.',
+        'Trabalho com SaaS, sistemas de negócio e integrações de e-commerce, acompanhando produtos desde o planejamento até a manutenção em produção.',
       storyTitle: 'Experiência aplicada',
       paragraphs: [
-        'Minha trajetória começou em interfaces web e evoluiu para produtos completos. Hoje trabalho do diagnóstico à produção, conectando frontend, backend, banco de dados, permissões, integrações, automações, deploy e manutenção sem perder de vista o uso real.',
-        'Desenvolvedor full stack sênior e referência técnica do time na Performa.AI, plataforma de inteligência e conversão para e-commerce. Desenvolvo APIs, integrações de catálogos e pedidos e ferramentas embarcadas nas lojas. Os catálogos abastecem vitrines e os pedidos permitem avaliar recomendações. Faço a interlocução técnica com plataformas, apoio o suporte e implementações específicas, resolvo problemas complexos e oriento profissionais iniciantes.',
-        'Em projetos externos, transformei presença pública em camada operacional: captação, cadastro, autenticação, pagamentos recorrentes, e-mails transacionais, tracking, banco relacional, cloud e ajustes pós-lançamento. No case JSBJJ Kylemore, por exemplo, o site deixou de ser só uma vitrine e passou a conectar aquisição, onboarding, assinatura recorrente e dados estruturados.',
-        'Meu diferencial está em entrar antes da implementação para entender fluxo, gargalo, dependência externa e risco técnico. A partir disso, desenho uma solução que não dependa de improviso depois do deploy: entidades claras, integrações explícitas, estados de interface previsíveis e responsabilidades bem separadas entre produto, operação e engenharia.',
+        'Minha trajetória começou em interfaces web e evoluiu para APIs, integrações e produtos completos. Na Performa.AI, atuo no desenvolvimento e na manutenção das ferramentas que conectam catálogos, pedidos e recomendações nas lojas.',
+        'Além da implementação, apoio o suporte na investigação de problemas, converso com plataformas sobre integrações e oriento profissionais em início de carreira. Nos projetos freelance, acompanho requisitos, entrega e manutenção junto aos clientes.',
       ],
       highlightsTitle: 'Evidências de senioridade',
       highlights: [
@@ -387,6 +403,7 @@ const siteContent: Record<Locale, SiteContent> = {
     resume: {
       label: 'View résumé',
       printLabel: 'Print / save PDF',
+      downloadLabel: 'Download résumé PDF',
       printHint:
         'Choose Save as PDF in the print dialog to download the résumé.',
       summaryTitle: 'Professional summary',
@@ -431,9 +448,9 @@ const siteContent: Record<Locale, SiteContent> = {
           label: 'developing and maintaining web products',
         },
         {
-          value: 'SaaS and freelance projects',
+          value: '150+ clients',
           label:
-            'experience in e-commerce, internal systems, and client platforms',
+            'connected to the webhook service during my work at Performa.AI',
         },
         {
           value: 'From architecture to production',
@@ -472,7 +489,7 @@ const siteContent: Record<Locale, SiteContent> = {
       ],
       featuredTitle: 'Selected freelance projects',
       featuredIntro:
-        'A selection of client projects, with details about my contribution, the solutions, and what was delivered to production.',
+        'Client projects: my contribution, technical decisions, and production delivery.',
       featuredProjects: [
         {
           slug: 'jsbjjkylemore',
@@ -486,7 +503,7 @@ const siteContent: Record<Locale, SiteContent> = {
           kicker: 'Gym website focused on a local audience',
           title: 'Unit 5 Strength & Fitness',
           summary:
-            'A commercial website with direct messaging and high-contrast visuals, designed for a local audience.',
+            'A responsive commercial website with service information, social proof, and calls to action for contact.',
         },
       ],
       experienceCaseLabel: 'View the Performa.AI case study',
@@ -499,13 +516,15 @@ const siteContent: Record<Locale, SiteContent> = {
           title: 'Performa.AI',
           caseSlug: 'performa-ai',
           description:
-            'Senior full stack developer and technical point of reference at Performa.AI, an intelligence and conversion platform for e-commerce. I develop APIs, catalog and order integrations, and tools embedded in stores.',
+            'Senior full stack developer and go-to engineer for technical questions at Performa.AI, an intelligence and conversion platform for e-commerce. I develop APIs, catalog and order integrations, and tools embedded in stores.',
           highlights: [
-            'APIs and scale: webhooks with 150+ connected clients and thousands of requests per minute; an API with replicated MongoDB, JWT, HMAC, and rate limiting, serving thousands of daily accesses.',
-            'Integrations and platforms: catalog and order synchronization, apps, and technical discussions to obtain integration guidance and support partnership agreements.',
+            'Reliable order processing: I implemented idempotent webhook processing to prevent duplicate records in a service with more than 150 connected clients and thousands of requests per minute, keeping data consistent for recommendation evaluation.',
+            'E-commerce integration automation: I developed and maintained catalog and order integrations with platforms such as Shopify, Nuvemshop, and Loja Integrada, automating updates to the data used by Performa.AI tools and reducing the need for manual intervention.',
+            'APIs and security: an API backed by replicated MongoDB with JWT, HMAC, and rate limiting, serving thousands of daily accesses.',
+            'Platform partnerships: technical discussions to obtain integration guidance and support partnership agreements.',
             'Support and clients: assistance to the support team, client-specific implementations, and resolution of complex technical issues.',
-            'Guidance for beginners: helping early-career professionals with day-to-day technical questions and decisions.',
-            'Optimizations: JavaScript improvements that reduced tool loading times and database consumption.',
+            'Mentoring: helping early-career professionals with day-to-day technical questions and decisions.',
+            'Production efficiency: I optimized JavaScript scripts and data access routines, reducing loading times for tools embedded in stores and database resource usage.',
             'AI automations: WhatsApp workflows with AI, MCP, and RAG, alongside work on payments and auditing.',
           ],
           stack: [
@@ -516,10 +535,16 @@ const siteContent: Record<Locale, SiteContent> = {
             'PHP',
             'MongoDB',
             'Redis',
-            'JavaScript CDN',
-            'Cloudflare Workers',
+            'JavaScript',
+            'Sentry',
+            'MCP',
+            'RAG',
+            'Docker',
+            'Vitest/Jest',
+            'Grafana',
+            'GitHub Actions',
             'Supabase',
-            'REST APIs',
+            'APIs',
             'Webhooks',
           ],
         },
@@ -532,8 +557,8 @@ const siteContent: Record<Locale, SiteContent> = {
             'Corporate intranet: an internal communication system with a photo archive and a noticeboard.',
             'Email marketing: a sending queue built with Bull Queue, Node.js, and Amazon SES, deployed to a DigitalOcean VPS.',
             'Dental clinic: an appointment scheduling system with management of doctors, staff, and available time slots.',
-            'JSBJJ Kylemore: a platform with student acquisition, registration, authentication, recurring payments via GoCardless, and PostgreSQL/Prisma.',
-            'Unit 5 Strength & Fitness: a responsive commercial website with service information, social proof, and calls to action for contact.',
+            'Academy platform: student acquisition, registration, authentication, recurring payments via GoCardless, and PostgreSQL/Prisma.',
+            'Gym website: a responsive commercial website with service information, social proof, and calls to action for contact.',
           ],
           stack: [
             'Next.js',
@@ -543,6 +568,11 @@ const siteContent: Record<Locale, SiteContent> = {
             'Tailwind CSS',
             'Prisma',
             'PostgreSQL',
+            'PHP',
+            'BullMQ',
+            'Vitest/Jest',
+            'GitHub Actions',
+            'Payment gateway integrations',
           ],
         },
       ],
@@ -557,6 +587,7 @@ const siteContent: Record<Locale, SiteContent> = {
         ],
         links: {
           whatsapp: 'WhatsApp',
+          email: 'Email',
         },
       },
       closingTitle: 'Have a role in mind?',
@@ -569,13 +600,11 @@ const siteContent: Record<Locale, SiteContent> = {
       title:
         'Senior full stack developer with experience in SaaS, e-commerce, and integrations.',
       intro:
-        'I have 8+ years of experience building, maintaining, and evolving web products in production. I fit best in internal systems, dashboards, e-commerce, and integrations where the work must go beyond a polished interface and support routines, decisions, automation, and growth.',
+        'I work on SaaS, internal systems, and e-commerce integrations, taking products from planning through production maintenance.',
       storyTitle: 'Applied experience',
       paragraphs: [
-        'My path started with web interfaces and evolved into complete products. Today I work from diagnosis to production, connecting frontend, backend, databases, permissions, integrations, automations, deployment, and maintenance without losing sight of real usage.',
-        'Senior full stack developer and technical point of reference at Performa.AI, an intelligence and conversion platform for e-commerce. I develop APIs, catalog and order integrations, and tools embedded in stores. Catalogs feed product displays and orders support recommendation evaluation. I work with platform teams, assist support and client-specific implementations, resolve complex issues, and guide early-career professionals.',
-        'In external projects, I have turned public presence into an operational layer: lead capture, registration, authentication, recurring payments, transactional email, tracking, relational data, cloud, and post-launch iteration. In the JSBJJ Kylemore case, for example, the website became more than a brochure and started connecting acquisition, onboarding, recurring subscriptions, and structured data.',
-        'My differentiator is getting involved before implementation to understand flows, bottlenecks, external dependencies, and technical risk. From there, I design solutions that do not depend on improvisation after deployment: clear entities, explicit integrations, predictable interface states, and well-separated responsibilities across product, operations, and engineering.',
+        'I started with web interfaces and moved into APIs, integrations, and complete products. At Performa.AI, I build and maintain tools connecting store catalogs, orders, and recommendations.',
+        'Alongside implementation, I help support investigate issues, work with platform teams on integrations, and mentor early-career developers. For freelance clients, I handle requirements, delivery, and ongoing maintenance.',
       ],
       highlightsTitle: 'Evidence of seniority',
       highlights: [
@@ -656,6 +685,16 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
         { value: 'Milhares/dia', label: 'acessos à API com MongoDB replicado' },
       ],
+      flow: {
+        title: 'Fluxo de pedidos',
+        note: 'Visão simplificada do fluxo descrito neste case.',
+        steps: [
+          'Plataformas de e-commerce',
+          'Serviço de webhooks',
+          'Registro de pedidos sem duplicação',
+          'Avaliação de recomendações',
+        ],
+      },
       sources: [
         {
           title: 'Site institucional da Performa.AI',
@@ -680,8 +719,16 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
           body: 'Criei uma API conectada a um MongoDB com réplicas e um serviço para receber webhooks de plataformas como Nuvemshop, Loja Integrada e Shopify. Esse serviço registrava pedidos nos sistemas da empresa e avaliava pedidos relacionados às recomendações das ferramentas. Também implementei integrações via API e aplicativos nas lojas de apps das plataformas.',
         },
         {
-          title: 'Arquitetura e confiabilidade',
-          body: 'A API incluía autenticação, JWT, HMAC e rate limiting. No processamento de pedidos, trabalhei com idempotência baseada na identificação única do pedido para evitar registros duplicados. Mantive também rotinas em PHP que consultavam produtos e categorias nas APIs, respeitavam seus limites de requisições e abasteciam o banco usado pelas vitrines. Minha atuação incluiu pagamentos e auditoria.',
+          title: 'Decisão: evitar pedidos duplicados',
+          body: 'O processamento de pedidos precisava evitar registros repetidos. Implementei idempotência baseada na identificação única do pedido, usada para reconhecer um pedido já registrado. Isso permitia manter os registros usados na avaliação das recomendações sem duplicar o mesmo pedido.',
+        },
+        {
+          title: 'Decisão: respeitar os limites das plataformas',
+          body: 'As plataformas de e-commerce impõem limites de requisições às APIs. Mantive rotinas em PHP que consultavam produtos e categorias respeitando esses limites e abasteciam o banco usado pelas vitrines. A sincronização precisava considerar tanto a obtenção dos dados quanto as restrições de cada integração.',
+        },
+        {
+          title: 'Decisão: controlar acesso à API',
+          body: 'A API precisava atender integrações com acesso controlado. Implementei autenticação com JWT, HMAC e rate limiting: os mecanismos de autenticação protegem o acesso e a validação das requisições, enquanto o limite de chamadas controla o consumo. A API se conectava a um MongoDB com réplicas.',
         },
         {
           title: 'Escala da operação',
@@ -734,8 +781,12 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
           body: 'Estruturei a experiência em torno de conversão e clareza: páginas específicas para adultos, kids e teens, CTAs consistentes, formulários direcionados e uma hierarquia visual voltada para trial e contato. No backend, organizei cadastro, autenticação, dados relacionais e integração com pagamento recorrente.',
         },
         {
-          title: 'Arquitetura e decisões',
-          body: 'A base foi desenhada para separar site público, fluxos de cadastro, persistência de dados e integrações externas. Prisma/PostgreSQL sustentam os dados principais, GoCardless cobre assinatura recorrente, emails transacionais fecham etapas críticas e eventos customizados no Meta Pixel ajudam a acompanhar ações relevantes do funil.',
+          title: 'Decisão: separar os fluxos do produto',
+          body: 'O projeto reunia apresentação comercial, cadastro e assinatura. Organizei a base separando site público, fluxos de cadastro, persistência e integrações externas. Essa separação explicita a responsabilidade de cada parte ao acompanhar um aluno desde o interesse até o pagamento.',
+        },
+        {
+          title: 'Decisão: dados relacionais e pagamento integrado',
+          body: 'Usei PostgreSQL com Prisma para persistir os dados principais dos fluxos de cadastro e GoCardless para integrar assinaturas recorrentes. Os e-mails transacionais acompanham etapas importantes do fluxo, e os eventos customizados do Meta Pixel permitem acompanhar ações do funil. São responsabilidades distintas: guardar dados do produto, conectar o pagamento e acompanhar a aquisição.',
         },
         {
           title: 'Impacto',
@@ -783,8 +834,8 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       cardSummary:
         'APIs, webhooks, and catalog synchronization for more than 150 connected clients, handling thousands of requests per minute as a regular workload.',
       overview:
-        'Performa.AI is an intelligence and conversion platform for e-commerce, offering search, recommendations, product displays, cart recovery, and customer service. As a senior full stack developer and technical point of reference, I develop and maintain APIs, catalog and order integrations, and tools embedded in stores.',
-      role: 'Senior full stack developer and the technical point of reference for the team, responsible for building, maintaining, and improving tools and integrations.',
+        'Performa.AI is an intelligence and conversion platform for e-commerce, offering search, recommendations, product displays, cart recovery, and customer service. As a senior full stack developer and go-to engineer for technical questions, I develop and maintain APIs, catalog and order integrations, and tools embedded in stores.',
+      role: 'Senior full stack developer and a go-to engineer for the team, responsible for building, maintaining, and improving tools and integrations.',
       deliverables:
         'Authenticated API, order webhook service, e-commerce integrations and platform apps, product and category synchronization, JavaScript optimizations, and AI automations.',
       stack: [
@@ -810,6 +861,16 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
           label: 'accesses to the API backed by replicated MongoDB',
         },
       ],
+      flow: {
+        title: 'Order processing flow',
+        note: 'Simplified view of the workflow described in this case.',
+        steps: [
+          'E-commerce platforms',
+          'Webhook service',
+          'Order records without duplicates',
+          'Recommendation evaluation',
+        ],
+      },
       sources: [
         {
           title: 'Performa.AI official website',
@@ -834,8 +895,16 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
           body: 'I built an API backed by replicated MongoDB and a service that received webhooks from platforms such as Nuvemshop, Loja Integrada, and Shopify. The service registered orders in company systems and evaluated orders associated with tool recommendations. I also implemented API integrations and apps for platform app stores.',
         },
         {
-          title: 'Architecture and reliability',
-          body: 'The API included authentication, JWT, HMAC, and rate limiting. For order processing, I worked on idempotency using unique order identifiers to prevent duplicate records. I also maintained PHP routines that fetched products and categories from platform APIs, respected their request limits, and populated the database used by product showcases. My responsibilities included payments and auditing.',
+          title: 'Decision: prevent duplicate orders',
+          body: 'Order processing needed to avoid repeated records. I implemented idempotency based on the unique order identifier to recognize orders that had already been recorded. This kept the records used to evaluate recommendations from duplicating the same order.',
+        },
+        {
+          title: 'Decision: respect platform API limits',
+          body: 'E-commerce platforms impose request limits on their APIs. I maintained PHP routines that queried products and categories within those limits and populated the database used by product displays. Synchronization had to account for both data retrieval and the constraints of each integration.',
+        },
+        {
+          title: 'Decision: control API access',
+          body: 'The API needed to serve integrations with controlled access. I implemented authentication with JWT, HMAC, and rate limiting: authentication mechanisms protect access and request validation, while call limits control consumption. The API connected to a replicated MongoDB database.',
         },
         {
           title: 'Operational scale',
@@ -888,8 +957,12 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
           body: 'I structured the experience around conversion and clarity: dedicated pages for adults, kids, and teens, consistent CTAs, directed forms, and a visual hierarchy focused on trial and contact. On the backend, I organized registration, authentication, relational data, and recurring payment integration.',
         },
         {
-          title: 'Architecture and decisions',
-          body: 'The foundation separates the public website, registration flows, data persistence, and external integrations. Prisma/PostgreSQL supports core data, GoCardless handles recurring subscriptions, transactional emails close critical steps, and custom Meta Pixel events help track relevant funnel actions.',
+          title: 'Decision: separate product workflows',
+          body: 'The project combined a commercial website, registration, and subscriptions. I organized the foundation around separate responsibilities for the public website, registration flows, persistence, and external integrations. This makes each part of the journey from initial interest to payment explicit.',
+        },
+        {
+          title: 'Decision: relational data and integrated payments',
+          body: 'I used PostgreSQL with Prisma to persist the core registration data and GoCardless to integrate recurring subscriptions. Transactional emails accompany key steps, and custom Meta Pixel events track funnel actions. These serve different responsibilities: storing product data, connecting payments, and tracking acquisition.',
         },
         {
           title: 'Impact',

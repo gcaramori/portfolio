@@ -1,7 +1,12 @@
 import Link from 'next/link'
 import siteContent, { projectCases, type Locale } from '@/lib/languages'
 import { getLocalizedPath } from '@/lib/locale'
-import { getWhatsappHref } from '@/lib/contact'
+import {
+  CONTACT_EMAIL,
+  emailHref,
+  getResumePdfHref,
+  getWhatsappHref,
+} from '@/lib/contact'
 import { projectOrder } from '@/lib/projects'
 import { PrintButton } from './printButton'
 
@@ -18,7 +23,16 @@ export function Resume({ locale }: { locale: Locale }) {
   return (
     <article className="resume-page container max-w-4xl py-10 md:py-14">
       <div className="resume-controls mb-10 print:hidden">
-        <PrintButton label={labels.printLabel} />
+        <div className="flex flex-wrap gap-3">
+          <a
+            href={getResumePdfHref(locale)}
+            download
+            className="primary-link"
+          >
+            {labels.downloadLabel}
+          </a>
+          <PrintButton label={labels.printLabel} />
+        </div>
         <p className="mt-3 text-sm text-[var(--muted-foreground)]">
           {labels.printHint}
         </p>
@@ -31,6 +45,9 @@ export function Resume({ locale }: { locale: Locale }) {
         <p className="mt-3 text-lg font-semibold">{content.home.title}</p>
         <p className="mt-3 text-sm leading-6">{content.home.note}</p>
         <ul className="resume-contacts mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <li>
+            <a href={emailHref}>{CONTACT_EMAIL}</a>
+          </li>
           <li>
             <a href="https://linkedin.com/in/gcaramori">
               linkedin.com/in/gcaramori

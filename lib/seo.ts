@@ -7,7 +7,7 @@ import siteContent, {
 import { getLocalizedPath } from './locale'
 
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.guilhermecaramori.com.br'
 export const siteName = 'Guilherme Caramori'
 export const ogImage = '/projects/kylemore.png'
 

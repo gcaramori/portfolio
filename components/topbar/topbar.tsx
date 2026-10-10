@@ -6,7 +6,7 @@ import { ArrowUpRight, Github, Linkedin } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { LanguageContext } from '@/contexts/languageContext'
 import siteContent from '@/lib/languages'
-import { getWhatsappHref } from '@/lib/contact'
+import { emailHref } from '@/lib/contact'
 import { getLocalizedPath, stripLocalePrefix } from '@/lib/locale'
 import { LanguageSwitch } from './languageSwitch'
 
@@ -132,9 +132,7 @@ export function Topbar() {
                 <LanguageSwitch className="hidden shrink-0 lg:flex" />
 
                 <Link
-                  href={getWhatsappHref(language)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={emailHref}
                   aria-label={content.cta}
                   className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--foreground)] bg-[var(--foreground)] text-[var(--background)] transition-transform hover:-translate-y-0.5 min-[360px]:w-auto min-[360px]:gap-2 min-[360px]:px-3 min-[360px]:text-xs min-[360px]:font-semibold min-[480px]:px-4 min-[480px]:text-sm lg:h-auto lg:min-w-[13rem] lg:flex-none lg:px-5 lg:py-3"
                 >
