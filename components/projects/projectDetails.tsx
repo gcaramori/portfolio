@@ -9,6 +9,7 @@ import siteContent, { projectCases, type ProjectSlug } from '@/lib/languages'
 import { getLocalizedPath } from '@/lib/locale'
 import { projectMeta, projectOrder } from '@/lib/projects'
 import { ProjectVisual } from './projectVisual'
+import { ProjectContact } from './projectContact'
 
 type ProjectDetailsProps = {
   slug: ProjectSlug
@@ -183,6 +184,8 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
           </ul>
         </section>
       )}
+
+      <ProjectContact />
 
       <FadeInBottom delay={0.2}>
         <section className="border-t border-[var(--border)] py-12 lg:py-16">

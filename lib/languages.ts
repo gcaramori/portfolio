@@ -39,6 +39,8 @@ type ProjectCase = {
   category: string
   title: string
   cardSummary: string
+  cardRole: string
+  cardStack: string[]
   overview: string
   role: string
   deliverables: string
@@ -140,6 +142,14 @@ type SiteContent = {
     intro: string
     cta: string
     liveLabel: string
+    profile: string
+    contact: {
+      title: string
+      availability: string
+      languages: string
+      emailLabel: string
+      linkedinLabel: string
+    }
   }
   projectDetail: {
     backLabel: string
@@ -406,12 +416,20 @@ const siteContent: Record<Locale, SiteContent> = {
     },
     projects: {
       eyebrow: 'Projetos',
-      title:
-        'Projetos que mostram como penso produto, interface e engenharia em entregas reais.',
+      title: 'SaaS, integrações e produtos full stack em produção.',
       intro:
-        'Cada case destaca um contexto em que precisei transformar necessidade de negócio em experiência clara, usável e tecnicamente consistente.',
-      cta: 'Ver case completo',
+        'Arquitetura, desenvolvimento e manutenção: integrações para mais de 150 clientes, pagamentos recorrentes e interfaces web.',
+      cta: 'Ler case',
       liveLabel: 'Abrir projeto',
+      profile: 'Full Stack Sênior · React · TypeScript · Node.js',
+      contact: {
+        title: 'Vamos conversar sobre uma vaga?',
+        availability:
+          'Brasil · UTC−3 · disponível para oportunidades remotas no Brasil e no exterior',
+        languages: 'Português · Inglês C1 (avançado)',
+        emailLabel: 'Conversar por e-mail',
+        linkedinLabel: 'Ver LinkedIn',
+      },
     },
     projectDetail: {
       backLabel: 'Voltar para projetos',
@@ -677,12 +695,20 @@ const siteContent: Record<Locale, SiteContent> = {
     },
     projects: {
       eyebrow: 'Projects',
-      title:
-        'Projects that show how I think through product, interface, and engineering in real deliveries.',
+      title: 'SaaS, integrations, and full stack products in production.',
       intro:
-        'Each case highlights a context where I had to turn a business need into a clear, usable, and technically consistent experience.',
-      cta: 'View full case',
+        'Architecture, development, and maintenance: integrations for 150+ clients, recurring payments, and web interfaces.',
+      cta: 'Read case study',
       liveLabel: 'Open project',
+      profile: 'Senior Full Stack Developer · React · TypeScript · Node.js',
+      contact: {
+        title: 'Let’s discuss an opportunity',
+        availability:
+          'Brazil · UTC−3 · open to remote opportunities in Brazil and internationally',
+        languages: 'Portuguese · English C1 (advanced)',
+        emailLabel: 'Contact by email',
+        linkedinLabel: 'View LinkedIn',
+      },
     },
     projectDetail: {
       backLabel: 'Back to projects',
@@ -691,7 +717,8 @@ const siteContent: Record<Locale, SiteContent> = {
       deliverablesLabel: 'Delivery',
       stackLabel: 'Stack',
       sourcesLabel: 'Company sources',
-      sourcesNote: 'Public context about the company and its platform distribution. The workloads and personal contributions described in this case study are based on my experience.',
+      sourcesNote:
+        'Public context about the company and its platform distribution. The workloads and personal contributions described in this case study are based on my experience.',
       moreProjectsLabel: 'More projects',
     },
   },
@@ -704,7 +731,19 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       category: 'SaaS de e-commerce · integrações e processamento de pedidos',
       title: 'Performa.AI',
       cardSummary:
-        'APIs, webhooks e sincronização de catálogos para mais de 150 clientes conectados, com milhares de requisições por minuto em volume habitual.',
+        'Desenvolvi e mantive APIs, webhooks e integrações de catálogos para mais de 150 clientes, com milhares de requisições por minuto e processamento idempotente de pedidos.',
+      cardRole: 'Full stack sênior · arquitetura e integrações',
+      cardStack: [
+        'TypeScript',
+        'Node.js',
+        'PHP',
+        'MongoDB',
+        'NestJS',
+        'React.js',
+        'PostgreSQL',
+        'MCP',
+        'RAG',
+      ],
       overview:
         'A Performa.AI é uma plataforma de inteligência e conversão para e-commerce, com busca, recomendações, vitrines, recuperação de carrinho e atendimento. Como desenvolvedor full stack sênior e referência técnica do time, desenvolvo e mantenho APIs, integrações de catálogos e pedidos e ferramentas embarcadas nas lojas.',
       role: 'Responsável por decisões de arquitetura de projetos, apps e ferramentas, levantamento do escopo com a equipe de produto, implementação full stack, testes, deploy e manutenção. Referência técnica do time.',
@@ -757,43 +796,31 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       sections: [
         {
           title: 'Contexto',
-          body: 'As ferramentas da empresa precisavam acessar dados de catálogos, renderizar vitrines nos e-commerces e registrar pedidos recebidos de diferentes plataformas. Minha atuação abrangia tanto novas entregas quanto manutenção e melhorias nos sistemas em produção.',
+          body: 'A Performa.AI oferece busca, recomendações e outras ferramentas de conversão para e-commerce. Os serviços precisavam consultar catálogos de diferentes plataformas, abastecer vitrines e registrar pedidos para avaliar recomendações.',
         },
         {
-          title: 'Contribuição individual',
-          body: 'Alinhava necessidades e escopo com a equipe de produto e tomava as decisões de arquitetura dos projetos, apps e ferramentas sob minha responsabilidade. Conduzia implementação, testes e deploy. Criei uma API conectada a MongoDB replicado, um serviço de webhooks para registrar pedidos e avaliar recomendações, integrações via API, apps para plataformas e interfaces como o dashboard.',
+          title: 'Minha contribuição',
+          body: 'Como full stack sênior e referência técnica, defini o escopo com produto e assumi decisões de arquitetura, implementação, testes, deploy e manutenção dos serviços sob minha responsabilidade. Desenvolvi APIs, webhooks, integrações e apps para plataformas, além de interfaces como o dashboard.',
         },
         {
-          title: 'Arquitetura: sincronizar catálogos sob limites de API',
-          body: 'As vitrines precisavam de dados de produtos e categorias de diferentes plataformas, mas cada API impunha limites de requisições. Mantive rotinas em PHP que consultavam esses dados respeitando as restrições e abasteciam o banco usado pelas ferramentas. A solução conectava a sincronização externa à consulta dos dados persistidos, considerando o volume de uso desde a implementação. O limite das plataformas era uma restrição de projeto, não algo que pudesse ser resolvido apenas aumentando a capacidade da aplicação.',
+          title: 'Decisão técnica: sincronização sob limites de API',
+          body: 'Cada plataforma impunha limites de chamadas. Mantive rotinas em PHP que consultavam produtos e categorias respeitando essas restrições e persistiam os dados usados pelas ferramentas. As vitrines consultavam essa base; a sincronização precisava considerar tanto os limites externos quanto o volume de uso.',
         },
         {
-          title: 'Frontend: conectar o dashboard à operação',
-          body: 'O dashboard precisava apresentar dados de ferramentas abastecidas por APIs e integrações. Desenvolvi a interface em conjunto com o trabalho de backend, alinhando o escopo com produto para conectar a apresentação às informações disponíveis. O desafio era transformar esse contexto técnico em uma ferramenta para a operação, mantendo coerência entre o que a interface apresentava e os dados dos serviços.',
+          title: 'Decisão técnica: processamento idempotente de pedidos',
+          body: 'Pedidos recebidos por webhooks precisavam ser registrados sem duplicação. Implementei idempotência baseada no identificador único do pedido para reconhecer registros existentes. Isso mantinha consistentes os dados usados na avaliação das recomendações.',
         },
         {
-          title: 'Decisão: evitar pedidos duplicados',
-          body: 'O processamento de pedidos precisava evitar registros repetidos. Implementei idempotência baseada na identificação única do pedido, usada para reconhecer um pedido já registrado. Isso permitia manter os registros usados na avaliação das recomendações sem duplicar o mesmo pedido.',
+          title: 'Decisão técnica: controle de acesso à API',
+          body: 'Implementei JWT para autenticação, HMAC para validação das requisições e rate limiting para controlar o consumo da API. O serviço consultava MongoDB replicado e atendia milhares de acessos diários durante minha atuação.',
         },
         {
-          title: 'Decisão: controlar acesso à API',
-          body: 'A API precisava atender integrações com acesso controlado. Implementei autenticação com JWT, HMAC e rate limiting: os mecanismos de autenticação protegem o acesso e a validação das requisições, enquanto o limite de chamadas controla o consumo. A API se conectava a um MongoDB com réplicas.',
+          title: 'Resultados e escala',
+          body: 'As integrações abasteciam vitrines com dados de catálogos, e o serviço de webhooks registrava pedidos sem duplicar o mesmo identificador. Durante minha atuação, havia mais de 150 clientes conectados ao serviço, com milhares de requisições por minuto em volume habitual. São volumes históricos da operação; este case não atribui um aumento de vendas individual às entregas.',
         },
         {
-          title: 'Escala da operação',
-          body: 'No serviço descrito, mais de 150 clientes estavam conectados e o volume habitual era de milhares de requisições por minuto. A API com MongoDB replicado atendia milhares de acessos por dia. Esses números descrevem a operação durante minha atuação nos serviços, sem representar uma medição atual.',
-        },
-        {
-          title: 'Resultados e evolução',
-          body: 'As integrações de catálogos abasteciam as vitrines nas lojas. O serviço de webhooks registrava pedidos para avaliar recomendações, com identificação única para evitar registros duplicados. As implementações foram planejadas desde o início com atenção à eficiência e à escala dentro do escopo. Essas entregas sustentavam ferramentas voltadas à conversão e à operação dos lojistas; aumentar vendas era um objetivo do produto, sem resultado comercial individual medido neste case.',
-        },
-        {
-          title: 'Referência técnica e colaboração',
-          body: 'Faço a interlocução técnica com plataformas de e-commerce para obter informações e orientações sobre integrações e apoiar o fechamento de parcerias. Apoio o suporte na investigação de problemas, desenvolvo implementações específicas para clientes e resolvo questões técnicas complexas. Também oriento profissionais iniciantes em dúvidas e decisões técnicas do dia a dia.',
-        },
-        {
-          title: 'Entrega adicional: automações com IA',
-          body: 'Também trabalhei em automações de WhatsApp utilizando IA, MCP, modelos e RAG. Essa experiência complementa minha atuação em e-commerces, sistemas de negócio e integrações.',
+          title: 'Colaboração e outras entregas',
+          body: 'Fiz a interlocução técnica com plataformas de e-commerce para apoiar integrações e parcerias. Apoio o suporte na investigação de problemas e oriento profissionais iniciantes nas decisões do dia a dia. Também trabalhei em automações de WhatsApp com IA, MCP e RAG.',
         },
       ],
     },
@@ -802,7 +829,16 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       category: 'Produto web + operação em produção',
       title: 'JSBJJ Kylemore',
       cardSummary:
-        'Plataforma para academia com captação, autenticação, pagamentos recorrentes, tracking, dados e integrações operacionais.',
+        'Desenvolvi a interface e a plataforma da academia, conectando captação de alunos, cadastro, autenticação e pagamentos recorrentes via GoCardless.',
+      cardRole: 'Full stack · requisitos à produção',
+      cardStack: [
+        'Next.js',
+        'TypeScript',
+        'PostgreSQL',
+        'GoCardless',
+        'Tailwind CSS',
+        'Vercel',
+      ],
       overview:
         'Projeto full stack para organizar a captação de alunos e conectar o site à operação da academia. A entrega incluiu cadastro, autenticação e pagamentos recorrentes, com banco de dados relacional, tracking e deploy em produção.',
       role: 'Responsável pelo levantamento de requisitos, desenvolvimento da interface completa, arquitetura frontend e backend, modelagem de dados, integrações externas, eventos de tracking, testes, deploy e ajustes pós-lançamento.',
@@ -823,27 +859,23 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       sections: [
         {
           title: 'Contexto',
-          body: 'A academia precisava de mais do que uma vitrine. A entrada de novos alunos passava por interesse, trial, cadastro, confirmação e pagamento, mas parte desse fluxo ainda dependia de etapas manuais. O desafio era comunicar confiança para iniciantes e famílias sem perder a base operacional por trás da interface.',
+          body: 'A entrada de alunos envolvia interesse, aula experimental, cadastro e pagamento, com parte do processo realizada manualmente. O projeto precisava apresentar a academia para adultos e famílias e conectar a captação à operação.',
         },
         {
-          title: 'Solução',
-          body: 'Estruturei a experiência em torno de conversão e clareza: páginas específicas para adultos, kids e teens, CTAs consistentes, formulários direcionados e uma hierarquia visual voltada para trial e contato. No backend, organizei cadastro, autenticação, dados relacionais e integração com pagamento recorrente.',
+          title: 'Minha contribuição',
+          body: 'Levantei requisitos e desenvolvi toda a interface e a plataforma, incluindo arquitetura frontend e backend, modelagem de dados, integrações, tracking, testes e deploy. Acompanhei também os ajustes após o lançamento.',
         },
         {
-          title: 'Frontend: conectar captação, cadastro e assinatura',
-          body: 'A interface reunia duas necessidades: apresentar a academia para adultos e famílias e conduzir o aluno ao cadastro e ao pagamento recorrente. Desenvolvi toda a interface com Next.js, TypeScript e Tailwind CSS, organizando páginas específicas por público, formulários e chamadas para ação. O cadastro precisava se conectar aos dados persistidos em PostgreSQL e à assinatura via GoCardless, enquanto a apresentação comercial permanecia clara em desktop e celular. A separação entre páginas públicas, cadastro e integrações permitia tratar as responsabilidades de cada etapa.',
+          title: 'Decisão técnica: separar as etapas do produto',
+          body: 'Organizei páginas públicas, fluxos de cadastro, persistência e integrações como responsabilidades distintas. A interface direciona adultos e famílias para páginas e formulários específicos, conectando o interesse inicial ao cadastro e à assinatura.',
         },
         {
-          title: 'Decisão: separar os fluxos do produto',
-          body: 'O projeto reunia apresentação comercial, cadastro e assinatura. Organizei a base separando site público, fluxos de cadastro, persistência e integrações externas. Essa separação explicita a responsabilidade de cada parte ao acompanhar um aluno desde o interesse até o pagamento.',
+          title: 'Decisão técnica: persistência e assinaturas recorrentes',
+          body: 'Usei PostgreSQL com Prisma para os dados de cadastro e GoCardless para assinaturas recorrentes. E-mails transacionais acompanham etapas do fluxo, enquanto eventos customizados do Meta Pixel registram ações do funil de aquisição.',
         },
         {
-          title: 'Decisão: dados relacionais e pagamento integrado',
-          body: 'Usei PostgreSQL com Prisma para persistir os dados principais dos fluxos de cadastro e GoCardless para integrar assinaturas recorrentes. Os e-mails transacionais acompanham etapas importantes do fluxo, e os eventos customizados do Meta Pixel permitem acompanhar ações do funil. São responsabilidades distintas: guardar dados do produto, conectar o pagamento e acompanhar a aquisição.',
-        },
-        {
-          title: 'Impacto',
-          body: 'O resultado foi um produto mais maduro do que um site institucional comum: presença digital com posicionamento claro, captura de leads, onboarding, pagamentos conectados e dados estruturados. A operação passou a depender menos de processos soltos e ganhou mais visibilidade sobre aquisição, cadastro e conversão.',
+          title: 'Entregas em produção',
+          body: 'A plataforma reúne apresentação da academia, captação, cadastro, autenticação e pagamentos recorrentes. Os dados de cadastro ficam persistidos em banco relacional, com e-mails transacionais e tracking integrados. O case apresenta essas funcionalidades entregues, sem atribuir percentuais de conversão não medidos.',
         },
       ],
     },
@@ -852,7 +884,9 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       category: 'Website fitness',
       title: 'Unit 5 Strength & Fitness',
       cardSummary:
-        'Website comercial com direção visual forte, hierarquia de conversão e comunicação pensada para presença local.',
+        'Criei o design e implementei o frontend responsivo para apresentar serviços, depoimentos e chamadas para contato.',
+      cardRole: 'Design e desenvolvimento frontend',
+      cardStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
       overview:
         'A Unit 5 precisava de um site com comunicação direta e uma identidade visual que transmitisse a energia e a força da academia. Desenvolvi uma interface responsiva que apresenta os serviços e dá destaque às chamadas para ação desde o início da página.',
       role: 'Responsável pela criação de todo o design do site e pela implementação frontend, incluindo layout, tipografia, hierarquia visual, responsividade e chamadas para ação.',
@@ -862,19 +896,19 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       sections: [
         {
           title: 'Contexto',
-          body: 'O projeto pedia uma identidade com mais presença e contraste, capaz de comunicar energia e especialização logo no primeiro scroll. O risco era virar mais um site genérico de academia, com pouca clareza de oferta e CTAs sem prioridade.',
+          body: 'A academia precisava apresentar seus serviços e facilitar o contato do público local. O design deveria comunicar a identidade da marca e manter as informações legíveis no celular.',
         },
         {
-          title: 'Solução',
-          body: 'A interface foi organizada para valorizar headline, imagem e chamadas para ação, usando contraste forte, tipografia pesada e ritmo visual direto. As seções foram pensadas para leitura escaneável: proposta, serviços, prova e contato sem excesso de ornamentação.',
+          title: 'Minha contribuição',
+          body: 'Criei todo o design e implementei o frontend com Next.js, TypeScript e Tailwind CSS. Assumi layout, tipografia, seleção e disposição visual das imagens, responsividade e hierarquia das chamadas para ação.',
         },
         {
-          title: 'Frontend: adaptar a direção visual ao celular',
-          body: 'O design usava imagens de destaque, contraste e tipografia forte para transmitir a identidade da academia. Em telas pequenas, esses elementos disputavam espaço com a apresentação dos serviços e as chamadas para contato. Criei o design e implementei o frontend com Next.js, TypeScript e Tailwind CSS, ajustando espaçamento, proporção de imagens, quebras de texto e hierarquia dos CTAs. A restrição era a área disponível no celular: cada seção precisava comunicar sua proposta e manter a ação principal fácil de encontrar.',
+          title: 'Decisão de interface: adaptar o design ao celular',
+          body: 'Imagens e títulos de destaque disputavam espaço com serviços e contato nas telas pequenas. Ajustei espaçamentos, proporções de imagens e quebras de texto para manter cada seção legível e a ação principal fácil de encontrar.',
         },
         {
-          title: 'Impacto',
-          body: 'O site ficou mais convincente como peça comercial e mais coerente com o tipo de serviço oferecido. A marca ganhou uma apresentação mais confiante, direta e adequada para tráfego local e primeiro contato.',
+          title: 'Entregas em produção',
+          body: 'O site apresenta serviços, prova social e chamadas para contato em um layout responsivo. A entrega demonstra autoria do design e implementação frontend, com organização das informações para leitura em desktop e celular.',
         },
       ],
     },
@@ -885,10 +919,22 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       category: 'E-commerce SaaS · integrations and order processing',
       title: 'Performa.AI',
       cardSummary:
-        'APIs, webhooks, and catalog synchronization for more than 150 connected clients, handling thousands of requests per minute as a regular workload.',
+        'I built and maintained APIs, webhooks, and catalog integrations for 150+ clients, handling thousands of requests per minute with idempotent order processing.',
+      cardRole: 'Senior full stack · architecture and integrations',
+      cardStack: [
+        'TypeScript',
+        'Node.js',
+        'PHP',
+        'MongoDB',
+        'NestJS',
+        'React.js',
+        'PostgreSQL',
+        'MCP',
+        'RAG',
+      ],
       overview:
-        'Performa.AI is an intelligence and conversion platform for e-commerce, offering search, recommendations, product displays, cart recovery, and customer service. As a senior full stack developer and go-to engineer for technical questions, I develop and maintain APIs, catalog and order integrations, and tools embedded in stores.',
-      role: 'Responsible for architecture decisions across projects, apps, and tools, gathering scope with the product team, full stack implementation, testing, deployment, and maintenance. A go-to engineer for the team.',
+        'Performa.AI is an intelligence and conversion platform for e-commerce, offering search, recommendations, product displays, cart recovery, and customer service. As a senior full stack developer and technical point of contact for the team, I develop and maintain APIs, catalog and order integrations, and tools embedded in stores.',
+      role: 'Responsible for architecture decisions across projects, apps, and tools, defining project scope with the product team, full stack implementation, testing, deployment, and maintenance. A technical point of contact for the team.',
       deliverables:
         'Authenticated API, order webhook service, e-commerce integrations and platform apps, product and category synchronization, interfaces including the dashboard, JavaScript tools, and AI automations.',
       stack: [
@@ -941,43 +987,32 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       sections: [
         {
           title: 'Context',
-          body: 'The company tools needed to access catalog data, render product showcases in online stores, and register orders from different platforms. My work covered new deliveries as well as maintenance and improvements to production systems.',
+          body: 'Performa.AI provides search, recommendations, and other e-commerce conversion tools. Its services needed to access catalogs across platforms, populate product displays, and record orders for recommendation evaluation.',
         },
         {
-          title: 'Individual contribution',
-          body: 'I gathered requirements and scope with the product team and made architecture decisions for the projects, apps, and tools I owned. I handled implementation, testing, and deployment. I built an API backed by replicated MongoDB, a webhook service to register orders and evaluate recommendations, API integrations, platform apps, and interfaces such as the dashboard.',
+          title: 'My contribution',
+          body: 'As a senior full stack developer and a technical point of contact for the team, I defined project scope with product and owned architecture decisions, implementation, testing, deployment, and maintenance for my services. I built APIs, webhooks, integrations, platform apps, and interfaces including the dashboard.',
         },
         {
-          title: 'Architecture: catalog synchronization within API limits',
-          body: 'Product displays needed product and category data from different platforms, but each API imposed request limits. I maintained PHP routines that queried this data within those limits and populated the database used by the tools. The solution connected external synchronization to queries against persisted data, accounting for usage volume from the initial implementation. Platform limits were a project constraint that could not be solved simply by increasing application capacity.',
+          title:
+            'Technical decision: catalog synchronization within API limits',
+          body: 'Each platform imposed request limits. I maintained PHP routines that fetched products and categories within those limits and persisted the data used by our tools. Product displays queried this database, while synchronization accounted for external API constraints and usage volume.',
         },
         {
-          title: 'Frontend: connecting the dashboard to operations',
-          body: 'The dashboard needed to present data from tools fed by APIs and integrations. I developed the interface alongside backend work, defining requirements with product teams to connect data presentation with the available information. The challenge was to turn this technical context into an operational tool while keeping the interface consistent with service data.',
+          title: 'Technical decision: idempotent order processing',
+          body: 'Orders received through webhooks needed to be recorded without duplication. I implemented idempotency using the unique order identifier to recognize existing records. This kept the data used for recommendation evaluation consistent.',
         },
         {
-          title: 'Decision: prevent duplicate orders',
-          body: 'Order processing needed to avoid repeated records. I implemented idempotency based on the unique order identifier to recognize orders that had already been recorded. This kept the records used to evaluate recommendations from duplicating the same order.',
+          title: 'Technical decision: API access control',
+          body: 'I implemented JWT authentication, HMAC request validation, and rate limiting to control API consumption. The service used replicated MongoDB and handled thousands of daily accesses during my work on it.',
         },
         {
-          title: 'Decision: control API access',
-          body: 'The API needed to serve integrations with controlled access. I implemented authentication with JWT, HMAC, and rate limiting: authentication mechanisms protect access and request validation, while call limits control consumption. The API connected to a replicated MongoDB database.',
+          title: 'Results and scale',
+          body: 'Catalog integrations populated product displays, and the webhook service recorded orders without duplicating the same identifier. During my work on the service, it connected 150+ clients and handled thousands of requests per minute as a regular workload. These are historical operational volumes; this case study does not attribute an individual sales increase to these deliveries.',
         },
         {
-          title: 'Operational scale',
-          body: 'In the service described, more than 150 clients were connected and thousands of requests per minute were a regular workload. The API backed by replicated MongoDB handled thousands of daily accesses. These figures describe the operation during my work on these services rather than a current measurement.',
-        },
-        {
-          title: 'Technical expertise and collaboration',
-          body: 'I work with e-commerce platform teams to obtain information and integration guidance and support partnership agreements. I help the support team investigate issues, develop client-specific implementations, and resolve complex technical problems. I also guide early-career professionals through day-to-day technical questions and decisions.',
-        },
-        {
-          title: 'Results and operational contribution',
-          body: 'Catalog integrations fed product displays in stores. The webhook service recorded orders to evaluate recommendations, using unique identifiers to prevent duplicate records. Implementations were planned for efficiency and scale within the project scope from the start. These deliveries supported tools designed for conversion and merchant operations; increasing sales was a product objective, with no individual commercial outcome measured in this case study.',
-        },
-        {
-          title: 'Additional delivery: AI automations',
-          body: 'I also worked on WhatsApp automations using AI, MCP, models, and RAG. This experience complements my work on e-commerce platforms, business systems, and integrations.',
+          title: 'Collaboration and additional work',
+          body: 'I worked with e-commerce platform teams on integrations and partnerships. I help support investigate issues and guide early-career developers through technical decisions. I also worked on WhatsApp automations using AI, MCP, and RAG.',
         },
       ],
     },
@@ -986,7 +1021,16 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       category: 'Web product + production operations',
       title: 'JSBJJ Kylemore',
       cardSummary:
-        'A platform for a martial arts academy with lead capture, authentication, recurring payments, tracking, data, and operational integrations.',
+        'I built the academy’s interface and platform, connecting student acquisition, registration, authentication, and recurring payments through GoCardless.',
+      cardRole: 'Full stack · requirements to production',
+      cardStack: [
+        'Next.js',
+        'TypeScript',
+        'PostgreSQL',
+        'GoCardless',
+        'Tailwind CSS',
+        'Vercel',
+      ],
       overview:
         "A full stack project to organize student acquisition and connect the website to the academy's operations. The delivery included registration, authentication, and recurring payments, with a relational database, tracking, and production deployment.",
       role: 'Responsible for requirements gathering, complete interface development, frontend and backend architecture, data modeling, external integrations, tracking events, testing, deployment, and post-launch adjustments.',
@@ -1007,27 +1051,23 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       sections: [
         {
           title: 'Context',
-          body: 'The academy needed more than a brochure site. New student acquisition involved interest, trial, registration, confirmation, and payment, but part of that flow still depended on manual steps. The challenge was to build trust with beginners and families while supporting the operational workflow behind the interface.',
+          body: 'Student acquisition involved initial interest, trial classes, registration, and payment, with some steps handled manually. The project needed to present the academy to adults and families and connect acquisition to its operations.',
         },
         {
-          title: 'Solution',
-          body: 'I structured the experience around conversion and clarity: dedicated pages for adults, kids, and teens, consistent CTAs, directed forms, and a visual hierarchy focused on trial and contact. On the backend, I organized registration, authentication, relational data, and recurring payment integration.',
+          title: 'My contribution',
+          body: 'I gathered requirements and built the complete interface and platform, including frontend and backend architecture, data modeling, integrations, tracking, testing, and deployment. I also handled post-launch adjustments.',
         },
         {
-          title: 'Frontend: connecting acquisition, registration, and subscriptions',
-          body: 'The interface combined two needs: presenting the academy to adults and families, and guiding students through registration and recurring payments. I built the complete interface with Next.js, TypeScript, and Tailwind CSS, organizing audience-specific pages, forms, and calls to action. Registration had to connect with data persisted in PostgreSQL and subscriptions through GoCardless, while commercial pages remained clear on desktop and mobile. Separating public pages, registration, and integrations made the responsibilities of each step explicit.',
+          title: 'Technical decision: separate product responsibilities',
+          body: 'I separated public pages, registration workflows, persistence, and external integrations. Audience-specific pages and forms guide adults and families from initial interest to registration and subscriptions.',
         },
         {
-          title: 'Decision: separate product workflows',
-          body: 'The project combined a commercial website, registration, and subscriptions. I organized the foundation around separate responsibilities for the public website, registration flows, persistence, and external integrations. This makes each part of the journey from initial interest to payment explicit.',
+          title: 'Technical decision: persistence and recurring subscriptions',
+          body: 'I used PostgreSQL with Prisma for registration data and GoCardless for recurring subscriptions. Transactional emails accompany workflow steps, while custom Meta Pixel events track acquisition funnel actions.',
         },
         {
-          title: 'Decision: relational data and integrated payments',
-          body: 'I used PostgreSQL with Prisma to persist the core registration data and GoCardless to integrate recurring subscriptions. Transactional emails accompany key steps, and custom Meta Pixel events track funnel actions. These serve different responsibilities: storing product data, connecting payments, and tracking acquisition.',
-        },
-        {
-          title: 'Impact',
-          body: 'The result was more mature than a standard institutional website: clear positioning, lead capture, onboarding, connected payments, and structured data. The operation became less dependent on disconnected manual processes and gained better visibility over acquisition, registration, and conversion.',
+          title: 'Production deliverables',
+          body: 'The platform brings together the academy website, lead capture, registration, authentication, and recurring payments. Registration data is stored in a relational database, with integrated transactional emails and tracking. This case study describes delivered functionality without claiming unmeasured conversion improvements.',
         },
       ],
     },
@@ -1036,7 +1076,9 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       category: 'Fitness website',
       title: 'Unit 5 Strength & Fitness',
       cardSummary:
-        'A commercial website with strong visual direction, conversion hierarchy, and messaging designed for local presence.',
+        'I designed and built a responsive frontend presenting services, testimonials, and clear calls to action.',
+      cardRole: 'Design and frontend development',
+      cardStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
       overview:
         "Unit 5 needed a website with direct messaging and a visual identity that conveyed the gym's energy and strength. I developed a responsive interface that presents its services and makes calls to action visible from the start of the page.",
       role: 'Responsible for the complete website design and frontend implementation, including layout, typography, visual hierarchy, responsiveness, and calls to action.',
@@ -1046,19 +1088,19 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       sections: [
         {
           title: 'Context',
-          body: 'The project called for a visual identity with more presence and contrast, able to communicate energy and specialization in the first scroll. The risk was ending up with a generic gym website, weak offer clarity, and CTAs without priority.',
+          body: 'The gym needed to present its services and make contact easy for local visitors. The design had to communicate its identity while keeping information readable on mobile.',
         },
         {
-          title: 'Solution',
-          body: 'The interface was structured to give more weight to headline, imagery, and calls to action, using strong contrast, heavy typography, and direct visual rhythm. The sections were designed for scanning: proposition, services, proof, and contact without unnecessary ornament.',
+          title: 'My contribution',
+          body: 'I designed the complete website and built the frontend with Next.js, TypeScript, and Tailwind CSS. I owned layout, typography, image presentation, responsiveness, and calls to action.',
         },
         {
-          title: 'Frontend: adapting the visual design for mobile',
-          body: 'The design used prominent images, contrast, and strong typography to convey the gym identity. On small screens, these elements competed for space with service information and contact actions. I created the design and built the frontend with Next.js, TypeScript, and Tailwind CSS, adjusting spacing, image proportions, text wrapping, and CTA hierarchy. Available mobile screen space was the constraint: each section needed to communicate its purpose and keep the main action easy to find.',
+          title: 'Interface decision: adapt the design for mobile',
+          body: 'Prominent images and headings competed with service information and contact actions on small screens. I adjusted spacing, image proportions, and text wrapping to keep sections readable and the main action easy to find.',
         },
         {
-          title: 'Impact',
-          body: 'The website became more convincing as a commercial asset and more aligned with the service itself. The brand gained a more confident, direct presentation suited for local traffic and first contact.',
+          title: 'Production deliverables',
+          body: 'The website presents services, social proof, and contact actions in a responsive layout. The project demonstrates complete website design and frontend implementation, with information organized for desktop and mobile reading.',
         },
       ],
     },

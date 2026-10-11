@@ -12,6 +12,9 @@ type ProjectLinkCardProps = {
   category: string
   title: string
   summary: string
+  role: string
+  stack: string[]
+  featured?: boolean
   cta: string
   liveLabel: string
   liveHref?: string
@@ -24,6 +27,9 @@ export function ProjectLinkCard({
   category,
   title,
   summary,
+  role,
+  stack,
+  featured = false,
   cta,
   liveLabel,
   liveHref,
@@ -33,10 +39,21 @@ export function ProjectLinkCard({
     : undefined
 
   return (
-    <article className="min-w-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)]">
-      <Link href={href} aria-label={`${cta}: ${title}`} className="group block">
+    <article
+      className={`min-w-0 overflow-hidden rounded-lg border border-[var(--border)] bg-[var(--surface)] ${featured ? 'lg:grid lg:grid-cols-[1.2fr_0.8fr]' : ''}`}
+    >
+      <Link
+        href={href}
+        aria-label={`${cta}: ${title}`}
+        className={`group block ${featured ? 'order-2 hidden lg:block lg:self-center' : ''}`}
+      >
         <div className="overflow-hidden border-b border-[var(--border)]">
-          <ProjectVisual image={imageSrc} title={title} metrics={metrics} />
+          <ProjectVisual
+            image={imageSrc}
+            title={title}
+            metrics={metrics}
+            compact={featured}
+          />
         </div>
       </Link>
 
@@ -50,6 +67,20 @@ export function ProjectLinkCard({
         <p className="mt-4 text-base leading-8 text-[var(--muted-foreground)]">
           {summary}
         </p>
+
+        <p className="mt-4 text-sm font-semibold text-[var(--foreground)]">
+          {role}
+        </p>
+        <ul className="mt-3 flex flex-wrap gap-2" aria-label="Stack">
+          {stack.map((item) => (
+            <li
+              key={item}
+              className="rounded-full border border-[var(--border)] px-3 py-1.5 text-xs"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <Link

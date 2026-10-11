@@ -106,8 +106,8 @@ export function getProjectsMetadata(locale: Locale) {
   return buildMetadata({
     title:
       locale === 'pt-BR'
-        ? 'Projetos | Guilherme Caramori'
-        : 'Projects | Guilherme Caramori',
+        ? 'Projetos | Guilherme Caramori | Full Stack Sênior'
+        : 'Projects | Guilherme Caramori | Senior Full Stack Developer',
     description: siteContent[locale].projects.intro,
     pathname: '/projects',
     locale,
