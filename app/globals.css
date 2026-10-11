@@ -157,7 +157,20 @@ body {
   }
 }
 
-@media screen and (min-width: 1024px) and (max-height: 850px) {
+@media screen and (min-width: 1024px) and (max-width: 1536px),
+  screen and (min-width: 1024px) and (max-height: 850px) {
+  .topbar-container {
+    gap: 1.5rem;
+    padding-block: 1rem;
+  }
+
+  .topbar-container > div:last-child {
+    gap: 0.5rem;
+  }
+
+  .topbar-socials {
+    height: 1.5rem;
+  }
   .home-content {
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
@@ -169,8 +182,8 @@ body {
   }
 
   .home-hero-title {
-    font-size: clamp(2.75rem, 6.4svh, 3.35rem);
-    line-height: 1.02;
+    font-size: clamp(2.25rem, 3.4vw, 3.1rem);
+    line-height: 1.12;
   }
 
   .home-hero-intro {
@@ -198,13 +211,35 @@ body {
   }
 
   .home-hero-stat-value {
-    font-size: 2.15rem;
+    font-size: clamp(1.25rem, 1.65vw, 1.5rem);
     line-height: 1.15;
   }
 
   .home-hero-stat-label {
+    max-width: none;
     line-height: 1.45;
     margin-top: 0.35rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .home-hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .home-hero-stat-label {
+    max-width: none;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .topbar-container > div:first-child {
+    max-width: 20rem;
   }
 }
 

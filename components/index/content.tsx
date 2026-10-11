@@ -100,7 +100,7 @@ export function IndexContent() {
                 className="home-hero-stat min-w-0 rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 md:p-6"
               >
                 <p
-                  className="break-words font-display text-xl leading-tight font-semibold tracking-normal text-[var(--foreground)] md:text-2xl"
+                  className="home-hero-stat-value break-words font-display text-xl leading-tight font-semibold tracking-normal text-[var(--foreground)] md:text-2xl"
                 >
                   {stat.value}
                 </p>

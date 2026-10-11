@@ -62,11 +62,11 @@ export function Topbar() {
         className="fixed inset-x-0 top-0 z-[100] border-b border-[var(--border)] backdrop-blur-xl print:hidden"
         style={{ backgroundColor: 'rgb(244 239 231 / 0.88)' }}
       >
-        <div className="container flex flex-col gap-2 py-2 lg:min-h-20 lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:py-4">
-          <div className="flex items-center justify-between gap-3 lg:w-[22rem] lg:flex-none lg:gap-4 xl:w-[30rem]">
+        <div className="topbar-container container flex flex-col gap-2 py-2 lg:min-h-20 lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:py-4">
+          <div className="flex items-center justify-between gap-3 lg:min-w-0 lg:flex-1 lg:gap-4">
             <Link
               href={getLocalizedPath('/', language)}
-              className="min-w-0 flex-1 lg:flex-none"
+              className="min-w-0 flex-1"
             >
               <p className="truncate font-display text-base leading-tight font-semibold tracking-[-0.03em] text-[var(--foreground)] min-[360px]:text-lg sm:text-xl lg:tracking-[-0.04em]">
                 {content.brand}
@@ -93,8 +93,8 @@ export function Topbar() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 lg:w-[37rem] lg:flex-none lg:items-end lg:gap-4 xl:w-[42rem]">
-            <div className="hidden items-center justify-end gap-2 lg:flex lg:w-full">
+          <div className="flex flex-col gap-2 lg:min-w-0 lg:shrink-0 lg:items-end lg:gap-4">
+            <div className="topbar-socials hidden items-center justify-end gap-2 lg:flex lg:w-full">
               {socialLinks.map(({ href, label, icon: Icon }) => (
                 <Link
                   key={label}
@@ -115,7 +115,7 @@ export function Topbar() {
                   <Link
                     key={item.href}
                     href={getLocalizedPath(item.href, language)}
-                    className={`min-w-0 truncate rounded-full px-2 py-1.5 text-center text-xs font-medium transition-colors min-[390px]:px-3 min-[390px]:text-sm lg:min-w-[5.5rem] lg:px-4 lg:py-2 ${
+                    className={`min-w-0 truncate rounded-full px-2 py-1.5 text-center text-xs font-medium transition-colors min-[390px]:px-3 min-[390px]:text-sm lg:px-3 xl:px-4 lg:py-2 ${
                       currentPath === item.href ||
                       (item.href !== '/' &&
                         currentPath.startsWith(`${item.href}/`))
@@ -136,7 +136,7 @@ export function Topbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={content.cta}
-                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--foreground)] bg-[var(--foreground)] text-[var(--background)] transition-transform hover:-translate-y-0.5 min-[360px]:w-auto min-[360px]:gap-2 min-[360px]:px-3 min-[360px]:text-xs min-[360px]:font-semibold min-[480px]:px-4 min-[480px]:text-sm lg:h-auto lg:min-w-[13rem] lg:flex-none lg:px-5 lg:py-3"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--foreground)] bg-[var(--foreground)] text-[var(--background)] transition-transform hover:-translate-y-0.5 min-[360px]:w-auto min-[360px]:gap-2 min-[360px]:px-3 min-[360px]:text-xs min-[360px]:font-semibold min-[480px]:px-4 min-[480px]:text-sm lg:h-auto lg:whitespace-nowrap lg:flex-none lg:px-5 lg:py-3"
                 >
                   <span className="hidden min-[360px]:inline min-[480px]:hidden">
                     {compactCta}
