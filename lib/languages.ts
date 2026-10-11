@@ -731,7 +731,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       category: 'SaaS de e-commerce · integrações e processamento de pedidos',
       title: 'Performa.AI',
       cardSummary:
-        'Desenvolvi e mantive APIs, webhooks e integrações de catálogos para mais de 150 clientes, com milhares de requisições por minuto e processamento idempotente de pedidos.',
+        'Desenvolvi e mantive interfaces e dashboards com KPIs, APIs e integrações de catálogos. Implementei também um serviço de webhooks para mais de 150 clientes, com milhares de requisições por minuto e processamento idempotente de pedidos.',
       cardRole: 'Full stack sênior · arquitetura e integrações',
       cardStack: [
         'TypeScript',
@@ -919,7 +919,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       category: 'E-commerce SaaS · integrations and order processing',
       title: 'Performa.AI',
       cardSummary:
-        'I built and maintained APIs, webhooks, and catalog integrations for 150+ clients, handling thousands of requests per minute with idempotent order processing.',
+        'I built and maintained interfaces and dashboards with KPIs, APIs, and catalog integrations. I also implemented a webhook service for 150+ clients, handling thousands of requests per minute with idempotent order processing.',
       cardRole: 'Senior full stack · architecture and integrations',
       cardStack: [
         'TypeScript',
