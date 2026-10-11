@@ -15,6 +15,10 @@ export function LanguageSwitch({ className = '' }: LanguageSwitchProps) {
   const pathname = usePathname()
   const router = useRouter()
 
+  if (pathname === '/guia-entrevistas-internacionais') {
+    return null
+  }
+
   function handleLanguageChange(locale: typeof language) {
     setLanguage(locale)
     router.push(getLocalizedPath(pathname, locale))

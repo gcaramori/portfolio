@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "resume:pdf": "node scripts/generate-resume.ts"
+    "resume:pdf": "node scripts/generate-resume.ts",
+    "guide:check": "node scripts/check-interview-guide.ts"
   },
   "dependencies": {
     "@fontsource/m-plus-rounded-1c": "^5.2.5",
@@ -22,6 +23,8 @@
     "next": "16.3.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.1.0",
     "three": "^0.175.0",
     "tw-animate-css": "^1.2.5"
