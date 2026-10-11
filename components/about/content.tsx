@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useContext } from 'react'
 import { ArrowRight } from 'lucide-react'
 import FadeInBottom from '@/components/fadeInBottom'
@@ -25,6 +26,19 @@ export function AboutContent() {
         <section className="grid gap-10 border-b border-[var(--border)] pb-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:pb-16">
           <div>
             <p className="section-label">{content.eyebrow}</p>
+            <Image
+              src="/guilherme-caramori.webp"
+              alt={
+                language === 'pt-BR'
+                  ? 'Retrato de Guilherme Caramori'
+                  : 'Portrait of Guilherme Caramori'
+              }
+              width={960}
+              height={960}
+              sizes="(max-width: 429px) calc(100vw - 24px), 384px"
+              loading="eager"
+              className="mt-6 h-auto w-full max-w-sm rounded-xl border border-[var(--border)]"
+            />
           </div>
 
           <div>
