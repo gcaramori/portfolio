@@ -22,7 +22,7 @@ try {
   const response = await page.goto(url)
   assert.equal(response?.status(), 200)
   await page.locator('.guide-days').waitFor()
-  assert.equal(await page.locator('.guide-section-heading').count(), 15)
+  assert.equal(await page.locator('.guide-section-heading').count(), 16)
   assert.equal(await page.locator('.guide-supplements details').count(), 7)
   assert.equal(await page.locator('.guide-day').count(), 14)
   assert.equal(await page.locator('.task-list-item input').count(), 9)
@@ -87,6 +87,17 @@ try {
   assert.ok(await checklist.nth(1).isChecked())
 
   const search = page.getByRole('searchbox')
+  const experience = page.locator(
+    '[id="16-perguntas-sobre-seu-currículo-e-experiência"]',
+  )
+  assert.equal(await experience.locator('h4').count(), 27)
+  await search.fill('Como você otimizou o serviço de webhook')
+  const experienceResult = page.locator(
+    '.guide-search-results a[href="#16-perguntas-sobre-seu-currículo-e-experiência"]',
+  )
+  await experienceResult.click()
+  assert.ok(await experience.isVisible())
+  assert.ok((await experience.innerText()).includes('garantia atômica'))
   const communicationHref =
     '#15-ansiedade-vergonha-e-comunicação-nas-entrevistas'
   for (const term of ['ansiedade', 'vergonha', 'ORATORIA', 'postura']) {
