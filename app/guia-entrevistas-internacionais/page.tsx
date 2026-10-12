@@ -4,7 +4,7 @@ import { getInterviewGuide } from '@/lib/interview-guide'
 
 const title = 'Guia de entrevistas internacionais | Guilherme Caramori'
 const description =
-  'Preparação técnica, inglês, plano de 14 dias e busca de vagas internacionais para desenvolvedores backend e full stack.'
+  'Preparação técnica, inglês, oratória e manejo da ansiedade em entrevistas, com plano de 14 dias e busca de vagas internacionais para desenvolvedores.'
 const pathname = '/guia-entrevistas-internacionais'
 
 export const metadata: Metadata = {

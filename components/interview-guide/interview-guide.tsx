@@ -238,14 +238,15 @@ export function InterviewGuide({
           </h1>
           <p className="guide-intro">
             Um guia para transformar experiência em boas entrevistas. Técnica,
-            inglês e busca de vagas, com um plano que cabe na sua rotina.
+            inglês, comunicação e manejo da ansiedade, com um plano que cabe
+            na sua rotina e orienta a busca de vagas.
           </p>
           <div className="guide-hero-meta">
             <span>
               <Clock3 size={15} />
               45 min ou 2 h por dia
             </span>
-            <span>Atualizado em 11 out. 2026</span>
+            <span>Atualizado em 12 out. 2026</span>
           </div>
           <div className="guide-shortcuts">
             {shortcuts.map(({ label, index }, i) => (
@@ -310,7 +311,7 @@ export function InterviewGuide({
         <p className="guide-search-hint" role="status">
           {trimmed
             ? `${results.length} resultado${results.length === 1 ? '' : 's'} para “${trimmed}”`
-            : '14 seções · 7 materiais complementares · Leia no seu ritmo'}
+            : `${sections.length} seções · ${supplements.length} materiais complementares · Leia no seu ritmo`}
         </p>
         {trimmed && (
           <div className="guide-search-results">
