@@ -680,45 +680,45 @@ O treino do guia pode acompanhar a preparação de carreira. Um profissional pod
 
 ## 16. Perguntas sobre seu currículo e experiência
 
-Este banco reúne perguntas comuns de preparação adaptadas ao seu currículo. A divisão por entrevistador ajuda a escolher a profundidade; qualquer pessoa pode fazer perguntas de outro grupo. Não representa um levantamento de frequência de entrevistas.
+Prepare-se para explicar o que fez, por que tomou cada decisão e como verificou o resultado. Recrutadores costumam buscar uma visão da trajetória; CTOs e equipes técnicas podem pedir detalhes da implementação. As perguntas abaixo servem para ensaio e podem aparecer em qualquer etapa. A seleção foi adaptada ao seu currículo, sem um levantamento de frequência.
 
-As respostas entre aspas são roteiros para falar em voz alta por cerca de 45–90 segundos. Ajuste as palavras ao seu jeito e confirme datas, disponibilidade e detalhes antes de usar. Nos aprofundamentos, escolha uma decisão e explique por quê. As sugestões técnicas são propostas para sua stack, sem atribuir ao seu passado ferramentas ou resultados que o portfólio não confirma.
+Ensaie cada resposta em voz alta por cerca de 45 a 90 segundos, usando suas palavras. Confira datas, disponibilidade e detalhes que você ainda precisa lembrar. Quando a conversa entrar na parte técnica, explique uma decisão por vez. As sugestões descrevem o que você poderia fazer hoje; só fale delas como experiência passada se realmente as implementou.
 
 ### Recrutadores: trajetória, motivação e aderência
 
 #### 1. “Me conte sobre você e sua experiência.”
 
-> “Sou desenvolvedor full stack, com experiência desde 2017 em produtos web e integrações. Na Performa.AI, trabalho com APIs, dashboards e integrações de e-commerce, incluindo um serviço de webhooks para mais de 150 clientes conectados. Também entreguei projetos freelance, desde requisitos até produção, com autenticação e pagamentos recorrentes. Minha stack inclui TypeScript, React, Node.js, NestJS e PHP, com bancos SQL e NoSQL. Procuro uma oportunidade em que essa experiência ajude a resolver problemas de integração e confiabilidade.”
+> “Sou desenvolvedor full stack e trabalho com produtos web e integrações desde 2017. Na Performa.AI, desenvolvo APIs, dashboards e integrações de e-commerce. Um dos serviços que fiz recebe webhooks de pedidos de mais de 150 clientes conectados. Também entreguei projetos freelance, do levantamento de requisitos à produção, com autenticação e pagamentos recorrentes. Uso TypeScript, React, Node.js, NestJS e PHP, além de bancos SQL e NoSQL. Quero continuar trabalhando com integrações e serviços que precisam funcionar bem em produção.”
 
 Se o vínculo com a Performa.AI tiver terminado, ajuste o tempo verbal. Não some períodos de freelance e emprego que aconteceram simultaneamente.
 
 #### 2. “Você prefere backend ou frontend?”
 
-> “Tenho experiência nas duas áreas. Para uma vaga de backend, destacaria APIs, webhooks, sincronização de catálogos e operação em produção. Em full stack, também consigo transformar os requisitos em interfaces React e acompanhar o fluxo completo. Minha preferência para esta conversa depende do escopo da vaga: quero entender onde posso contribuir mais com o que já entreguei.”
+> “Já trabalhei nas duas áreas. No backend, tenho experiência com APIs, webhooks e sincronização de catálogos, incluindo a manutenção em produção. Também desenvolvo interfaces React e consigo acompanhar uma entrega completa. Quero entender melhor o escopo desta vaga para ver onde minha experiência seria mais útil.”
 
 Antes da entrevista, substitua a última frase pela sua preferência real e por uma responsabilidade concreta da vaga.
 
 #### 3. “Por que você quer mudar de empresa ou trabalhar fora?”
 
-> “Quero aplicar minha experiência com integrações e produtos web em um novo contexto. Tenho interesse em entender outros processos de engenharia e colaborar em projetos nos quais confiabilidade e manutenção sejam relevantes. Esta vaga me chamou a atenção por [responsabilidade específica]. Gostaria de entender como o time trabalha e quais problemas esperam que eu resolva.”
+> “Quero trabalhar com integrações e produtos web em outro contexto e conhecer a forma de trabalhar de um novo time. Tenho interesse em projetos que exigem cuidado com confiabilidade e manutenção. Nesta vaga, o que me chamou a atenção foi [responsabilidade específica]. Queria entender quais problemas vocês esperam que eu ajude a resolver.”
 
 Complete o motivo com algo verdadeiro. Se o vínculo terminou, explique isso de forma breve; evite apresentar uma busca hipotética como sua situação atual.
 
 #### 4. “Como concilia freelance e seu trabalho principal?”
 
-> “As experiências aparecem em períodos sobrepostos no currículo. Os projetos freelance me deram contato direto com requisitos, clientes e entrega completa, enquanto a Performa.AI me deu continuidade em um produto e suas integrações. Posso explicar quais projetos estavam ativos em cada período e qual era minha responsabilidade.”
+> “Os períodos se sobrepõem no meu currículo. No freelance, tive contato direto com os clientes e cuidei das entregas desde os requisitos. Na Performa.AI, acompanhei a evolução de um produto e das integrações ao longo do tempo. Posso detalhar quais projetos estavam ativos em cada período e o que eu fazia em cada um.”
 
 Prepare sua disponibilidade atual e explique como organiza compromissos, conforme a realidade. Não prometa dedicação exclusiva ou horários que ainda não decidiu.
 
 #### 5. “Qual projeto melhor demonstra sua experiência?”
 
-> “Eu destacaria o serviço de webhooks de pedidos. Desenvolvi e mantive um fluxo usado por mais de 150 clientes conectados, com milhares de requisições por minuto no volume habitual. Implementei idempotência por identificador do pedido para evitar registros duplicados. O valor era manter consistentes os dados usados na avaliação das recomendações. Posso aprofundar minha contribuição e os limites do que consigo comprovar.”
+> “Eu escolheria o serviço de webhooks de pedidos. Desenvolvi e mantive esse serviço para mais de 150 clientes conectados, com milhares de requisições por minuto na operação habitual. Implementei idempotência pelo identificador do pedido para evitar registros duplicados. Esses pedidos eram usados para avaliar as recomendações, então a consistência dos dados era importante para o produto.”
 
 Para uma vaga full stack com pagamentos, use também o JSBJJ Kylemore: interface e plataforma, cadastro, autenticação, pagamentos recorrentes via GoCardless e PostgreSQL com Prisma.
 
 #### 6. “Qual é seu nível de inglês, disponibilidade e expectativa salarial?”
 
-> “Hoje consigo [descrever sua capacidade real em inglês]. Minha disponibilidade para começar é [prazo], e posso trabalhar com sobreposição de [horários e fuso]. Para remuneração, considero [faixa, moeda e periodicidade], dependendo do escopo e do modelo de contratação. Qual é a faixa prevista e quanto de comunicação em inglês faz parte da rotina?”
+> “Hoje consigo [descrever sua capacidade real em inglês]. Posso começar em [prazo] e trabalhar com sobreposição de [horários e fuso]. Minha expectativa é [faixa, moeda e periodicidade], dependendo das responsabilidades e do modelo de contratação. Qual faixa vocês têm prevista? E quanto da rotina envolve conversar em inglês?”
 
 Preencha esses campos antes de treinar. Diferencie leitura de documentação, conversa e reuniões técnicas; prepare uma apresentação em inglês para demonstrar o nível que declarou.
 
@@ -728,47 +728,47 @@ Preencha esses campos antes de treinar. Diferencie leitura de documentação, co
 
 Resposta sobre a entrega confirmada:
 
-> “A melhoria que consigo afirmar foi de consistência: implementei processamento idempotente por identificador do pedido, reconhecendo registros existentes para evitar duplicação. O serviço atendia mais de 150 clientes conectados e milhares de requisições por minuto na operação habitual. Isso ajudava a manter os dados usados na avaliação das recomendações consistentes. Não tenho uma medição de redução de latência para atribuir a essa mudança.”
+> “Melhorei a consistência do processamento. Usei o identificador do pedido para reconhecer registros existentes e evitar duplicação. O serviço atendia mais de 150 clientes conectados, com milhares de requisições por minuto na operação habitual. Como esses dados eram usados na avaliação das recomendações, precisávamos evitar pedidos duplicados. Não tenho uma medição de redução de latência para essa mudança.”
 
 Se perguntarem como você otimizaria desempenho hoje:
 
-> “Eu começaria medindo o caminho do evento: tempo no endpoint, processamento e acesso ao banco. Em Node.js e NestJS, manteria a entrada curta, evitaria trabalho síncrono pesado e limitaria a concorrência das chamadas externas. Se o processamento justificasse uma fila, persistiria o evento de forma durável antes de confirmar o recebimento e processaria com workers. No banco, avaliaria índices e uma garantia atômica de idempotência por loja. Depois compararia latência, erros e atraso dos pedidos sob a mesma carga, incluindo duplicatas e falhas.”
+> “Primeiro eu mediria onde o evento demora: no endpoint, no processamento ou no banco. Em Node.js e NestJS, deixaria pouco trabalho no recebimento e evitaria operações síncronas pesadas. Também colocaria um limite nas chamadas externas simultâneas. Se precisasse de uma fila, salvaria o evento de forma durável antes de confirmar o recebimento, para os workers processarem depois. No banco, avaliaria índices e uma garantia atômica de idempotência por loja. Para saber se melhorou, compararia latência, erros e atraso dos pedidos com a mesma carga, incluindo eventos duplicados e falhas.”
 
 Maneiras de otimizar na sua stack, conforme o gargalo medido:
 
-- **TypeScript/Node.js/NestJS:** validar payload em runtime, limitar seu tamanho e configurar timeout nas integrações. Usar I/O assíncrono e concorrência limitada; `Promise.all` sobre um lote ilimitado pode saturar dependências. Cálculo pesado pode exigir worker threads ou outro processo; `async` sozinho não libera o event loop. Veja a [documentação do Node.js sobre bloqueio](https://nodejs.org/learn/asynchronous-work/dont-block-the-event-loop).
-- **Fila e Redis/BullMQ:** considerar workers para absorver picos, com retentativas limitadas, espera progressiva e destino para falhas que precisam de análise. Definir persistência, recuperação e comportamento sem Redis antes de tratar a fila como durável. Seu currículo confirma BullMQ em e-mail marketing; não confirma seu uso no serviço de pedidos.
-- **PostgreSQL/MongoDB:** avaliar chave composta por loja e identidade do evento, restrição única e escrita atômica. Evitar consultar e depois inserir sem proteção de concorrência. Examinar planos de consulta e selecionar os campos necessários, conforme [EXPLAIN no PostgreSQL](https://www.postgresql.org/docs/current/using-explain.html) e [índices únicos no MongoDB](https://www.mongodb.com/docs/manual/core/index-unique/). Reconhecimento de evento e efeito de negócio precisam de recuperação coordenada.
-- **PHP:** em um receptor HTTP, evitar uma sincronização longa antes da resposta. Para rotinas de catálogo, processar páginas ou lotes limitados, salvar o ponto de retomada e evitar carregar todo o catálogo em memória. Em workers de longa duração, acompanhar memória e liberar referências; a [documentação de coleta de lixo do PHP](https://www.php.net/manual/en/features.gc.php) explica o tratamento de ciclos. Essas são propostas para PHP, sem afirmar que seu webhook foi escrito nessa linguagem.
-- **Protocolo e segurança:** verificar autenticidade conforme o contrato da plataforma. Retornar sucesso depois que a entrada estiver aceita de forma recuperável, sem esperar tarefas demoradas. Duplicatas, ordem de entrega e retentativas variam por provedor; a [documentação de webhooks da Stripe](https://docs.stripe.com/webhooks) é um exemplo, não o contrato de todas as integrações.
+- Em TypeScript/Node.js/NestJS, validar payload em runtime, limitar seu tamanho e configurar timeout nas integrações. Usar I/O assíncrono e concorrência limitada; `Promise.all` sobre um lote ilimitado pode saturar dependências. Cálculo pesado pode exigir worker threads ou outro processo; `async` sozinho não libera o event loop. Veja a [documentação do Node.js sobre bloqueio](https://nodejs.org/learn/asynchronous-work/dont-block-the-event-loop).
+- Com filas e Redis/BullMQ, considerar workers para absorver picos, com retentativas limitadas, espera progressiva e destino para falhas que precisam de análise. Definir persistência, recuperação e comportamento sem Redis antes de tratar a fila como durável. Seu currículo confirma BullMQ em e-mail marketing; não confirma seu uso no serviço de pedidos.
+- Em PostgreSQL/MongoDB, avaliar chave composta por loja e identidade do evento, restrição única e escrita atômica. Evitar consultar e depois inserir sem proteção de concorrência. Examinar planos de consulta e selecionar os campos necessários, conforme [EXPLAIN no PostgreSQL](https://www.postgresql.org/docs/current/using-explain.html) e [índices únicos no MongoDB](https://www.mongodb.com/docs/manual/core/index-unique/). Reconhecimento de evento e efeito de negócio precisam de recuperação coordenada.
+- Num receptor HTTP em PHP, evitar uma sincronização longa antes da resposta. Para rotinas de catálogo, processar páginas ou lotes limitados, salvar o ponto de retomada e evitar carregar todo o catálogo em memória. Em workers de longa duração, acompanhar memória e liberar referências; a [documentação de coleta de lixo do PHP](https://www.php.net/manual/en/features.gc.php) explica o tratamento de ciclos. Essas são propostas para PHP, sem afirmar que seu webhook foi escrito nessa linguagem.
+- Para receber os eventos com segurança, verificar autenticidade conforme o contrato da plataforma. Retornar sucesso depois que a entrada estiver aceita de forma recuperável, sem esperar tarefas demoradas. Duplicatas, ordem de entrega e retentativas variam por provedor; a [documentação de webhooks da Stripe](https://docs.stripe.com/webhooks) é um exemplo, não o contrato de todas as integrações.
 
 Como validar: comparar p95/p99 do recebimento, taxa de erro, eventos processados por segundo, tempo até atualizar o pedido, idade do backlog e uso de banco/CPU/memória. Testar duas entregas simultâneas, reinício do worker e falha depois de um efeito externo. Um endpoint rápido pode esconder uma fila que só cresce.
 
 #### 8. “Por que Node.js/NestJS e PHP? Você reescreveria o legado?”
 
-> “Minha experiência inclui serviços com Node.js e NestJS e rotinas de integração em PHP. Eu escolheria a tecnologia considerando o fluxo, a manutenção e a experiência do time. Antes de reescrever, identificaria o problema concreto: desempenho, risco de mudança ou dificuldade de operação. Se uma rotina PHP atende bem ao objetivo, posso melhorá-la sem migração. Se houver motivo para substituir, faria por etapas, com validação do comportamento e possibilidade de recuperação.”
+> “Trabalhei com serviços em Node.js e NestJS e com rotinas de integração em PHP. Para escolher, eu olharia o que o serviço precisa fazer e o que o time consegue manter. Antes de reescrever, procuraria entender o problema: está lento, é difícil de operar ou mudar o código virou um risco? Uma rotina PHP que funciona bem pode continuar em PHP. Se a substituição fizer sentido, faria por etapas, conferindo o comportamento e mantendo uma forma de recuperar o serviço.”
 
-Aprofundamento: explique um fluxo real de catálogo em PHP. Evite dizer que trocar de linguagem, sozinho, resolve consultas ruins ou limites de uma API externa.
+Esteja pronto para explicar um fluxo de catálogo que manteve em PHP. Evite dizer que trocar de linguagem, sozinho, resolve consultas ruins ou limites de uma API externa.
 
 #### 9. “Como prepararia essa arquitetura para crescer?”
 
-> “Eu estimaria volume, concentração por loja e atraso aceitável, e mediria qual recurso limita o processamento. Separaria recebimento e trabalho demorado quando necessário, com limites por integração e capacidade de retomar falhas. Aumentaria workers apenas se banco e APIs externas suportassem. Também verificaria como uma loja de alto volume afeta as outras. A arquitetura precisa crescer com controle de custo e com uma operação que o time consiga manter.”
+> “Eu começaria pelo volume esperado e pelo atraso que o produto aceita. Também olharia se a carga está concentrada em poucas lojas. Mediria o que limita o processamento e, se necessário, separaria o recebimento do trabalho mais demorado, com limites por integração e retomada após falhas. Antes de aumentar workers, verificaria se o banco e as APIs externas aguentam. Precisaria testar o efeito de uma loja de alto volume sobre as outras e acompanhar o custo de operar tudo isso.”
 
-Aprofundamento: use o [cenário de Black Friday](06-cenario-black-friday-webhooks.md) como exercício hipotético. Diferencie throughput de recebimento e de processamento; não transforme o volume histórico em um teste de carga documentado.
+Para ensaiar crescimento de carga, use o [cenário de Black Friday](06-cenario-black-friday-webhooks.md) como exercício hipotético. Diferencie throughput de recebimento e de processamento; não transforme o volume histórico em um teste de carga documentado.
 
 #### 10. “Qual foi o impacto de negócio do seu trabalho?”
 
-> “As integrações abasteciam as ferramentas com dados de catálogo, e os webhooks registravam pedidos sem duplicar o identificador. Isso conectava meu trabalho à qualidade dos dados e à operação do produto. Também apoiava suporte e interlocução técnica com plataformas. Consigo explicar esses efeitos e o alcance histórico do serviço, mas não atribuo um percentual de aumento de vendas à minha entrega sem uma medição.”
+> “As integrações traziam os dados de catálogo usados pelas ferramentas. Nos webhooks, evitei que um pedido fosse registrado mais de uma vez, o que ajudava a manter os dados do produto consistentes. Também apoiava o suporte e conversava com as plataformas sobre questões técnicas. Consigo explicar o que entreguei e quantos clientes o serviço atendia. Para falar em aumento de vendas, eu precisaria de uma medição que não tenho.”
 
 #### 11. “Como você protege APIs e dados de vários clientes?”
 
-> “Meu currículo inclui API com JWT, HMAC e rate limiting. São controles com propósitos diferentes: JWT participa da autenticação, HMAC verifica autenticidade e integridade quando o protocolo usa assinatura, e rate limiting limita consumo. Eu ainda preciso validar autorização e isolamento por loja em cada operação. Para uma revisão hoje, derivaria o tenant de um contexto confiável e testaria se um cliente consegue consultar ou alterar dados de outro.”
+> “Trabalhei com uma API que usava JWT, HMAC e rate limiting. Cada um resolve uma parte: JWT na autenticação, HMAC na verificação de autenticidade e integridade das mensagens assinadas, e rate limiting no controle de consumo. Também é preciso conferir autorização e isolamento por loja em cada operação. Numa revisão hoje, eu obteria o tenant de um contexto confiável e testaria tentativas de consultar ou alterar dados de outro cliente.”
 
-Aprofundamento: JWT válido não autoriza acesso a qualquer recurso. Em HMAC, seguir o formato e os bytes assinados exigidos pelo provedor; não supor que a assinatura impede toda repetição de evento.
+Se pedirem detalhes de autorização, lembre que um JWT válido não autoriza acesso a qualquer recurso. Em HMAC, seguir o formato e os bytes assinados exigidos pelo provedor; não supor que a assinatura impede toda repetição de evento.
 
 #### 12. “Por que usar MongoDB replicado? Isso resolve disponibilidade?”
 
-> “Trabalhei com uma API que usava MongoDB replicado. A replicação participa da continuidade do serviço, mas a garantia depende da configuração e de como a aplicação trata falhas. Eu precisaria conferir a configuração usada para detalhar eleição, confirmação de escrita e leitura. Replicação também não substitui backup nem resolve automaticamente consultas lentas.”
+> “A API com que trabalhei usava MongoDB replicado. Isso ajuda na continuidade do serviço, dependendo da configuração e de como a aplicação reage às falhas. Para explicar a eleição e as garantias de leitura e escrita daquele ambiente, eu precisaria conferir a configuração. Backup continua sendo necessário, e consultas lentas precisam de investigação própria.”
 
 Se pedirem a decisão histórica, confirme o que você escolheu pessoalmente. Para uma proposta nova, discuta consistência, recuperação, índices e teste de restauração.
 
@@ -776,35 +776,35 @@ Se pedirem a decisão histórica, confirme o que você escolheu pessoalmente. Pa
 
 #### 13. “O que significa ser referência técnica no seu currículo?”
 
-> “Na Performa.AI, atuo como referência técnica e desenvolvedor full stack sênior. Alinho escopo com produto e assumo decisões de arquitetura, implementação, testes, deploy e manutenção dos serviços sob minha responsabilidade. Também apoio suporte e profissionais em início de carreira. Essa descrição representa meu escopo técnico; posso explicar uma decisão concreta e quem participou dela.”
+> “Na Performa.AI, sou desenvolvedor full stack sênior e referência técnica do time. Converso com produto para definir o escopo e cuido das decisões de arquitetura dos meus serviços. Também faço a implementação, os testes, o deploy e a manutenção. Apoio o suporte e ajudo profissionais que estão começando. Posso dar um exemplo de uma decisão minha e explicar quem participou.”
 
 Prepare um exemplo real de orientação. O currículo não confirma gestão formal de pessoas, contratação ou responsabilidade por toda a engenharia.
 
 #### 14. “Como você lida com prazo curto e requisito ambíguo?”
 
-> “Como atuo do requisito à produção, preciso entender o problema antes de definir a entrega. Eu esclareceria o fluxo essencial, os riscos e o que pode ficar para uma segunda etapa. Apresentaria as opções com seu custo e combinaria critérios de aceite. Para pagamento, autenticação ou isolamento de clientes, deixaria explícito o risco de simplificar um controle importante. Depois validaria a entrega com quem usa o produto.”
+> “Primeiro eu tentaria entender o que precisa funcionar nessa entrega e o que pode esperar. Levaria as opções e seus custos para combinar o escopo e os critérios de aceite. Se a pressa levasse a simplificar um controle de pagamento, autenticação ou isolamento entre clientes, explicaria o risco antes de decidir. Depois conferiria o fluxo com quem vai usar o produto.”
 
 Traga um projeto freelance ou da Performa.AI que você lembra. Essa fala descreve abordagem; acrescente o resultado somente quando puder reconstruir a decisão real.
 
 #### 15. “Conte um erro seu em produção e como resolveu.”
 
-> “Uma alteração minha no script das lojas passou a disparar chamadas desnecessárias à API em lojas React. O problema apareceu com erros 504, e a análise dos logs mostrou aumento de tráfego no servidor. Publiquei uma correção para eliminar as chamadas e acompanhei logs e dados do servidor para confirmar a resolução. Assumi a correção. Hoje, ao revisar esse tipo de script, também verifico a frequência dos disparos durante a navegação.”
+> “Fiz uma alteração no script das lojas que passou a gerar chamadas desnecessárias à API em lojas React. Começaram a aparecer erros 504, e os logs mostraram o aumento de tráfego no servidor. O erro foi meu. Publiquei a correção e acompanhei os logs e os dados do servidor para confirmar que as chamadas excessivas tinham parado. Hoje, ao revisar esse tipo de script, também olho quantas chamadas cada ação e a navegação geram.”
 
-Aprofundamento: não atribuir o incidente a `useEffect`, listeners duplicados ou CDN sem confirmação. Use o [relato do script](03-script-sobrecarga-api.md) para preparar os limites da história. Para uma pergunta específica sobre operação destrutiva, há também o [relato de recuperação do dashboard PHP](05-recuperacao-dashboard-php.md).
+Ao contar o incidente, evite atribuí-lo a `useEffect`, listeners duplicados ou CDN sem confirmação. Use o [relato do script](03-script-sobrecarga-api.md) para preparar os limites da história. Para uma pergunta específica sobre operação destrutiva, há também o [relato de recuperação do dashboard PHP](05-recuperacao-dashboard-php.md).
 
 #### 16. “Como você orienta alguém iniciante ou faz code review?”
 
-> “Minha experiência inclui apoiar profissionais em início de carreira nas dúvidas e decisões do dia a dia. Ao orientar, eu procuraria entender o raciocínio da pessoa e usar um caso concreto para explicar a decisão. Em uma revisão, priorizaria correção, segurança e risco em produção, com comentários que expliquem o efeito do problema. Também pediria à pessoa que validasse a solução com um caso de teste, para ela ganhar autonomia.”
+> “Já ajudei profissionais em início de carreira com dúvidas e decisões do dia a dia. Para orientar alguém, eu procuraria entender como a pessoa chegou à solução e explicaria a decisão com um caso concreto. Em code review, começaria pelos problemas de correção e segurança e pelo risco em produção. Explicaria o efeito de cada problema e pediria um teste que ajudasse a pessoa a verificar a solução por conta própria.”
 
 Complete com uma dúvida real que ajudou a resolver. A abordagem de review é uma proposta; não invente um processo formal de mentoria ou revisão.
 
 #### 17. “Como você trabalha com suporte, produto e clientes?”
 
-> “Na Performa.AI, apoio suporte em problemas técnicos complexos e converso com plataformas sobre integrações. Também alinho o escopo com produto. Para investigar um problema, preciso identificar a loja, o fluxo afetado e o comportamento esperado. Eu comunicaria o impacto em termos da operação do cliente e explicaria o que já foi confirmado, o que ainda estou investigando e qual é o próximo passo.”
+> “Na Performa.AI, ajudo o suporte com problemas técnicos complexos, converso com plataformas sobre integrações e defino escopo com produto. Numa investigação, preciso saber qual loja está afetada e o que o cliente esperava que acontecesse naquele fluxo. Ao comunicar o andamento, explicaria o impacto na operação, o que já sabemos e o que ainda falta investigar, junto com o próximo passo.”
 
 #### 18. “Como você trata uma discordância técnica?”
 
-> “Eu começaria alinhando o objetivo e as restrições. Compararia as opções pelo risco, esforço de manutenção e evidências disponíveis. Se a dúvida fosse desempenho, proporia uma medição pequena; se fosse produto, validaria o fluxo com quem define o requisito. Depois registraria a decisão e em que condições deveríamos revisá-la.”
+> “Eu tentaria entender se estamos buscando o mesmo resultado e quais restrições cada pessoa está considerando. Compararia as opções pelo risco e pelo trabalho de manutenção, usando as evidências que tivermos. Uma dúvida de desempenho pode pedir uma medição pequena. Uma dúvida de produto precisa ser discutida com quem define o requisito. Depois registraria o que decidimos e quando faria sentido rever a escolha.”
 
 Prepare um episódio real para uma pergunta comportamental. Se não lembrar de um caso, apresente essa resposta como sua abordagem, sem criar uma história de conflito.
 
@@ -812,53 +812,53 @@ Prepare um episódio real para uma pergunta comportamental. Se não lembrar de u
 
 #### 19. “Como sua idempotência funciona com duas requisições simultâneas?”
 
-> “No serviço real, implementei reconhecimento pelo identificador do pedido. Preciso confirmar o mecanismo usado para afirmar como a concorrência era protegida. Em um desenho novo, usaria unicidade no armazenamento e uma operação atômica, porque consultar antes de inserir permite corrida. Definiria também a identidade da entrega e a do pedido: uma atualização legítima não pode ser descartada só porque aquele pedido já existe.”
+> “No serviço que fiz, reconhecia os pedidos pelo identificador. Preciso conferir a implementação para detalhar a proteção contra concorrência. Se fosse projetar hoje, garantiria unicidade no banco com uma operação atômica. Só consultar antes de inserir permite que duas requisições vejam o pedido como ausente ao mesmo tempo. Também separaria a identidade da entrega da identidade do pedido, para aceitar atualizações legítimas de um pedido já registrado.”
 
-Aprofundamento: chave por tenant quando o identificador não for global; em PostgreSQL, avaliar restrição única e `ON CONFLICT`; em MongoDB, índice único composto e tratamento da colisão. Registrar “processado” antes de concluir o efeito pode perder trabalho após uma falha. Para efeitos externos, definir idempotência no destino ou reconciliação.
+Para explicar a concorrência, considere uma chave por tenant quando o identificador não for global; em PostgreSQL, avaliar restrição única e `ON CONFLICT`; em MongoDB, índice único composto e tratamento da colisão. Registrar “processado” antes de concluir o efeito pode perder trabalho após uma falha. Para efeitos externos, definir idempotência no destino ou reconciliação.
 
 #### 20. “Como você respeita rate limits na sincronização de catálogos?”
 
-> “Mantive integrações com Shopify, Nuvemshop, Loja Integrada, Tray, VTEX e Magazord, incluindo rotinas PHP que consultavam produtos e categorias dentro dos limites das plataformas. Para desenhar esse fluxo hoje, controlaria paginação e concorrência por credencial ou loja, conforme o contrato. Em respostas 429, seguiria a orientação de espera do provedor. Salvaria o ponto de retomada e separaria erro temporário de credencial inválida, que precisa de ação.”
+> “Mantive integrações com Shopify, Nuvemshop, Loja Integrada, Tray, VTEX e Magazord. Isso incluía rotinas PHP que buscavam produtos e categorias respeitando os limites das APIs. Num fluxo novo, controlaria a paginação e as chamadas simultâneas por credencial ou loja, conforme o contrato. Ao receber 429, seguiria a orientação de espera da plataforma. Também salvaria onde a sincronização parou. Uma falha temporária pode permitir nova tentativa; uma credencial inválida precisa ser corrigida.”
 
-Aprofundamento: retries com orçamento e espera progressiva; conferir limites por conta, token ou operação. Não inventar números iguais para todas as plataformas. Leia a [história de integrações](02-integracoes-ecommerce.md) para escolher um fluxo real.
+Prepare-se para discutir retries com orçamento e espera progressiva; conferir limites por conta, token ou operação. Não inventar números iguais para todas as plataformas. Leia a [história de integrações](02-integracoes-ecommerce.md) para escolher um fluxo real.
 
 #### 21. “Como você usa Redis e BullMQ? E se um job executar duas vezes?”
 
-> “No freelance, usei BullMQ com Node.js e Amazon SES para uma fila de e-mail marketing, publicada em VPS na DigitalOcean. Posso explicar esse projeto como experiência real com filas. Para lidar com execução repetida hoje, definiria uma identidade para o envio e registraria seu estado. Também verificaria o caso em que o provedor aceita o e-mail e o worker falha antes de salvar o sucesso. Uma fila, sozinha, não garante que um efeito externo aconteça uma única vez.”
+> “Usei BullMQ com Node.js e Amazon SES numa fila de e-mail marketing de um projeto freelance, com deploy numa VPS da DigitalOcean. Para tratar execução repetida hoje, daria uma identidade ao envio e registraria seu estado. Testaria principalmente a falha depois que o provedor aceita o e-mail, antes de o worker salvar o sucesso. Nesse intervalo, repetir o job pode repetir o envio, mesmo usando uma fila.”
 
-Aprofundamento: confira as opções de retries e recuperação da versão utilizada antes de detalhar a API. Um identificador de job pode ajudar a evitar enfileiramento duplicado, mas não substitui recuperação do efeito de negócio. Não confunda uso de Redis como cache com durabilidade da fila.
+Antes de detalhar a API, confira as opções de retries e recuperação da versão utilizada. Um identificador de job pode ajudar a evitar enfileiramento duplicado, mas não substitui recuperação do efeito de negócio. Não confunda uso de Redis como cache com durabilidade da fila.
 
 #### 22. “Como investigaria uma API lenta ou erros 504?”
 
-> “Eu separaria o tempo gasto no proxy, na aplicação, no banco e nas integrações externas. Correlacionaria a requisição com logs e métricas e procuraria relação com deploy, loja ou endpoint. Em Node.js, verificaria bloqueio do event loop e concorrência; em PHP, ocupação dos processos e duração das chamadas; no banco, consultas e espera por recursos. O 504 me diz que houve timeout no caminho, mas preciso de evidências para identificar a causa.”
+> “Eu mediria quanto tempo a requisição passa no proxy, na aplicação, no banco e nas chamadas externas. Usaria logs e métricas para acompanhar a mesma requisição e ver se o problema começou num deploy ou se afeta uma loja ou endpoint específico. Em Node.js, olharia o event loop e a concorrência. Em PHP, a ocupação dos processos e a duração das chamadas. No banco, investigaria consultas e espera por recursos. O 504 indica um timeout no caminho; a causa precisa aparecer na investigação.”
 
-Aprofundamento: definir timeouts por dependência, analisar p95/p99 e comparar a mesma carga antes e depois. Aumentar timeout pode apenas manter recursos ocupados por mais tempo.
+Para avaliar a mudança, defina timeouts por dependência, analise p95/p99 e compare a mesma carga antes e depois. Aumentar timeout pode apenas manter recursos ocupados por mais tempo.
 
 #### 23. “Como você otimiza React e evita requests desnecessários?”
 
-> “Eu verificaria primeiro o que dispara a chamada: uma ação do usuário, a sincronização de um efeito ou a inicialização de um script. Testaria navegação sem recarregar, troca rápida de produto e inicialização repetida. Controlaria respostas obsoletas e limpeza quando necessário. Para renderização lenta, mediria o componente antes de usar memoização. Meu incidente real envolveu chamadas excessivas em lojas React, mas não lembro o mecanismo exato para atribuí-lo a um hook.”
+> “Primeiro eu olharia de onde vem a chamada: uma ação do usuário, um efeito ou a inicialização do script. Testaria a navegação sem recarregar a página, a troca rápida de produto e o que acontece se o script inicializar mais de uma vez. Cuidaria da limpeza e de respostas antigas que chegam depois da atual. Se o problema fosse renderização lenta, mediria o componente antes de usar memoização. No incidente que tive em lojas React, sei que havia chamadas excessivas, mas preciso lembrar o mecanismo para dizer se envolvia um hook.”
 
-Aprofundamento: diferenciar estado derivado e sincronização externa; medir chamadas por ação e respeitar dependências do efeito. O guia já inclui a [documentação de efeitos do React](https://react.dev/learn/you-might-not-need-an-effect).
+Prepare-se para explicar a diferença entre estado derivado e sincronização externa, medir chamadas por ação e discutir as dependências do efeito. O guia já inclui a [documentação de efeitos do React](https://react.dev/learn/you-might-not-need-an-effect).
 
 #### 24. “Como fez pagamentos recorrentes e quais falhas testaria?”
 
-> “No JSBJJ Kylemore, desenvolvi a interface e a plataforma, com cadastro, autenticação, pagamentos recorrentes via GoCardless e PostgreSQL com Prisma. Para detalhar a implementação, preciso reconstruir o fluxo real entre usuário, pagamento e estado salvo. Em uma revisão hoje, testaria atualização duplicada, atraso na confirmação, falha de cobrança e tentativa de acessar dados de outro usuário. Não trataria um redirecionamento de sucesso no navegador como prova suficiente de pagamento confirmado.”
+> “No JSBJJ Kylemore, fiz a interface e a plataforma, com cadastro, autenticação e pagamentos recorrentes via GoCardless. Usei PostgreSQL com Prisma. Preciso revisar o fluxo entre usuário, pagamento e estado salvo para detalhar a implementação. Se fosse revisar hoje, testaria confirmação atrasada, atualização duplicada, falha de cobrança e acesso aos dados de outro usuário. A confirmação do pagamento precisaria vir de uma fonte confiável; só o redirecionamento no navegador não seria suficiente.”
 
-Aprofundamento: conferir o contrato do GoCardless antes de afirmar eventos, estados ou política de cobrança. Não presumir que recorrência significa cobrar por cron próprio. Separar estado financeiro de acesso ao produto conforme as regras do negócio.
+Confira o contrato do GoCardless antes de afirmar eventos, estados ou política de cobrança. Não presumir que recorrência significa cobrar por cron próprio. Separar estado financeiro de acesso ao produto conforme as regras do negócio.
 
 #### 25. “Como escolheria um índice e reduziria consultas no dashboard?”
 
-> “Eu partiria dos filtros e da ordenação usados de verdade. Para pedidos por loja e período, avaliaria um índice que atendesse esse padrão e examinaria o plano de execução. Reduziria campos e volume retornado e investigaria consultas repetidas. Um índice também aumenta custo de escrita e armazenamento, então validaria seu benefício com dados representativos. Se usasse cache, a chave incluiria a loja e eu definiria o atraso aceitável dos indicadores.”
+> “Eu olharia os filtros e a ordenação que o dashboard usa. Numa consulta de pedidos por loja e período, avaliaria um índice para esse padrão e conferiria o plano de execução. Também verificaria se estamos buscando campos demais ou repetindo consultas. Como um índice custa armazenamento e trabalho nas escritas, testaria o benefício com dados representativos. Se precisasse de cache, colocaria a loja na chave e combinaria quanto atraso os indicadores podem ter.”
 
-Aprofundamento: `EXPLAIN ANALYZE` executa a consulta; ter cuidado com comandos que alteram dados e com carga em produção. Em Prisma, observar o SQL gerado. Em MongoDB, avaliar o plano e a relação entre documentos examinados e retornados. Veja [EXPLAIN no PostgreSQL](https://www.postgresql.org/docs/current/using-explain.html).
+`EXPLAIN ANALYZE` executa a consulta. Tenha cuidado com comandos que alteram dados e com carga em produção. Em Prisma, observar o SQL gerado. Em MongoDB, avaliar o plano e a relação entre documentos examinados e retornados. Veja [EXPLAIN no PostgreSQL](https://www.postgresql.org/docs/current/using-explain.html).
 
 #### 26. “Que testes e observabilidade você colocaria nesse serviço?”
 
-> “Eu priorizaria os riscos do fluxo: duplicata concorrente, isolamento entre lojas, payload inválido, timeout externo e falha no meio do processamento. Usaria testes de integração para conferir as garantias reais do banco, além de testes da lógica em TypeScript. Na operação, acompanharia erros, latência, atraso de processamento e falhas por integração, com logs correlacionáveis que não exponham segredos. Minha stack inclui Jest, Vitest, Sentry e Grafana; confirmaria em qual projeto usei cada um antes de detalhar.”
+> “Começaria testando duas entregas duplicadas ao mesmo tempo e tentativas de acessar dados de outra loja. Também cobriria payload inválido, timeout externo e falha no meio do processamento. Testaria a lógica em TypeScript e usaria integração para verificar o comportamento do banco. Em produção, acompanharia erros, latência e atraso de processamento, separando as falhas por integração. Os logs precisariam permitir acompanhar uma operação sem expor segredos. Uso Jest, Vitest, Sentry e Grafana na minha stack; preciso conferir em quais projetos usei cada um para dar exemplos.”
 
 #### 27. “O que você fez com IA, MCP e RAG?”
 
-> “Minha experiência inclui automações de WhatsApp com IA, MCP e RAG. Para explicar esse trabalho, eu separaria o fluxo que implementei, as fontes consultadas e as ações que a automação podia executar. Não apresentaria isso como treinamento de modelos. Em um projeto novo, definiria permissões, exemplos de avaliação e um caminho de atendimento quando o sistema não tiver informação suficiente.”
+> “Trabalhei com automações de WhatsApp usando IA, MCP e RAG. Para detalhar, preciso explicar o fluxo que implementei, de onde vinha a informação e o que a automação podia fazer. Ao falar desse trabalho, eu descreveria a automação sem apresentá-la como treinamento de modelos. Num projeto novo, definiria as permissões e exemplos para avaliar as respostas. Também preveria como encaminhar o atendimento quando faltar informação.”
 
 Prepare um exemplo real e o limite da sua contribuição. Para uma vaga de backend, conecte essa experiência a integração, validação e operação, mantendo espaço para o tema principal da vaga.
 
@@ -868,10 +868,10 @@ Escolha duas perguntas de cada perfil e pratique sem ler o texto inteiro. Use tr
 
 Depois de cada resposta, treine uma pergunta adicional: “Por que essa opção?”, “Como você mediu?”, “O que acontece se falhar?” ou “Qual parte foi sua?”. Se não lembrar um detalhe histórico, use:
 
-> “Consigo afirmar a entrega e minha contribuição. Esse detalhe de implementação eu precisaria conferir para responder com precisão. Posso explicar como resolveria hoje e quais garantias procuraria.”
+> “Lembro do que entreguei e da minha parte no trabalho. Esse detalhe eu preciso conferir. Posso explicar como faria hoje e o que verificaria para saber se a solução funciona.”
 
 Para a pergunta de webhook em inglês:
 
-> “The improvement I can confirm was idempotent order processing, using the order identifier to avoid duplicate records. The service supported over 150 connected clients and thousands of requests per minute as its regular workload. If I were optimizing performance today, I would measure request latency, database time, and processing delay first. Then I would address the bottleneck, limit concurrency, and evaluate durable asynchronous processing. I would validate the changes under comparable load, including duplicate events and failures.”
+> “I improved order consistency by using the order identifier to recognize existing records and avoid duplicates. The service supported over 150 connected clients and handled thousands of requests per minute in its regular workload. To improve performance today, I would first measure request latency, database time, and processing delay. I would use those measurements to find the bottleneck, limit concurrent work, and decide whether we need durable asynchronous processing. Then I would compare the results under similar load, including duplicate events and failures.”
 
-As recomendações técnicas desta seção são uma síntese para sua stack, com documentação consultada em 12/10/2026 nos links próximos a cada tema. Confirme o contrato da plataforma e a versão das ferramentas antes de usar uma API ou atribuir uma garantia à implementação.
+Documentação consultada em 12/10/2026. Antes de aplicar as recomendações, confira o contrato da plataforma e a versão das ferramentas e quais garantias elas oferecem.
