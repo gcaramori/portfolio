@@ -109,10 +109,12 @@ export function InterviewGuide({
         }
         const valid = new Set([
           ...Array.from({ length: 14 }, (_, index) => `day:${index + 1}`),
-          ...Array.from(
-            sections[12].markdown.matchAll(/^- \[ \] (.+)$/gm),
-            (match) =>
-              `${sections[12].id}:check:${encodeURIComponent(match[1].trim())}`,
+          ...sections.flatMap((section) =>
+            Array.from(
+              section.markdown.matchAll(/^- \[ \] (.+)$/gm),
+              (match) =>
+                `${section.id}:check:${encodeURIComponent(match[1].trim())}`,
+            ),
           ),
         ])
         const restored = [...new Set(parsed)].filter((id) => valid.has(id))

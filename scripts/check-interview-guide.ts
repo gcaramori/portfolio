@@ -22,10 +22,10 @@ try {
   const response = await page.goto(url)
   assert.equal(response?.status(), 200)
   await page.locator('.guide-days').waitFor()
-  assert.equal(await page.locator('.guide-section-heading').count(), 16)
+  assert.equal(await page.locator('.guide-section-heading').count(), 17)
   assert.equal(await page.locator('.guide-supplements details').count(), 7)
   assert.equal(await page.locator('.guide-day').count(), 14)
-  assert.equal(await page.locator('.task-list-item input').count(), 9)
+  assert.equal(await page.locator('.task-list-item input').count(), 17)
   assert.equal(
     await page.getByRole('button', { name: 'English', exact: true }).count(),
     0,
@@ -87,6 +87,28 @@ try {
   assert.ok(await checklist.nth(1).isChecked())
 
   const search = page.getByRole('searchbox')
+  await search.fill('Resend')
+  await page
+    .locator('.guide-search-results')
+    .getByRole('link')
+    .filter({ hasText: '17. Estudar em casa' })
+    .click()
+  const study = page.locator(
+    '[id="17-estudar-em-casa-de-graça-para-uma-vaga-como-a-da-resend"]',
+  )
+  assert.ok(await study.isVisible())
+  assert.ok((await study.innerText()).includes('Ciclo de 12 semanas'))
+  const studyCheck = study.getByRole('checkbox').first()
+  await studyCheck.check()
+  await page.reload()
+  await page.waitForFunction(() =>
+    document.querySelector<HTMLInputElement>(
+      '[id="17-estudar-em-casa-de-graça-para-uma-vaga-como-a-da-resend"] input',
+    )?.checked,
+  )
+  assert.ok(await studyCheck.isChecked())
+  assert.ok(await checklist.nth(1).isChecked())
+  await studyCheck.uncheck()
   const experience = page.locator(
     '[id="16-perguntas-sobre-seu-currículo-e-experiência"]',
   )

@@ -1,6 +1,6 @@
 # Guia de preparação e busca de vagas internacionais
 
-Atualizado em 12 de outubro de 2026. Preparado para Guilherme Caramori, com base no portfólio: TypeScript, React, Node.js/NestJS, PHP, MongoDB, PostgreSQL, Redis, integrações de e-commerce e responsabilidade por produção.
+Atualizado em 14 de outubro de 2026. Preparado para Guilherme Caramori, com base no portfólio: TypeScript, React, Node.js/NestJS, PHP, MongoDB, PostgreSQL, Redis, integrações de e-commerce e responsabilidade por produção.
 
 Objetivo: aumentar a chance de entrevistas e propostas sem transformar a preparação em meses de estudo. As rotinas e quantidades abaixo são propostas de trabalho, não estatísticas de contratação. Sites e processos mudam: confirme as condições na vaga e com o recrutador.
 
@@ -22,6 +22,7 @@ Objetivo: aumentar a chance de entrevistas e propostas sem transformar a prepara
 14. [Fontes e leituras](#14-fontes-e-leituras)
 15. [Ansiedade, vergonha e comunicação nas entrevistas](#15-ansiedade-vergonha-e-comunicação-nas-entrevistas)
 16. [Perguntas sobre seu currículo e experiência](#16-perguntas-sobre-seu-currículo-e-experiência)
+17. [Estudar em casa, de graça, para uma vaga como a da Resend](#17-estudar-em-casa-de-graça-para-uma-vaga-como-a-da-resend)
 
 ## 1. Decisões para começar hoje
 
@@ -875,3 +876,106 @@ Para a pergunta de webhook em inglês:
 > “I improved order consistency by using the order identifier to recognize existing records and avoid duplicates. The service supported over 150 connected clients and handled thousands of requests per minute in its regular workload. To improve performance today, I would first measure request latency, database time, and processing delay. I would use those measurements to find the bottleneck, limit concurrent work, and decide whether we need durable asynchronous processing. Then I would compare the results under similar load, including duplicate events and failures.”
 
 Documentação consultada em 12/10/2026. Antes de aplicar as recomendações, confira o contrato da plataforma e a versão das ferramentas e quais garantias elas oferecem.
+
+## 17. Estudar em casa, de graça, para uma vaga como a da Resend
+
+### O alvo e seu ponto de partida
+
+A referência é a vaga de [Software Engineer, Trust & Safety — Americas](https://resend.com/careers/729ad3fa-10a2-4a07-ba9c-13b6eec6adb1), consultada em 13/10/2026. O foco é construir sistemas antiabuso que tomem decisões rápidas, expliquem suas ações e permitam corrigir bloqueios indevidos. Ela pede cinco ou mais anos de engenharia, inglês fluente, domínio de Node.js/TypeScript/React, bancos e infraestrutura. Go pode ser aprendido; experiência anterior em segurança, detecção com ML e protocolos de e-mail aparece como diferencial. Consulte o anúncio novamente antes de se candidatar.
+
+Pelo seu portfólio, você já tem experiências relacionadas: eventos repetidos, integrações, Redis, bancos, interfaces e investigação em produção. Isso é uma base para estudar o problema. Ainda precisamos avaliar sua profundidade em detecção, segurança, latência e avaliação de decisões; o portfólio sozinho não confirma essa prontidão.
+
+Não sentir que você é essa pessoa ainda não mede sua competência. Troque essa impressão por perguntas verificáveis: consigo implementar, testar falhas, medir e defender uma decisão? O plano abaixo produz essas evidências. É um ciclo inicial de 12 semanas, ajustável à sua rotina, sem promessa de contratação ou de adquirir toda a experiência exigida nesse prazo. Continue a busca das seções anteriores enquanto estuda.
+
+### Diagnóstico antes de escolher cursos
+
+Em duas sessões de 45 minutos, tente explicar e esboçar um serviço que limita envios por conta, recebe eventos duplicados e permite contestar um bloqueio. Depois responda: como impedir acesso entre contas? O que fazer se Redis cair? Como saber se a regra está prejudicando clientes legítimos? Como investigar p99 alto?
+
+Marque cada dimensão abaixo: **0** = não consigo explicar; **1** = explico com consulta; **2** = implemento e testo sozinho; **3** = comparo alternativas, meço e explico limites. Registre a evidência, não apenas a nota. Comece pelas duas menores notas mais relevantes para a vaga.
+
+| Competência | Estudo e prática em casa | Evidência esperada |
+| --- | --- | --- |
+| Node.js e TypeScript | Validação runtime, timeouts, concorrência limitada, event loop | Endpoint com falhas e testes de concorrência |
+| Eventos e consistência | Idempotência, retries, ordem dos eventos, fila e recuperação | Reiniciar worker sem duplicar ações |
+| PostgreSQL e Redis | Transações, restrições, índices, contadores atômicos | Plano de consulta e limite correto sob concorrência |
+| Segurança e abuso | Autorização, rotação de chaves, mudanças de comportamento | Contenção restrita à chave afetada e trilha de auditoria |
+| Políticas de decisão | Regras versionadas, motivos, revisão e reversão | Comparar duas versões antes de ativar uma |
+| Latência e operação | p95/p99, tracing, carga, degradação e rollback | Relatório reproduzível de desempenho e falhas |
+| Avaliação de detecção | Falsos positivos/negativos, precision, recall, limiares | Matriz de confusão em conjunto separado |
+| Produto e inglês | Interface de investigação e explicação de trade-offs | Demo e README em inglês que você consegue defender |
+
+### Um laboratório pequeno que evolui
+
+Crie um repositório separado de estudo para um **serviço local de decisões antiabuso para e-mail**. Use dados fictícios e envio capturado pelo Mailpit, sem entregar e-mails na internet. Não precisa integrar lojas, clientes ou uma conta paga da Resend.
+
+Comece com Node.js/TypeScript, PostgreSQL e um endpoint. Adicione Redis e worker quando o exercício exigir; React para investigação; Go apenas após medir uma necessidade ou para aprender o requisito. Você pode usar containers com Podman ou outra opção gratuita adequada ao seu computador. Se a máquina tiver pouca memória, execute banco e aplicações diretamente e adie a pilha de observabilidade.
+
+Fluxo proposto: pedido de envio → autenticação e conta → política local rápida → permitir, limitar ou encaminhar para revisão → processamento assíncrono → registro da decisão → painel de investigação e reversão. Separe a decisão imediata da análise demorada. Defina quais sinais precisam estar disponíveis no caminho crítico.
+
+O registro deve incluir conta, evento, versão da regra, motivo, ação e horário. A interface deve mostrar histórico, permitir revisão autorizada e registrar quem alterou a decisão. Não grave tokens nem conteúdo sensível nos logs.
+
+Use um orçamento inicial de **p99 inferior a 20 ms para a etapa de decisão**, como meta inventada para o laboratório, não como requisito publicado da Resend. Defina carga, hardware e tamanho dos dados antes de medir. Se falhar, investigue e documente; uma medição honesta vale mais que um número escolhido para o currículo.
+
+### Ciclo de 12 semanas
+
+Planejamento sugerido: cinco sessões de uma hora por semana, com cerca de 60 horas no total. Essa carga delimita um protótipo; reduza escopo se necessário. Com 45 minutos por dia, prolongue o ciclo. Avance pelo critério de conclusão, não por ter terminado uma playlist.
+
+| Semanas | Foco e entrega | Critério para avançar |
+| --- | --- | --- |
+| 1–2 | API TypeScript, validação, autorização por conta e persistência | Entrada inválida é rejeitada; uma conta não lê nem altera outra; testes cobrem ambos |
+| 3–4 | Fila, idempotência e rate limiting atômico por conta | Duplicatas e chamadas simultâneas não duplicam ações nem ultrapassam o limite definido; reinício tem recuperação demonstrada |
+| 5–6 | Motor simples de regras versionadas, modo de observação e painel React | Regra candidata registra o que faria sem bloquear; reversão deixa histórico; pico legítimo não vira bloqueio apenas por volume |
+| 7–8 | Logs, métricas, tracing, carga, falhas e infraestrutura local reproduzível | Medir p95/p99 e atraso da fila; simular queda de Redis/worker; justificar resposta degradada e demonstrar rollback |
+| 9–10 | Fundamentos de e-mail, tomada de conta e avaliação de classificador | Explicar SPF/DKIM/DMARC; simular chave comprometida; comparar regras e modelo em dados separados, incluindo erros |
+| 11–12 | Go básico, revisão e simulação de seleção | Reimplementar apenas a decisão em Go e comparar sob a mesma carga; executar projeto do zero; apresentar decisões em inglês |
+
+No bloco de falhas, evite uma resposta única de “liberar tudo” ou “bloquear tudo”. Defina por operação e risco: uma revisão indisponível pode adiar uma ação; uma chave confirmadamente revogada não deve ganhar acesso porque o cache caiu. Explique custo para usuários legítimos, duração da degradação e recuperação.
+
+Para infraestrutura, faça primeiro um tutorial de Terraform com recursos Docker locais, se tiver um runtime compatível. Depois estude o mapeamento conceitual para AWS/CDK: serviço, fila, banco, permissões e monitoramento. Escrever configuração ou operar localmente não comprova experiência em AWS; registre essa lacuna para oportunidades reais de trabalho. Não há necessidade de provisionar cloud para concluir o ciclo gratuito.
+
+### Recursos gratuitos: cada leitura termina em uma entrega
+
+Os links abaixo são materiais oficiais ou do próprio projeto. A trilha usa leitura e execução local; não depende de cursos pagos, provas, cartão, hospedagem ou créditos promocionais.
+
+| Recurso | Trecho ou tema | Exercício associado |
+| --- | --- | --- |
+| [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/narrowing.html) | Narrowing e uniões discriminadas | Modelar decisão e validar entrada não confiável |
+| [Node.js — Event loop](https://nodejs.org/learn/asynchronous-work/dont-block-the-event-loop) | CPU, I/O e bloqueios | Comparar decisão leve com cálculo pesado e medir atraso |
+| [PostgreSQL — EXPLAIN](https://www.postgresql.org/docs/current/using-explain.html) | Planos e índices | Medir consulta do histórico antes/depois de um índice |
+| [OpenTelemetry — JavaScript](https://opentelemetry.io/docs/languages/js/) | Instrumentação e traces | Seguir um evento da API ao worker |
+| [Terraform — Docker local](https://developer.hashicorp.com/terraform/tutorials/docker-get-started) | Infraestrutura declarativa | Criar e recriar um recurso local; entender estado e mudanças |
+| [Mailpit](https://github.com/axllent/mailpit) | Servidor SMTP para testes | Capturar mensagens fictícias sem envio externo |
+| [Resend — API](https://resend.com/docs/api-reference/introduction) | Contrato de API de e-mail | Descrever a adaptação do seu serviço sem chamar a API |
+| [DMARC — RFC 7489](https://www.rfc-editor.org/rfc/rfc7489) | Visão geral e alinhamento SPF/DKIM | Explicar por que autenticação de domínio não comprova conteúdo seguro |
+| [scikit-learn — Avaliação](https://scikit-learn.org/stable/modules/model_evaluation.html) | Matriz de confusão, precision e recall | Comparar baseline e classificador simples local |
+| [A Tour of Go](https://go.dev/tour/) | Tipos, erros e concorrência | Implementar uma decisão com timeout, sem reescrever o projeto inteiro |
+| [React — Efeitos](https://react.dev/learn/you-might-not-need-an-effect) | Estado derivado e sincronização | Painel com carregamento, erro e proteção contra resposta obsoleta |
+
+Para ML, comece com regras e depois um classificador simples, como regressão logística com scikit-learn local. Python entra apenas nesse exercício. Não precisa usar LLM nem pagar por APIs. Dados sintéticos servem para testar o mecanismo, mas resultados neles não estimam qualidade em tráfego real.
+
+Separe treino, validação e teste antes de ajustar limiares; evite colocar cópias da mesma campanha nos três conjuntos. Conte verdadeiros positivos, falsos positivos e falsos negativos. **Precision = TP/(TP+FP)**; **recall = TP/(TP+FN)**. Registre quando o denominador for zero. Exemplo fictício: entre 100 bloqueios, 10 eram legítimos; precision de 90% ainda significa dez clientes prejudicados. Compare também taxa de falso positivo e resultados por perfil de conta. Reversões ajudam a investigar erros, mas não revelam todos os erros: nem todo usuário recorre.
+
+### Como estudar sem ficar dependente de tutorial ou IA
+
+Em uma sessão de 60 minutos: 10 para ler uma questão concreta, 35 para implementar ou investigar, 10 para testar e explicar em inglês, 5 para registrar resultado e próxima dúvida. Em 45 minutos, use 5/25/10/5. No fim da semana, reserve uma sessão para reconstruir ou explicar uma parte sem consultar.
+
+Use IA para pedir pistas, revisar hipóteses e discutir trade-offs. Antes de aceitar código, preveja o comportamento e teste um caso que possa quebrá-lo. No dia seguinte, refaça a parte central sozinho. Se você não consegue explicar onde a solução falha, o tópico continua em estudo.
+
+Mantenha no repositório: instruções para rodar, decisões de arquitetura, testes importantes, relatório de carga e um incidente simulado com mitigação e prevenção. Publique apenas medições realizadas, identificando ambiente local e dados fictícios. Grave uma demo de cinco minutos em inglês: problema, decisão, falha, medição e limite.
+
+### Quando transformar estudo em candidatura
+
+Faça uma revisão a cada quatro semanas e escolha as três lacunas seguintes. Se o escopo crescer, corte funcionalidades secundárias e mantenha os testes de decisão, recuperação e avaliação. Continue se candidatando a backend, integrações e produto conforme a aderência; essas funções também podem oferecer experiência útil para chegar ao alvo.
+
+- [ ] Explico um sistema real que construí, minha responsabilidade e como verifiquei o resultado.
+- [ ] Demonstro isolamento entre contas, duplicatas, concorrência e recuperação do worker.
+- [ ] Consigo justificar uma política e explicar um falso positivo e sua reversão.
+- [ ] Apresento medições reproduzíveis de latência e qualidade, com seus limites.
+- [ ] Explico como mudaria uma regra gradualmente e como a desativaria.
+- [ ] Consigo discutir o projeto e responder perguntas em inglês sem ler roteiro.
+- [ ] Distingo estudo local, incidentes simulados e experiência efetiva em produção/cloud.
+- [ ] Comparei minha experiência e disponibilidade com os requisitos atuais da vaga.
+
+O formulário dessa vaga pede um caso de sistema que decidia automaticamente e como você sabia que acertava. Investigue se seu trabalho real com roteamento, recomendações ou processamento de eventos oferece um caso verificável; não atribua detecção antifraude a uma integração que não fazia isso. Use o laboratório como evidência complementar, explicitamente identificado como estudo.
+
+O [processo publicado pela Resend](https://resend.com/handbook/people/whats-the-hiring-process) inclui desafio em casa e discussão técnica sobre a entrega. Como treino, delimite uma melhoria para duas sessões, escreva o README em inglês e peça revisão a um colega, se possível. Prepare perguntas sobre latência, falsos positivos e rollout. O plano ajuda a desenvolver competência demonstrável; anos de experiência, colaboração e operação real continuam sendo avaliados separadamente.
