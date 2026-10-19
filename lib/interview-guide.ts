@@ -2,6 +2,13 @@ import 'server-only'
 
 import { readFile, readdir } from 'node:fs/promises'
 import path from 'node:path'
+import {
+  guideMetadata,
+  guideSources,
+  glossary,
+  studyModules,
+  type StudyLesson,
+} from './interview-curriculum'
 
 export type GuideSection = {
   id: string
@@ -58,5 +65,36 @@ export async function getInterviewGuide() {
     .split(/^## /m)[0]
     .replace(/^# .+\r?\n/, '')
     .trim()
-  return { introduction, sections, supplements }
+  const lessons: StudyLesson[] = await Promise.all(
+    studyModules.flatMap((module) =>
+      module.lessons.map(async (definition) => {
+        const source = await readFile(
+          path.join(directory, 'trilha', `${definition.id}.md`),
+          'utf8',
+        )
+        const [markdown, remainder] = source.split('<!-- hints -->')
+        const [hints, solution] = (remainder ?? '').split('<!-- solution -->')
+        if (!markdown?.trim() || !hints?.trim() || !solution?.trim()) {
+          throw new Error(`Incomplete lesson: ${definition.id}`)
+        }
+        return {
+          ...definition,
+          moduleId: module.id,
+          markdown: markdown.trim(),
+          hints: hints.trim(),
+          solution: solution.trim(),
+        }
+      }),
+    ),
+  )
+  return {
+    introduction,
+    sections,
+    supplements,
+    lessons,
+    modules: studyModules,
+    sources: guideSources,
+    glossary,
+    metadata: guideMetadata,
+  }
 }

@@ -1,65 +1,29 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type MouseEvent } from 'react'
 import {
   ArrowDown,
-  ArrowUpRight,
+  ArrowLeft,
+  ArrowRight,
   BookOpen,
   Check,
-  ChevronDown,
-  Clock3,
   Search,
   X,
 } from 'lucide-react'
-import type { GuideSection } from '@/lib/interview-guide'
+import type { getInterviewGuide } from '@/lib/interview-guide'
+import {
+  dueReviews,
+  emptyProgress,
+  legacyStorageKey,
+  restoreProgress,
+  studyStorageKey,
+  type StudyProgress,
+} from '@/lib/interview-curriculum'
 import { MarkdownContent } from './markdown-content'
 import './interview-guide.css'
 
-const storageKey = 'interview-guide:progress:v1'
-const shortcuts = [
-  { label: 'Começar hoje', index: 0 },
-  { label: 'Plano de 14 dias', index: 2 },
-  { label: 'Encontrar vagas', index: 8 },
-  { label: 'Mensagens prontas', index: 10 },
-]
-const resources = [
-  {
-    name: 'LinkedIn Jobs',
-    description: 'Vagas e contatos com recrutadores.',
-    href: 'https://www.linkedin.com/jobs/',
-    category: 'Vagas',
-  },
-  {
-    name: 'Himalayas',
-    description: 'Busca remota por localização e fuso.',
-    href: 'https://himalayas.app/',
-    category: 'Vagas',
-  },
-  {
-    name: 'Wellfound',
-    description: 'Startups e oportunidades de produto.',
-    href: 'https://wellfound.com/jobs',
-    category: 'Vagas',
-  },
-  {
-    name: 'Get on Board',
-    description: 'Tecnologia na América Latina.',
-    href: 'https://www.getonbrd.com/',
-    category: 'Vagas',
-  },
-  {
-    name: 'TypeScript Handbook',
-    description: 'Narrowing e modelagem de tipos.',
-    href: 'https://www.typescriptlang.org/docs/handbook/2/narrowing.html',
-    category: 'Estudo',
-  },
-  {
-    name: 'Node.js',
-    description: 'Event loop e trabalho bloqueante.',
-    href: 'https://nodejs.org/learn/asynchronous-work/dont-block-the-event-loop',
-    category: 'Estudo',
-  },
-]
+type GuideProps = Awaited<ReturnType<typeof getInterviewGuide>>
+const interviewPlan = '3-rotina-e-plano-de-14-dias'
 
 function normalize(text: string) {
   return text
@@ -68,67 +32,104 @@ function normalize(text: string) {
     .toLowerCase()
 }
 
-function snippet(markdown: string, query: string) {
-  const plain = markdown
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-    .replace(/[#*`>|]/g, '')
-    .replace(/\s+/g, ' ')
-  const index = normalize(plain).indexOf(normalize(query))
-  const start = Math.max(0, index - 55)
-  return `${start ? '…' : ''}${plain.slice(start, start + 180)}…`
+function excerpt(markdown: string, query: string) {
+  const plain = markdown.replace(/[#*`>|]/g, '').replace(/\s+/g, ' ')
+  const offset = Math.max(0, normalize(plain).indexOf(normalize(query)) - 45)
+  return `${offset ? '…' : ''}${plain.slice(offset, offset + 170)}…`
 }
 
 export function InterviewGuide({
   introduction,
   sections,
   supplements,
-}: {
-  introduction: string
-  sections: GuideSection[]
-  supplements: GuideSection[]
-}) {
-  const [query, setQuery] = useState('')
-  const [active, setActive] = useState(sections[0].id)
-  const [completed, setCompleted] = useState<string[]>([])
+  lessons,
+  modules,
+  sources,
+  glossary,
+  metadata,
+}: GuideProps) {
+  const [activeId, setActiveId] = useState(lessons[0].id)
+  const [progress, setProgress] = useState<StudyProgress>(emptyProgress)
+  const progressRef = useRef<StudyProgress>(emptyProgress())
+  const [legacy, setLegacy] = useState<string[]>([])
+  const legacyRef = useRef<string[]>([])
   const [opened, setOpened] = useState<string[]>([])
-  const [storageNotice, setStorageNotice] = useState('')
-  const ready = useRef(false)
-  const storageAvailable = useRef(true)
-  const progress = useRef<string[]>([])
+  const [query, setQuery] = useState('')
+  const [notice, setNotice] = useState('')
+  const [ready, setReady] = useState(false)
+  const [clock, setClock] = useState<number | null>(null)
+  const available = useRef({ study: true, legacy: true })
+  const lessonHeading = useRef<HTMLHeadingElement>(null)
+  const current = lessons.find((lesson) => lesson.id === activeId) ?? lessons[0]
+  const position = lessons.findIndex((lesson) => lesson.id === current.id)
+  const currentModule = modules.find(
+    (module) => module.id === current.moduleId,
+  )!
+  const references = [...sections, ...supplements]
+  const validIds = lessons.map((lesson) => lesson.id)
+  const done = progress.completed[current.id]
+  const reviews = clock === null ? [] : dueReviews(progress, clock)
+  const completionCount = Object.keys(progress.completed).length
+  const nextLesson =
+    lessons.find((lesson) => !progress.completed[lesson.id]) ?? lessons[0]
+
+  function save(next: StudyProgress) {
+    progressRef.current = next
+    setProgress(next)
+    if (ready && available.current.study) {
+      try {
+        localStorage.setItem(studyStorageKey, JSON.stringify(next))
+      } catch {
+        available.current.study = false
+        setNotice(
+          'Não foi possível salvar a trilha. O progresso desta visita fica apenas na sessão.',
+        )
+      }
+    }
+  }
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(storageKey)
-      if (saved) {
-        const parsed: unknown = JSON.parse(saved)
-        if (
-          !Array.isArray(parsed) ||
-          !parsed.every((item) => typeof item === 'string')
-        ) {
-          throw new Error('Invalid progress')
-        }
-        const valid = new Set([
-          ...Array.from({ length: 14 }, (_, index) => `day:${index + 1}`),
-          ...sections.flatMap((section) =>
-            Array.from(
-              section.markdown.matchAll(/^- \[ \] (.+)$/gm),
-              (match) =>
-                `${section.id}:check:${encodeURIComponent(match[1].trim())}`,
-            ),
-          ),
-        ])
-        const restored = [...new Set(parsed)].filter((id) => valid.has(id))
-        progress.current = restored
-        // Restore browser-local state only after hydration.
-        requestAnimationFrame(() => setCompleted(restored))
+    const frame = requestAnimationFrame(() => {
+      let restored = emptyProgress()
+      const notices: string[] = []
+      try {
+        const stored = localStorage.getItem(studyStorageKey)
+        if (stored)
+          restored = restoreProgress(
+            JSON.parse(stored),
+            lessons.map((lesson) => lesson.id),
+          )
+      } catch {
+        available.current.study = false
+        notices.push(
+          'Não foi possível restaurar a trilha; esta visita usa progresso de sessão. O registro anterior foi preservado.',
+        )
       }
-    } catch {
-      storageAvailable.current = false
-      requestAnimationFrame(() =>
-        setStorageNotice('O progresso ficará salvo apenas nesta sessão.'),
-      )
-    }
-    ready.current = true
+      progressRef.current = restored
+      setProgress(restored)
+      if (restored.lastLesson) setActiveId(restored.lastLesson)
+      try {
+        const stored = localStorage.getItem(legacyStorageKey)
+        if (stored) {
+          const parsed: unknown = JSON.parse(stored)
+          if (
+            !Array.isArray(parsed) ||
+            !parsed.every((item) => typeof item === 'string')
+          )
+            throw new Error('Invalid legacy progress')
+          legacyRef.current = [...new Set(parsed)]
+          setLegacy(legacyRef.current)
+        }
+      } catch {
+        available.current.legacy = false
+        notices.push(
+          'O plano antigo não pôde ser restaurado; suas marcações anteriores foram preservadas no armazenamento.',
+        )
+      }
+      setNotice(notices.join(' '))
+      setReady(true)
+      revealHash()
+    })
 
     function revealHash() {
       let id: string
@@ -137,159 +138,274 @@ export function InterviewGuide({
       } catch {
         return
       }
-      if (supplements.some((item) => item.id === id)) {
+      if (lessons.some((lesson) => lesson.id === id)) {
+        setActiveId(id)
+        const next = { ...progressRef.current, lastLesson: id }
+        progressRef.current = next
+        setProgress(next)
+        if (available.current.study) {
+          try {
+            localStorage.setItem(studyStorageKey, JSON.stringify(next))
+          } catch {
+            available.current.study = false
+            setNotice('O progresso da trilha fica apenas nesta sessão.')
+          }
+        }
+      }
+      if ([...sections, ...supplements].some((section) => section.id === id)) {
         setOpened((previous) =>
           previous.includes(id) ? previous : [...previous, id],
         )
+      }
+      if (id)
         requestAnimationFrame(() =>
           document.getElementById(id)?.scrollIntoView(),
         )
-      }
     }
-    revealHash()
+    const tick = () => setClock(Date.now())
+    const clockFrame = requestAnimationFrame(tick)
+    const interval = window.setInterval(tick, 60_000)
+    window.addEventListener('focus', tick)
     window.addEventListener('hashchange', revealHash)
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries.filter((entry) => entry.isIntersecting)
-        if (visible[0]) setActive(visible[0].target.id)
-      },
-      { rootMargin: '-180px 0px -55% 0px', threshold: 0 },
-    )
-    sections.forEach(({ id }) => {
-      const element = document.getElementById(id)
-      if (element) observer.observe(element)
-    })
+    window.addEventListener('popstate', revealHash)
     return () => {
-      observer.disconnect()
+      cancelAnimationFrame(frame)
+      cancelAnimationFrame(clockFrame)
+      clearInterval(interval)
+      window.removeEventListener('focus', tick)
       window.removeEventListener('hashchange', revealHash)
+      window.removeEventListener('popstate', revealHash)
     }
-  }, [sections, supplements])
+  }, [lessons, sections, supplements])
 
-  function toggle(id: string) {
-    const next = progress.current.includes(id)
-      ? progress.current.filter((item) => item !== id)
-      : [...progress.current, id]
-    progress.current = next
-    setCompleted(next)
-    if (ready.current && storageAvailable.current) {
+  function navigate(id: string, event?: MouseEvent<HTMLAnchorElement>) {
+    if (
+      event &&
+      (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)
+    )
+      return
+    event?.preventDefault()
+    if (validIds.includes(id)) {
+      setActiveId(id)
+      save({ ...progressRef.current, lastLesson: id })
+    } else if (references.some((section) => section.id === id)) {
+      setOpened((previous) =>
+        previous.includes(id) ? previous : [...previous, id],
+      )
+    }
+    if (window.location.hash !== `#${encodeURIComponent(id)}`) {
+      window.history.pushState(null, '', `#${encodeURIComponent(id)}`)
+    }
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView()
+      if (validIds.includes(id))
+        lessonHeading.current?.focus({ preventScroll: true })
+      else {
+        const element = document.getElementById(id)
+        const target =
+          element?.tagName === 'DETAILS'
+            ? element.querySelector('summary')
+            : element
+        target?.focus({ preventScroll: true })
+      }
+    })
+  }
+
+  function toggleLesson() {
+    const completedAt = new Date().toISOString()
+    const next = {
+      ...progressRef.current,
+      completed: { ...progressRef.current.completed },
+    }
+    if (next.completed[current.id]) delete next.completed[current.id]
+    else next.completed[current.id] = { completedAt, reviews: [] }
+    setClock(Date.parse(completedAt))
+    save(next)
+  }
+
+  function toggleLegacy(id: string) {
+    const next = legacyRef.current.includes(id)
+      ? legacyRef.current.filter((item) => item !== id)
+      : [...legacyRef.current, id]
+    legacyRef.current = next
+    setLegacy(next)
+    if (available.current.legacy) {
       try {
-        localStorage.setItem(storageKey, JSON.stringify(next))
+        localStorage.setItem(legacyStorageKey, JSON.stringify(next))
       } catch {
-        storageAvailable.current = false
-        setStorageNotice('O progresso ficará salvo apenas nesta sessão.')
+        available.current.legacy = false
+        setNotice('O progresso do plano antigo fica apenas nesta sessão.')
       }
     }
   }
 
-  function openSupplement(id: string) {
-    setOpened((previous) =>
-      previous.includes(id) ? previous : [...previous, id],
-    )
-    requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView())
+  const legacyRenderer = {
+    disabled: !ready,
+    completed: legacy,
+    toggle: toggleLegacy,
+    openSupplement: (id: string) => navigate(id),
   }
-
-  const trimmed = query.trim()
+  const lessonRenderer = {
+    completed: [],
+    toggle: () => {},
+    openSupplement: (id: string) => navigate(id),
+  }
+  const trimmed = normalize(query.trim())
+  const searchable = [
+    ...lessons.map((lesson) => ({
+      id: lesson.id,
+      title: lesson.title,
+      markdown: `${lesson.objective}\n${lesson.markdown}\n${lesson.hints}\n${lesson.solution}`,
+      label: 'Aula',
+    })),
+    ...references.map((section) => ({ ...section, label: 'Biblioteca' })),
+    ...glossary.map((entry, index) => ({
+      id: `termo-${index}`,
+      title: entry.term,
+      markdown: entry.definition,
+      label: 'Glossário',
+    })),
+  ]
   const results = trimmed
-    ? [...sections, ...supplements].filter((item) =>
-        normalize(`${item.title} ${item.markdown}`).includes(
-          normalize(trimmed),
-        ),
+    ? searchable.filter((item) =>
+        normalize(`${item.title} ${item.markdown}`).includes(trimmed),
       )
     : []
-  const days = completed.filter((id) =>
-    /^day:(?:[1-9]|1[0-4])$/.test(id),
-  ).length
-  const checks = completed.filter((id) =>
-    id.startsWith(`${sections[12].id}:check:`),
-  ).length
-  const rendererProps = { completed, toggle, openSupplement }
 
-  const indexLinks = (
-    <nav aria-label="Seções do guia">
-      {sections.map((section, index) => (
-        <a
-          key={section.id}
-          href={`#${section.id}`}
-          aria-current={active === section.id ? 'location' : undefined}
-          className={active === section.id ? 'is-active' : ''}
-        >
-          <span>{String(index + 1).padStart(2, '0')}</span>
-          {section.title.replace(/^\d+\. /, '')}
-        </a>
-      ))}
-      <a href="#materiais-complementares">
-        <span>
-          <BookOpen size={13} />
-        </span>
-        Histórias e exercícios
+  const moduleIndex = (
+    <nav aria-label="Módulos e aulas">
+      {modules.map((module, index) => {
+        const count = module.lessons.filter(
+          (lesson) => progress.completed[lesson.id],
+        ).length
+        return (
+          <details
+            key={module.id}
+            open={module.id === current.moduleId}
+            className="study-module"
+          >
+            <summary>
+              <span>
+                {String(index + 1).padStart(2, '0')} · {module.title}
+              </span>
+              <small>
+                {count}/{module.lessons.length}
+              </small>
+            </summary>
+            <p>{module.description}</p>
+            {module.lessons.map((lesson) => (
+              <a
+                key={lesson.id}
+                href={`#${lesson.id}`}
+                onClick={(event) => navigate(lesson.id, event)}
+                aria-current={current.id === lesson.id ? 'step' : undefined}
+              >
+                {progress.completed[lesson.id] ? (
+                  <Check size={14} aria-label="Concluída" />
+                ) : (
+                  <span aria-hidden="true">○</span>
+                )}
+                {lesson.title}
+              </a>
+            ))}
+          </details>
+        )
+      })}
+      <a href="#biblioteca" onClick={(event) => navigate('biblioteca', event)}>
+        Biblioteca pessoal e revisão de 14 dias
+      </a>
+      <a href="#glossario" onClick={(event) => navigate('glossario', event)}>
+        Glossário
+      </a>
+      <a href="#fontes" onClick={(event) => navigate('fontes', event)}>
+        Fontes e atualização
       </a>
     </nav>
   )
 
   return (
-    <div className="interview-guide container py-10 md:py-14">
+    <div className="interview-guide study-guide container py-10 md:py-14">
       <header className="guide-hero">
         <div>
-          <p className="section-label">
-            Carreira internacional / Guia de preparação
-          </p>
-          <h1>
-            Seu próximo passo
-            <br />
-            começa com preparo.
-          </h1>
+          <p className="section-label">Full stack / Carreira internacional</p>
+          <h1>{metadata.title}</h1>
           <p className="guide-intro">
-            Um guia para transformar experiência em boas entrevistas. Técnica,
-            inglês, comunicação e manejo da ansiedade, com um plano que cabe
-            na sua rotina e orienta a busca de vagas.
+            Uma tarefa de cada vez. Aprenda, pratique e explique com suas
+            palavras. Para quem já programa e quer se preparar para vagas pleno
+            e sênior.
           </p>
           <div className="guide-hero-meta">
+            <span>15–45 min por sessão</span>
             <span>
-              <Clock3 size={15} />
-              45 min ou 2 h por dia
+              Revisado em{' '}
+              <time dateTime={metadata.reviewedAt}>
+                {metadata.reviewedLabel}
+              </time>
             </span>
-            <span>Atualizado em 12 out. 2026</span>
           </div>
           <div className="guide-shortcuts">
-            {shortcuts.map(({ label, index }, i) => (
-              <a
-                key={label}
-                href={`#${sections[index].id}`}
-                className={i === 0 ? 'primary-link' : 'secondary-link'}
-              >
-                {label}
-                <ArrowDown size={15} />
-              </a>
-            ))}
+            <a
+              className="primary-link"
+              href={`#${lessons[0].id}`}
+              onClick={(event) => navigate(lessons[0].id, event)}
+            >
+              Começar <ArrowDown size={15} />
+            </a>
+            <a
+              className="secondary-link"
+              href={`#${progress.lastLesson ?? nextLesson.id}`}
+              aria-disabled={!ready}
+              onClick={(event) => {
+                if (!ready) event.preventDefault()
+                else navigate(progress.lastLesson ?? nextLesson.id, event)
+              }}
+            >
+              Continuar estudando
+            </a>
+            <a
+              className="secondary-link"
+              href={`#${interviewPlan}`}
+              onClick={(event) => navigate(interviewPlan, event)}
+            >
+              Tenho entrevista marcada
+            </a>
           </div>
         </div>
-        <aside
-          className="guide-progress"
-          aria-label="Seu progresso de preparação"
-        >
-          <span className="section-label">Um dia de cada vez</span>
+        <aside className="guide-progress" aria-label="Progresso da trilha">
+          <p className="section-label">No seu ritmo</p>
           <div className="guide-progress-number">
-            {days}
-            <span>/ 14 dias</span>
+            {completionCount}
+            <span>/ {lessons.length} aulas</span>
           </div>
-          <p>Preparação em movimento</p>
-          <progress value={days} max={14} aria-label="Dias concluídos" />
-          <div className="guide-check-count">
-            <Check size={16} />
-            {checks} de 9 itens de prontidão
-          </div>
-          <p className="guide-local-note">
-            Marque suas entregas ao longo do guia. Seu progresso fica neste
-            navegador.
+          <progress
+            value={completionCount}
+            max={lessons.length}
+            aria-label="Aulas concluídas"
+          />
+          <p>
+            Concluir significa praticar e explicar. Abrir uma aula não conta
+            como conclusão.
           </p>
-          {storageNotice && (
-            <p role="status" className="guide-storage-notice">
-              {storageNotice}
-            </p>
-          )}
+          <p className="guide-local-note">
+            Progresso neste navegador, sem login. Dias perdidos não apagam o que
+            você aprendeu.
+          </p>
+          <a
+            href={`#${nextLesson.id}`}
+            onClick={(event) => navigate(nextLesson.id, event)}
+          >
+            {completionCount === lessons.length
+              ? 'Revisitar o diagnóstico'
+              : `Próxima pendência: ${nextLesson.title}`}
+          </a>
         </aside>
       </header>
 
+      {notice && (
+        <p role="status" className="guide-storage-notice">
+          {notice}
+        </p>
+      )}
       <section className="guide-search-area" aria-label="Buscar no guia">
         <label className="guide-search">
           <Search size={19} aria-hidden="true" />
@@ -297,8 +413,8 @@ export function InterviewGuide({
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Busque um assunto: inglês, webhooks, currículo…"
-            aria-label="Buscar no guia e nos materiais"
+            aria-label="Buscar aulas, materiais e glossário"
+            placeholder="Busque: SQL, inglês, cache, currículo…"
           />
           {query && (
             <button
@@ -310,130 +426,241 @@ export function InterviewGuide({
             </button>
           )}
         </label>
-        <p className="guide-search-hint" role="status">
+        <p role="status" className="guide-search-hint">
           {trimmed
-            ? `${results.length} resultado${results.length === 1 ? '' : 's'} para “${trimmed}”`
-            : `${sections.length} seções · ${supplements.length} materiais complementares · Leia no seu ritmo`}
+            ? `${results.length} resultado(s)`
+            : `${modules.length} módulos · ${lessons.length} aulas · Recursos gratuitos e prática local`}
         </p>
         {trimmed && (
           <div className="guide-search-results">
-            {results.length === 0 ? (
-              <p>Nenhum resultado. Tente outro assunto ou limpe a busca.</p>
-            ) : (
-              results.map((item) => (
-                <a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  onClick={() => {
-                    if (item.kind !== 'section') openSupplement(item.id)
-                  }}
-                >
-                  <strong>
-                    {item.title}
-                    <ArrowDown size={14} />
-                  </strong>
-                  <span>{snippet(item.markdown, trimmed)}</span>
-                </a>
-              ))
-            )}
+            {!results.length && <p>Nenhum resultado. Tente outro termo.</p>}
+            {results.map((item) => (
+              <a
+                key={item.id}
+                href={`#${item.id}`}
+                onClick={(event) => navigate(item.id, event)}
+              >
+                <strong>
+                  {item.label} · {item.title}
+                </strong>
+                <span>{excerpt(item.markdown, query.trim())}</span>
+              </a>
+            ))}
           </div>
         )}
       </section>
 
+      <section className="study-reviews" aria-labelledby="revisoes-titulo">
+        <h2 id="revisoes-titulo">Revisar sem consultar</h2>
+        <p>
+          Tente explicar e refazer a parte central após 1, 7 e 14 dias. São
+          intervalos sugeridos; você pode revisar quando puder.
+        </p>
+        {!reviews.length && (
+          <p>
+            {completionCount
+              ? 'Nenhuma revisão pendente agora.'
+              : 'As sugestões aparecem depois que você concluir uma aula.'}
+          </p>
+        )}
+        {reviews.map(({ id, day }) => (
+          <div key={`${id}:${day}`} className="study-review-row">
+            <a href={`#${id}`} onClick={(event) => navigate(id, event)}>
+              {lessons.find((lesson) => lesson.id === id)?.title} · revisão de{' '}
+              {day} dia(s)
+            </a>
+            <button
+              type="button"
+              onClick={() => {
+                const next = progressRef.current
+                const entry = next.completed[id]
+                if (!entry) return
+                save({
+                  ...next,
+                  completed: {
+                    ...next.completed,
+                    [id]: {
+                      ...entry,
+                      reviews: [...new Set([...entry.reviews, day])],
+                    },
+                  },
+                })
+              }}
+            >
+              Revisei sem consulta
+            </button>
+          </div>
+        ))}
+      </section>
+
       <div className="guide-layout">
         <aside className="guide-sidebar">
-          <p className="section-label">Neste guia</p>
-          {indexLinks}
-          <p className="guide-sidebar-note">
-            Prepare respostas com experiências reais. Use os exercícios para
-            explorar novas decisões.
-          </p>
+          <p className="section-label">Sua trilha</p>
+          {moduleIndex}
         </aside>
         <div className="guide-reading">
           <details className="guide-mobile-index">
-            <summary>
-              Explorar as seções
-              <ChevronDown size={17} />
-            </summary>
-            {indexLinks}
+            <summary>Escolher módulo ou aula</summary>
+            {moduleIndex}
           </details>
-          <div className="guide-context">
-            <BookOpen size={19} aria-hidden="true" />
+          <article
+            id={current.id}
+            key={current.id}
+            className="study-lesson guide-section"
+          >
+            <p className="section-label">
+              {currentModule.title} · Aula {position + 1} de {lessons.length}
+            </p>
+            <h2 ref={lessonHeading} tabIndex={-1}>
+              {current.title}
+            </h2>
+            <p className="study-objective">
+              <strong>Você vai conseguir:</strong> {current.objective}
+            </p>
+            <p className="study-duration">
+              {current.minutes.minimum} min para uma tarefa · até{' '}
+              {current.minutes.extended} min com continuação
+            </p>
+            {current.prerequisites.length > 0 && (
+              <p className="study-prerequisites">
+                Antes desta aula:{' '}
+                {current.prerequisites.map((id) => (
+                  <a
+                    key={id}
+                    href={`#${id}`}
+                    onClick={(event) => navigate(id, event)}
+                  >
+                    {lessons.find((lesson) => lesson.id === id)?.title}
+                  </a>
+                ))}
+              </p>
+            )}
+            <div className="study-session-note">
+              Pouca concentração hoje? Faça só a tarefa de 15 minutos e anote o
+              próximo passo. Conclua a aula quando conseguir demonstrar o
+              critério; você pode dividi-la em várias sessões.
+            </div>
+            <MarkdownContent
+              markdown={current.markdown}
+              scope={current.id}
+              {...lessonRenderer}
+            />
+            <details className="study-help">
+              <summary>Preciso de uma pista</summary>
+              <MarkdownContent
+                markdown={current.hints}
+                scope={`${current.id}:hint`}
+                {...lessonRenderer}
+              />
+            </details>
+            <details className="study-help">
+              <summary>Ver solução comentada depois de tentar</summary>
+              <MarkdownContent
+                markdown={current.solution}
+                scope={`${current.id}:solution`}
+                {...lessonRenderer}
+              />
+            </details>
+            <div className="study-sources">
+              <h3>Leia só o trecho necessário</h3>
+              <ul>
+                {current.references.map((id) => {
+                  const source = sources.find((source) => source.id === id)!
+                  return (
+                    <li key={id}>
+                      <a
+                        href={source.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {source.title}
+                      </a>
+                      <p>{source.purpose}</p>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+            <label className="study-complete">
+              <input
+                type="checkbox"
+                checked={Boolean(done)}
+                disabled={!ready}
+                onChange={toggleLesson}
+              />
+              Pratiquei, expliquei sem consulta e cumpri o critério desta aula.
+            </label>
+            <p className="study-save-status" role="status">
+              {done
+                ? 'Aula concluída. Você pode desmarcar e praticar novamente.'
+                : 'Seu progresso só muda quando você marca a conclusão.'}
+            </p>
+            <nav
+              className="study-pagination"
+              aria-label="Navegação entre aulas"
+            >
+              {lessons[position - 1] && (
+                <a
+                  href={`#${lessons[position - 1].id}`}
+                  onClick={(event) => navigate(lessons[position - 1].id, event)}
+                >
+                  <ArrowLeft size={16} /> Aula anterior
+                </a>
+              )}
+              {lessons[position + 1] && (
+                <a
+                  href={`#${lessons[position + 1].id}`}
+                  onClick={(event) => navigate(lessons[position + 1].id, event)}
+                >
+                  Próxima aula <ArrowRight size={16} />
+                </a>
+              )}
+            </nav>
+          </article>
+
+          <section
+            id="biblioteca"
+            tabIndex={-1}
+            className="guide-section study-library"
+          >
+            <span id="materiais-complementares" className="study-anchor" />
+            <p className="section-label">
+              <BookOpen size={16} aria-hidden="true" /> Para consultar quando
+              precisar
+            </p>
+            <h2>Biblioteca pessoal e preparação paralela</h2>
+            <p>
+              Continue se candidatando enquanto estuda. Aqui ficam currículo,
+              busca de vagas, inglês, comunicação e suas experiências. O plano
+              de 14 dias revisa conhecimentos; o laboratório Resend é uma
+              especialização opcional.
+            </p>
+            <p>
+              As marcações antigas ficam separadas da trilha:{' '}
+              {legacy.filter((id) => /^day:(?:[1-9]|1[0-4])$/.test(id)).length}
+              /14 dias. Elas não são convertidas em aulas concluídas.
+            </p>
+            <div className="guide-prose">
+              <ul>
+                {references.map((item) => (
+                  <li key={item.id}>
+                    <a
+                      href={`#${item.id}`}
+                      onClick={(event) => navigate(item.id, event)}
+                    >
+                      {item.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <MarkdownContent
               markdown={introduction}
               scope="introducao"
-              {...rendererProps}
+              {...legacyRenderer}
             />
-          </div>
-          {sections.map((section, index) => (
-            <section key={section.id} id={section.id} className="guide-section">
-              <div className="guide-section-heading">
-                <span className="guide-section-number">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <h2>{section.title.replace(/^\d+\. /, '')}</h2>
-              </div>
-              {index === 8 && (
-                <div className="guide-resource-grid">
-                  {resources
-                    .filter((item) => item.category === 'Vagas')
-                    .map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="guide-resource"
-                      >
-                        <span>
-                          {item.category}
-                          <ArrowUpRight size={16} />
-                        </span>
-                        <strong>{item.name}</strong>
-                        <p>{item.description}</p>
-                      </a>
-                    ))}
-                </div>
-              )}
-              {index === 3 && (
-                <div className="guide-resource-grid">
-                  {resources
-                    .filter((item) => item.category === 'Estudo')
-                    .map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="guide-resource"
-                      >
-                        <span>
-                          {item.category}
-                          <ArrowUpRight size={16} />
-                        </span>
-                        <strong>{item.name}</strong>
-                        <p>{item.description}</p>
-                      </a>
-                    ))}
-                </div>
-              )}
-              <MarkdownContent
-                markdown={section.markdown}
-                scope={section.id}
-                {...rendererProps}
-              />
-            </section>
-          ))}
-          <section id="materiais-complementares" className="guide-section">
-            <p className="section-label">Para aprofundar</p>
-            <h2 className="guide-supplements-title">Histórias e exercícios</h2>
-            <p className="guide-supplements-intro">
-              Pratique sua contribuição, as decisões e a validação. Os cenários
-              de Black Friday são hipotéticos; os relatos mantêm os limites do
-              que está confirmado.
-            </p>
             <div className="guide-supplements">
-              {supplements.map((item) => (
+              {references.map((item) => (
                 <details
                   key={item.id}
                   id={item.id}
@@ -454,25 +681,67 @@ export function InterviewGuide({
                       <span className="guide-material-label">
                         {item.kind === 'exercise'
                           ? 'Exercício hipotético'
-                          : /^0[12]-/.test(item.id)
-                            ? 'Realização do portfólio'
-                            : 'Relato pessoal'}
+                          : item.kind === 'story'
+                            ? 'História pessoal · confirme os fatos antes de usar'
+                            : item.id.startsWith('17-')
+                              ? 'Aprofundamento opcional'
+                              : 'Consulta e preparação'}
                       </span>
                       <strong>{item.title}</strong>
                     </span>
-                    <ChevronDown size={19} />
                   </summary>
                   <MarkdownContent
                     markdown={item.markdown}
                     scope={item.id}
-                    {...rendererProps}
+                    {...legacyRenderer}
                   />
                 </details>
               ))}
             </div>
           </section>
+
+          <section id="glossario" tabIndex={-1} className="guide-section">
+            <h2>Glossário em linguagem direta</h2>
+            <p>Use a busca para encontrar um termo e voltar à prática.</p>
+            <dl className="study-glossary">
+              {glossary.map((entry, index) => (
+                <div key={entry.term} id={`termo-${index}`} tabIndex={-1}>
+                  <dt>{entry.term}</dt>
+                  <dd>{entry.definition}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+          <section id="fontes" tabIndex={-1} className="guide-section">
+            <h2>Fontes e atualização</h2>
+            <p>
+              Revisão da trilha em {metadata.reviewedLabel}. As fontes
+              históricas da biblioteca mantêm suas datas de consulta. Os tempos,
+              intervalos de revisão e prioridades são propostas deste guia, sem
+              garantia de aprendizagem ou contratação.
+            </p>
+            <p>
+              2026: documentação e processos consultados. 2027: preparação
+              recomendada, sem apresentar previsão como fato. Confirme versões,
+              elegibilidade e regras de IA na vaga atual.
+            </p>
+            <ul className="study-source-list">
+              {sources.map((source) => (
+                <li key={source.id}>
+                  <a
+                    href={source.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {source.title}
+                  </a>
+                  <p>{source.purpose}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
           <footer className="guide-footer">
-            <span>Guia de entrevistas internacionais</span>
+            <span>{metadata.title}</span>
             <a href="#">Voltar ao início ↑</a>
           </footer>
         </div>

@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint .",
     "resume:pdf": "node scripts/generate-resume.ts",
-    "guide:check": "node scripts/check-interview-guide.ts"
+    "guide:check": "node scripts/check-interview-guide.ts",
+    "guide:content": "node scripts/check-interview-content.ts"
   },
   "dependencies": {
     "@fontsource/m-plus-rounded-1c": "^5.2.5",

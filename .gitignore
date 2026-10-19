@@ -44,5 +44,11 @@ next-env.d.ts
 /preparacao-carreira/
 
 # local scripts and content
-/scripts/
-/content/
+/scripts/*
+!/scripts/check-interview-content.ts
+/content/*
+!/content/entrevistas/
+/content/entrevistas/*
+!/content/entrevistas/trilha/
+/content/entrevistas/trilha/*
+!/content/entrevistas/trilha/*.md

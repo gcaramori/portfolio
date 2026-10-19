@@ -1,6 +1,6 @@
 # Guia de preparação e busca de vagas internacionais
 
-Atualizado em 14 de outubro de 2026. Preparado para Guilherme Caramori, com base no portfólio: TypeScript, React, Node.js/NestJS, PHP, MongoDB, PostgreSQL, Redis, integrações de e-commerce e responsabilidade por produção.
+Biblioteca de consulta pessoal, com revisão editorial em 19 de outubro de 2026. Preparada para Guilherme Caramori, com base no portfólio: TypeScript, React, Node.js/NestJS, PHP, MongoDB, PostgreSQL, Redis, integrações de e-commerce e responsabilidade por produção. A trilha full stack é o percurso principal; o plano de 14 dias é uma revisão para entrevistas próximas e o laboratório Resend é um aprofundamento opcional.
 
 Objetivo: aumentar a chance de entrevistas e propostas sem transformar a preparação em meses de estudo. As rotinas e quantidades abaixo são propostas de trabalho, não estatísticas de contratação. Sites e processos mudam: confirme as condições na vaga e com o recrutador.
 

@@ -45,6 +45,7 @@ function CopyQuote({
 }
 
 type MarkdownContentProps = {
+  disabled?: boolean
   markdown: string
   scope: string
   completed: string[]
@@ -99,7 +100,7 @@ const markdownComponents: Components = {
   },
   input: () => null,
   li: function ChecklistItem({ children, node, className }) {
-    const { scope, completed, toggle } = useContext(MarkdownContext)
+    const { scope, completed, toggle, disabled } = useContext(MarkdownContext)
     if (className?.includes('task-list-item')) {
       const text = node ? elementText(node).trim() : ''
       const id = `${scope}:check:${encodeURIComponent(text)}`
@@ -108,6 +109,7 @@ const markdownComponents: Components = {
           <label>
             <input
               type="checkbox"
+              disabled={disabled}
               checked={completed.includes(id)}
               onChange={() => toggle(id)}
               aria-label={text}
@@ -120,11 +122,9 @@ const markdownComponents: Components = {
     return <li className={className}>{children}</li>
   },
   table: function GuideTable({ node, children }) {
-    const { completed, toggle } = useContext(MarkdownContext)
-    const head = node?.children.find(
-      (child) => child.type === 'element' && child.tagName === 'thead',
-    ) as Element | undefined
-    if (head && elementText(head).trim().startsWith('Dia')) {
+    const { scope, completed, toggle, disabled } = useContext(MarkdownContext)
+    // Only the preserved interview calendar has interactive day cards.
+    if (scope === '3-rotina-e-plano-de-14-dias') {
       const body = node?.children.find(
         (child) => child.type === 'element' && child.tagName === 'tbody',
       ) as Element | undefined
@@ -153,6 +153,7 @@ const markdownComponents: Components = {
                   <span>Dia {cells[0].padStart(2, '0')}</span>
                   <input
                     type="checkbox"
+                    disabled={disabled}
                     checked={done}
                     onChange={() => toggle(id)}
                     aria-label={`Concluir dia ${cells[0]}: ${cells[1]}`}
