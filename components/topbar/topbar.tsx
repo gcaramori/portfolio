@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useContext, useEffect, useRef, useState } from 'react'
 import { ArrowUpRight, Github, Linkedin } from 'lucide-react'
 import { usePathname } from 'next/navigation'
@@ -25,6 +26,7 @@ const socialLinks = [
 
 export function Topbar() {
   const { language } = useContext(LanguageContext)
+  const reduced = useReducedMotion()
   const pathname = usePathname()
   const headerRef = useRef<HTMLElement>(null)
   const [headerHeight, setHeaderHeight] = useState(0)
@@ -40,7 +42,9 @@ export function Topbar() {
     }
 
     const updateHeaderHeight = () => {
-      setHeaderHeight(header.getBoundingClientRect().height)
+      const height = header.getBoundingClientRect().height
+      setHeaderHeight(height)
+      document.documentElement.style.setProperty('--topbar-height', height + 'px')
     }
 
     updateHeaderHeight()
@@ -50,6 +54,7 @@ export function Topbar() {
     window.addEventListener('resize', updateHeaderHeight)
 
     return () => {
+      document.documentElement.style.removeProperty('--topbar-height')
       observer.disconnect()
       window.removeEventListener('resize', updateHeaderHeight)
     }
@@ -115,14 +120,16 @@ export function Topbar() {
                   <Link
                     key={item.href}
                     href={getLocalizedPath(item.href, language)}
-                    className={`min-w-0 truncate rounded-full px-2 py-1.5 text-center text-xs font-medium transition-colors min-[390px]:px-3 min-[390px]:text-sm lg:px-3 xl:px-4 lg:py-2 ${
+                    aria-current={currentPath === item.href || (item.href !== '/' && currentPath.startsWith(`${item.href}/`)) ? 'page' : undefined}
+                    className={`relative isolate min-w-0 truncate rounded-full px-2 py-1.5 text-center text-xs font-medium transition-colors min-[390px]:px-3 min-[390px]:text-sm lg:px-3 xl:px-4 lg:py-2 ${
                       currentPath === item.href ||
                       (item.href !== '/' &&
                         currentPath.startsWith(`${item.href}/`))
-                        ? 'bg-[var(--surface-strong)] text-[var(--foreground)] lg:bg-[var(--surface-strong)]'
+                        ? 'text-[var(--foreground)]'
                         : 'text-[var(--muted-foreground)] hover:bg-[var(--surface)] hover:text-[var(--foreground)]'
                     }`}
                   >
+                     {(currentPath === item.href || (item.href !== '/' && currentPath.startsWith(`${item.href}/`))) && <motion.span layoutId={reduced ? undefined : "nav-active"} className="absolute inset-0 -z-10 rounded-full bg-[var(--surface-strong)]" transition={{ duration: reduced ? 0 : 0.22 }} />}
                     {item.label}
                   </Link>
                 ))}

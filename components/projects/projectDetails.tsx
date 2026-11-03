@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import { CaseReading, CaseIndex } from '@/components/readingMotion'
 import { useContext } from 'react'
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 import FadeInBottom from '@/components/fadeInBottom'
 import { LanguageContext } from '@/contexts/languageContext'
 import siteContent, { projectCases, type ProjectSlug } from '@/lib/languages'
@@ -24,7 +25,7 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
 
   return (
     <div className="container py-10 md:py-14">
-      <FadeInBottom>
+      <CaseReading><FadeInBottom>
         <section className="grid gap-10 border-b border-[var(--border)] pb-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16 lg:pb-16">
           <div>
             <Link
@@ -105,49 +106,14 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
         </section>
       </FadeInBottom>
 
-      {details.flow && (
-        <FadeInBottom delay={0.12}>
-          <figure className="border-b border-[var(--border)] py-10">
-            <figcaption>
-              <h2 className="font-display text-2xl font-semibold">
-                {details.flow.title}
-              </h2>
-              <p className="mt-3 text-sm text-[var(--muted-foreground)]">
-                {details.flow.note}
-              </p>
-            </figcaption>
-            <ol className="mt-6 grid gap-3 lg:grid-cols-4">
-              {details.flow.steps.map((step, index) => (
-                <li key={step} className="flex flex-col gap-3 lg:flex-row">
-                  <div className="editorial-card flex flex-1 items-center">
-                    <span className="mr-3 text-sm text-[var(--accent)]">
-                      {index + 1}
-                    </span>
-                    <p className="text-sm leading-6">{step}</p>
-                  </div>
-                  {index < details.flow!.steps.length - 1 && (
-                    <span aria-hidden="true" className="self-center">
-                      <ArrowDown className="h-4 w-4 lg:hidden" />
-                      <ArrowRight className="hidden h-4 w-4 lg:block" />
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ol>
-          </figure>
-        </FadeInBottom>
-      )}
-
-      <FadeInBottom delay={0.16}>
+      <div>
         <section className="grid gap-8 border-b border-[var(--border)] py-12 lg:grid-cols-[0.72fr_1.28fr] lg:py-16">
-          <div>
-            <p className="section-label">{details.title}</p>
-          </div>
+          <CaseIndex titles={details.sections.map(section => section.title)} label={labels.indexLabel} />
 
           <div className="grid gap-8">
-            {details.sections.map((section) => (
+            {details.sections.map((section, index) => (
               <article key={section.title}>
-                <h2 className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] text-[var(--foreground)] md:text-4xl">
+                <h2 id={`case-section-${index + 1}`} tabIndex={-1} className="case-heading font-display text-3xl leading-tight font-semibold tracking-[-0.04em] text-[var(--foreground)] md:text-4xl">
                   {section.title}
                 </h2>
                 <p className="mt-4 max-w-3xl text-base leading-8 text-[var(--muted-foreground)] md:text-lg">
@@ -157,7 +123,7 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
             ))}
           </div>
         </section>
-      </FadeInBottom>
+      </div>
 
       {details.sources && (
         <section className="border-b border-[var(--border)] py-10">
@@ -185,39 +151,66 @@ export function ProjectDetails({ slug }: ProjectDetailsProps) {
         </section>
       )}
 
+      </CaseReading>
       <ProjectContact />
 
-      <FadeInBottom delay={0.2}>
-        <section className="border-t border-[var(--border)] py-12 lg:py-16">
-          <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <div>
-              <p className="section-label">{labels.moreProjectsLabel}</p>
-            </div>
+      <section
+        aria-labelledby="more-projects-title"
+        className="border-t border-[var(--border)] py-12 lg:py-16"
+      >
+        <div className="mb-6 flex flex-wrap items-baseline justify-between gap-4 md:mb-8">
+          <h2
+            id="more-projects-title"
+            className="font-display text-3xl leading-tight font-semibold tracking-[-0.04em] text-[var(--foreground)]"
+          >
+            {labels.moreProjectsLabel}
+          </h2>
+          <Link
+            href={getLocalizedPath('/projects', language)}
+            className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold underline underline-offset-4"
+          >
+            {labels.backLabel}
+            <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0" />
+          </Link>
+        </div>
 
-            <div className="grid gap-4 md:grid-cols-3">
-              {moreProjects.map((item) => {
-                const project = projectCases[language][item]
+        <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+          {moreProjects.map((item) => {
+            const project = projectCases[language][item]
 
-                return (
-                  <Link
-                    key={item}
-                    href={getLocalizedPath(`/projects/${item}`, language)}
-                    className="rounded-lg border border-[var(--border)] bg-[var(--surface)] p-5 transition-transform hover:-translate-y-0.5"
-                  >
-                    <p className="section-label">{project.category}</p>
-                    <h2 className="mt-4 font-display text-2xl leading-tight tracking-[-0.04em] text-[var(--foreground)]">
-                      {project.title}
-                    </h2>
-                    <p className="mt-3 text-sm leading-7 text-[var(--muted-foreground)]">
-                      {project.cardSummary}
-                    </p>
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        </section>
-      </FadeInBottom>
+            return (
+              <Link
+                key={item}
+                href={getLocalizedPath(`/projects/${item}`, language)}
+                aria-labelledby={`related-${item}-title related-${item}-cta`}
+                className="group flex min-w-0 flex-col rounded-lg border border-[var(--border)] bg-[var(--surface)] p-6 transition-colors duration-180 hover:border-[var(--accent)] hover:bg-[var(--surface-strong)] motion-reduce:transition-none md:p-8"
+              >
+                <p className="text-sm leading-6 text-[var(--muted-foreground)]">
+                  {project.category}
+                </p>
+                <h3
+                  id={`related-${item}-title`}
+                  className="mt-3 font-display text-2xl leading-tight font-semibold tracking-[-0.04em] text-[var(--foreground)] md:text-3xl"
+                >
+                  {project.title}
+                </h3>
+                <p className="mt-4 max-w-[65ch] text-base leading-7 text-[var(--muted-foreground)]">
+                  {project.cardSummary}
+                </p>
+                <span
+                  id={`related-${item}-cta`}
+                  className="mt-auto flex items-center justify-between gap-4 pt-8 text-sm font-semibold text-[var(--foreground)]"
+                >
+                  <span className="underline-offset-4 group-hover:underline group-focus-visible:underline">
+                    {siteContent[language].projects.cta}
+                  </span>
+                  <ArrowRight aria-hidden="true" className="h-5 w-5 shrink-0" />
+                </span>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
     </div>
   )
 }

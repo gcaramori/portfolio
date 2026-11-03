@@ -152,6 +152,7 @@ type SiteContent = {
     }
   }
   projectDetail: {
+    indexLabel: string
     backLabel: string
     openLabel: string
     roleLabel: string
@@ -433,6 +434,7 @@ const siteContent: Record<Locale, SiteContent> = {
       },
     },
     projectDetail: {
+      indexLabel: 'Neste case',
       backLabel: 'Voltar para projetos',
       openLabel: 'Abrir projeto',
       roleLabel: 'Papel',
@@ -713,6 +715,7 @@ const siteContent: Record<Locale, SiteContent> = {
       },
     },
     projectDetail: {
+      indexLabel: 'In this case',
       backLabel: 'Back to projects',
       openLabel: 'Open project',
       roleLabel: 'Role',
@@ -1110,3 +1113,38 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
 }
 
 export default siteContent
+
+
+export const motionContent = {
+  'pt-BR': {
+    labels: ['Plataforma', 'Webhook', 'Pedido \u00fanico', 'Recomenda\u00e7\u00f5es'],
+    disclaimer: 'Demonstra\u00e7\u00e3o ilustrativa \u00b7 dados fict\u00edcios',
+    simulate: 'Simular pedido',
+    duplicate: 'Simular pedido duplicado',
+    reset: 'Reiniciar',
+    success: 'Pedido DEMO-001 registrado e avaliado. Total: 1 pedido.',
+    ignored: 'Duplicado ignorado. Continua um pedido; a avalia\u00e7\u00e3o n\u00e3o foi repetida.',
+  },
+  en: {
+    labels: ['Platform', 'Webhook', 'Unique order', 'Recommendations'],
+    disclaimer: 'Illustrative demo \u00b7 fictional data',
+    simulate: 'Simulate order',
+    duplicate: 'Simulate duplicate',
+    reset: 'Reset',
+    success: 'Order DEMO-001 registered and evaluated. Total: 1 order.',
+    ignored: 'Duplicate ignored. Still one order; evaluation was not repeated.',
+  },
+}
+
+export const copyEmailContent = {
+  'pt-BR': {
+    label: 'Copiar e-mail',
+    success: 'E-mail copiado',
+    error: 'Não foi possível copiar. Selecione o endereço abaixo.',
+  },
+  en: {
+    label: 'Copy email',
+    success: 'Email copied',
+    error: 'Could not copy. Select the address below.',
+  },
+} satisfies Record<Locale, { label: string; success: string; error: string }>

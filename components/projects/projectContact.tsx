@@ -1,6 +1,7 @@
 'use client'
 
 import { useContext } from 'react'
+import { CopyEmailButton } from '@/components/copyEmailButton'
 import { ArrowUpRight, Download } from 'lucide-react'
 import { LanguageContext } from '@/contexts/languageContext'
 import siteContent from '@/lib/languages'
@@ -21,11 +22,12 @@ export function ProjectContact() {
       <p className="mt-2 text-sm text-[var(--muted-foreground)]">
         {content.languages}
       </p>
-      <div className="mt-6 flex flex-wrap items-center gap-4">
+      <div className="mt-6 flex flex-wrap items-start gap-4">
         <a href={emailHref} className="primary-link">
           {content.emailLabel}
           <ArrowUpRight aria-hidden="true" className="h-4 w-4" />
         </a>
+        <CopyEmailButton language={language} />
         <a
           href="https://linkedin.com/in/gcaramori"
           target="_blank"
