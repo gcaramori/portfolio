@@ -58,7 +58,7 @@ export function CopyEmailButton({ language }: { language: Locale }) {
           </span>
         </span>
       </button>
-      <div role="status" aria-atomic="true" className="mt-2 min-h-5 max-w-xs text-sm leading-5 text-[var(--muted-foreground)]">
+      <div role="status" aria-atomic="true" className={`${state === 'error' ? 'mt-2 ' : ''}max-w-xs text-sm leading-5 text-[var(--muted-foreground)]`}>
         {success && <span className="sr-only">{content.success}</span>}
         {state === 'error' && <>
           <p>{content.error}</p>

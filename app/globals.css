@@ -157,6 +157,85 @@ body {
   }
 }
 
+.hiring-actions {
+  display: grid;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.hiring-resume {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+}
+
+.hiring-email {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  padding-block: 1rem;
+  border-block: 1px solid var(--border);
+  min-width: 0;
+}
+
+.hiring-email-address {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  min-width: 0;
+  font-weight: 600;
+}
+
+.hiring-email-address span {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.hiring-socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 639px) {
+  .hiring-resume {
+    flex-direction: column;
+  }
+
+  .hiring-actions .primary-link,
+  .hiring-actions .secondary-link {
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .hiring-email {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  .hiring-email .secondary-link {
+    border-color: transparent;
+    padding-inline: 0;
+    color: var(--muted-foreground);
+  }
+
+  .hiring-socials {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .hiring-socials .secondary-link {
+    gap: 0.375rem;
+    padding-inline: 0.25rem;
+    font-size: 0.75rem;
+  }
+}
+
 @media screen and (min-width: 1024px) and (max-width: 1536px),
   screen and (min-width: 1024px) and (max-height: 850px) {
   .topbar-container {

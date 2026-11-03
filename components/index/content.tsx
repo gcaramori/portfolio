@@ -250,10 +250,11 @@ export function IndexContent() {
               ))}
             </div>
 
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-start">
+            <div className="hiring-actions mt-6">
+              <div className="hiring-resume">
               <Link
                 href={getLocalizedPath('/resume', language)}
-                className="secondary-link justify-center"
+                className="primary-link justify-center"
               >
                 {content.secondaryCta}
                 <MoveRight className="h-4 w-4" />
@@ -266,20 +267,28 @@ export function IndexContent() {
                 <Download className="h-4 w-4" />
                 {siteContent[language].resume.downloadLabel}
               </a>
-              {contactLinks.map(({ href, label, icon: Icon }) => (
-                <div key={href} className="flex min-w-0 flex-col gap-3 sm:contents">
+              </div>
+              <div className="hiring-email">
+                <a href={emailHref} className="hiring-email-address">
+                  <Mail aria-hidden="true" className="h-4 w-4 shrink-0" />
+                  <span>{CONTACT_EMAIL}</span>
+                </a>
+                <CopyEmailButton language={language} />
+              </div>
+              <div className="hiring-socials">
+              {contactLinks.filter(({ href }) => href !== emailHref).map(({ href, label, icon: Icon }) => (
                   <Link
+                    key={href}
                     href={href}
                     target={href.startsWith('https:') ? '_blank' : undefined}
                     rel={href.startsWith('https:') ? 'noopener noreferrer' : undefined}
                     className="secondary-link justify-center"
                   >
-                    <Icon className="h-4 w-4" />
+                    <Icon aria-hidden="true" className="h-4 w-4 shrink-0" />
                     {label}
                   </Link>
-                  {href === emailHref && <CopyEmailButton language={language} />}
-                </div>
               ))}
+              </div>
             </div>
           </div>
         </section>
@@ -287,7 +296,7 @@ export function IndexContent() {
 
       <FadeInBottom delay={0.18}>
         <section className="py-12 lg:py-16">
-          <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-strong)] p-8 md:p-10">
+          <div className="rounded-lg border border-[var(--border)] bg-[var(--surface-strong)] p-5 sm:p-8 md:p-10">
             <h2 className="max-w-3xl font-display text-3xl leading-tight tracking-[-0.05em] text-[var(--foreground)] md:text-5xl">
               {content.closingTitle}
             </h2>
