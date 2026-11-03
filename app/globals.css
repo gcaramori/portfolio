@@ -343,8 +343,8 @@ body {
 }
 
 @keyframes hero-reveal {
-  from { opacity: 0; transform: translateY(12px); clip-path: inset(0 0 100% 0); }
-  to { opacity: 1; transform: none; clip-path: inset(0); }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
 }
 .hero-title-block, .hero-title > .sm\:hidden { animation: hero-reveal 600ms both; }
 .hero-title-block { display: inline-block; }
