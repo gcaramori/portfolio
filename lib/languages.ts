@@ -199,7 +199,7 @@ const siteContent: Record<Locale, SiteContent> = {
       title: 'Desenvolvedor Full Stack Sênior | React, TypeScript e Node.js',
       mobileTitle: 'Desenvolvedor Full Stack Sênior',
       intro:
-        'Tenho mais de oito anos de experiência desenvolvendo produtos web e soluções para e-commerce. Trabalho com React, TypeScript e Node.js no frontend, no backend e nas integrações. Assumo projetos da definição técnica à entrega em produção. Também desenvolvo agentes de IA para atendimento e recomendação de produtos.',
+        'Tenho mais de oito anos de experiência em produtos web e e-commerce. Minha atuação combina desenvolvimento full stack e construção de aplicações com IA. Desenvolvo agentes e integro modelos a sistemas de negócio, avaliando a qualidade das respostas, o consumo de tokens e o tempo de resposta. Trabalho com React, TypeScript e Node.js e assumo projetos da definição técnica à entrega em produção.',
       mobileIntro:
         'Mais de oito anos em produtos web e e-commerce, com React, TypeScript e Node.js. Experiência em interfaces, integrações e agentes de IA.',
       description:
@@ -509,7 +509,7 @@ const siteContent: Record<Locale, SiteContent> = {
       title: 'Senior Full-Stack Developer | React, TypeScript and Node.js',
       mobileTitle: 'Senior Full-Stack Developer',
       intro:
-        'I have over eight years of experience developing web products and e-commerce solutions. I work with React, TypeScript, and Node.js across frontend, backend, and integrations, taking projects from technical planning through deployment. I also build AI agents for customer support and product recommendations.',
+        'I have over eight years of experience in web products and e-commerce. My work combines full-stack development with building AI applications. I develop agents and integrate models into business systems, evaluating response quality, token usage, and response time. I work with React, TypeScript, and Node.js and take projects from technical planning through deployment.',
       mobileIntro:
         'Over eight years in web products and e-commerce with React, TypeScript, and Node.js. Experience in interfaces, integrations, and AI agents.',
       description:
