@@ -71,7 +71,7 @@ export function Topbar() {
           <div className="flex items-center justify-between gap-3 lg:min-w-0 lg:flex-1 lg:gap-4">
             <Link
               href={getLocalizedPath('/', language)}
-              className="min-w-0 flex-1"
+              className="min-w-0 flex-1 active:scale-100"
             >
               <p className="truncate font-display text-base leading-tight font-semibold tracking-[-0.03em] text-[var(--foreground)] min-[360px]:text-lg sm:text-xl lg:tracking-[-0.04em]">
                 {content.brand}
