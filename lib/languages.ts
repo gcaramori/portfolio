@@ -199,9 +199,9 @@ const siteContent: Record<Locale, SiteContent> = {
       title: 'Desenvolvedor Full Stack Sênior | React, TypeScript e Node.js',
       mobileTitle: 'Desenvolvedor Full Stack Sênior',
       intro:
-        '8+ anos desenvolvendo produtos web e integrações de e-commerce, com responsabilidade pela arquitetura, pelos testes e pela entrega em produção. Conecto sistemas e automatizo processos para reduzir trabalho manual, manter dados confiáveis e sustentar operações em escala.',
+        'Tenho mais de oito anos de experiência em produtos web e e-commerce. Trabalho com React, TypeScript e Node.js, do frontend às integrações e à entrega em produção. Passei três anos implementando vitrines fiéis ao visual das lojas e hoje também desenvolvo agentes de IA e uso Codex com MCP nas integrações.',
       mobileIntro:
-        '8+ anos em produtos web e integrações, com responsabilidade pela arquitetura e entrega em produção. React, TypeScript e Node.js.',
+        'Mais de oito anos em produtos web e e-commerce, com React, TypeScript e Node.js. Experiência em interfaces, integrações e agentes de IA.',
       description:
         'Ajudo times e negócios a substituir planilhas, tarefas manuais e sistemas desconectados por aplicações com requisitos claros, interfaces fáceis de usar e integrações estáveis. Cuido da arquitetura e acompanho o deploy para facilitar a manutenção.',
       primaryCta: 'Conversar sobre uma oportunidade',
@@ -252,14 +252,14 @@ const siteContent: Record<Locale, SiteContent> = {
             'Integro plataformas por APIs e webhooks e desenvolvo rotinas internas com serviços cloud. Busco reduzir tarefas manuais com automações e dependências que o time consiga manter.',
         },
         {
-          title: 'MVPs e funcionalidades de negócio',
+          title: 'Frontend e fluxos de compra',
           description:
-            'Desenvolvo lojas, catálogos e fluxos comerciais, incluindo checkout, autenticação e pagamentos. Planejo a implementação para permitir novas funcionalidades depois da primeira entrega.',
+            'Implemento interfaces responsivas e layouts a partir de Figma e PSD. Minha experiência inclui vitrines de e-commerce, o design e frontend da Unit 5 e os fluxos de cadastro e assinatura da JSBJJ Kylemore.',
         },
       ],
       featuredTitle: 'Projetos freelance selecionados',
       featuredIntro:
-        'Projetos para clientes: minha contribuição, decisões técnicas e entregas em produção.',
+        'Na Unit 5, criei o design e implementei o frontend. Na JSBJJ Kylemore, desenvolvi a interface e conectei captação, cadastro e pagamentos recorrentes.',
       featuredProjects: [
         {
           slug: 'jsbjjkylemore',
@@ -288,10 +288,10 @@ const siteContent: Record<Locale, SiteContent> = {
           description:
             'Desenvolvedor full stack sênior e referência técnica do time na Performa.AI, plataforma de inteligência e conversão para e-commerce. Defino a arquitetura de projetos, apps e ferramentas, alinho o escopo com a equipe de produto e conduzo o desenvolvimento, os testes e o deploy, incluindo APIs, integrações e interfaces como o dashboard.',
           highlights: [
-            'Frontend de e-commerce: nos primeiros três anos na Performa, implementei renderização, posicionamento e design de vitrines, reproduzindo o visual nativo das lojas com fidelidade pixel perfect e implementando layouts personalizados a partir de PSD e Figma, buscas diferenciadas e vitrines do tipo compre junto.',
-            'Capacidade de entrega: integrei três lojas por dia frente ao padrão anterior de uma, chegando a cinco em dias com hora extra. Reaproveitei estruturas e estilos, analisei previamente os componentes nativos e pontos de inserção e organizei a implementação em posicionamento, renderização, estilos e conferência de comportamentos. O conhecimento dos temas e problemas recorrentes reduziu a investigação e o retrabalho. Em um período, absorvi sozinho a demanda antes atendida por três desenvolvedores.',
+            'Frontend de e-commerce: durante três anos, implementei vitrines fiéis ao visual nativo das lojas e layouts personalizados a partir de arquivos PSD e designs no Figma. Cuidei da renderização, do posicionamento e dos estilos, incluindo buscas personalizadas e vitrines do tipo compre junto.',
+            'Capacidade de entrega: passei de uma referência de uma loja por dia para três, chegando a cinco em dias com hora extra. Reaproveitei estruturas e estilos, analisei os componentes nativos antes de implementar e defini uma sequência de trabalho. O conhecimento dos temas reduziu a investigação e o retrabalho. Em um período, absorvi sozinho a demanda antes atendida por três desenvolvedores.',
             'Shopify: desenvolvi três apps completos usando Liquid e Remix. Os apps não chegaram à produção por questões internas da empresa.',
-            'IA no desenvolvimento: uso agentes de IA no trabalho há 1,5 ano. Atualmente, utilizo o Codex conectado ao MCP da Performa para implementar e ajustar integrações de e-commerce, com revisão do código, verificações locais e confirmação da persistência por releitura da API. Os testes nas lojas são realizados pelo usuário.',
+            'Uso de IA no desenvolvimento: trabalho com agentes de IA há 1,5 ano. Uso Codex conectado ao MCP da Performa para implementar e ajustar integrações de e-commerce. Reviso o código, executo verificações locais e confirmo as alterações por releitura da API; a validação nas lojas inclui testes manuais.',
             'E-mail marketing: criei templates de e-mail em HTML e MJML para campanhas de marketing.',
             'Confiabilidade no processamento de pedidos: implementei processamento idempotente de webhooks para evitar registros duplicados em um serviço com mais de 150 clientes conectados e milhares de requisições por minuto, mantendo dados consistentes para a avaliação das recomendações.',
             'Integrações de e-commerce: desenvolvi e mantive a sincronização de catálogos e pedidos com Shopify, Nuvemshop, Loja Integrada, Tray, VTEX e Magazord, respeitando os limites das APIs e automatizando atualizações para reduzir a intervenção manual.',
@@ -301,7 +301,8 @@ const siteContent: Record<Locale, SiteContent> = {
             'Suporte e clientes: apoio ao suporte, implementações específicas e resolução de problemas técnicos complexos.',
             'Orientação de iniciantes: apoio a profissionais em início de carreira nas dúvidas e decisões técnicas do dia a dia.',
             'Arquitetura e escala desde a implementação: planejo projetos, apps e ferramentas com atenção à eficiência e à capacidade de crescer dentro do escopo, assumindo as decisões técnicas, o desenvolvimento, os testes e o deploy.',
-            'Automações com IA: fluxos de WhatsApp com IA, MCP e RAG, além de trabalho com pagamentos e auditoria.',
+            'Agentes de IA: participei da criação de um agente de atendimento com RAG e assumi toda a estrutura de backend, WebSockets, validações e fluxos. A solução começou no WhatsApp com Baileys e evoluiu para um chat nas lojas, integrado ao catálogo para recomendar produtos a partir da intenção de compra.',
+            'Consumo e qualidade da IA: ajustei o contexto enviado aos modelos, a seleção do modelo e o nível de raciocínio conforme a solicitação. Trabalhei com prompt caching e eliminação de chamadas desnecessárias, validando entradas para reduzir o risco de prompt injection. Avaliei tokens, tempo de resposta e relevância das respostas em testes e no dashboard da ferramenta.',
           ],
           stack: [
             'TypeScript',
@@ -320,6 +321,10 @@ const siteContent: Record<Locale, SiteContent> = {
             'Figma',
             'MCP',
             'RAG',
+            'WebSockets',
+            'Baileys',
+            'Codex',
+            'Prompt caching',
             'Docker',
             'Vitest',
             'Jest',
@@ -383,14 +388,27 @@ const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'Sobre',
       title: 'Desenvolvedor Full Stack Sênior | React, TypeScript e Node.js',
       intro:
-        'Tenho mais de 8 anos de experiência em produtos web e integrações de e-commerce, com responsabilidade pela arquitetura e entrega full stack. Aberto a oportunidades remotas como full stack sênior no Brasil e no exterior.',
+        'Tenho mais de oito anos de experiência em produtos web e e-commerce. Minha atuação reúne interfaces em React e Next.js, integrações e backend com Node.js. Também desenvolvo agentes de IA e uso essas ferramentas no trabalho diário.',
       storyTitle: 'Minha experiência',
       paragraphs: [
         'Comecei com interfaces web e ampliei minha atuação para APIs e produtos completos. Desde 2018, trabalho na Performa.AI, em colaboração com produto, suporte e equipes de plataformas de e-commerce. Também oriento profissionais iniciantes nas decisões técnicas do dia a dia.',
         'Em paralelo, desenvolvo projetos freelance diretamente com os clientes. Essa experiência inclui a plataforma da JSBJJ Kylemore e o design e frontend da Unit 5, combinando necessidades comerciais, interfaces e integrações.',
       ],
-      highlightsTitle: 'Arquitetura e entregas selecionadas',
+      highlightsTitle: 'Experiência e entregas selecionadas',
       highlights: [
+        {
+          title: 'Três anos implementando vitrines',
+          body: 'Implementei vitrines fiéis ao visual das lojas e layouts enviados em PSD e Figma. Na Unit 5, criei o design e o frontend responsivo; na JSBJJ Kylemore, conectei a interface aos fluxos de cadastro e assinatura.',
+        },
+        {
+          title: 'Backend de agentes de IA',
+          body: 'Assumi o backend de um agente com RAG, inicialmente no WhatsApp via Baileys e depois em chats nas lojas. Desenvolvi conexões WebSocket, validações e fluxos, incluindo recomendações de produtos por intenção de compra.',
+        },
+        {
+          title: 'IA no trabalho diário',
+          body: 'Uso agentes de IA há 1,5 ano. Nas integrações da Performa, utilizo Codex com MCP, reviso o código e verifico a persistência das alterações. Também acompanhei tokens, tempo de resposta e relevância das respostas dos agentes que ajudei a desenvolver.',
+        },
+
         {
           title: 'Webhooks em escala, sem pedidos duplicados',
           body: 'Desenvolvi um serviço com mais de 150 clientes conectados e milhares de requisições por minuto. Implementei processamento idempotente para evitar pedidos duplicados e manter consistentes os dados usados na avaliação das recomendações.',
@@ -491,9 +509,9 @@ const siteContent: Record<Locale, SiteContent> = {
       title: 'Senior Full-Stack Developer | React, TypeScript and Node.js',
       mobileTitle: 'Senior Full-Stack Developer',
       intro:
-        '8+ years building web products and e-commerce integrations, with responsibility for architecture, testing, and production delivery. I connect systems and automate processes to reduce manual work, keep data reliable, and support operations at scale.',
+        'I have over eight years of experience in web products and e-commerce, working with React, TypeScript, and Node.js from frontend implementation through integrations and deployment. I spent three years matching product displays to storefront designs. I also build AI agents and use Codex with MCP for integrations.',
       mobileIntro:
-        '8+ years in web products and integrations, with responsibility for architecture and production delivery. React, TypeScript and Node.js.',
+        'Over eight years in web products and e-commerce with React, TypeScript, and Node.js. Experience in interfaces, integrations, and AI agents.',
       description:
         'I help teams and businesses replace spreadsheets, manual tasks, and disconnected systems with applications that have clear requirements, usable interfaces, and stable integrations. I handle architecture and deployment with maintenance in mind.',
       primaryCta: 'Discuss an opportunity',
@@ -543,14 +561,14 @@ const siteContent: Record<Locale, SiteContent> = {
             'I connect platforms through APIs and webhooks and build internal routines using cloud services. I aim to reduce manual work with automations and dependencies the team can maintain.',
         },
         {
-          title: 'MVPs and features with business logic',
+          title: 'Frontend and purchase flows',
           description:
-            'I develop stores, catalogs, and commercial workflows, including checkout, authentication, and payments. I plan the implementation so new features can be added after the first release.',
+            'I implement responsive interfaces and layouts from Figma and PSD files. My work includes e-commerce product displays, the Unit 5 design and frontend, and registration and subscription flows for JSBJJ Kylemore.',
         },
       ],
       featuredTitle: 'Selected freelance projects',
       featuredIntro:
-        'Client projects: my contribution, technical decisions, and production delivery.',
+        'For Unit 5, I created the design and built the frontend. For JSBJJ Kylemore, I built the interface and connected lead capture, registration, and recurring payments.',
       featuredProjects: [
         {
           slug: 'jsbjjkylemore',
@@ -582,7 +600,7 @@ const siteContent: Record<Locale, SiteContent> = {
             'E-commerce frontend: during my first three years at Performa, I implemented product display rendering, placement, and styling, matching native storefront designs pixel for pixel. I also built custom displays from PSD files and Figma designs, custom search interfaces, and frequently bought together product displays.',
             'Delivery capacity: I integrated three stores per day, compared with the previous baseline of one, reaching five on days with overtime. I reused structures and styles, reviewed native components and insertion points before coding, and organized implementation into placement, rendering, styling, and behavior checks. Familiarity with themes and recurring issues reduced investigation time and rework. During one period, I handled the workload previously covered by three developers on my own.',
             'Shopify: I developed three complete apps using Liquid and Remix. The apps did not reach production due to internal company issues.',
-            'AI-assisted development: I have used AI agents at work for 1.5 years. I currently use Codex connected to the Performa MCP server for e-commerce integrations, with code review, local checks, and API readback verification. Store testing is performed by the human operator.',
+            'AI-assisted development: I have used AI agents at work for 1.5 years. I use Codex connected to the Performa MCP server to implement and adjust e-commerce integrations, review the code, run local checks, and verify changes through API readbacks. Store validation includes manual testing.',
             'Email marketing: I created HTML and MJML email templates for marketing campaigns.',
 
             'Reliable order processing: I implemented idempotent webhook processing to prevent duplicate records in a service with more than 150 connected clients and thousands of requests per minute, keeping data consistent for recommendation evaluation.',
@@ -593,7 +611,8 @@ const siteContent: Record<Locale, SiteContent> = {
             'Support and clients: assistance to the support team, client-specific implementations, and resolution of complex technical issues.',
             'Mentoring: helping early-career professionals with day-to-day technical questions and decisions.',
             'Architecture and scale from the initial implementation: I plan projects, apps, and tools for efficiency and growth within their scope, taking responsibility for technical decisions, development, testing, and deployment.',
-            'AI automations: WhatsApp workflows with AI, MCP, and RAG, alongside work on payments and auditing.',
+            'AI agents: I helped build a support agent using RAG and owned the backend, WebSocket connections, validation, and conversation flows. The solution started on WhatsApp with Baileys and evolved into a storefront chat connected to the product catalog, recommending products based on shopping intent.',
+            'AI cost and response quality: I adjusted input context, model selection, and reasoning effort for each request. I worked with prompt caching, removed unnecessary API calls, and validated inputs to reduce prompt injection risk. I evaluated token usage, response time, and answer relevance through tests and the tool dashboard.',
           ],
           stack: [
             'TypeScript',
@@ -612,6 +631,10 @@ const siteContent: Record<Locale, SiteContent> = {
             'Figma',
             'MCP',
             'RAG',
+            'WebSockets',
+            'Baileys',
+            'Codex',
+            'Prompt caching',
             'Docker',
             'Vitest',
             'Jest',
@@ -675,14 +698,27 @@ const siteContent: Record<Locale, SiteContent> = {
       eyebrow: 'About',
       title: 'Senior Full-Stack Developer | React, TypeScript & Node.js',
       intro:
-        'I have 8+ years of experience building web products and e-commerce integrations, with responsibility for architecture and full stack delivery. Open to remote senior full stack opportunities in Brazil and internationally.',
+        'I have over eight years of experience in web products and e-commerce. My work covers React and Next.js interfaces, integrations, and Node.js backends. I also build AI agents and use them in my daily development work.',
       storyTitle: 'My experience',
       paragraphs: [
         'I started with web interfaces and expanded into APIs and complete products. Since 2018, I have worked at Performa.AI, collaborating with product, support, and e-commerce platform teams. I also mentor junior developers on day-to-day technical decisions.',
         'Alongside this work, I develop freelance projects directly with clients. These include the JSBJJ Kylemore platform and the Unit 5 design and frontend, combining commercial requirements, interfaces, and integrations.',
       ],
-      highlightsTitle: 'Architecture and selected projects',
+      highlightsTitle: 'Experience and selected projects',
       highlights: [
+        {
+          title: 'Three years building storefront displays',
+          body: 'I matched product displays to storefront designs and implemented layouts from PSD files and Figma. For Unit 5, I created the design and responsive frontend; for JSBJJ Kylemore, I connected the interface to registration and subscription flows.',
+        },
+        {
+          title: 'Backend for AI agents',
+          body: 'I owned the backend of a RAG-based agent, initially on WhatsApp through Baileys and later in storefront chats. I built WebSocket connections, validation, and conversation flows, including product recommendations based on shopping intent.',
+        },
+        {
+          title: 'AI in daily development',
+          body: 'I have used AI agents at work for 1.5 years. For Performa integrations, I use Codex with MCP, review code, and verify that changes persist. I also monitored token usage, response time, and answer relevance for the agents I helped build.',
+        },
+
         {
           title: 'Webhook processing at scale, without duplicate orders',
           body: 'I built a service with 150+ connected clients, handling thousands of requests per minute. I implemented idempotent processing to prevent duplicate orders and keep the data used to evaluate recommendations consistent.',
@@ -757,7 +793,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       category: 'SaaS de e-commerce · integrações e processamento de pedidos',
       title: 'Performa.AI',
       cardSummary:
-        'Desenvolvi e mantive interfaces e dashboards com KPIs, APIs e integrações de catálogos. Implementei também um serviço de webhooks para mais de 150 clientes, com milhares de requisições por minuto e processamento idempotente de pedidos.',
+        'Implementei vitrines, dashboards e integrações de e-commerce. Assumi o backend de um agente com RAG e de um serviço de webhooks para mais de 150 clientes, com milhares de requisições por minuto.',
       cardRole: 'Full stack sênior · arquitetura e integrações',
       cardStack: [
         'TypeScript',
@@ -821,12 +857,33 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       ],
       sections: [
         {
-          title: 'Frontend de lojas e fidelidade visual',
-          body: 'Frontend de e-commerce: nos primeiros três anos na Performa, implementei renderização, posicionamento e design de vitrines, reproduzindo o visual nativo das lojas com fidelidade pixel perfect e implementando layouts personalizados a partir de PSD e Figma, buscas diferenciadas e vitrines do tipo compre junto.',
+          title: 'Agente de atendimento: do WhatsApp ao chat nas lojas',
+          body: 'Participei da criação de um agente para responder mensagens em nome dos estabelecimentos a qualquer horário. Assumi toda a estrutura de backend, as conexões WebSocket, validações e fluxos de conversa. A primeira versão usava Baileys para integração com o WhatsApp e RAG para recuperar o contexto das respostas. A solução depois passou a oferecer chat dentro das lojas, também com comunicação por WebSockets.',
+        },
+        {
+          title: 'Contexto de atendimento e busca por intenção',
+          body: 'O agente respondia perguntas sobre a loja, contato, suporte e horário de funcionamento. Em uma adaptação para um escritório de advocacia, fornecia informações sobre casos em andamento e permitia marcar agendamentos. Também integramos o catálogo das lojas ao chat: diante de um pedido como encontrar um presente para a esposa, o agente recomendava produtos ou fazia perguntas para entender melhor a intenção de compra.',
+        },
+        {
+          title: 'Decisões sobre contexto, modelos e consumo',
+          body: 'Analisei o contexto das solicitações para selecionar o modelo e o nível de raciocínio. Ajustei o conteúdo enviado nas chamadas e trabalhei com prompt caching para reaproveitar o processamento de trechos recorrentes. Também revisei os fluxos para evitar chamadas desnecessárias. Acompanhei o consumo no dashboard da ferramenta e comparei tokens, tempo de resposta e relevância em testes.',
+        },
+        {
+          title: 'Validação das entradas e ajustes da IA',
+          body: 'Implementei validações de entrada para reduzir o risco de prompt injection e participei dos ajustes no comportamento e no uso dos modelos. A avaliação das respostas orientava novas alterações no contexto e nos fluxos.',
+        },
+        {
+          title: 'Agentes de IA no desenvolvimento',
+          body: 'Uso agentes de IA no trabalho há 1,5 ano. Atualmente, utilizo Codex conectado ao MCP da Performa nas integrações de e-commerce. Organizei o fluxo com registros por loja, backups e verificações locais. As alterações em stage são confirmadas por releitura da API, e os testes nas lojas são realizados manualmente.',
+        },
+
+        {
+          title: 'Vitrines e fidelidade visual',
+          body: 'durante três anos, implementei vitrines fiéis ao visual nativo das lojas e layouts personalizados a partir de arquivos PSD e designs no Figma. Cuidei da renderização, do posicionamento e dos estilos, incluindo buscas personalizadas e vitrines do tipo compre junto.',
         },
         {
           title: 'Capacidade de entrega',
-          body: 'Capacidade de entrega: integrei três lojas por dia frente ao padrão anterior de uma, chegando a cinco em dias com hora extra. Em um período, absorvi sozinho a demanda antes atendida por três desenvolvedores.',
+          body: 'integrei três lojas por dia frente ao padrão anterior de uma, chegando a cinco em dias com hora extra. Em um período, absorvi sozinho a demanda antes atendida por três desenvolvedores.',
         },
         {
           title: 'Método: reaproveitar a base e adaptar cada loja',
@@ -838,11 +895,11 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
         {
           title: 'Apps Shopify com Liquid e Remix',
-          body: 'Shopify: desenvolvi três apps completos usando Liquid e Remix. Os apps não chegaram à produção por questões internas da empresa.',
+          body: 'desenvolvi três apps completos usando Liquid e Remix. Os apps não chegaram à produção por questões internas da empresa.',
         },
         {
           title: 'Templates de e-mail em HTML e MJML',
-          body: 'E-mail marketing: criei templates de e-mail em HTML e MJML para campanhas de marketing.',
+          body: 'criei templates de e-mail em HTML e MJML para campanhas de marketing.',
         },
 
         {
@@ -871,7 +928,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
         {
           title: 'Colaboração e outras entregas',
-          body: 'Fiz a interlocução técnica com plataformas de e-commerce para apoiar integrações e parcerias. Apoio o suporte na investigação de problemas e oriento profissionais iniciantes nas decisões do dia a dia. Também trabalhei em automações de WhatsApp com IA, MCP e RAG.',
+          body: 'Fiz a interlocução técnica com plataformas de e-commerce para apoiar integrações e parcerias. Apoio o suporte na investigação de problemas e oriento profissionais iniciantes nas decisões do dia a dia. Também trabalhei com pagamentos e auditoria.',
         },
       ],
     },
@@ -970,7 +1027,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       category: 'E-commerce SaaS · integrations and order processing',
       title: 'Performa.AI',
       cardSummary:
-        'I built and maintained interfaces and dashboards with KPIs, APIs, and catalog integrations. I also implemented a webhook service for 150+ clients, handling thousands of requests per minute with idempotent order processing.',
+        'I built storefront displays, dashboards, and e-commerce integrations. I owned the backend of a RAG-based agent and a webhook service for 150+ clients, handling thousands of requests per minute.',
       cardRole: 'Senior full stack · architecture and integrations',
       cardStack: [
         'TypeScript',
@@ -1037,12 +1094,33 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       ],
       sections: [
         {
+          title: 'Support agent: from WhatsApp to storefront chat',
+          body: 'I helped build an agent that answered messages on behalf of businesses at any hour. I owned the backend, WebSocket connections, validation, and conversation flows. The first version used Baileys to connect to WhatsApp and RAG to retrieve context for responses. The solution later expanded to chat embedded in storefronts, also communicating over WebSockets.',
+        },
+        {
+          title: 'Support context and shopping intent',
+          body: 'The agent answered questions about the store, contact details, support, and opening hours. An adaptation for a law firm provided information about ongoing cases and allowed clients to book appointments. We also connected store catalogs to the chat: when asked to find a gift for a spouse, the agent could recommend products or ask follow-up questions to clarify shopping intent.',
+        },
+        {
+          title: 'Context, model selection, and token usage',
+          body: 'I analyzed request context to select the model and reasoning effort, adjusted the content sent in API calls, and worked with prompt caching to reuse processing for recurring input. I also revised flows to avoid unnecessary calls. I monitored usage in the tool dashboard and compared token consumption, response time, and answer relevance in tests.',
+        },
+        {
+          title: 'Input validation and model behavior',
+          body: 'I implemented input validation to reduce prompt injection risk and contributed to adjustments in model behavior and usage. Response evaluation informed further changes to context and conversation flows.',
+        },
+        {
+          title: 'AI agents in development',
+          body: 'I have used AI agents at work for 1.5 years. I currently use Codex connected to the Performa MCP server for e-commerce integrations. I organized the workflow around store-specific records, backups, and local checks. Stage changes are verified through API readbacks, with manual testing in the stores.',
+        },
+
+        {
           title: 'Storefront frontend and visual fidelity',
-          body: 'E-commerce frontend: during my first three years at Performa, I implemented product display rendering, placement, and styling, matching native storefront designs pixel for pixel. I also built custom displays from PSD files and Figma designs, custom search interfaces, and frequently bought together product displays.',
+          body: 'during my first three years at Performa, I implemented product display rendering, placement, and styling, matching native storefront designs pixel for pixel. I also built custom displays from PSD files and Figma designs, custom search interfaces, and frequently bought together product displays.',
         },
         {
           title: 'Delivery capacity',
-          body: 'Delivery capacity: I integrated three stores per day, compared with the previous baseline of one, reaching five on days with overtime. During one period, I handled the workload previously covered by three developers on my own.',
+          body: 'I integrated three stores per day, compared with the previous baseline of one, reaching five on days with overtime. During one period, I handled the workload previously covered by three developers on my own.',
         },
         {
           title: 'Method: reuse the foundation and adapt each store',
@@ -1054,11 +1132,11 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
         {
           title: 'Shopify apps with Liquid and Remix',
-          body: 'Shopify: I developed three complete apps using Liquid and Remix. The apps did not reach production due to internal company issues.',
+          body: 'I developed three complete apps using Liquid and Remix. The apps did not reach production due to internal company issues.',
         },
         {
           title: 'HTML and MJML email templates',
-          body: 'Email marketing: I created HTML and MJML email templates for marketing campaigns.',
+          body: 'I created HTML and MJML email templates for marketing campaigns.',
         },
 
         {
@@ -1088,7 +1166,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
         {
           title: 'Collaboration and additional work',
-          body: 'I worked with e-commerce platform teams on integrations and partnerships. I help support investigate issues and guide early-career developers through technical decisions. I also worked on WhatsApp automations using AI, MCP, and RAG.',
+          body: 'I worked with e-commerce platform teams on integrations and partnerships. I help support investigate issues and guide early-career developers through technical decisions. I also worked on payments and auditing.',
         },
       ],
     },

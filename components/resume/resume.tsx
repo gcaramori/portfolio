@@ -42,14 +42,6 @@ export function Resume({
             {labels.downloadLabel}
           </a>
           <PrintButton label={labels.printLabel} />
-          <Link
-            href={getLocalizedPath(frontend ? '/resume' : '/resume/frontend', locale)}
-            className="secondary-link"
-          >
-            {locale === 'en'
-              ? frontend ? 'Full stack résumé' : 'Frontend résumé'
-              : frontend ? 'Currículo full stack' : 'Currículo frontend'}
-          </Link>
         </div>
         <p className="mt-3 text-sm text-[var(--muted-foreground)]">
           {labels.printHint}

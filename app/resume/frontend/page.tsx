@@ -5,12 +5,15 @@ import { getFrontendResumeContent } from '@/lib/frontend-resume'
 const locale = 'pt-BR'
 const content = getFrontendResumeContent(locale)
 
-export const metadata = buildMetadata({
-  title: `${content.home.title} | Guilherme Caramori`,
-  description: content.home.intro,
-  pathname: '/resume/frontend',
-  locale,
-})
+export const metadata = {
+  ...buildMetadata({
+    title: `${content.home.title} | Guilherme Caramori`,
+    description: content.home.intro,
+    pathname: '/resume/frontend',
+    locale,
+  }),
+  robots: { index: false, follow: false },
+}
 
 export default function FrontendResumePage() {
   return <Resume locale={locale} frontend />

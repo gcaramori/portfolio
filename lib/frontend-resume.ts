@@ -4,14 +4,14 @@ const frontendCopy = {
   'pt-BR': {
     title: 'Desenvolvedor Frontend Sênior | React, Next.js e Shopify',
     intro:
-      '8+ anos em produtos web e e-commerce, incluindo três anos dedicados à implementação visual de vitrines em lojas. Experiência com layouts pixel perfect a partir de PSD e Figma, templates de e-mail em HTML e MJML e com o desenvolvimento de apps Shopify com Liquid e Remix. Criei também o design e implementei o frontend de sites com Next.js, TypeScript e Tailwind CSS, além de fluxos de cadastro e assinatura recorrente.',
+      'Mais de oito anos em produtos web e e-commerce, incluindo três anos implementando vitrines fiéis ao visual das lojas e designs em PSD e Figma. Desenvolvi apps Shopify com Liquid e Remix e templates de e-mail em HTML e MJML. Em projetos com Next.js, TypeScript e Tailwind CSS, criei interfaces e conectei cadastro e assinaturas recorrentes.',
     freelance:
       'Desenvolvimento de sites e plataformas para clientes, do levantamento de requisitos à implementação responsiva e entrega em produção.',
   },
   en: {
     title: 'Senior Frontend Developer | React, Next.js & Shopify',
     intro:
-      '8+ years in web products and e-commerce, including three years focused on storefront product displays. Experience implementing pixel-perfect designs from PSD files and Figma designs, creating HTML and MJML email templates, and developing Shopify apps with Liquid and Remix. I have also designed and built websites with Next.js, TypeScript, and Tailwind CSS, including registration and recurring subscription flows.',
+      'Over eight years in web products and e-commerce, including three years matching product displays to storefront designs and implementing layouts from PSD files and Figma. I built Shopify apps with Liquid and Remix and email templates in HTML and MJML. My Next.js, TypeScript, and Tailwind CSS projects include interface design, registration, and recurring subscriptions.',
     freelance:
       'Built client websites and platforms, from requirements gathering through responsive implementation and production delivery.',
   },
@@ -34,7 +34,12 @@ export function getFrontendResumeContent(locale: Locale) {
           description: locale === 'en'
             ? 'Senior full-stack developer with hands-on responsibility for storefront interfaces, e-commerce integrations, and operational dashboards.'
             : 'Desenvolvedor full stack sênior com atuação direta em interfaces de lojas, integrações de e-commerce e dashboards operacionais.',
-          highlights: performa.highlights?.slice(0, 5),
+          highlights: [
+            ...(performa.highlights?.slice(0, 5) ?? []),
+            locale === 'en'
+              ? 'AI products: I owned the backend and WebSocket connections of a RAG-based support agent, first on WhatsApp with Baileys and later in storefront chats with catalog recommendations. I also worked on model selection, token usage, and response quality.'
+              : 'Produtos com IA: assumi o backend e as conexões WebSocket de um agente de atendimento com RAG, inicialmente no WhatsApp via Baileys e depois em chats nas lojas com recomendações do catálogo. Também trabalhei na seleção de modelos, no consumo de tokens e na qualidade das respostas.',
+          ],
           stack: [
             'HTML',
             'CSS',

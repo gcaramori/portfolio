@@ -7,12 +7,10 @@ const staticRoutes = [
   '/about',
   '/projects',
   '/resume',
-  '/resume/frontend',
   '/en',
   '/en/about',
   '/en/projects',
   '/en/resume',
-  '/en/resume/frontend',
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {
