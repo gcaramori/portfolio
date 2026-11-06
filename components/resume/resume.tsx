@@ -25,6 +25,7 @@ export function Resume({
   const labels = content.resume
   const technologies = Array.from(
     new Set([
+      'Next.js',
       ...(frontend ? [] : projectCases[locale]['performa-ai'].stack),
       ...content.home.experience.flatMap((item) => item.stack ?? []),
     ]),

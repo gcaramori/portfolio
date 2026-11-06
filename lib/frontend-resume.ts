@@ -2,14 +2,14 @@ import siteContent, { type Locale } from './languages'
 
 const frontendCopy = {
   'pt-BR': {
-    title: 'Desenvolvedor Frontend Sênior | React, Next.js e Shopify',
+    title: 'Desenvolvedor Frontend Sênior | Next.js, React e Shopify',
     intro:
       'Mais de oito anos em produtos web e e-commerce, incluindo três anos implementando vitrines fiéis ao visual das lojas e designs em PSD e Figma. Desenvolvi apps Shopify com Liquid e Remix e templates de e-mail em HTML e MJML. Em projetos com Next.js, TypeScript e Tailwind CSS, criei interfaces e conectei cadastro e assinaturas recorrentes.',
     freelance:
       'Desenvolvimento de sites e plataformas para clientes, do levantamento de requisitos à implementação responsiva e entrega em produção.',
   },
   en: {
-    title: 'Senior Frontend Developer | React, Next.js & Shopify',
+    title: 'Senior Frontend Developer | Next.js, React & Shopify',
     intro:
       'Over eight years in web products and e-commerce, including three years matching product displays to storefront designs and implementing layouts from PSD files and Figma. I built Shopify apps with Liquid and Remix and email templates in HTML and MJML. My Next.js, TypeScript, and Tailwind CSS projects include interface design, registration, and recurring subscriptions.',
     freelance:
@@ -41,12 +41,12 @@ export function getFrontendResumeContent(locale: Locale) {
               : 'Produtos com IA: assumi o backend e as conexões WebSocket de um agente de atendimento com RAG, inicialmente no WhatsApp via Baileys e depois em chats nas lojas com recomendações do catálogo. Também trabalhei na seleção de modelos, no consumo de tokens e na qualidade das respostas.',
           ],
           stack: [
+            'Next.js',
             'HTML',
             'CSS',
             'JavaScript',
             'TypeScript',
             'React',
-            'Next.js',
             'Tailwind CSS',
             'Shopify',
             'Liquid',

@@ -196,12 +196,12 @@ const siteContent: Record<Locale, SiteContent> = {
     },
     home: {
       eyebrow: 'SaaS · e-commerce · integrações',
-      title: 'Desenvolvedor Full Stack Sênior | React, TypeScript e Node.js',
+      title: 'Desenvolvedor Full Stack Sênior | Next.js, TypeScript e Node.js',
       mobileTitle: 'Desenvolvedor Full Stack Sênior',
       intro:
-        'Tenho mais de oito anos de experiência em produtos web e e-commerce. Minha atuação combina desenvolvimento full stack e construção de aplicações com IA. Desenvolvo agentes e integro modelos a sistemas de negócio, avaliando a qualidade das respostas, o consumo de tokens e o tempo de resposta. Trabalho com React, TypeScript e Node.js e assumo projetos da definição técnica à entrega em produção.',
+        'Tenho mais de oito anos de experiência em produtos web e e-commerce. Minha atuação combina desenvolvimento full stack e construção de aplicações com IA. Desenvolvo agentes e integro modelos a sistemas de negócio, avaliando a qualidade das respostas, o consumo de tokens e o tempo de resposta. Trabalho com Next.js, TypeScript e Node.js e assumo projetos da definição técnica à entrega em produção.',
       mobileIntro:
-        'Mais de oito anos em produtos web e e-commerce, com React, TypeScript e Node.js. Experiência em interfaces, integrações e agentes de IA.',
+        'Mais de oito anos em produtos web e e-commerce, com Next.js, TypeScript e Node.js. Experiência em interfaces, integrações e agentes de IA.',
       description:
         'Ajudo times e negócios a substituir planilhas, tarefas manuais e sistemas desconectados por aplicações com requisitos claros, interfaces fáceis de usar e integrações estáveis. Cuido da arquitetura e acompanho o deploy para facilitar a manutenção.',
       primaryCta: 'Conversar sobre uma oportunidade',
@@ -386,9 +386,9 @@ const siteContent: Record<Locale, SiteContent> = {
     },
     about: {
       eyebrow: 'Sobre',
-      title: 'Desenvolvedor Full Stack Sênior | React, TypeScript e Node.js',
+      title: 'Desenvolvedor Full Stack Sênior | Next.js, TypeScript e Node.js',
       intro:
-        'Tenho mais de oito anos de experiência em produtos web e e-commerce. Minha atuação reúne interfaces em React e Next.js, integrações e backend com Node.js. Também desenvolvo agentes de IA e uso essas ferramentas no trabalho diário.',
+        'Tenho mais de oito anos de experiência em produtos web e e-commerce. Minha atuação reúne interfaces em Next.js e React, integrações e backend com Node.js. Também desenvolvo agentes de IA e uso essas ferramentas no trabalho diário.',
       storyTitle: 'Minha experiência',
       paragraphs: [
         'Comecei com interfaces web e ampliei minha atuação para APIs e produtos completos. Desde 2018, trabalho na Performa.AI, em colaboração com produto, suporte e equipes de plataformas de e-commerce. Também oriento profissionais iniciantes nas decisões técnicas do dia a dia.',
@@ -451,7 +451,7 @@ const siteContent: Record<Locale, SiteContent> = {
         'Arquitetura, desenvolvimento e manutenção: integrações para mais de 150 clientes, pagamentos recorrentes e interfaces web.',
       cta: 'Ler case',
       liveLabel: 'Abrir projeto',
-      profile: 'Full Stack Sênior · React · TypeScript · Node.js',
+      profile: 'Full Stack Sênior · Next.js · TypeScript · Node.js',
       contact: {
         title: 'Vamos conversar sobre uma vaga?',
         availability:
@@ -506,12 +506,12 @@ const siteContent: Record<Locale, SiteContent> = {
     },
     home: {
       eyebrow: 'SaaS · e-commerce · integrations',
-      title: 'Senior Full-Stack Developer | React, TypeScript and Node.js',
+      title: 'Senior Full-Stack Developer | Next.js, TypeScript and Node.js',
       mobileTitle: 'Senior Full-Stack Developer',
       intro:
-        'I have over eight years of experience in web products and e-commerce. My work combines full-stack development with building AI applications. I develop agents and integrate models into business systems, evaluating response quality, token usage, and response time. I work with React, TypeScript, and Node.js and take projects from technical planning through deployment.',
+        'I have over eight years of experience in web products and e-commerce. My work combines full-stack development with building AI applications. I develop agents and integrate models into business systems, evaluating response quality, token usage, and response time. I work with Next.js, TypeScript, and Node.js and take projects from technical planning through deployment.',
       mobileIntro:
-        'Over eight years in web products and e-commerce with React, TypeScript, and Node.js. Experience in interfaces, integrations, and AI agents.',
+        'Over eight years in web products and e-commerce with Next.js, TypeScript, and Node.js. Experience in interfaces, integrations, and AI agents.',
       description:
         'I help teams and businesses replace spreadsheets, manual tasks, and disconnected systems with applications that have clear requirements, usable interfaces, and stable integrations. I handle architecture and deployment with maintenance in mind.',
       primaryCta: 'Discuss an opportunity',
@@ -696,9 +696,9 @@ const siteContent: Record<Locale, SiteContent> = {
     },
     about: {
       eyebrow: 'About',
-      title: 'Senior Full-Stack Developer | React, TypeScript & Node.js',
+      title: 'Senior Full-Stack Developer | Next.js, TypeScript & Node.js',
       intro:
-        'I have over eight years of experience in web products and e-commerce. My work covers React and Next.js interfaces, integrations, and Node.js backends. I also build AI agents and use them in my daily development work.',
+        'I have over eight years of experience in web products and e-commerce. My work covers Next.js and React interfaces, integrations, and Node.js backends. I also build AI agents and use them in my daily development work.',
       storyTitle: 'My experience',
       paragraphs: [
         'I started with web interfaces and expanded into APIs and complete products. Since 2018, I have worked at Performa.AI, collaborating with product, support, and e-commerce platform teams. I also mentor junior developers on day-to-day technical decisions.',
@@ -761,7 +761,7 @@ const siteContent: Record<Locale, SiteContent> = {
         'Architecture, development, and maintenance: integrations for 150+ clients, recurring payments, and web interfaces.',
       cta: 'Read case study',
       liveLabel: 'Open project',
-      profile: 'Senior Full-Stack Developer · React · TypeScript · Node.js',
+      profile: 'Senior Full-Stack Developer · Next.js · TypeScript · Node.js',
       contact: {
         title: 'Let’s discuss an opportunity',
         availability:
@@ -812,12 +812,12 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       deliverables:
         'API autenticada, serviço de webhooks para pedidos, integrações e apps para plataformas de e-commerce, sincronização de produtos e categorias, interfaces incluindo o dashboard, ferramentas JavaScript e automações com IA.',
       stack: [
+        'Next.js',
         'JavaScript',
         'TypeScript',
         'PHP',
         'NestJS',
         'Node.js',
-        'Next.js',
         'React',
         'CSS',
         'MongoDB',
@@ -1046,12 +1046,12 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       deliverables:
         'Authenticated API, order webhook service, e-commerce integrations and platform apps, product and category synchronization, interfaces including the dashboard, JavaScript tools, and AI automations.',
       stack: [
+        'Next.js',
         'JavaScript',
         'TypeScript',
         'PHP',
         'NestJS',
         'Node.js',
-        'Next.js',
         'React',
         'CSS',
         'MongoDB',
