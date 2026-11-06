@@ -8,7 +8,8 @@ import {
   getWhatsappHref,
 } from '@/lib/contact'
 import { getFrontendResumeContent } from '@/lib/frontend-resume'
-import { projectOrder } from '@/lib/projects'
+import { projectMeta, projectOrder } from '@/lib/projects'
+import { siteUrl } from '@/lib/seo'
 import { PrintButton } from './printButton'
 
 export function Resume({
@@ -63,6 +64,11 @@ export function Resume({
         <p className="mt-3 text-sm leading-6">{content.home.note}</p>
         <ul className="resume-contacts mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
           <li>
+            <a href={new URL(getLocalizedPath('/', locale), siteUrl).href}>
+              {new URL(siteUrl).hostname}
+            </a>
+          </li>
+          <li>
             <a href={emailHref}>{CONTACT_EMAIL}</a>
           </li>
           <li>
@@ -111,7 +117,7 @@ export function Resume({
 
       <section className="resume-section">
         <h2>{labels.projectsTitle}</h2>
-        <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
+        <ul className="mt-3 space-y-2">
           {(frontend
             ? (['unit5', 'jsbjjkylemore', 'performa-ai'] as const)
             : projectOrder
@@ -123,6 +129,21 @@ export function Resume({
               >
                 {projectCases[locale][slug].title}
               </Link>
+              {projectMeta[slug].href && (
+                <p className="text-sm">
+                  {slug === 'performa-ai' && (
+                    <span>
+                      {locale === 'en' ? 'Company website: ' : 'Site da empresa: '}
+                    </span>
+                  )}
+                  <a
+                    href={projectMeta[slug].href}
+                    className="underline underline-offset-4"
+                  >
+                    {new URL(projectMeta[slug].href).hostname}
+                  </a>
+                </p>
+              )}
             </li>
           ))}
         </ul>
