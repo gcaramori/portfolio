@@ -288,6 +288,10 @@ const siteContent: Record<Locale, SiteContent> = {
           description:
             'Desenvolvedor full stack sênior e referência técnica do time na Performa.AI, plataforma de inteligência e conversão para e-commerce. Defino a arquitetura de projetos, apps e ferramentas, alinho o escopo com produto e conduzo desenvolvimento, testes e deploy, incluindo APIs, integrações e interfaces como o dashboard.',
           highlights: [
+            'Frontend de e-commerce: nos primeiros três anos na Performa, implementei renderização, posicionamento e design de vitrines, reproduzindo o visual nativo das lojas com fidelidade pixel perfect e implementando layouts personalizados a partir de PSD e Figma, buscas diferenciadas e vitrines de compre junto.',
+            'Capacidade de entrega: integrei três lojas por dia frente ao padrão anterior de uma, chegando a cinco em dias com hora extra. Reaproveitei estruturas e estilos, analisei previamente os componentes nativos e pontos de inserção e organizei a implementação em posicionamento, renderização, estilos e conferência de comportamentos. O conhecimento dos temas e problemas recorrentes reduziu a investigação e o retrabalho. Em um período, absorvi sozinho a demanda antes atendida por três desenvolvedores.',
+            'Shopify: desenvolvi três apps completos usando Liquid e Remix. Os apps não chegaram à produção por questões internas da empresa.',
+            'E-mail marketing: criei templates de e-mail em HTML e MJML para campanhas de marketing.',
             'Confiabilidade no processamento de pedidos: implementei processamento idempotente de webhooks para evitar registros duplicados em um serviço com mais de 150 clientes conectados e milhares de requisições por minuto, mantendo dados consistentes para a avaliação das recomendações.',
             'Integrações de e-commerce: desenvolvi e mantive a sincronização de catálogos e pedidos com Shopify, Nuvemshop, Loja Integrada, Tray, VTEX e Magazord, respeitando os limites das APIs e automatizando atualizações para reduzir a intervenção manual.',
             'APIs e segurança: API com MongoDB replicado, JWT, HMAC e rate limiting, com milhares de acessos diários.',
@@ -308,6 +312,11 @@ const siteContent: Record<Locale, SiteContent> = {
             'Redis',
             'JavaScript',
             'Sentry',
+            'MJML', 'Liquid',
+            'Remix',
+            'HTML',
+            'CSS',
+            'Figma',
             'MCP',
             'RAG',
             'Docker',
@@ -569,6 +578,11 @@ const siteContent: Record<Locale, SiteContent> = {
           description:
             'Senior full stack developer and go-to engineer at Performa.AI, an intelligence and conversion platform for e-commerce. I define architecture for projects, apps, and tools, clarify scope with product teams, and handle development, testing, and deployment, including APIs, integrations, and interfaces such as the dashboard.',
           highlights: [
+            'E-commerce frontend: during my first three years at Performa, I implemented product display rendering, placement, and styling, matching native storefront designs pixel for pixel. I also built custom displays from PSD and Figma, custom search interfaces, and frequently bought together displays.',
+            'Delivery capacity: integrated three stores per day against the previous baseline of one, reaching five on days with overtime. I reused structures and styles, reviewed native components and insertion points before coding, and organized implementation into placement, rendering, styling, and behavior checks. Familiarity with themes and recurring issues reduced investigation time and rework. During one period, I handled the workload previously covered by three developers on my own.',
+            'Shopify: developed three complete apps using Liquid and Remix. The apps did not reach production due to internal company issues.',
+            'Email marketing: created HTML and MJML email templates for marketing campaigns.',
+
             'Reliable order processing: I implemented idempotent webhook processing to prevent duplicate records in a service with more than 150 connected clients and thousands of requests per minute, keeping data consistent for recommendation evaluation.',
             'E-commerce integrations: I developed and maintained catalog and order synchronization with Shopify, Nuvemshop, Loja Integrada, Tray, VTEX, and Magazord, respecting API limits and automating updates to reduce manual intervention.',
             'APIs and security: an API backed by replicated MongoDB with JWT, HMAC, and rate limiting, serving thousands of daily accesses.',
@@ -589,6 +603,11 @@ const siteContent: Record<Locale, SiteContent> = {
             'Redis',
             'JavaScript',
             'Sentry',
+            'MJML', 'Liquid',
+            'Remix',
+            'HTML',
+            'CSS',
+            'Figma',
             'MCP',
             'RAG',
             'Docker',
@@ -800,6 +819,31 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       ],
       sections: [
         {
+          title: 'Frontend de lojas e fidelidade visual',
+          body: 'Frontend de e-commerce: nos primeiros três anos na Performa, implementei renderização, posicionamento e design de vitrines, reproduzindo o visual nativo das lojas com fidelidade pixel perfect e implementando layouts personalizados a partir de PSD e Figma, buscas diferenciadas e vitrines de compre junto.',
+        },
+        {
+          title: 'Capacidade de entrega',
+          body: 'Capacidade de entrega: integrei três lojas por dia frente ao padrão anterior de uma, chegando a cinco em dias com hora extra. Em um período, absorvi sozinho a demanda antes atendida por três desenvolvedores.',
+        },
+        {
+          title: 'Método: reaproveitar a base e adaptar cada loja',
+          body: 'Identifiquei estruturas recorrentes nas vitrines e reaproveitei código e estilos, concentrando as adaptações em tipografia, cores, espaçamentos e comportamentos de cada loja. Antes de implementar, analisava os componentes nativos e os pontos de inserção para evitar refazer layouts ou interferir no funcionamento da loja.',
+        },
+        {
+          title: 'Método: sequência de implementação e diagnóstico',
+          body: 'Organizei o trabalho em posicionamento, renderização dos produtos, estilos e conferência dos comportamentos, deixando os ajustes finos para uma estrutura já funcionando. Com a experiência, reconhecia padrões dos temas e problemas recorrentes de CSS e JavaScript, reduzindo a investigação a cada integração. Essas práticas sustentaram o aumento da capacidade de entrega.',
+        },
+        {
+          title: 'Apps Shopify com Liquid e Remix',
+          body: 'Shopify: desenvolvi três apps completos usando Liquid e Remix. Os apps não chegaram à produção por questões internas da empresa.',
+        },
+        {
+          title: 'Templates de e-mail em HTML e MJML',
+          body: 'E-mail marketing: criei templates de e-mail em HTML e MJML para campanhas de marketing.',
+        },
+
+        {
           title: 'Contexto',
           body: 'A Performa.AI oferece busca, recomendações e outras ferramentas de conversão para e-commerce. Os serviços precisavam consultar catálogos de diferentes plataformas, abastecer vitrines e registrar pedidos para avaliar recomendações.',
         },
@@ -990,6 +1034,31 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
       ],
       sections: [
+        {
+          title: 'Storefront frontend and visual fidelity',
+          body: 'E-commerce frontend: during my first three years at Performa, I implemented product display rendering, placement, and styling, matching native storefront designs pixel for pixel. I also built custom displays from PSD and Figma, custom search interfaces, and frequently bought together displays.',
+        },
+        {
+          title: 'Delivery capacity',
+          body: 'Delivery capacity: integrated three stores per day against the previous baseline of one, reaching five on days with overtime. During one period, I handled the workload previously covered by three developers on my own.',
+        },
+        {
+          title: 'Method: reuse the foundation and adapt each store',
+          body: 'I identified recurring product display structures and reused code and styles, focusing adaptations on each store’s typography, colors, spacing, and behavior. Before implementation, I reviewed native components and insertion points to avoid rebuilding layouts or interfering with storefront functionality.',
+        },
+        {
+          title: 'Method: implementation sequence and troubleshooting',
+          body: 'I organized the work into placement, product rendering, styling, and behavior checks, leaving fine adjustments until the structure was working. With experience, I recognized theme patterns and recurring CSS and JavaScript issues, reducing investigation time for each integration. These practices supported the increase in delivery capacity.',
+        },
+        {
+          title: 'Shopify apps with Liquid and Remix',
+          body: 'Shopify: developed three complete apps using Liquid and Remix. The apps did not reach production due to internal company issues.',
+        },
+        {
+          title: 'HTML and MJML email templates',
+          body: 'Email marketing: created HTML and MJML email templates for marketing campaigns.',
+        },
+
         {
           title: 'Context',
           body: 'Performa.AI provides search, recommendations, and other e-commerce conversion tools. Its services needed to access catalogs across platforms, populate product displays, and record orders for recommendation evaluation.',

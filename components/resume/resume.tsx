@@ -7,15 +7,24 @@ import {
   getResumePdfHref,
   getWhatsappHref,
 } from '@/lib/contact'
+import { getFrontendResumeContent } from '@/lib/frontend-resume'
 import { projectOrder } from '@/lib/projects'
 import { PrintButton } from './printButton'
 
-export function Resume({ locale }: { locale: Locale }) {
-  const content = siteContent[locale]
+export function Resume({
+  locale,
+  frontend = false,
+}: {
+  locale: Locale
+  frontend?: boolean
+}) {
+  const content = frontend
+    ? getFrontendResumeContent(locale)
+    : siteContent[locale]
   const labels = content.resume
   const technologies = Array.from(
     new Set([
-      ...projectCases[locale]['performa-ai'].stack,
+      ...(frontend ? [] : projectCases[locale]['performa-ai'].stack),
       ...content.home.experience.flatMap((item) => item.stack ?? []),
     ]),
   )
@@ -25,13 +34,21 @@ export function Resume({ locale }: { locale: Locale }) {
       <div className="resume-controls mb-10 print:hidden">
         <div className="flex flex-wrap gap-3">
           <a
-            href={getResumePdfHref(locale)}
+            href={getResumePdfHref(locale, frontend)}
             download
             className="primary-link"
           >
             {labels.downloadLabel}
           </a>
           <PrintButton label={labels.printLabel} />
+          <Link
+            href={getLocalizedPath(frontend ? '/resume' : '/resume/frontend', locale)}
+            className="secondary-link"
+          >
+            {locale === 'en'
+              ? frontend ? 'Full stack résumé' : 'Frontend résumé'
+              : frontend ? 'Currículo full stack' : 'Currículo frontend'}
+          </Link>
         </div>
         <p className="mt-3 text-sm text-[var(--muted-foreground)]">
           {labels.printHint}
@@ -95,7 +112,10 @@ export function Resume({ locale }: { locale: Locale }) {
       <section className="resume-section">
         <h2>{labels.projectsTitle}</h2>
         <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2">
-          {projectOrder.map((slug) => (
+          {(frontend
+            ? (['unit5', 'jsbjjkylemore', 'performa-ai'] as const)
+            : projectOrder
+          ).map((slug) => (
             <li key={slug} className="resume-project">
               <Link
                 href={getLocalizedPath(`/projects/${slug}`, locale)}

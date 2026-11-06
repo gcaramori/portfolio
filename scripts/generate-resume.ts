@@ -19,9 +19,11 @@ async function generateResumes() {
 
   try {
     await mkdir(outputDirectory, { recursive: true })
-    for (const locale of ['pt-br', 'en']) {
+    for (const variant of ['pt-br', 'en', 'frontend-pt-br', 'frontend-en']) {
+      const locale = variant.endsWith('en') ? 'en' : 'pt-br'
+      const frontend = variant.startsWith('frontend-')
       const page = await browser.newPage()
-      const pathname = locale === 'en' ? '/en/resume' : '/resume'
+      const pathname = `${locale === 'en' ? '/en/resume' : '/resume'}${frontend ? '/frontend' : ''}`
       const response = await page.goto(new URL(pathname, baseUrl).toString())
       if (!response?.ok()) {
         throw new Error(`Could not load ${pathname}: ${response?.status()}`)
@@ -40,7 +42,7 @@ async function generateResumes() {
       await page.emulateMedia({ media: 'print' })
       const outputPath = resolve(
         outputDirectory,
-        `guilherme-caramori-${locale}.pdf`,
+        `guilherme-caramori-${variant}.pdf`,
       )
       await page.pdf({
         path: outputPath,
