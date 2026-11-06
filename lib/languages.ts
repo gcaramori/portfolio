@@ -199,7 +199,7 @@ const siteContent: Record<Locale, SiteContent> = {
       title: 'Desenvolvedor Full Stack Sênior | React, TypeScript e Node.js',
       mobileTitle: 'Desenvolvedor Full Stack Sênior',
       intro:
-        '8+ anos desenvolvendo produtos web e integrações de e-commerce, com responsabilidade pela arquitetura, testes e entrega em produção. Conecto sistemas e automatizo processos para reduzir trabalho manual, manter dados confiáveis e sustentar operações em escala.',
+        '8+ anos desenvolvendo produtos web e integrações de e-commerce, com responsabilidade pela arquitetura, pelos testes e pela entrega em produção. Conecto sistemas e automatizo processos para reduzir trabalho manual, manter dados confiáveis e sustentar operações em escala.',
       mobileIntro:
         '8+ anos em produtos web e integrações, com responsabilidade pela arquitetura e entrega em produção. React, TypeScript e Node.js.',
       description:
@@ -286,12 +286,12 @@ const siteContent: Record<Locale, SiteContent> = {
           title: 'Performa.AI',
           caseSlug: 'performa-ai',
           description:
-            'Desenvolvedor full stack sênior e referência técnica do time na Performa.AI, plataforma de inteligência e conversão para e-commerce. Defino a arquitetura de projetos, apps e ferramentas, alinho o escopo com produto e conduzo desenvolvimento, testes e deploy, incluindo APIs, integrações e interfaces como o dashboard.',
+            'Desenvolvedor full stack sênior e referência técnica do time na Performa.AI, plataforma de inteligência e conversão para e-commerce. Defino a arquitetura de projetos, apps e ferramentas, alinho o escopo com a equipe de produto e conduzo o desenvolvimento, os testes e o deploy, incluindo APIs, integrações e interfaces como o dashboard.',
           highlights: [
-            'Frontend de e-commerce: nos primeiros três anos na Performa, implementei renderização, posicionamento e design de vitrines, reproduzindo o visual nativo das lojas com fidelidade pixel perfect e implementando layouts personalizados a partir de PSD e Figma, buscas diferenciadas e vitrines de compre junto.',
+            'Frontend de e-commerce: nos primeiros três anos na Performa, implementei renderização, posicionamento e design de vitrines, reproduzindo o visual nativo das lojas com fidelidade pixel perfect e implementando layouts personalizados a partir de PSD e Figma, buscas diferenciadas e vitrines do tipo compre junto.',
             'Capacidade de entrega: integrei três lojas por dia frente ao padrão anterior de uma, chegando a cinco em dias com hora extra. Reaproveitei estruturas e estilos, analisei previamente os componentes nativos e pontos de inserção e organizei a implementação em posicionamento, renderização, estilos e conferência de comportamentos. O conhecimento dos temas e problemas recorrentes reduziu a investigação e o retrabalho. Em um período, absorvi sozinho a demanda antes atendida por três desenvolvedores.',
             'Shopify: desenvolvi três apps completos usando Liquid e Remix. Os apps não chegaram à produção por questões internas da empresa.',
-            'IA no desenvolvimento: uso agentes de IA no trabalho ha 1,5 ano; atualmente utilizo Codex conectado ao MCP da Performa para implementar e ajustar integracoes de e-commerce, com revisao do codigo, gates locais e confirmacao de persistencia por releitura da API. Testes nas lojas realizados pelo usuario.',
+            'IA no desenvolvimento: uso agentes de IA no trabalho há 1,5 ano. Atualmente, utilizo o Codex conectado ao MCP da Performa para implementar e ajustar integrações de e-commerce, com revisão do código, verificações locais e confirmação da persistência por releitura da API. Os testes nas lojas são realizados pelo usuário.',
             'E-mail marketing: criei templates de e-mail em HTML e MJML para campanhas de marketing.',
             'Confiabilidade no processamento de pedidos: implementei processamento idempotente de webhooks para evitar registros duplicados em um serviço com mais de 150 clientes conectados e milhares de requisições por minuto, mantendo dados consistentes para a avaliação das recomendações.',
             'Integrações de e-commerce: desenvolvi e mantive a sincronização de catálogos e pedidos com Shopify, Nuvemshop, Loja Integrada, Tray, VTEX e Magazord, respeitando os limites das APIs e automatizando atualizações para reduzir a intervenção manual.',
@@ -470,7 +470,7 @@ const siteContent: Record<Locale, SiteContent> = {
       availabilityTitle: 'Availability and languages',
     },
     metadata: {
-      title: 'Guilherme Caramori | Senior Full Stack Developer',
+      title: 'Guilherme Caramori | Senior Full-Stack Developer',
       description:
         'Portfolio of Guilherme Caramori, a senior full stack developer focused on e-commerce platforms, internal products, dashboards, integrations, automations, and production delivery.',
     },
@@ -488,8 +488,8 @@ const siteContent: Record<Locale, SiteContent> = {
     },
     home: {
       eyebrow: 'SaaS · e-commerce · integrations',
-      title: 'Senior Full Stack Developer | React, TypeScript and Node.js',
-      mobileTitle: 'Senior Full Stack Developer',
+      title: 'Senior Full-Stack Developer | React, TypeScript and Node.js',
+      mobileTitle: 'Senior Full-Stack Developer',
       intro:
         '8+ years building web products and e-commerce integrations, with responsibility for architecture, testing, and production delivery. I connect systems and automate processes to reduce manual work, keep data reliable, and support operations at scale.',
       mobileIntro:
@@ -573,21 +573,21 @@ const siteContent: Record<Locale, SiteContent> = {
         'Experience in e-commerce SaaS and independent projects, taking responsibility for development, integrations, and production maintenance.',
       experience: [
         {
-          period: '2018 - now',
+          period: '2018 - present',
           title: 'Performa.AI',
           caseSlug: 'performa-ai',
           description:
-            'Senior full stack developer and go-to engineer at Performa.AI, an intelligence and conversion platform for e-commerce. I define architecture for projects, apps, and tools, clarify scope with product teams, and handle development, testing, and deployment, including APIs, integrations, and interfaces such as the dashboard.',
+            'Senior full-stack developer and go-to engineer at Performa.AI, an intelligence and conversion platform for e-commerce. I define architecture for projects, apps, and tools, clarify scope with product teams, and handle development, testing, and deployment, including APIs, integrations, and interfaces such as the dashboard.',
           highlights: [
-            'E-commerce frontend: during my first three years at Performa, I implemented product display rendering, placement, and styling, matching native storefront designs pixel for pixel. I also built custom displays from PSD and Figma, custom search interfaces, and frequently bought together displays.',
-            'Delivery capacity: integrated three stores per day against the previous baseline of one, reaching five on days with overtime. I reused structures and styles, reviewed native components and insertion points before coding, and organized implementation into placement, rendering, styling, and behavior checks. Familiarity with themes and recurring issues reduced investigation time and rework. During one period, I handled the workload previously covered by three developers on my own.',
-            'Shopify: developed three complete apps using Liquid and Remix. The apps did not reach production due to internal company issues.',
-            'AI-assisted development: 1.5 years using AI agents at work. Currently using Codex connected to Performa MCP for e-commerce integrations, with code review, local checks, and API readback verification. Store testing is performed by the human operator.',
-            'Email marketing: created HTML and MJML email templates for marketing campaigns.',
+            'E-commerce frontend: during my first three years at Performa, I implemented product display rendering, placement, and styling, matching native storefront designs pixel for pixel. I also built custom displays from PSD files and Figma designs, custom search interfaces, and frequently bought together product displays.',
+            'Delivery capacity: I integrated three stores per day, compared with the previous baseline of one, reaching five on days with overtime. I reused structures and styles, reviewed native components and insertion points before coding, and organized implementation into placement, rendering, styling, and behavior checks. Familiarity with themes and recurring issues reduced investigation time and rework. During one period, I handled the workload previously covered by three developers on my own.',
+            'Shopify: I developed three complete apps using Liquid and Remix. The apps did not reach production due to internal company issues.',
+            'AI-assisted development: I have used AI agents at work for 1.5 years. I currently use Codex connected to the Performa MCP server for e-commerce integrations, with code review, local checks, and API readback verification. Store testing is performed by the human operator.',
+            'Email marketing: I created HTML and MJML email templates for marketing campaigns.',
 
             'Reliable order processing: I implemented idempotent webhook processing to prevent duplicate records in a service with more than 150 connected clients and thousands of requests per minute, keeping data consistent for recommendation evaluation.',
             'E-commerce integrations: I developed and maintained catalog and order synchronization with Shopify, Nuvemshop, Loja Integrada, Tray, VTEX, and Magazord, respecting API limits and automating updates to reduce manual intervention.',
-            'APIs and security: an API backed by replicated MongoDB with JWT, HMAC, and rate limiting, serving thousands of daily accesses.',
+            'APIs and security: an API backed by replicated MongoDB with JWT, HMAC, and rate limiting, handling thousands of requests per day.',
             'Dashboard and interfaces: I built interfaces connected to the backend and integrations, translating product requirements into operational tools.',
             'Platform partnerships: technical discussions to obtain integration guidance and support partnership agreements.',
             'Support and clients: assistance to the support team, client-specific implementations, and resolution of complex technical issues.',
@@ -624,16 +624,16 @@ const siteContent: Record<Locale, SiteContent> = {
           ],
         },
         {
-          period: '2017 - now',
-          title: 'Freelance Full Stack Developer',
+          period: '2017 - present',
+          title: 'Freelance Full-Stack Developer',
           description:
             'My freelance experience includes websites, web platforms, corporate intranets, scheduling systems, and email marketing automations. I work from requirements gathering through production delivery, covering frontend, backend, integrations, and maintenance.',
           highlights: [
             'Corporate intranet: an internal communication system with a photo archive and a noticeboard.',
             'Email marketing: a sending queue built with BullMQ, Node.js, and Amazon SES, deployed to a DigitalOcean VPS.',
-            'Dental clinic: an appointment scheduling system with management of doctors, staff, and available time slots.',
+            'Dental clinic: an appointment scheduling system for managing dentists, staff, and available time slots.',
             'JSBJJ Kylemore: complete interface and platform development, with student acquisition, registration, authentication, recurring payments via GoCardless, and PostgreSQL with Prisma ORM.',
-            'Unit 5: complete website design and responsive frontend implementation, with service information, social proof, and calls to action for contact.',
+            'Unit 5: complete website design and responsive frontend implementation, with service information, social proof, and calls to action encouraging visitors to get in touch.',
           ],
           stack: [
             'Next.js',
@@ -673,7 +673,7 @@ const siteContent: Record<Locale, SiteContent> = {
     },
     about: {
       eyebrow: 'About',
-      title: 'Senior Full Stack Developer | React, TypeScript & Node.js',
+      title: 'Senior Full-Stack Developer | React, TypeScript & Node.js',
       intro:
         'I have 8+ years of experience building web products and e-commerce integrations, with responsibility for architecture and full stack delivery. Open to remote senior full stack opportunities in Brazil and internationally.',
       storyTitle: 'My experience',
@@ -725,7 +725,7 @@ const siteContent: Record<Locale, SiteContent> = {
         'Architecture, development, and maintenance: integrations for 150+ clients, recurring payments, and web interfaces.',
       cta: 'Read case study',
       liveLabel: 'Open project',
-      profile: 'Senior Full Stack Developer · React · TypeScript · Node.js',
+      profile: 'Senior Full-Stack Developer · React · TypeScript · Node.js',
       contact: {
         title: 'Let’s discuss an opportunity',
         availability:
@@ -822,7 +822,7 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       sections: [
         {
           title: 'Frontend de lojas e fidelidade visual',
-          body: 'Frontend de e-commerce: nos primeiros três anos na Performa, implementei renderização, posicionamento e design de vitrines, reproduzindo o visual nativo das lojas com fidelidade pixel perfect e implementando layouts personalizados a partir de PSD e Figma, buscas diferenciadas e vitrines de compre junto.',
+          body: 'Frontend de e-commerce: nos primeiros três anos na Performa, implementei renderização, posicionamento e design de vitrines, reproduzindo o visual nativo das lojas com fidelidade pixel perfect e implementando layouts personalizados a partir de PSD e Figma, buscas diferenciadas e vitrines do tipo compre junto.',
         },
         {
           title: 'Capacidade de entrega',
@@ -1038,11 +1038,11 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       sections: [
         {
           title: 'Storefront frontend and visual fidelity',
-          body: 'E-commerce frontend: during my first three years at Performa, I implemented product display rendering, placement, and styling, matching native storefront designs pixel for pixel. I also built custom displays from PSD and Figma, custom search interfaces, and frequently bought together displays.',
+          body: 'E-commerce frontend: during my first three years at Performa, I implemented product display rendering, placement, and styling, matching native storefront designs pixel for pixel. I also built custom displays from PSD files and Figma designs, custom search interfaces, and frequently bought together product displays.',
         },
         {
           title: 'Delivery capacity',
-          body: 'Delivery capacity: integrated three stores per day against the previous baseline of one, reaching five on days with overtime. During one period, I handled the workload previously covered by three developers on my own.',
+          body: 'Delivery capacity: I integrated three stores per day, compared with the previous baseline of one, reaching five on days with overtime. During one period, I handled the workload previously covered by three developers on my own.',
         },
         {
           title: 'Method: reuse the foundation and adapt each store',
@@ -1054,11 +1054,11 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         },
         {
           title: 'Shopify apps with Liquid and Remix',
-          body: 'Shopify: developed three complete apps using Liquid and Remix. The apps did not reach production due to internal company issues.',
+          body: 'Shopify: I developed three complete apps using Liquid and Remix. The apps did not reach production due to internal company issues.',
         },
         {
           title: 'HTML and MJML email templates',
-          body: 'Email marketing: created HTML and MJML email templates for marketing campaigns.',
+          body: 'Email marketing: I created HTML and MJML email templates for marketing campaigns.',
         },
 
         {
