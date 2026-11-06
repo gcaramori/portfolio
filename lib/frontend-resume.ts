@@ -34,7 +34,7 @@ export function getFrontendResumeContent(locale: Locale) {
           description: locale === 'en'
             ? 'Senior full stack developer with hands-on responsibility for storefront interfaces, e-commerce integrations, and operational dashboards.'
             : 'Desenvolvedor full stack sênior com atuação direta em interfaces de lojas, integrações de e-commerce e dashboards operacionais.',
-          highlights: performa.highlights?.slice(0, 4),
+          highlights: performa.highlights?.slice(0, 5),
           stack: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Shopify', 'MJML', 'Liquid', 'Remix', 'Figma'],
         },
         {
