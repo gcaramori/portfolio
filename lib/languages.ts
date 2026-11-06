@@ -199,7 +199,7 @@ const siteContent: Record<Locale, SiteContent> = {
       title: 'Desenvolvedor Full Stack Sênior | React, TypeScript e Node.js',
       mobileTitle: 'Desenvolvedor Full Stack Sênior',
       intro:
-        'Tenho mais de oito anos de experiência em produtos web e e-commerce. Trabalho com React, TypeScript e Node.js, do frontend às integrações e à entrega em produção. Passei três anos implementando vitrines fiéis ao visual das lojas e hoje também desenvolvo agentes de IA e uso Codex com MCP nas integrações.',
+        'Tenho mais de oito anos de experiência desenvolvendo produtos web e soluções para e-commerce. Trabalho com React, TypeScript e Node.js no frontend, no backend e nas integrações. Assumo projetos da definição técnica à entrega em produção. Também desenvolvo agentes de IA para atendimento e recomendação de produtos.',
       mobileIntro:
         'Mais de oito anos em produtos web e e-commerce, com React, TypeScript e Node.js. Experiência em interfaces, integrações e agentes de IA.',
       description:
@@ -509,7 +509,7 @@ const siteContent: Record<Locale, SiteContent> = {
       title: 'Senior Full-Stack Developer | React, TypeScript and Node.js',
       mobileTitle: 'Senior Full-Stack Developer',
       intro:
-        'I have over eight years of experience in web products and e-commerce, working with React, TypeScript, and Node.js from frontend implementation through integrations and deployment. I spent three years matching product displays to storefront designs. I also build AI agents and use Codex with MCP for integrations.',
+        'I have over eight years of experience developing web products and e-commerce solutions. I work with React, TypeScript, and Node.js across frontend, backend, and integrations, taking projects from technical planning through deployment. I also build AI agents for customer support and product recommendations.',
       mobileIntro:
         'Over eight years in web products and e-commerce with React, TypeScript, and Node.js. Experience in interfaces, integrations, and AI agents.',
       description:
