@@ -35,10 +35,11 @@ export function getFrontendResumeContent(locale: Locale) {
             ? 'Senior full-stack developer with hands-on responsibility for storefront interfaces, e-commerce integrations, and operational dashboards.'
             : 'Desenvolvedor full stack sênior com atuação direta em interfaces de lojas, integrações de e-commerce e dashboards operacionais.',
           highlights: [
-            ...(performa.highlights?.slice(0, 5) ?? []),
+            ...(performa.highlights?.slice(0, 1) ?? []),
             locale === 'en'
-              ? 'AI products: I owned the backend and WebSocket connections of a RAG-based support agent, first on WhatsApp with Baileys and later in storefront chats with catalog recommendations. I also worked on model selection, token usage, and response quality.'
-              : 'Produtos com IA: assumi o backend e as conexões WebSocket de um agente de atendimento com RAG, inicialmente no WhatsApp via Baileys e depois em chats nas lojas com recomendações do catálogo. Também trabalhei na seleção de modelos, no consumo de tokens e na qualidade das respostas.',
+              ? 'Shopify: I developed three complete apps using Liquid and Remix. They did not reach production due to internal company issues.'
+              : 'Shopify: desenvolvi três apps completos com Liquid e Remix, que não chegaram à produção por questões internas da empresa.',
+            ...(performa.highlights?.slice(2) ?? []),
           ],
           stack: [
             'Next.js',

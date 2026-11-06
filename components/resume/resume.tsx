@@ -29,7 +29,7 @@ export function Resume({
       ...(frontend ? [] : projectCases[locale]['performa-ai'].stack),
       ...content.home.experience.flatMap((item) => item.stack ?? []),
     ]),
-  )
+  ).filter((technology) => !['MJML', 'Baileys'].includes(technology))
 
   return (
     <article className="resume-page container max-w-4xl py-10 md:py-14">
