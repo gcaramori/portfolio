@@ -74,13 +74,15 @@ export function IndexContent() {
             </p>
 
             <div className="hero-actions home-hero-actions mt-7 flex flex-col gap-3 sm:mt-9 sm:flex-row sm:flex-wrap sm:items-center">
-              <Link
-                href={emailHref}
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="primary-link"
               >
                 {content.primaryCta}
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </a>
 
               <Link
                 href={getLocalizedPath('/resume', language)}
