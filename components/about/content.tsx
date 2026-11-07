@@ -47,6 +47,7 @@ export function AboutContent() {
               }
               width={960}
               height={960}
+              unoptimized
               sizes="(max-width: 429px) calc(100vw - 24px), 384px"
               loading="eager"
               className="mt-6 h-auto w-full max-w-sm rounded-xl border border-[var(--border)]"
