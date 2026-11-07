@@ -821,9 +821,13 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         { value: '150+', label: 'clientes conectados ao serviço de webhooks' },
         {
           value: 'Milhares/min',
-          label: 'requisições em volume habitual no serviço de webhooks',
+          label: 'requisições processadas por minuto',
         },
         { value: 'Milhares/dia', label: 'acessos à API com MongoDB replicado' },
+        {
+          value: '6 plataformas',
+          label: 'integrações de catálogos e pedidos',
+        },
       ],
       flow: {
         title: 'Fluxo de pedidos',
@@ -1059,11 +1063,15 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         { value: '150+', label: 'clients connected to the webhook service' },
         {
           value: 'Thousands/min',
-          label: 'requests as a regular workload in the webhook service',
+          label: 'requests processed per minute',
         },
         {
           value: 'Thousands/day',
           label: 'accesses to the API backed by replicated MongoDB',
+        },
+        {
+          value: '6 platforms',
+          label: 'catalog and order integrations',
         },
       ],
       flow: {
