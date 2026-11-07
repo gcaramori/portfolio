@@ -387,7 +387,7 @@ const siteContent: Record<Locale, SiteContent> = {
       highlightsTitle: 'Experiência e entregas selecionadas',
       highlights: [
         {
-          title: 'Três anos implementando vitrines',
+          title: 'Interfaces para e-commerce e plataformas web',
           body: 'Implementei vitrines fiéis ao visual das lojas e layouts enviados em PSD e Figma. Na Unit 5, criei o design e o frontend responsivo; na JSBJJ Kylemore, conectei a interface aos fluxos de cadastro e assinatura.',
         },
         {
@@ -686,7 +686,7 @@ const siteContent: Record<Locale, SiteContent> = {
       highlightsTitle: 'Experience and selected projects',
       highlights: [
         {
-          title: 'Three years building storefront displays',
+          title: 'Interfaces for e-commerce and web platforms',
           body: 'I matched product displays to storefront designs and implemented layouts from PSD files and Figma. For Unit 5, I created the design and responsive frontend; for JSBJJ Kylemore, I connected the interface to registration and subscription flows.',
         },
         {
