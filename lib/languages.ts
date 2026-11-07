@@ -765,6 +765,42 @@ const siteContent: Record<Locale, SiteContent> = {
   },
 }
 
+function getPerformaStack(locale: Locale): string[] {
+  const experienceStack = siteContent[locale].home.experience.find(
+    (item) => item.caseSlug === 'performa-ai',
+  )?.stack ?? []
+  const aiPractices = locale === 'pt-BR'
+    ? [
+        'Agentes de IA',
+        'Gestão de contexto',
+        'Seleção de modelos',
+        'Avaliação de respostas',
+        'Monitoramento de tokens e latência',
+        'Proteção contra prompt injection',
+      ]
+    : [
+        'AI agents',
+        'Context management',
+        'Model selection',
+        'Response evaluation',
+        'Token and latency monitoring',
+        'Prompt injection protection',
+      ]
+
+  return Array.from(new Set([
+    'TypeScript',
+    'Node.js',
+    'PHP',
+    'MongoDB',
+    'NestJS',
+    'React',
+    'PostgreSQL',
+    'Next.js',
+    ...experienceStack,
+    ...aiPractices,
+  ]))
+}
+
 export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
   'pt-BR': {
     'performa-ai': {
@@ -774,34 +810,13 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       cardSummary:
         'Implementei vitrines, dashboards e integrações de e-commerce. Assumi o backend de um agente com RAG e de um serviço de webhooks para mais de 150 clientes, com milhares de requisições por minuto.',
       cardRole: 'Full stack sênior · arquitetura e integrações',
-      cardStack: [
-        'TypeScript',
-        'Node.js',
-        'PHP',
-        'MongoDB',
-        'NestJS',
-        'React.js',
-        'PostgreSQL',
-        'MCP',
-        'RAG',
-      ],
+      cardStack: getPerformaStack('pt-BR'),
       overview:
         'A Performa.AI é uma plataforma de inteligência e conversão para e-commerce, com busca, recomendações, vitrines, recuperação de carrinho e atendimento. Como desenvolvedor full stack sênior e referência técnica do time, desenvolvo e mantenho APIs, integrações de catálogos e pedidos e ferramentas embarcadas nas lojas.',
       role: 'Responsável por decisões de arquitetura de projetos, apps e ferramentas, levantamento do escopo com a equipe de produto, implementação full stack, testes, deploy e manutenção. Referência técnica do time.',
       deliverables:
         'API autenticada, serviço de webhooks para pedidos, integrações e apps para plataformas de e-commerce, sincronização de produtos e categorias, interfaces incluindo o dashboard, ferramentas JavaScript e automações com IA.',
-      stack: [
-        'Next.js',
-        'JavaScript',
-        'TypeScript',
-        'PHP',
-        'NestJS',
-        'Node.js',
-        'React',
-        'CSS',
-        'MongoDB',
-        'PostgreSQL',
-      ],
+      stack: getPerformaStack('pt-BR'),
       metrics: [
         { value: '150+', label: 'clientes conectados ao serviço de webhooks' },
         {
@@ -924,6 +939,12 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         'PostgreSQL',
         'GoCardless',
         'Tailwind CSS',
+        'Prisma',
+        'Framer Motion',
+        'Google APIs',
+        'Meta Pixel',
+        'Autenticação',
+        'E-mails transacionais',
         'Vercel',
       ],
       overview:
@@ -942,6 +963,9 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         'GoCardless API',
         'Vercel',
         'Cloud deployment',
+        'Meta Pixel',
+        'Autenticação',
+        'E-mails transacionais',
       ],
       sections: [
         {
@@ -973,13 +997,29 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       cardSummary:
         'Criei o design e implementei o frontend responsivo para apresentar serviços, depoimentos e chamadas para contato.',
       cardRole: 'Design e desenvolvimento frontend',
-      cardStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      cardStack: [
+        'Next.js',
+        'TypeScript',
+        'Tailwind CSS',
+        'Vercel',
+        'Design responsivo',
+        'UI design',
+        'Hierarquia visual',
+      ],
       overview:
         'A Unit 5 precisava de um site com comunicação direta e uma identidade visual que transmitisse a energia e a força da academia. Desenvolvi uma interface responsiva que apresenta os serviços e dá destaque às chamadas para ação desde o início da página.',
       role: 'Responsável pela criação de todo o design do site e pela implementação frontend, incluindo layout, tipografia, hierarquia visual, responsividade e chamadas para ação.',
       deliverables:
         'Website promocional com hero de alto impacto, seções de serviços, prova social, contato e layout responsivo preparado para leitura rápida em mobile.',
-      stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      stack: [
+        'Next.js',
+        'TypeScript',
+        'Tailwind CSS',
+        'Vercel',
+        'Design responsivo',
+        'UI design',
+        'Hierarquia visual',
+      ],
       sections: [
         {
           title: 'Contexto',
@@ -1008,34 +1048,13 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       cardSummary:
         'I built storefront displays, dashboards, and e-commerce integrations. I owned the backend of a RAG-based agent and a webhook service for 150+ clients, handling thousands of requests per minute.',
       cardRole: 'Senior full stack · architecture and integrations',
-      cardStack: [
-        'TypeScript',
-        'Node.js',
-        'PHP',
-        'MongoDB',
-        'NestJS',
-        'React.js',
-        'PostgreSQL',
-        'MCP',
-        'RAG',
-      ],
+      cardStack: getPerformaStack('en'),
       overview:
         'Performa.AI is an intelligence and conversion platform for e-commerce, offering search, recommendations, product displays, cart recovery, and customer service. As a senior full stack developer and technical point of contact for the team, I develop and maintain APIs, catalog and order integrations, and tools embedded in stores.',
       role: 'Responsible for architecture decisions across projects, apps, and tools, defining project scope with the product team, full stack implementation, testing, deployment, and maintenance. A technical point of contact for the team.',
       deliverables:
         'Authenticated API, order webhook service, e-commerce integrations and platform apps, product and category synchronization, interfaces including the dashboard, JavaScript tools, and AI automations.',
-      stack: [
-        'Next.js',
-        'JavaScript',
-        'TypeScript',
-        'PHP',
-        'NestJS',
-        'Node.js',
-        'React',
-        'CSS',
-        'MongoDB',
-        'PostgreSQL',
-      ],
+      stack: getPerformaStack('en'),
       metrics: [
         { value: '150+', label: 'clients connected to the webhook service' },
         {
@@ -1162,6 +1181,12 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         'PostgreSQL',
         'GoCardless',
         'Tailwind CSS',
+        'Prisma',
+        'Framer Motion',
+        'Google APIs',
+        'Meta Pixel',
+        'Authentication',
+        'Transactional emails',
         'Vercel',
       ],
       overview:
@@ -1180,6 +1205,9 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
         'GoCardless API',
         'Vercel',
         'Cloud deployment',
+        'Meta Pixel',
+        'Authentication',
+        'Transactional emails',
       ],
       sections: [
         {
@@ -1211,13 +1239,29 @@ export const projectCases: Record<Locale, Record<ProjectSlug, ProjectCase>> = {
       cardSummary:
         'I designed and built a responsive frontend presenting services, testimonials, and clear calls to action.',
       cardRole: 'Design and frontend development',
-      cardStack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      cardStack: [
+        'Next.js',
+        'TypeScript',
+        'Tailwind CSS',
+        'Vercel',
+        'Responsive design',
+        'UI design',
+        'Visual hierarchy',
+      ],
       overview:
         "Unit 5 needed a website with direct messaging and a visual identity that conveyed the gym's energy and strength. I developed a responsive interface that presents its services and makes calls to action visible from the start of the page.",
       role: 'Responsible for the complete website design and frontend implementation, including layout, typography, visual hierarchy, responsiveness, and calls to action.',
       deliverables:
         'Promotional website with a high-impact hero, service sections, social proof, contact flows, and a responsive layout prepared for fast mobile reading.',
-      stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+      stack: [
+        'Next.js',
+        'TypeScript',
+        'Tailwind CSS',
+        'Vercel',
+        'Responsive design',
+        'UI design',
+        'Visual hierarchy',
+      ],
       sections: [
         {
           title: 'Context',
