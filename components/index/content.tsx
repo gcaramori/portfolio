@@ -61,12 +61,12 @@ export function IndexContent() {
           <div className="min-w-0">
             <p className="section-label">{content.eyebrow}</p>
 
-            <h1 className="hero-title home-hero-title mt-3 max-w-[58rem] font-display text-[1.75rem] leading-[1.08] font-semibold tracking-normal text-[var(--foreground)] min-[390px]:text-[1.875rem] sm:mt-4 sm:text-[3rem] sm:leading-[1.04] md:text-[3.65rem] lg:text-[3.75rem] xl:text-[3.95rem]">
-              <span className="sm:hidden">{content.mobileTitle}</span>
-              <span className="hidden sm:inline">{content.title.split(' | ').map((part, index) => (
-                <span key={part} className="hero-title-block" style={{ animationDelay: `${index * 100}ms` }}>{index > 0 ? ' | ' : ''}{part}</span>
-              ))}</span>
+            <h1 className="hero-title home-hero-title mt-3 max-w-[58rem] text-balance font-display text-[1.75rem] leading-[1.08] font-semibold tracking-normal text-[var(--foreground)] min-[390px]:text-[1.875rem] sm:mt-4 sm:text-[3rem] sm:leading-[1.04] md:text-[3.65rem] lg:text-[3.75rem] xl:text-[3.95rem]">
+              <span className="hero-title-block">{content.mobileTitle}</span>
             </h1>
+            <p className="mt-3 text-balance font-display text-lg leading-snug font-medium text-[var(--muted-foreground)] sm:mt-4 sm:text-2xl lg:text-[1.75rem]">
+              {content.title.split(' | ')[1]}
+            </p>
 
             <p className="hero-intro home-hero-intro mt-5 max-w-2xl text-[1.0625rem] leading-7 text-[var(--foreground)] sm:mt-7 sm:max-w-3xl sm:text-xl sm:leading-9 lg:text-[1.35rem] lg:leading-10">
               <span className="sm:hidden">{content.mobileIntro}</span>
